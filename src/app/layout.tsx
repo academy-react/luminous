@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
+import ThemeProvider from "@/components/providers/theme-provider";
 import TailwindIndicator from "@/components/utils/tailwind-indicator";
 
 export const metadata: Metadata = {
@@ -14,10 +15,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="h-screen min-h-screen">
-        {children}
-        <TailwindIndicator />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   );
