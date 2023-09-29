@@ -2,6 +2,9 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
+import { mitra, roboto } from "@/lib/fonts/fonts";
+import { cn } from "@/lib/utils";
+
 import ThemeProvider from "@/components/providers/theme-provider";
 import TailwindIndicator from "@/components/utils/tailwind-indicator";
 
@@ -29,7 +32,11 @@ const RootLayout = ({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className="h-screen min-h-screen"
+        className={cn(
+          "h-screen min-h-screen font-multi",
+          roboto.variable,
+          mitra.variable
+        )}
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

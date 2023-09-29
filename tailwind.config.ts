@@ -9,6 +9,11 @@ const config: Config = {
         xs: "480px",
         xxs: "350px",
       },
+      fontFamily: {
+        roboto: ["var(--font-roboto)"],
+        mitra: ["var(--font-mitra)"],
+        multi: ["var(--font-mitra)", "var(--font-roboto)"],
+      },
     },
   },
   plugins: [],
