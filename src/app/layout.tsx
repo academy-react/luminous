@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className="min-h-screen h-screen">{children}</body>
+      <body className="h-screen min-h-screen">{children}</body>
     </html>
   );
 };
