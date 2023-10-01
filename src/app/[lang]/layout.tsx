@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 import { mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
+import Header from "@/components/layout/lobby/header/header";
 import ThemeProvider from "@/components/providers/theme-provider";
 import TailwindIndicator from "@/components/utils/tailwind-indicator";
 
@@ -40,7 +41,10 @@ const RootLayout = ({
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <div className="h-full w-full">
+            <Header />
+            {children}
+          </div>
           <TailwindIndicator />
         </ThemeProvider>
       </body>
