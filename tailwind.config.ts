@@ -14,6 +14,14 @@ const config: Config = {
         mitra: ["var(--font-mitra)"],
         multi: ["var(--font-mitra)", "var(--font-roboto)"],
       },
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'white':{primary: '#ffffff'},
+        'purple':{primary: '#5A0BA9'},
+        'pink':{primary:'#C003B2'},
+      },
+      
     },
   },
   plugins: [require("daisyui")],
