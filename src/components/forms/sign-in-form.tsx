@@ -10,7 +10,6 @@ import {
   signInInputValidator,
   type SignInInputs,
 } from "@/types/validations/auth.validation";
-import { cn } from "@/lib/utils";
 import { signInForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -19,7 +18,6 @@ import { AnimatedInput, AnimatedPasswordInput } from "@/components/ui/input";
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
-import { PasswordInput } from "../ui/password-input";
 
 const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -64,7 +62,6 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
               <FormControl>
                 <AnimatedPasswordInput
                   lang={lang}
-                  Icon={User2}
                   label={signInForm.password[lang]}
                   {...field}
                 />

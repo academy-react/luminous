@@ -4,9 +4,9 @@ import { Eye, EyeOff, type LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-import { type Locale } from "#/i18n.config";
+import { FormLabel, useFormField } from "@/components/ui/form";
 
-import { FormLabel, useFormField } from "./form";
+import { type Locale } from "#/i18n.config";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -88,9 +88,14 @@ const AnimatedInput = React.forwardRef<HTMLInputElement, AnimatedInputProps>(
 );
 AnimatedInput.displayName = "AnimatedInput";
 
+export interface AnimatedPasswordInputProps extends InputProps {
+  lang: Locale;
+  label: string;
+}
+
 const AnimatedPasswordInput = React.forwardRef<
   HTMLInputElement,
-  AnimatedInputProps
+  AnimatedPasswordInputProps
 >(({ lang, label, ...props }, ref) => {
   const { error } = useFormField();
   const [isFocused, setIsFocus] = React.useState(false);
