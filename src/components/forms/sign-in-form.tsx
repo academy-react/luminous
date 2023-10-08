@@ -14,11 +14,12 @@ import { cn } from "@/lib/utils";
 import { signInForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
+import { AnimatedInput, AnimatedPasswordInput } from "@/components/ui/input";
 
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
+import { PasswordInput } from "../ui/password-input";
 
 const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +37,7 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
   return (
     <Form {...form}>
       <form
-        className=""
+        className="grid gap-4"
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
         <FormField
@@ -55,13 +56,29 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
             </FormItem>
           )}
         />
-        {/* <Button disabled={isLoading} dir="ltr">
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <AnimatedPasswordInput
+                  lang={lang}
+                  Icon={User2}
+                  label={signInForm.password[lang]}
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <Button disabled={isLoading} dir="ltr">
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
           {signInForm.button[lang]}
           <span className="sr-only">{signInForm.button[lang]}</span>
-        </Button> */}
+        </Button>
       </form>
     </Form>
   );
