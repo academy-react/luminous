@@ -58,7 +58,7 @@ const AnimatedInput = React.forwardRef<HTMLInputElement, AnimatedInputProps>(
           <Input
             placeholder=" "
             className={cn(
-              "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
+              "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pe-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
               error
                 ? "focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0"
                 : "focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0"
@@ -124,7 +124,7 @@ const AnimatedPasswordInput = React.forwardRef<
           placeholder=" "
           type={showPassword ? "text" : "password"}
           className={cn(
-            "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !ps-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
+            "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pe-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
             error
               ? "focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0"
               : "focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0"
