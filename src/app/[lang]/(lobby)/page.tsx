@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { title } from "@/dict/lobby/header";
+import { title } from "@/dict/lobby/header.dict";
 
 import { type Locale } from "#/i18n.config";
 
