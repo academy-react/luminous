@@ -173,3 +173,49 @@ export const thirdSignUpForm: ThirdSignUpFormProps = {
     en: "Sign Up",
   },
 };
+
+export interface ResetPasswordFormProps {
+  title: {
+    fa: string;
+    en: string;
+  };
+  email: {
+    fa: string;
+    en: string;
+  };
+  button: {
+    fa: string;
+    en: string;
+  };
+  signIn: {
+    fa: string;
+    en: string;
+  };
+  signUp: {
+    fa: string;
+    en: string;
+  };
+}
+
+export const resetPasswordForm: ResetPasswordFormProps = {
+  title: {
+    fa: "بازیابی رمز عبور",
+    en: "Reset Password",
+  },
+  email: {
+    fa: "ایمیل",
+    en: "Email",
+  },
+  button: {
+    fa: "ارسال کد تایید",
+    en: "Sending Confirmation Code",
+  },
+  signIn: {
+    fa: "ورود",
+    en: "Sign In",
+  },
+  signUp: {
+    fa: "ثبت‌نام",
+    en: "Sign Up",
+  },
+};

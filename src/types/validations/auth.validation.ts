@@ -25,3 +25,11 @@ export const thirdSignUpInputValidator = z.object({
 });
 
 export type ThirdSignUpInputProps = z.infer<typeof thirdSignUpInputValidator>;
+
+export const resetPasswordInputValidator = z.object({
+  email: z.string().email(),
+});
+
+export type ResetPasswordInputProps = z.infer<
+  typeof resetPasswordInputValidator
+>;
