@@ -16,16 +16,19 @@ import { type Locale } from "#/i18n.config";
 const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="flex h-full w-full items-center justify-center">
-      <Card className="w-full" dir={lang === "en" ? "ltr" : "rtl"}>
+      <Card className="w-full">
         <CardHeader className="flex items-center justify-center">
           <CardTitle className="text-2xl">{signInForm.title[lang]}</CardTitle>
         </CardHeader>
         <CardContent className="">
           <SignInForm lang={lang} />
         </CardContent>
-        <CardFooter className="flex items-center justify-center">
+        <CardFooter className="flex flex-col items-center justify-center gap-3">
+          <Link aria-label="reset-password" href={`/${lang}/reset-password`}>
+            {signInForm.forgot[lang]}
+          </Link>
           <div className="text-sm">
-            <span className="hidden ltr:mr-1 rtl:ml-1 sm:inline-block">
+            <span className="me-1 inline-block opacity-70">
               {signInForm.question[lang]}
             </span>
             <Link
