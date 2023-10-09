@@ -36,7 +36,7 @@ const FirstSignUpForm = ({
     },
   });
 
-  const onSubmit = async (data: FirstSignUpInputProps) => {
+  const onSubmit = (data: FirstSignUpInputProps) => {
     setFormState("second");
   };
 

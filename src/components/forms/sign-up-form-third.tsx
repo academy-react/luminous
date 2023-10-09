@@ -36,7 +36,7 @@ const ThirdSignUpForm = ({
     resolver: zodResolver(thirdSignUpInputValidator),
   });
 
-  const onSubmit = async (data: ThirdSignUpInputProps) => {
+  const onSubmit = (data: ThirdSignUpInputProps) => {
     setFormState("third");
   };
 

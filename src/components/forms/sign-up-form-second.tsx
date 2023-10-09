@@ -33,7 +33,7 @@ const SecondSignUpForm = ({
     resolver: zodResolver(secondSignUpInputValidator),
   });
 
-  const onSubmit = async (data: SecondSignUpInputProps) => {
+  const onSubmit = (data: SecondSignUpInputProps) => {
     setFormState("third");
   };
 
