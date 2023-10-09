@@ -1,9 +1,11 @@
+import type { Locale } from "#/i18n.config";
+
 import Navbar from "./navbar";
 
-const Header = () => {
+const Header = ({ lang }: { lang: Locale }) => {
   return (
     <div className="">
-      <Navbar />
+      <Navbar lang={lang} />
     </div>
   );
 };
