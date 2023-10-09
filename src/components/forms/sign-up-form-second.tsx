@@ -7,20 +7,20 @@ import { Loader2, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import {
-  firstSignUpInputValidator,
-  type FirstSignUpInputProps,
+  secondSignUpInputValidator,
+  type SecondSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { firstSignUpForm } from "@/dict/auth/auth.dict";
+import { secondSignUpForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
+import { AnimatedPasswordInput } from "@/components/ui/input";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
 
-const FirstSignUpForm = ({
+const SecondSignUpForm = ({
   lang,
   setFormState,
 }: {
@@ -29,15 +29,12 @@ const FirstSignUpForm = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<FirstSignUpInputProps>({
-    resolver: zodResolver(firstSignUpInputValidator),
-    defaultValues: {
-      phone: "",
-    },
+  const form = useForm<SecondSignUpInputProps>({
+    resolver: zodResolver(secondSignUpInputValidator),
   });
 
-  const onSubmit = async (data: FirstSignUpInputProps) => {
-    setFormState("second");
+  const onSubmit = async (data: SecondSignUpInputProps) => {
+    setFormState("third");
   };
 
   return (
@@ -48,14 +45,13 @@ const FirstSignUpForm = ({
       >
         <FormField
           control={form.control}
-          name="phone"
+          name="code"
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <AnimatedInput
+                <AnimatedPasswordInput
                   lang={lang}
-                  Icon={Phone}
-                  label={firstSignUpForm.phone[lang]}
+                  label={secondSignUpForm.code[lang]}
                   {...field}
                 />
               </FormControl>
@@ -66,12 +62,12 @@ const FirstSignUpForm = ({
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {firstSignUpForm.button[lang]}
-          <span className="sr-only">{firstSignUpForm.button[lang]}</span>
+          {secondSignUpForm.button[lang]}
+          <span className="sr-only">{secondSignUpForm.button[lang]}</span>
         </Button>
       </form>
     </Form>
   );
 };
 
-export default FirstSignUpForm;
+export default SecondSignUpForm;

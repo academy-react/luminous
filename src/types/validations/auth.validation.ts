@@ -15,7 +15,7 @@ export const firstSignUpInputValidator = z.object({
 export type FirstSignUpInputProps = z.infer<typeof firstSignUpInputValidator>;
 
 export const secondSignUpInputValidator = z.object({
-  code: z.number().min(1),
+  code: z.string().min(1),
 });
 
 export type SecondSignUpInputProps = z.infer<typeof secondSignUpInputValidator>;

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 import { firstSignUpForm } from "@/dict/auth/auth.dict";
@@ -10,10 +13,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import FirstSignUpForm from "@/components/forms/sign-up-form-first";
+import SecondSignUpForm from "@/components/forms/sign-up-form-second";
 
 import { type Locale } from "#/i18n.config";
 
+export type SignUpFormStates = "first" | "second" | "third";
+
 const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
+  const [formState, setFormState] = useState<SignUpFormStates>("first");
+
   return (
     <main className="flex h-full w-full items-center justify-center">
       <Card className="w-full">
@@ -23,7 +31,17 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="">
-          <FirstSignUpForm lang={lang} />
+          {
+            {
+              first: (
+                <FirstSignUpForm lang={lang} setFormState={setFormState} />
+              ),
+              second: (
+                <SecondSignUpForm lang={lang} setFormState={setFormState} />
+              ),
+              third: <div>Third</div>,
+            }[formState]
+          }
         </CardContent>
         <CardFooter className="flex flex-col items-center justify-center gap-3">
           <Link
