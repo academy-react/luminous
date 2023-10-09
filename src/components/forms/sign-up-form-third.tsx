@@ -13,6 +13,8 @@ import {
 
 import "@/dict/auth/auth.dict";
 
+import { useRouter } from "next/navigation";
+
 import { thirdSignUpForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -31,13 +33,14 @@ const ThirdSignUpForm = ({
   setFormState: (state: SignUpFormStates) => void;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const form = useForm<ThirdSignUpInputProps>({
     resolver: zodResolver(thirdSignUpInputValidator),
   });
 
   const onSubmit = (data: ThirdSignUpInputProps) => {
-    setFormState("third");
+    router.push(`/${lang}`);
   };
 
   return (

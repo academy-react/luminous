@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, User2 } from "lucide-react";
@@ -28,6 +29,7 @@ import { Checkbox } from "../ui/checkbox";
 
 const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const form = useForm<SignInInputProps>({
     resolver: zodResolver(signInInputValidator),
@@ -38,7 +40,9 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
     },
   });
 
-  const onSubmit = async (data: SignInInputProps) => {};
+  const onSubmit = (data: SignInInputProps) => {
+    router.push(`/${lang}`);
+  };
 
   return (
     <Form {...form}>
