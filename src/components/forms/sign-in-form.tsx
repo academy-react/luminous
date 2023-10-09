@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 
 import {
   signInInputValidator,
-  type SignInInputs,
+  type SignInInputProps,
 } from "@/types/validations/auth.validation";
 import { signInForm } from "@/dict/auth/auth.dict";
 
@@ -29,7 +29,7 @@ import { Checkbox } from "../ui/checkbox";
 const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<SignInInputs>({
+  const form = useForm<SignInInputProps>({
     resolver: zodResolver(signInInputValidator),
     defaultValues: {
       username: "",
@@ -38,7 +38,7 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
     },
   });
 
-  const onSubmit = async (data: SignInInputs) => {};
+  const onSubmit = async (data: SignInInputProps) => {};
 
   return (
     <Form {...form}>

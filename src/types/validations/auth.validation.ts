@@ -6,4 +6,22 @@ export const signInInputValidator = z.object({
   remember: z.boolean().default(true).optional(),
 });
 
-export type SignInInputs = z.infer<typeof signInInputValidator>;
+export type SignInInputProps = z.infer<typeof signInInputValidator>;
+
+export const firstSignUpInputValidator = z.object({
+  phone: z.number().min(12).max(12),
+});
+
+export type FirstSignUpInputProps = z.infer<typeof firstSignUpInputValidator>;
+
+export const secondSignUpInputValidator = z.object({
+  code: z.number().min(1),
+});
+
+export type SecondSignUpInputProps = z.infer<typeof secondSignUpInputValidator>;
+
+export const thirdSignUpInputValidator = z.object({
+  email: z.string().email(),
+});
+
+export type ThirdSignUpInputProps = z.infer<typeof thirdSignUpInputValidator>;
