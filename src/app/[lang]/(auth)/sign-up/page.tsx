@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import FirstSignUpForm from "@/components/forms/sign-up-form-first";
 import SecondSignUpForm from "@/components/forms/sign-up-form-second";
+import ThirdSignUpForm from "@/components/forms/sign-up-form-third";
 
 import { type Locale } from "#/i18n.config";
 
@@ -39,7 +40,9 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
               second: (
                 <SecondSignUpForm lang={lang} setFormState={setFormState} />
               ),
-              third: <div>Third</div>,
+              third: (
+                <ThirdSignUpForm lang={lang} setFormState={setFormState} />
+              ),
             }[formState]
           }
         </CardContent>
