@@ -12,12 +12,19 @@ import {
 } from "@/types/validations/auth.validation";
 import { signInForm } from "@/dict/auth/auth.dict";
 
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
 import { AnimatedInput, AnimatedPasswordInput } from "@/components/ui/input";
 
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
 
 const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,6 +34,7 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
     defaultValues: {
       username: "",
       password: "",
+      remember: true,
     },
   });
 
@@ -66,6 +74,23 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
                   {...field}
                 />
               </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="remember"
+          render={({ field }) => (
+            <FormItem className="flex items-center justify-center gap-2 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div className="leading-none">
+                <FormLabel>{signInForm.remember[lang]}</FormLabel>
+              </div>
             </FormItem>
           )}
         />
