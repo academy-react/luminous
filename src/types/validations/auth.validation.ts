@@ -9,7 +9,7 @@ export const signInInputValidator = z.object({
 export type SignInInputProps = z.infer<typeof signInInputValidator>;
 
 export const firstSignUpInputValidator = z.object({
-  phone: z.number().min(12).max(12),
+  phone: z.string().regex(/^09\d{9}$/),
 });
 
 export type FirstSignUpInputProps = z.infer<typeof firstSignUpInputValidator>;
