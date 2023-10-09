@@ -67,3 +67,109 @@ export const signInForm: SignInFormProps = {
     en: "Sign Up",
   },
 };
+
+export interface FirstSignUpFormProps {
+  title: {
+    fa: string;
+    en: string;
+  };
+  phone: {
+    fa: string;
+    en: string;
+  };
+  button: {
+    fa: string;
+    en: string;
+  };
+  link: {
+    fa: string;
+    en: string;
+  };
+}
+
+export const firstSignUpForm: FirstSignUpFormProps = {
+  title: {
+    fa: "ثبت‌نام",
+    en: "Sign Up",
+  },
+  phone: {
+    fa: "شماره همراه",
+    en: "Phone Number",
+  },
+  button: {
+    fa: "ارسال کد تایید",
+    en: "Sending Confirmation Code",
+  },
+  link: {
+    fa: "ورود به حساب کاربری",
+    en: "Sign In",
+  },
+};
+
+export interface SecondSignUpFormProps {
+  title: {
+    fa: string;
+    en: string;
+  };
+  code: {
+    fa: string;
+    en: string;
+  };
+  button: {
+    fa: string;
+    en: string;
+  };
+}
+
+export const secondSignUpForm: SecondSignUpFormProps = {
+  title: {
+    fa: "ثبت‌نام",
+    en: "Sign Up",
+  },
+  code: {
+    fa: "کد تایید",
+    en: "Confirmation Code",
+  },
+  button: {
+    fa: "تایید",
+    en: "Confirm",
+  },
+};
+
+export interface ThirdSignUpFormProps {
+  title: {
+    fa: string;
+    en: string;
+  };
+  email: {
+    fa: string;
+    en: string;
+  };
+  password: {
+    fa: string;
+    en: string;
+  };
+  button: {
+    fa: string;
+    en: string;
+  };
+}
+
+export const thirdSignUpForm: ThirdSignUpFormProps = {
+  title: {
+    fa: "ثبت‌نام",
+    en: "Sign Up",
+  },
+  email: {
+    fa: "ایمیل",
+    en: "Email",
+  },
+  password: {
+    fa: "رمز عبور",
+    en: "Password",
+  },
+  button: {
+    fa: "ثبت‌نام",
+    en: "Sign Up",
+  },
+};
