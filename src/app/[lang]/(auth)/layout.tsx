@@ -9,7 +9,11 @@ const AuthLayout = ({
   children: React.ReactNode;
   params: { lang: Locale };
 }) => {
-  return <div className="h-full w-full">{children}</div>;
+  return (
+    <div className="flex h-full w-full items-center justify-center">
+      <div className="w-[30rem]">{children}</div>
+    </div>
+  );
 };
 
 export default AuthLayout;
