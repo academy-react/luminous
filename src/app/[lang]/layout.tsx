@@ -45,7 +45,7 @@ const RootLayout = ({
           <div className="h-full w-full">
             <Header lang={lang} />
             {children}
-            <Footer />
+            <Footer lang={lang} />
           </div>
           <TailwindIndicator />
         </ThemeProvider>
