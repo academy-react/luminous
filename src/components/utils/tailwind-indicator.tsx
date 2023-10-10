@@ -2,7 +2,7 @@ const TailwindIndicator = () => {
   if (process.env.NODE_ENV === "production") return null;
 
   return (
-    <div className="text-white dark:bg-white fixed bottom-2 left-2 z-50 flex items-center justify-center border bg-black px-1 text-center font-mono text-xs dark:text-black xxs:py-1">
+    <div className="fixed bottom-2 left-2 z-50 flex items-center justify-center border bg-black px-1 text-center font-mono text-xs text-white dark:bg-white dark:text-black xxs:py-1">
       <div className="block xxs:hidden">—</div>
       <div className="hidden xxs:block xs:hidden">xxs</div>
       <div className="hidden xs:block sm:hidden">xs</div>

@@ -27,7 +27,7 @@ const Header = ({ lang }: { lang: Locale }) => {
               {headerMenuOptions.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={item.href}
+                    href={`/${lang}/${item.href}`}
                     className={cn(
                       "font-semibold text-purple-text decoration-1 underline-offset-[12px] hover:underline",
                       lang === "en"
