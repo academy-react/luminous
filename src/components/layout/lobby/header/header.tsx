@@ -4,9 +4,9 @@ import Navbar from "./nav-bar";
 
 const Header = ({ lang }: { lang: Locale }) => {
   return (
-    <>
+    <header>
       <Navbar lang={lang} />
-    </>
+    </header>
   );
 };
 
