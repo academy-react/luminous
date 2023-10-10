@@ -11,7 +11,7 @@ import type { Locale } from "#/i18n.config";
 const Header = ({ lang }: { lang: Locale }) => {
   return (
     <header>
-      <nav className="fixed mx-auto flex h-16 w-full items-center justify-between bg-white/70 px-4 py-3 sm:px-5 lg:h-20 lg:px-10 lg:py-5">
+      <nav className="fixed mx-auto flex h-16 w-full items-center justify-between px-4 py-3 sm:px-5 lg:h-20 lg:px-10 lg:py-5">
         {/* Nav Bar */}
         <div className="flex h-full items-center gap-4">
           <div className="relative aspect-square h-full">
@@ -45,7 +45,7 @@ const Header = ({ lang }: { lang: Locale }) => {
         {/* Auth Nav Bar */}
         <div className="flex h-full">
           {/* Mobile Menu */}
-          <button className="h-full rounded-lg text-gray-500 transition-all duration-500 hover:text-black md:hidden">
+          <button className="h-full rounded-lg text-gray-300 transition-all duration-500 hover:text-black md:hidden">
             <Menu />
           </button>
           {/* Desktop Menu */}

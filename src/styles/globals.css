@@ -23,6 +23,6 @@
 
 @layer base {
   * {
-    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-700 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-corner-rounded-full scroll-smooth;
+    @apply scroll-smooth scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-zinc-700 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-corner-rounded-full;
   }
 }

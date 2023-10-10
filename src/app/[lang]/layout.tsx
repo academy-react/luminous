@@ -5,8 +5,8 @@ import { type Metadata } from "next";
 import { mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
-import Footer from "@/components/layout/lobby/footer/footer";
-import Header from "@/components/layout/lobby/header/header";
+import Footer from "@/components/layout/footer/footer";
+import Header from "@/components/layout/header/header";
 import ThemeProvider from "@/components/providers/theme-provider";
 import TailwindIndicator from "@/components/utils/tailwind-indicator";
 
