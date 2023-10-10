@@ -14,14 +14,14 @@ const Header = ({ lang }: { lang: Locale }) => {
       <nav className="fixed z-50 mx-auto flex h-16 w-full items-center justify-between px-4 py-3 sm:px-5 lg:h-20 lg:px-10 lg:py-5">
         {/* Nav Bar */}
         <div className="flex h-full items-center gap-4">
-          <div className="relative aspect-square h-full">
+          <Link href={`/${lang}`} className="relative aspect-square h-full">
             <Image
               src="/images/logos/logo.svg"
               fill
               alt="website-logo"
               className="object-cover"
             />
-          </div>
+          </Link>
           <div className="hidden w-full md:block md:w-auto">
             <ul className="flex gap-6">
               {headerMenuOptions.map((item) => (
