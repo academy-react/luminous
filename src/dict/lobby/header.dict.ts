@@ -21,41 +21,41 @@ export const headerMenuOptions: HeaderMenuOptionProps[] = [
   {
     id: 1,
     title: {
-      fa: "بلاگ",
-      en: "Blog",
+      fa: "خانه",
+      en: "Home",
     },
     href: "",
   },
   {
     id: 2,
     title: {
-      fa: "درباره‌ ما",
-      en: "About Us",
+      fa: "دوره‌ها",
+      en: "courses",
     },
-    href: "about",
+    href: "courses",
   },
   {
     id: 3,
     title: {
-      fa: "تماس با ما",
-      en: "Contact Us",
+      fa: "بلاگ",
+      en: "blog",
     },
-    href: "contact",
+    href: "blog",
   },
   {
     id: 4,
     title: {
-      fa: "همکاری با ما",
-      en: "Join Us",
+      fa: "درباره ما",
+      en: "about us",
     },
-    href: "join",
+    href: "about",
   },
   {
     id: 5,
     title: {
-      fa: "سوالات متداول",
-      en: "FAQ",
+      fa: "تماس با ما",
+      en: "contact us",
     },
-    href: "faq",
+    href: "contact",
   },
 ];

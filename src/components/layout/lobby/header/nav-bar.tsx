@@ -30,7 +30,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
                   className={cn(
                     "font-semibold text-purple-text decoration-1 underline-offset-[12px] hover:underline",
                     lang === "en"
-                      ? "text-base lg:text-lg"
+                      ? "text-base capitalize lg:text-lg"
                       : "text-lg lg:text-xl"
                   )}
                 >
