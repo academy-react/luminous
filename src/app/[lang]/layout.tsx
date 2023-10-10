@@ -44,8 +44,8 @@ const RootLayout = ({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="h-full w-full">
-            <Header />
-            <Hero />
+            <Header lang={lang} />
+            {/* <Hero /> */}
             {children}
 
             <Footer />

@@ -7,13 +7,13 @@ const LoginBtn = () => {
       <div className="flex gap-2">
         <Link
           href="#"
-          className="bg-purple-btn rounded-xl px-4 py-1 text-purple-text transition hover:bg-white-primary"
+          className="rounded-xl bg-purple-btn px-4 py-1 text-purple-text transition hover:bg-white-primary"
         >
           ورود
         </Link>
         <Link
           href="#"
-          className="bg-purple-btn rounded-xl px-4 py-1 text-purple-text transition hover:bg-white-primary"
+          className="rounded-xl bg-purple-btn px-4 py-1 text-purple-text transition hover:bg-white-primary"
         >
           ثبت نام
         </Link>

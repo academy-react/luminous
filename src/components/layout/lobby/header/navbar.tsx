@@ -66,7 +66,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
             </svg>
           </button>
           <div className=" hidden items-center justify-start gap-2 justify-self-end  md:flex">
-            <div className="bg-purple-btn rounded-xl px-2 py-2 text-purple-text transition hover:bg-white-primary">
+            <div className="rounded-xl bg-purple-btn px-2 py-2 text-purple-text transition hover:bg-white-primary">
               <BsSearch />
             </div>
             <LoginBtn />

@@ -15,17 +15,16 @@ const config: Config = {
         multi: ["var(--font-mitra)", "var(--font-roboto)"],
       },
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        'white':{primary: '#ffffff'},
-        'purple':{primary: '#5A0BA9',
-                  secondary:'#C003B2',
-                  text:'#5A0BA9',
-                  btn:'#E4D7F1'},
-        
-
+        transparent: "transparent",
+        current: "currentColor",
+        white: { primary: "#ffffff" },
+        purple: {
+          primary: "#5A0BA9",
+          secondary: "#C003B2",
+          text: "#5A0BA9",
+          btn: "#E4D7F1",
+        },
       },
-      
     },
   },
   plugins: [require("daisyui")],

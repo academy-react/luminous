@@ -9,7 +9,7 @@ export const title: TitleProps = {
 };
 
 export interface MenuOptionProps {
-  id:number;
+  id: number;
   title: {
     en: string;
     fa: string;
@@ -19,7 +19,7 @@ export interface MenuOptionProps {
 
 export const menuOptions: MenuOptionProps[] = [
   {
-    id:1,
+    id: 1,
     title: {
       fa: "خانه",
       en: "Home",
@@ -27,7 +27,7 @@ export const menuOptions: MenuOptionProps[] = [
     href: "",
   },
   {
-    id:2,
+    id: 2,
     title: {
       fa: "دوره ها",
       en: "courses",
@@ -35,7 +35,7 @@ export const menuOptions: MenuOptionProps[] = [
     href: "courses",
   },
   {
-    id:3,
+    id: 3,
     title: {
       fa: "بلاگ",
       en: "blog",
@@ -43,7 +43,7 @@ export const menuOptions: MenuOptionProps[] = [
     href: "blog",
   },
   {
-    id:4,
+    id: 4,
     title: {
       fa: "درباره ما",
       en: "about us",
@@ -51,7 +51,7 @@ export const menuOptions: MenuOptionProps[] = [
     href: "about",
   },
   {
-    id:5,
+    id: 5,
     title: {
       fa: "تماس با ما",
       en: "contact us",
@@ -59,4 +59,3 @@ export const menuOptions: MenuOptionProps[] = [
     href: "contact",
   },
 ];
-
