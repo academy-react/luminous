@@ -60,8 +60,3 @@ export const menuOptions: MenuOptionProps[] = [
   },
 ];
 
-export interface ButtonProps {
-  href: string;
-  style: string;
-  title: string;
-}

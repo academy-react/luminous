@@ -2,8 +2,12 @@ import React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import type { ButtonProps } from "@/dict/lobby/header.dict";
 
+interface ButtonProps {
+  href: string;
+  style: string;
+  title: string;
+}
 const Button = ({ href, style, title }: ButtonProps) => {
   return (
     <div>

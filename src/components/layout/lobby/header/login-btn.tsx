@@ -4,16 +4,16 @@ import Link from "next/link";
 const LoginBtn = () => {
   return (
     <div>
-      <div className="m-5 w-fit rounded-xl border shadow-sm">
+      <div className="flex gap-2">
         <Link
           href="#"
-          className="rounded-r-xl bg-neutral-50 px-4 py-1 transition hover:bg-neutral-100"
+          className="bg-purple-btn rounded-xl px-4 py-1 text-purple-text transition hover:bg-white-primary"
         >
           ورود
         </Link>
         <Link
           href="#"
-          className="m-0 rounded-l-xl bg-red-500 px-4 py-1 text-white-primary transition hover:bg-red-600"
+          className="bg-purple-btn rounded-xl px-4 py-1 text-purple-text transition hover:bg-white-primary"
         >
           ثبت نام
         </Link>

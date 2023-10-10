@@ -6,24 +6,41 @@ import { BsSearch } from "react-icons/bs";
 
 import { menuOptions } from "@/dict/lobby/header.dict";
 
+import type { Locale } from "#/i18n.config";
+
 import LoginBtn from "./login-btn";
 
-const Navbar = () => {
+const Navbar = ({ lang }: { lang: Locale }) => {
   return (
     <>
-      <nav className="z-10 flex  h-[80px] items-center  justify-between border-gray-200 bg-transparent dark:bg-gray-900 ">
-        <div className="flex max-w-screen-xl flex-wrap items-center justify-start p-4 ">
-          <div className="ml-4 flex items-center  ">
-            <Image
-              src="/favicon_io/favicon.ico"
-              width={20}
-              height="20"
-              alt="p"
-            />
-            <div className="flex self-start whitespace-nowrap text-2xl font-semibold dark:text-white-primary">
-              آکادمی بحر
-            </div>
+      <nav className=" mx-auto flex  h-[80px] w-11/12  items-center justify-center border-gray-200 bg-transparent dark:bg-gray-900 ">
+        <div className="flex basis-1/2 justify-start">
+          <div className=" flex items-center justify-between">
+            <Image src="/images/logo.svg" width={20} height={20} alt="p" />
           </div>
+
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul className="mt-4 flex flex-col rounded-lg  bg-transparent p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 md:dark:bg-gray-900">
+              {menuOptions.map((item) => {
+                console.log("title : " + item.title[lang]);
+                console.log("href : " + item.href);
+                return (
+                  <li key={item.id}>
+                    <Link
+                      href={item.href}
+                      className=" block py-2 pl-3  pr-4 text-xl font-bold text-purple-text dark:text-white-primary md:bg-transparent md:p-0  md:dark:text-purple-text"
+                      aria-current="page"
+                    >
+                      {"خانه"}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+        {/* login register button and hambergery menu */}
+        <div className="flex basis-1/2 justify-end">
           <button
             data-collapse-toggle="navbar-default"
             type="button"
@@ -48,29 +65,12 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white-primary md:p-0 md:dark:bg-gray-900">
-              {menuOptions.map((item) => {
-                return (
-                  <li key={item.id}>
-                    <Link
-                      href={item.href}
-                      className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white-primary dark:text-white-primary md:bg-transparent md:p-0 md:text-blue-700 md:dark:text-blue-500"
-                      aria-current="page"
-                      // title={lang === "en" ? item.title.en : item.title.fa}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
+          <div className=" hidden items-center justify-start gap-2 justify-self-end  md:flex">
+            <div className="bg-purple-btn rounded-xl px-2 py-2 text-purple-text transition hover:bg-white-primary">
+              <BsSearch />
+            </div>
+            <LoginBtn />
           </div>
-        </div>
-
-        {/* login register button */}
-        <div className="flex min-h-screen items-center justify-end  justify-self-end">
-          <BsSearch />
-
-          <LoginBtn />
         </div>
       </nav>
     </>
