@@ -8,7 +8,7 @@ export const title: TitleProps = {
   en: "The Luminous Team React Project",
 };
 
-export interface MenuOptionProps {
+export interface HeaderMenuOptionProps {
   id: number;
   title: {
     en: string;
@@ -17,45 +17,45 @@ export interface MenuOptionProps {
   href: string;
 }
 
-export const menuOptions: MenuOptionProps[] = [
+export const headerMenuOptions: HeaderMenuOptionProps[] = [
   {
     id: 1,
     title: {
-      fa: "خانه",
-      en: "Home",
+      fa: "بلاگ",
+      en: "Blog",
     },
     href: "",
   },
   {
     id: 2,
     title: {
-      fa: "دوره‌ها",
-      en: "courses",
-    },
-    href: "courses",
-  },
-  {
-    id: 3,
-    title: {
-      fa: "بلاگ",
-      en: "blog",
-    },
-    href: "blog",
-  },
-  {
-    id: 4,
-    title: {
-      fa: "درباره ما",
-      en: "about us",
+      fa: "درباره‌ ما",
+      en: "About Us",
     },
     href: "about",
   },
   {
-    id: 5,
+    id: 3,
     title: {
       fa: "تماس با ما",
-      en: "contact us",
+      en: "Contact Us",
     },
     href: "contact",
+  },
+  {
+    id: 4,
+    title: {
+      fa: "همکاری با ما",
+      en: "Join Us",
+    },
+    href: "join",
+  },
+  {
+    id: 5,
+    title: {
+      fa: "سوالات متداول",
+      en: "FAQ",
+    },
+    href: "faq",
   },
 ];
