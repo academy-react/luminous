@@ -8,7 +8,7 @@ import React from "react";
 const TitleBox = ({ title, desc }: { title: string; desc: string }) => {
   return (
     <>
-      <div className=" text-purple rounded-xl px-6 py-1 text-center shadow-lg">
+      <div className="text-purple rounded-xl px-6 py-1 text-center shadow-lg">
         <h2 className="text-2xl font-bold ">{title}</h2>
         <p className="text-base font-medium ">{desc}</p>
       </div>

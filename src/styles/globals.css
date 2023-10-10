@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0, 0%, 100%;
+
+    --purple-primary: #5a0ba9;
+    --purple-secondary: #c003b2;
+    --purple-text: #5a0ba9;
+    --purple-btn: #e4d7f1;
+
+    --border: 0, 0%, 85%;
+  }
+}
+
+@layer base {
+  body {
+    /* @apply bg-background; */
+  }
+}
+
+@layer base {
+  * {
+    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-700 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-corner-rounded-full scroll-smooth;
+  }
+}

@@ -29,7 +29,7 @@ export const menuOptions: MenuOptionProps[] = [
   {
     id: 2,
     title: {
-      fa: "دوره ها",
+      fa: "دوره‌ها",
       en: "courses",
     },
     href: "courses",

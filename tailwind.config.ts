@@ -1,9 +1,17 @@
+import scrollbar from "tailwind-scrollbar";
 import { type Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1440px",
+      },
+    },
     extend: {
       screens: {
         xs: "480px",
@@ -15,30 +23,17 @@ const config: Config = {
         multi: ["var(--font-mitra)", "var(--font-roboto)"],
       },
       colors: {
-        transparent: "transparent",
-        current: "currentColor",
-        white: { primary: "#ffffff" },
+        background: "hsl(var(--background))",
         purple: {
-          primary: "#5A0BA9",
-          secondary: "#C003B2",
-          text: "#5A0BA9",
-          btn: "#E4D7F1",
+          primary: "var(--purple-primary)",
+          secondary: "var(--purple-secondary)",
+          text: "var(--purple-text)",
+          btn: "var(--purple-btn)",
         },
       },
     },
   },
-  plugins: [require("daisyui")],
-
-  daisyui: {
-    themes: false, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "dark", // name of one of the included themes for dark mode
-    base: true, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
-    rtl: true, // rotate style direction from left-to-right to right-to-left. You also need to add dir="rtl" to your html tag and install `tailwindcss-flip` plugin for Tailwind CSS.
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-  },
+  plugins: [scrollbar({ nocompatible: true }), require("tailwindcss-animate")],
 };
 
 export default config;
