@@ -22,10 +22,10 @@ const BlogIDPage = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <main className="flex w-full flex-col items-start justify-center gap-8 px-10 pb-10 pt-20 md:flex-row">
+    <main className="flex w-full flex-col items-start justify-center gap-8 px-10 pb-10 pt-20 lg:flex-row">
       {details && (
-        <div className="flex min-h-full w-full flex-col items-center gap-7 rounded-md border p-10 shadow md:w-3/4">
-          <div className="flex w-full items-center justify-between text-xl">
+        <div className="flex min-h-full w-full flex-col items-center gap-7 rounded-md border p-10 shadow lg:w-3/4">
+          <div className="hidden w-full items-center justify-between text-xl lg:flex">
             <BlogPostDetails
               lang={lang}
               Icon={User2}
@@ -58,8 +58,30 @@ const BlogIDPage = ({
           <p className="text-lg">{details.text[lang]}</p>
         </div>
       )}
-      <div className="h-full w-full rounded-md border px-10 py-7 shadow md:w-1/4">
-        <div className="flex w-full flex-col items-center justify-center gap-7">
+      <div className="flex h-full w-full flex-col gap-7 lg:w-1/4">
+        <div className="flex w-full flex-col items-center justify-center gap-7 rounded-md  border px-10 py-7 shadow lg:hidden">
+          {details && (
+            <div className="grid w-full grid-cols-2 justify-between">
+              <BlogPostDetails
+                lang={lang}
+                Icon={User2}
+                text={details.teacher[lang]}
+              />
+              <BlogPostDetails
+                lang={lang}
+                Icon={Hash}
+                text={details.category[lang]}
+              />
+              <BlogPostDetails lang={lang} Icon={Eye} text={details.views} />
+              <BlogPostDetails
+                lang={lang}
+                Icon={CalendarDays}
+                text={details.date}
+              />
+            </div>
+          )}
+        </div>
+        <div className="flex w-full flex-col items-center justify-center gap-7 rounded-md  border px-10 py-7 shadow">
           <p className="text-2xl font-bold">
             {
               {

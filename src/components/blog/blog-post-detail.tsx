@@ -14,7 +14,7 @@ const BlogPostDetails = ({ lang, Icon, text }: BlogPostDetailsProps) => {
   return (
     <div
       className={cn(
-        "flex gap-1 ",
+        "flex w-fit gap-1",
         lang === "en" ? "items-start" : "items-center"
       )}
     >
