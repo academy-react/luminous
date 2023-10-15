@@ -22,9 +22,9 @@ const BlogIDPage = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <main className="flex w-full items-start justify-center gap-8 px-10 pb-10 pt-20">
+    <main className="flex w-full flex-col items-start justify-center gap-8 px-10 pb-10 pt-20 md:flex-row">
       {details && (
-        <div className="flex min-h-full w-3/4 flex-col items-center gap-7 rounded-md border p-10 shadow">
+        <div className="flex min-h-full w-full flex-col items-center gap-7 rounded-md border p-10 shadow md:w-3/4">
           <div className="flex w-full items-center justify-between text-xl">
             <BlogPostDetails
               lang={lang}
@@ -53,12 +53,12 @@ const BlogIDPage = ({
               </div>
             </div>
           </div>
-          <div className="aspect-video w-3/4 rounded-lg bg-slate-200" />
+          <div className="aspect-video w-full rounded-lg bg-slate-200 lg:w-3/4" />
           <h3 className="w-full text-3xl font-bold">{details.title[lang]}</h3>
           <p className="text-lg">{details.text[lang]}</p>
         </div>
       )}
-      <div className="h-full w-1/4 rounded-md border px-10 py-7 shadow">
+      <div className="h-full w-full rounded-md border px-10 py-7 shadow md:w-1/4">
         <div className="flex w-full flex-col items-center justify-center gap-7">
           <p className="text-2xl font-bold">
             {
@@ -72,7 +72,7 @@ const BlogIDPage = ({
             <>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="aspect-square w-20 rounded-full bg-slate-200" />
+                  <div className="hidden aspect-square w-20 rounded-full bg-slate-200 lg:block" />
                   <p className="text-2xl">{details.teacher[lang]}</p>
                 </div>
                 <ChevronUp
