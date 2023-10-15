@@ -11,12 +11,7 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
         <HeroSection lang={lang} />
       </div>
       {/* courseSection */}
-      <div className="flex  w-full border border-black px-20">
-        <div className="w-[70%]  border border-black">
-          <CourseSection />
-        </div>
-        <div className="w-[30%]  border border-black">2</div>
-      </div>
+      <CourseSection />
 
       <ThemeSwitcher lang={lang} />
     </main>
