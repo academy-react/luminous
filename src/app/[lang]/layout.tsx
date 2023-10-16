@@ -11,6 +11,7 @@ import ThemeProvider from "@/components/providers/theme-provider";
 import TailwindIndicator from "@/components/utils/tailwind-indicator";
 
 import { i18n, type Locale } from "#/i18n.config";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Luminous",
@@ -45,6 +46,7 @@ const RootLayout = ({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative flex min-h-screen flex-col">
             <Header lang={lang} />
+            <Link href="/not-existing-route">Not Found</Link>
             {children}
             <Footer lang={lang} />
           </div>
