@@ -1,22 +1,26 @@
 import { type LucideIcon } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+
 import { Card, CardContent } from "@/components/ui/card";
 
 type ServiceCardProps = {
   title: string;
   Icon: LucideIcon;
+  bgColor: string;
 };
 
-const ServiceCard = ({ Icon, title }: ServiceCardProps) => {
+const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
+  console.log(bgColor);
+  console.log("test");
+
   return (
-    <div>
-      <Card className="flex">
-        <CardContent className="flex flex-row items-center gap-3 ">
-          <Icon className="h-20 w-16 text-red-500" />
-          <h3 className="text-2xl text-red-500">{title}</h3>
-        </CardContent>
-      </Card>
-    </div>
+    <Card className={cn("flex w-72 p-4 shadow-md", bgColor)}>
+      <CardContent className="flex flex-row items-center gap-3">
+        <Icon className="text-white" size={70} />
+        <h3 className="text-2xl text-white">{title}</h3>
+      </CardContent>
+    </Card>
   );
 };
 

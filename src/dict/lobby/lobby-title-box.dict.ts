@@ -1,11 +1,11 @@
+import { type Locale } from "#/i18n.config";
+
 export interface LobbyTitleBoxDict {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   subtitle?: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 

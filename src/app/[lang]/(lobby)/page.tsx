@@ -11,8 +11,8 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <div className="h-fit w-full">
         <HeroSection lang={lang} />
       </div>
-      <CourseSection />
       <ServiceSection lang={lang} />
+      <CourseSection />
       <ThemeSwitcher lang={lang} />
     </main>
   );

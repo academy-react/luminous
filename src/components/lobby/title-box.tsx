@@ -7,18 +7,29 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { type Locale } from "#/i18n.config";
+
 type TitleBoxProps = {
-  title: string;
-  desc: string;
-  className: string;
+  lang: Locale;
+  title: {
+    [key in Locale]: string;
+  };
+  desc?: {
+    [key in Locale]: string;
+  };
+  className?: string;
 };
 
-const TitleBox = ({ title, desc, className }: TitleBoxProps) => {
+const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   return (
     <Card className={cn(`w-fit rounded-xl px-12 py-2 shadow`, className)}>
       <CardContent className="flex flex-col items-center justify-center text-purple-primary">
-        <CardTitle className="text-2xl font-bold">{title}</CardTitle>
-        <CardDescription className="">{desc}</CardDescription>
+        <CardTitle className="text-3xl font-bold">{title[lang]}</CardTitle>
+        {desc && (
+          <CardDescription className="text-center text-lg">
+            {desc[lang]}
+          </CardDescription>
+        )}
       </CardContent>
     </Card>
   );
