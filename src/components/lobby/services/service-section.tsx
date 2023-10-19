@@ -8,25 +8,23 @@ import { type Locale } from "#/i18n.config";
 
 const ServiceSection = ({ lang }: { lang: Locale }) => {
   return (
-    <>
-      <div className="flex w-full flex-col items-center gap-8">
-        <TitleBox
-          lang={lang}
-          title={servicesTitleBox.title}
-          desc={servicesTitleBox.subtitle}
-        />
-        <div className="grid grid-cols-2 gap-6">
-          {services.map((item) => (
-            <ServiceCard
-              key={item.id}
-              title={item.title[lang]}
-              Icon={item.icon}
-              bgColor={item.bgColor}
-            />
-          ))}
-        </div>
+    <div className="flex w-full flex-col items-center gap-10">
+      <TitleBox
+        lang={lang}
+        title={servicesTitleBox.title}
+        desc={servicesTitleBox.subtitle}
+      />
+      <div className="grid grid-cols-2 gap-6">
+        {services.map((item) => (
+          <ServiceCard
+            key={item.id}
+            title={item.title[lang]}
+            Icon={item.icon}
+            bgColor={item.bgColor}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

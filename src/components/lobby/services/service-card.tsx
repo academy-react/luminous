@@ -11,9 +11,6 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
-  console.log(bgColor);
-  console.log("test");
-
   return (
     <Card className={cn("flex w-72 p-4 shadow-md", bgColor)}>
       <CardContent className="flex flex-row items-center gap-3">
