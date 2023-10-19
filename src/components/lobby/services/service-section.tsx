@@ -1,10 +1,10 @@
 import { services } from "@/dict/lobby/services.dict";
 
 import { CardContent } from "@/components/ui/card";
-import TitleBox from "@/components/common/landing-title-box";
 
 import { type Locale } from "#/i18n.config";
 
+import TitleBox from "../title-box";
 import ServiceCard from "./service-card";
 
 const ServiceSection = ({ lang }: { lang: Locale }) => {
