@@ -7,6 +7,20 @@ import { Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+const CheckboxGroup = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  return (
+    <CheckboxPrimitive.Root
+      className={cn("grid gap-2", className)}
+      {...props}
+      ref={ref}
+    />
+  );
+});
+CheckboxGroup.displayName = CheckboxPrimitive.Root.displayName;
+
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
