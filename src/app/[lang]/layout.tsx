@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
-import { mitra, roboto } from "@/lib/fonts/fonts";
+import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
 import Footer from "@/components/layout/footer/footer";
@@ -37,6 +37,7 @@ const RootLayout = ({
         className={cn(
           "h-screen min-h-screen font-multi",
           roboto.variable,
+          iranSans.variable,
           mitra.variable
         )}
         dir={lang === "en" ? "ltr" : "rtl"}
