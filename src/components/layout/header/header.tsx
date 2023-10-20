@@ -12,15 +12,17 @@ import { headerMenuOptions } from "@/dict/lobby/header.dict";
 import type { Locale } from "#/i18n.config";
 
 const Header = ({ lang }: { lang: Locale }) => {
-  const [backgroundColor, setBackgroundColor] = useState("bg-transparent");
+  const [backgroundOpacity, setBackgroundOpacity] = useState(
+    "bg-opacity-50 dark:bg-opacity-50"
+  );
 
   const handleScroll = () => {
-    const scrollPosition = window.pageYOffset;
+    const scrollPosition = window.scrollY;
 
     if (scrollPosition > 0) {
-      setBackgroundColor("bg-white dark:bg-black shadow");
+      setBackgroundOpacity("bg-opacity-100  dark:bg-opacity-100");
     } else {
-      setBackgroundColor("bg-transparent");
+      setBackgroundOpacity("bg-opacity-50  dark:bg-opacity-50");
     }
   };
 
@@ -35,8 +37,8 @@ const Header = ({ lang }: { lang: Locale }) => {
   return (
     <header
       className={cn(
-        "fixed z-50 mx-auto flex h-16 w-full items-center justify-between px-4 py-3 transition-all duration-300 sm:px-5 lg:h-20 lg:px-10 lg:py-5",
-        backgroundColor
+        "fixed z-50 mx-auto flex h-16 w-full items-center justify-between bg-white px-4 py-3.5 shadow transition-all duration-300 dark:bg-black sm:px-5 lg:h-20 lg:px-10 lg:py-5",
+        backgroundOpacity
       )}
     >
       {/* Routes Nav Bar */}
@@ -50,16 +52,14 @@ const Header = ({ lang }: { lang: Locale }) => {
           />
         </Link>
         <div className="hidden w-full md:block md:w-auto">
-          <ul className="flex gap-6">
+          <ul className="flex gap-4 lg:gap-6">
             {headerMenuOptions.map((item) => (
               <li key={item.id}>
                 <Link
                   href={`/${lang}/${item.href}`}
                   className={cn(
-                    "font-semibold text-purple-text decoration-1 underline-offset-[12px] hover:underline",
-                    lang === "en"
-                      ? "text-base capitalize lg:text-lg"
-                      : "text-lg lg:text-xl"
+                    "text-base font-semibold text-purple-text decoration-1 underline-offset-[12px] hover:underline lg:text-lg",
+                    lang === "en" ? "capitalize" : ""
                   )}
                 >
                   {item.title[lang]}
@@ -80,12 +80,7 @@ const Header = ({ lang }: { lang: Locale }) => {
           <div className="flex aspect-square h-full cursor-pointer items-center justify-center rounded-xl bg-purple-btn text-purple-text transition hover:bg-white">
             <Search />
           </div>
-          <div
-            className={cn(
-              "flex h-full gap-2",
-              lang === "en" ? "text-base lg:text-lg" : "text-lg lg:text-xl"
-            )}
-          >
+          <div className="flex h-full gap-2">
             <Link
               href={`/${lang}/sign-up`}
               className="flex h-full items-center justify-center rounded-xl bg-purple-btn px-7 text-center text-purple-text transition hover:bg-white"
