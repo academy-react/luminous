@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-import Balancer from "react-wrap-balancer";
-
 import { heroDict } from "@/dict/lobby/hero.dict";
 
 import { type Locale } from "#/i18n.config";
@@ -10,7 +8,7 @@ import { type Locale } from "#/i18n.config";
 const HeroSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="container relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden lg:h-screen">
-      <div className="container relative z-10 mx-auto flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
+      <div className="container relative -top-10 z-10 mx-auto flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
         <div className="flex flex-col items-center gap-7 px-4 lg:items-start">
           <h1 className="text-center text-5xl font-black lg:text-start lg:text-6xl">
             {heroDict.title[lang]}
