@@ -14,7 +14,7 @@ const Footer = ({ lang }: { lang: Locale }) => {
   return (
     <>
       {/* footer background */}
-      <div className="relative aspect-[7/1] w-full border border-black">
+      <div className="relative aspect-[7/1] w-full">
         <Image
           src="/images/artworks/footer-art.svg"
           fill
