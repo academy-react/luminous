@@ -16,7 +16,7 @@ const HeroSection = ({ lang }: { lang: Locale }) => {
       </div>
       <div className="absolute start-0 top-0">
         <div className="flex flex-col gap-4 ps-10 pt-20 lg:ps-20 lg:pt-32">
-          <h1 className="w-fit text-4xl font-bold">پژهشگاه سپهر</h1>
+          <h1 className="w-fit text-4xl font-black">پژهشگاه سپهر</h1>
           <p className="w-96 text-lg font-medium">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون کاربردی می باشد،
