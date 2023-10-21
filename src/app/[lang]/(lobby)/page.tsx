@@ -1,3 +1,4 @@
+import { CategoriesSection } from "@/components/lobby/categories/category-section";
 import CourseSection from "@/components/lobby/courses/course-section";
 import HeroSection from "@/components/lobby/hero/hero-section";
 import ServiceSection from "@/components/lobby/services/service-section";
@@ -11,6 +12,7 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
       <CourseSection lang={lang} />
+      <CategoriesSection lang={lang} />
       <ThemeSwitcher lang={lang} />
     </main>
   );
