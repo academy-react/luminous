@@ -1,3 +1,4 @@
+    "use client"
 
 import { cn } from "@/lib/utils";
 
@@ -12,17 +13,17 @@ const SortByTitle = () => {
     >
       <div className={cn("flex items-center space-x-2")}>
         <RadioGroupItem value="همه ی دوره ها" id="r1" />
-        <Label htmlFor="r1" className="text-[#666] text-xs">همه ی دوره ها
+        <Label htmlFor="r1" className="text-[#666] text-sm">همه ی دوره ها
         </Label>
       </div>
       <div className={cn("flex appearance-none items-center space-x-2")}>
         <RadioGroupItem value="پرمخاطب ها" id="r2" />
-        <Label htmlFor="r2" className="text-[#333] text-xs">پرمخاطب ها
+        <Label htmlFor="r2" className="text-[#333] text-sm">پرمخاطب ها
         </Label>
       </div>
       <div className={cn("flex appearance-none items-center space-x-2")}>
         <RadioGroupItem value="جدیدترین" id="r3" />
-        <Label htmlFor="r3" className="text-[#333] text-xs">جدیدترین ها
+        <Label htmlFor="r3" className="text-[#333] text-sm">جدیدترین ها
         </Label>
       </div>
     </RadioGroup>
