@@ -1,39 +1,39 @@
 import React from "react";
 import Image from "next/image";
 
+import { heroDict } from "@/dict/lobby/hero.dict";
+
 import { type Locale } from "#/i18n.config";
 
 const HeroSection = ({ lang }: { lang: Locale }) => {
   return (
-    <div className="relative h-full w-full">
-      <div className="relative -z-10 aspect-[2/1] w-full overflow-hidden">
-        <Image
-          alt="hero-bg"
-          src="/images/artworks/hero-bg.svg"
-          fill
-          className="scale-110 object-cover"
-        />
-      </div>
-      <div className="absolute start-0 top-0">
-        <div className="flex flex-col gap-4 ps-10 pt-20 lg:ps-20 lg:pt-32">
-          <h1 className="w-fit text-4xl font-black">پژهشگاه سپهر</h1>
-          <p className="w-96 text-lg font-medium">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون کاربردی می باشد،
-            کتابهای زیادی در شصت و سه درصد گذش سوالات پیوسته اهل دنیای موجود
-            طراحی اساسا مورد استفاده قرار گیرد.
+    <section className="container relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden lg:h-screen">
+      <div className="container relative -top-10 z-10 mx-auto flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
+        <div className="flex flex-col items-center gap-7 px-4 lg:items-start">
+          <h1 className="text-center text-5xl font-black lg:text-start lg:text-6xl">
+            {heroDict.title[lang]}
+          </h1>
+          <p className="max-w-xl text-center text-lg font-medium text-gray-600 dark:text-gray-400 lg:text-start">
+            {heroDict.description[lang]}
           </p>
-          <button className="w-40 rounded-xl border bg-gradient-to-r from-purple-primary to-purple-secondary px-2 py-1 font-bold text-white transition-all hover:border-2 hover:border-purple-primary hover:from-transparent hover:text-purple-primary">
-            {
-              {
-                fa: "شروع یادگیری",
-                en: "Start Learning",
-              }[lang]
-            }
+          <button className="group relative inline-flex w-fit items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-purple-primary to-purple-secondary p-[4px] font-extrabold text-white transition-transform duration-300 hover:to-purple-primary hover:text-purple-primary focus:outline-none active:scale-90">
+            <span className="relative rounded-lg px-9 py-2 transition-all duration-300 ease-in group-hover:bg-white">
+              {heroDict.button[lang]}
+            </span>
           </button>
         </div>
+        <div className="relative aspect-[1.5/1] h-64 sm:h-80 xl:h-96">
+          <Image
+            src="/images/artworks/hero-bg-mobile.svg"
+            fill
+            priority
+            quality={100}
+            alt="hero-section"
+            className="object-contain"
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

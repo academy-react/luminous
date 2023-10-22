@@ -1,82 +1,49 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-import { Menu, Search } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { headerMenuOptions } from "@/dict/lobby/header.dict";
+
+import { AuthNav, MainNav } from "@/components/layout/header/desktop-nav";
+import { MobileNav } from "@/components/layout/header/mobile-nav";
 
 import type { Locale } from "#/i18n.config";
 
-const Header = ({ lang }: { lang: Locale }) => {
+export const Header = ({ lang }: { lang: Locale }) => {
+  const [backgroundOpacity, setBackgroundOpacity] = useState(
+    "bg-opacity-50 dark:bg-opacity-50"
+  );
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 0) {
+      setBackgroundOpacity("bg-opacity-100  dark:bg-opacity-100");
+    } else {
+      setBackgroundOpacity("bg-opacity-50  dark:bg-opacity-50");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header>
-      <nav className="fixed z-50 mx-auto flex h-16 w-full items-center justify-between px-4 py-3 sm:px-5 lg:h-20 lg:px-10 lg:py-5">
-        {/* Nav Bar */}
-        <div className="flex h-full items-center gap-4">
-          <Link href={`/${lang}`} className="relative aspect-square h-full">
-            <Image
-              src="/images/logos/logo.svg"
-              fill
-              alt="website-logo"
-              className="object-cover"
-            />
-          </Link>
-          <div className="hidden w-full md:block md:w-auto">
-            <ul className="flex gap-6">
-              {headerMenuOptions.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={`/${lang}/${item.href}`}
-                    className={cn(
-                      "font-semibold text-purple-text decoration-1 underline-offset-[12px] hover:underline",
-                      lang === "en"
-                        ? "text-base capitalize lg:text-lg"
-                        : "text-lg lg:text-xl"
-                    )}
-                  >
-                    {item.title[lang]}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        {/* Auth Nav Bar */}
-        <div className="flex h-full">
-          {/* Mobile Menu */}
-          <button className="h-full rounded-lg text-gray-300 transition-all duration-500 hover:text-black md:hidden">
-            <Menu />
-          </button>
-          {/* Desktop Menu */}
-          <div className="hidden items-center gap-2 md:flex">
-            <div className="flex aspect-square h-full cursor-pointer items-center justify-center rounded-xl bg-purple-btn text-purple-text transition hover:bg-white">
-              <Search />
-            </div>
-            <div
-              className={cn(
-                "flex h-full gap-2",
-                lang === "en" ? "text-base lg:text-lg" : "text-lg lg:text-xl"
-              )}
-            >
-              <Link
-                href={`/${lang}/sign-up`}
-                className="flex h-full items-center justify-center rounded-xl bg-purple-btn px-7 text-center text-purple-text transition hover:bg-white"
-              >
-                {{ fa: "ثبت‌نام", en: "Sign Up" }[lang]}
-              </Link>
-              <Link
-                href={`/${lang}/sign-in`}
-                className="flex h-full items-center justify-center rounded-xl bg-purple-btn px-7 text-center text-purple-text transition hover:bg-white"
-              >
-                {{ fa: "ورود", en: "Sign In" }[lang]}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <header
+      className={cn(
+        "sticky top-0 z-50 mx-auto flex w-full justify-between bg-white shadow dark:bg-black",
+        backgroundOpacity
+      )}
+    >
+      <div className="container flex h-16 items-center">
+        <MainNav lang={lang} />
+        <AuthNav lang={lang} />
+        <MobileNav lang={lang} />
+      </div>
     </header>
   );
 };
-
-export default Header;

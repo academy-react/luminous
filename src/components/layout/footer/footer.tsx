@@ -23,14 +23,14 @@ const Footer = ({ lang }: { lang: Locale }) => {
         />
       </div>
       {/* Footer Section */}
-      <footer className="flex w-full items-center justify-between pb-16">
+      <footer className="grid w-full grid-rows-3 place-content-center py-16 lg:grid-cols-3 lg:grid-rows-1">
         {/* Info Area */}
-        <div className="flex w-[40%] gap-16 ps-20">
+        <div className="flex items-start justify-center gap-6">
           {/* Nav Bar */}
           <ul
             className={cn(
-              "flex flex-col font-bold",
-              lang === "en" ? "" : "md:text-lg"
+              "flex flex-col gap-1.5 font-bold",
+              lang === "en" ? "" : "text-xl md:text-lg"
             )}
           >
             {footerMenuOptions.map((item) => (
@@ -42,12 +42,17 @@ const Footer = ({ lang }: { lang: Locale }) => {
             ))}
           </ul>
           {/* Phone Numbers */}
-          <div className="flex flex-col gap-3">
-            <div className={cn("font-bold", lang === "en" ? "" : "md:text-lg")}>
+          <div className="flex flex-col items-end gap-3 lg:items-start">
+            <div
+              className={cn(
+                "font-bold",
+                lang === "en" ? "" : "text-xl md:text-lg"
+              )}
+            >
               {
                 {
-                  fa: "شماره های تماس:",
-                  en: "Phone numbers:",
+                  fa: "شماره های تماس",
+                  en: "Phone numbers",
                 }[lang]
               }
             </div>
@@ -58,19 +63,19 @@ const Footer = ({ lang }: { lang: Locale }) => {
           </div>
         </div>
         {/* Social Media Icons */}
-        <div className="flex w-[20%] flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-3">
           <div className="flex w-fit items-center gap-4">
             {footerSocialMediaOptions.map((item) => (
               <Link
                 key={item.id}
                 href={item.href}
-                className="text-3xl text-purple-primary"
+                className="text-5xl text-purple-primary lg:text-3xl"
               >
                 <item.icon />
               </Link>
             ))}
           </div>
-          <p className="hidden w-fit text-lg font-bold text-purple-primary md:block">
+          <p className="w-fit text-xl font-bold text-purple-primary lg:text-lg">
             {
               {
                 fa: "ما را در شبکه‌های اجتماعی دنبال کنید",
@@ -80,8 +85,8 @@ const Footer = ({ lang }: { lang: Locale }) => {
           </p>
         </div>
         {/* Trust Badges */}
-        <div className="flex w-[40%] items-center justify-end pe-20">
-          <div className="relative aspect-square h-20">
+        <div className="flex items-center justify-center">
+          <div className="relative aspect-square h-32">
             <Image
               src="/images/trust/E-Namad.png"
               alt="e-namad"
@@ -89,7 +94,7 @@ const Footer = ({ lang }: { lang: Locale }) => {
               className="object-contain"
             />
           </div>
-          <div className="relative aspect-square h-20">
+          <div className="relative aspect-square h-32">
             <Image
               src="/images/trust/Sabt.webp"
               alt="sabt"

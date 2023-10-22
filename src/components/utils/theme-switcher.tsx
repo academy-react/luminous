@@ -12,7 +12,7 @@ const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex h-52 w-full items-center justify-center gap-2 border border-black">
+    <div className="flex w-full items-center justify-center gap-2 font-black">
       <h1 className={cn(lang === "en" ? "text-sm" : "text-xl", "h-fit")}>
         {title[lang]}
       </h1>

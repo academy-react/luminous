@@ -1,46 +1,57 @@
+import {
+  FileCheck,
+  Network,
+  ScrollText,
+  User,
+  type LucideIcon,
+} from "lucide-react";
 
-import { Home, LucideIcon } from "lucide-react";
+import { type Locale } from "#/i18n.config";
 
 export interface ServicesProps {
-    id:number;
-    title:{
-        fa:string;
-        en:string;
-    };
-    icon:LucideIcon;
-} 
+  id: number;
+  title: {
+    [key in Locale]: string;
+  };
+  icon: LucideIcon;
+  bgColor: string;
+}
 
-export const services:ServicesProps[] = [
-{
-    id:1,
-    title:{
-        fa:"مدرک معتبر",
-        en:"Valid certificate",
+export const services: ServicesProps[] = [
+  {
+    id: 1,
+    title: {
+      fa: "مدرک معتبر",
+      en: "Valid Certificate",
     },
-    icon:Home,
-},
-{
-    id:2,
-    title:{
-        fa:"امتحان ",
-        en:" exam",
+    icon: ScrollText,
+    bgColor: "bg-[#E3B709]",
+  },
+  {
+    id: 2,
+    title: {
+      fa: "امتحان",
+      en: "Exam",
     },
-    icon:Home,
-},
-{
-    id:3,
-    title:{
-        fa:" فرصت شغلی",
-        en:" job opportunity",
+    icon: FileCheck,
+    bgColor: "bg-[#D23120]",
+  },
+  {
+    id: 3,
+    title: {
+      fa: "فرصت‌های شغلی",
+      en: "Job Opportunity",
     },
-    icon:Home,
-},
-{
-    id:4,
-    title:{
-        fa:" مشاوره",
-        en:"counseling ",
+    icon: Network,
+    bgColor: "bg-[#267AB2]",
+  },
+  {
+    id: 4,
+    title: {
+      fa: "مشاوره",
+      en: "Counseling",
     },
-    icon:Home,
-},
-]
+    icon: User,
+    bgColor: "bg-[#7D329A]",
+  },
+];
