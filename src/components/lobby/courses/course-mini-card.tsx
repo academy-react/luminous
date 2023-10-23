@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CourseMiniCard = () => {
+type CourseMiniCardProps= {
+image: string;
+}
+const CourseMiniCard = ({image}:CourseMiniCardProps) => {
   return (
     <Link href="#" className="relative aspect-video w-full">
       <Image
-        src="/images/dev/node-js.jpg"
+        src={image}
         alt="course-picture"
         fill
         className="rounded-xl object-contain"
