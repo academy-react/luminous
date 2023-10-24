@@ -1,4 +1,3 @@
-const CourseList = () =>{
+export const CourseList = () =>{
     return(<></>)
 }
-export default CourseList 

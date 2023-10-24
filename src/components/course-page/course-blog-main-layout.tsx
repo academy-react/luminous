@@ -3,7 +3,7 @@
 //     sidebar:
 // }
 
-const MainLayout = () => {
+export const MainLayout = () => {
   return (
     <div className="flex h-[700px] w-full border border-black ">
       <div className="w-[30%] border border-black">
@@ -17,4 +17,3 @@ const MainLayout = () => {
     </div>
   );
 };
-export default MainLayout;

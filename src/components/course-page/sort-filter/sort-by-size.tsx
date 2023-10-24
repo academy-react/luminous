@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-const SortBySize = () => {
+export const SortBySize = () => {
   return (
     <RadioGroup
       defaultValue="grid-layout"
@@ -28,4 +28,3 @@ const SortBySize = () => {
     </RadioGroup>
   );
 };
-export default SortBySize;

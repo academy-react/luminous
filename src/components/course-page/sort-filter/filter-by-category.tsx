@@ -1,7 +1,7 @@
 import { CheckboxGroup } from "@/components/ui/checkbox";
-import Checkboxbtn from "@/components/common/checkbox-btn";
+import {Checkboxbtn} from "@/components/common/checkbox-btn";
 
-const FilterByCategory = () => {
+export const FilterByCategory = () => {
   return (
     <CheckboxGroup className="flex flex-col gap-4 justify-start text-base rounded-xl px-8 py-6  shadow-lg">
       دسته بندی دوره ها
@@ -14,4 +14,3 @@ const FilterByCategory = () => {
     </CheckboxGroup>
   );
 };
-export default FilterByCategory;

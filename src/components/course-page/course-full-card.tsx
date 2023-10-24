@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CourseFullCard = () => {
+export const CourseFullCard = () => {
   return (
     <div className="flex w-full  gap-4 rounded-xl p-4 shadow-lg">
       <Link href="#" className="relative aspect-[2/1] basis-1/3 ">
@@ -42,4 +42,3 @@ const CourseFullCard = () => {
     </div>
   );
 };
-export default CourseFullCard;
