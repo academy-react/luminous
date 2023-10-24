@@ -8,7 +8,7 @@ import { title } from "@/dict/lobby/header.dict";
 
 import { type Locale } from "#/i18n.config";
 
-const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
+export const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -27,4 +27,3 @@ const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
   );
 };
 
-export default ThemeSwitcher;

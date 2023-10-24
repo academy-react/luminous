@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const Pagination = () => {
+export const Pagination = () => {
   return (
     <nav>
       <ul className="flex flex-row-reverse items-center gap-1">
@@ -50,4 +50,3 @@ const Pagination = () => {
     </nav>
   );
 };
-export default Pagination;

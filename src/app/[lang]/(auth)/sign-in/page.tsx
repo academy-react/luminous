@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import SignInForm from "@/components/forms/sign-in-form";
+import {SignInForm} from "@/components/forms/sign-in-form";
 
 import { type Locale } from "#/i18n.config";
 

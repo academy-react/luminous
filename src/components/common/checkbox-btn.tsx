@@ -9,7 +9,7 @@ type CheckboxBtnProps={
     label:string;
 }
 
-const Checkboxtn = ({id,className,label}:CheckboxBtnProps)=> {
+export const Checkboxtn = ({id,className,label}:CheckboxBtnProps)=> {
   return (
   <>
       <Checkbox id={id} />
@@ -22,4 +22,3 @@ const Checkboxtn = ({id,className,label}:CheckboxBtnProps)=> {
   </>
   )
 }
-export default Checkboxtn

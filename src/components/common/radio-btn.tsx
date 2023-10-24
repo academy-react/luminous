@@ -9,7 +9,7 @@ type LabeledRadioGroupItemProps ={
     label:string;
 }
 
-const LabeledRadioGroupItem =({className,id,value,label}:LabeledRadioGroupItemProps)=>{
+export const LabeledRadioGroupItem =({className,id,value,label}:LabeledRadioGroupItemProps)=>{
     return(
 <div className={cn("flex items-center space-x-2" , className)}>
     <RadioGroupItem value={value} id={id} />
@@ -18,4 +18,3 @@ const LabeledRadioGroupItem =({className,id,value,label}:LabeledRadioGroupItemPr
     )
 }
   
-export default LabeledRadioGroupItem

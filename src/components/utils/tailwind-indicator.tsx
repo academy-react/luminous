@@ -1,4 +1,4 @@
-const TailwindIndicator = () => {
+export const TailwindIndicator = () => {
   if (process.env.NODE_ENV === "production") return null;
 
   return (
@@ -15,4 +15,3 @@ const TailwindIndicator = () => {
   );
 };
 
-export default TailwindIndicator;

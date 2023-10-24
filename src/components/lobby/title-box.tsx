@@ -20,7 +20,7 @@ type TitleBoxProps = {
   className?: string;
 };
 
-const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
+export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   return (
     <Card className={cn(`rounded-xl px-12 py-3 shadow`, className)}>
       <CardContent className="flex flex-col items-center justify-center gap-1.5 text-purple-primary">
@@ -35,4 +35,3 @@ const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   );
 };
 
-export default TitleBox;

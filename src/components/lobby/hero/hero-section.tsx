@@ -5,7 +5,7 @@ import { heroDict } from "@/dict/lobby/hero.dict";
 
 import { type Locale } from "#/i18n.config";
 
-const HeroSection = ({ lang }: { lang: Locale }) => {
+export const HeroSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="container relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden lg:h-screen">
       <div className="container relative -top-10 z-10 mx-auto flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
@@ -37,4 +37,3 @@ const HeroSection = ({ lang }: { lang: Locale }) => {
   );
 };
 
-export default HeroSection;
