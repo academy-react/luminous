@@ -1,4 +1,4 @@
-import CourseSection from "@/components/lobby/courses/course-section";
+import {CourseSection} from "@/components/lobby/courses/course-section";
 import {HeroSection} from "@/components/lobby/hero/hero-section";
 import ServiceSection from "@/components/lobby/services/service-section";
 import {ThemeSwitcher} from "@/components/utils/theme-switcher";

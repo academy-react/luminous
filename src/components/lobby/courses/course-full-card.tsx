@@ -20,7 +20,7 @@ type CourseCardProps = {
   image: string;
 };
 
-const CourseFullCard = ({
+export const CourseFullCard = ({
   lang,
   title,
   desc,
@@ -66,4 +66,3 @@ const CourseFullCard = ({
   );
 };
 
-export default CourseFullCard;

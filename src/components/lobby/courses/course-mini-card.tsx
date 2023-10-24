@@ -4,7 +4,7 @@ import Link from "next/link";
 type CourseMiniCardProps= {
 image: string;
 }
-const CourseMiniCard = ({image}:CourseMiniCardProps) => {
+export const CourseMiniCard = ({image}:CourseMiniCardProps) => {
   return (
     <Link href="#" className="relative aspect-video w-full">
       <Image
@@ -16,4 +16,3 @@ const CourseMiniCard = ({image}:CourseMiniCardProps) => {
     </Link>
   );
 };
-export default CourseMiniCard;

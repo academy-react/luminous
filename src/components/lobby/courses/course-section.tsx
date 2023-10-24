@@ -4,13 +4,13 @@ import { courses } from "@/dict/lobby/courses.dict";
 import { coursesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 
 import { Button } from "@/components/ui/button";
-import CourseFullCard from "@/components/lobby/courses/course-full-card";
-import CourseMiniCard from "@/components/lobby/courses/course-mini-card";
-import TitleBox from "@/components/lobby/title-box";
+import {CourseFullCard} from "@/components/lobby/courses/course-full-card";
+import {CourseMiniCard} from "@/components/lobby/courses/course-mini-card";
+import {TitleBox} from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 
-const CourseSection = ({ lang }: { lang: Locale }) => {
+export const CourseSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="container flex w-full flex-col items-center gap-10">
       <TitleBox
@@ -53,4 +53,3 @@ const CourseSection = ({ lang }: { lang: Locale }) => {
   );
 };
 
-export default CourseSection;
