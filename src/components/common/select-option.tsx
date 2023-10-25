@@ -1,14 +1,9 @@
-import {
-  SelectItem
-} from "@/components/ui/select";
+import { SelectItem } from "@/components/ui/select";
 
-type SelectOptionProps ={
-    value:string;
-    title:string;
-}
-const SelectOption = ({value,title}:SelectOptionProps) => {
-  return (
-        <SelectItem value={value}>{title}</SelectItem>
-  );
+type SelectOptionProps = {
+  value: string;
+  title: string;
 };
-export default SelectOption;
+export const SelectOption = ({ value, title }: SelectOptionProps) => {
+  return <SelectItem value={value}>{title}</SelectItem>;
+};

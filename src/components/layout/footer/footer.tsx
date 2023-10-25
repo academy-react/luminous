@@ -10,7 +10,7 @@ import {
 
 import { type Locale } from "#/i18n.config";
 
-const Footer = ({ lang }: { lang: Locale }) => {
+export const Footer = ({ lang }: { lang: Locale }) => {
   return (
     <>
       {/* footer background */}
@@ -107,5 +107,3 @@ const Footer = ({ lang }: { lang: Locale }) => {
     </>
   );
 };
-
-export default Footer;

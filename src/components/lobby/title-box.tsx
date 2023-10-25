@@ -20,7 +20,7 @@ type TitleBoxProps = {
   className?: string;
 };
 
-const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
+export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   return (
     <Card
       className={cn(
@@ -39,5 +39,3 @@ const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
     </Card>
   );
 };
-
-export default TitleBox;
