@@ -36,4 +36,3 @@ export const HeroSection = ({ lang }: { lang: Locale }) => {
     </section>
   );
 };
-

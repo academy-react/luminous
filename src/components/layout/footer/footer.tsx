@@ -107,4 +107,3 @@ export const Footer = ({ lang }: { lang: Locale }) => {
     </>
   );
 };
-

@@ -1,13 +1,14 @@
+import { Label } from "@radix-ui/react-label";
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { cn } from "@/lib/utils"
-import { Label } from "@radix-ui/react-label"
+import { cn } from "@/lib/utils";
 
-type CheckboxBtnProps={
-    id:string;
-    className:string;
-    label:string;
-}
+import { Checkbox } from "@/components/ui/checkbox";
+
+type CheckboxBtnProps = {
+  id: string;
+  className: string;
+  label: string;
+};
 
 export const Checkboxbtn = ({id,className,label}:CheckboxBtnProps)=> {
   return (
@@ -17,7 +18,7 @@ export const Checkboxbtn = ({id,className,label}:CheckboxBtnProps)=> {
         htmlFor={id}
         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
-      {label}
+        {label}
       </Label>
   </div>
   )

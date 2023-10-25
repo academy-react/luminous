@@ -12,9 +12,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {FirstSignUpForm} from "@/components/forms/sign-up-form-first";
-import {SecondSignUpForm} from "@/components/forms/sign-up-form-second";
-import {ThirdSignUpForm} from "@/components/forms/sign-up-form-third";
+import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
+import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
+import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
 
 import { type Locale } from "#/i18n.config";
 

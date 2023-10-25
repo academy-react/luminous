@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {ResetPasswordForm} from "@/components/forms/reset-password-form";
+import { ResetPasswordForm } from "@/components/forms/reset-password-form";
 
 import { type Locale } from "#/i18n.config";
 

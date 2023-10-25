@@ -5,10 +5,10 @@ import { type Metadata } from "next";
 import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
-import {Footer} from "@/components/layout/footer/footer";
+import { Footer } from "@/components/layout/footer/footer";
 import { Header } from "@/components/layout/header/header";
-import {ThemeProvider} from "@/components/providers/theme-provider";
-import TailwindIndicator from "@/components/utils/tailwind-indicator";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
 import { i18n, type Locale } from "#/i18n.config";
 
