@@ -10,19 +10,16 @@ type CheckboxBtnProps = {
   label: string;
 };
 
-export const Checkboxtn = ({ id, className, label }: CheckboxBtnProps) => {
+export const Checkboxbtn = ({id,className,label}:CheckboxBtnProps)=> {
   return (
-    <>
-      <Checkbox id={id} />
+  <div className={cn( className)} >
+      <Checkbox id={id}/>
       <Label
         htmlFor={id}
-        className={cn(
-          "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-          className
-        )}
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         {label}
       </Label>
-    </>
-  );
-};
+  </div>
+  )
+}
