@@ -22,7 +22,12 @@ type TitleBoxProps = {
 
 export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   return (
-    <Card className={cn(`rounded-xl px-12 py-3 shadow`, className)}>
+    <Card
+      className={cn(
+        `rounded-xl border-purple-primary px-4 py-3 shadow-sm shadow-purple-primary sm:px-7 md:px-12`,
+        className
+      )}
+    >
       <CardContent className="flex flex-col items-center justify-center gap-1.5 text-purple-primary">
         <CardTitle className="text-3xl font-black">{title[lang]}</CardTitle>
         {desc && (
