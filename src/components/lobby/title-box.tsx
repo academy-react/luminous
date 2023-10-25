@@ -34,4 +34,3 @@ export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
     </Card>
   );
 };
-

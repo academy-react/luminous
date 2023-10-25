@@ -26,4 +26,3 @@ export const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
     </div>
   );
 };
-

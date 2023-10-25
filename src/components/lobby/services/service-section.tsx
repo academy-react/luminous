@@ -2,7 +2,7 @@ import { servicesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 import { services } from "@/dict/lobby/services.dict";
 
 import ServiceCard from "@/components/lobby/services/service-card";
-import TitleBox from "@/components/lobby/title-box";
+import { TitleBox } from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 
