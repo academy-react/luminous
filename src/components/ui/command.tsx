@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import {type DialogProps } from "@radix-ui/react-dialog";
+import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 
@@ -31,9 +31,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className="">
-          {children}
-        </Command>
+        <Command className="">{children}</Command>
       </DialogContent>
     </Dialog>
   );
@@ -90,10 +88,7 @@ const CommandGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Group
     ref={ref}
-    className={cn(
-      "overflow-hidden p-1 ",
-      className
-    )}
+    className={cn("overflow-hidden p-1 ", className)}
     {...props}
   />
 ));
@@ -134,10 +129,7 @@ const CommandShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cn(
-        " ml-auto text-xs tracking-widest",
-        className
-      )}
+      className={cn(" ml-auto text-xs tracking-widest", className)}
       {...props}
     />
   );

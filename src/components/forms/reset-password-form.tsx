@@ -65,4 +65,3 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
     </Form>
   );
 };
-
