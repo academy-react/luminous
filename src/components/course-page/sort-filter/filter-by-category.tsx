@@ -19,6 +19,7 @@ export const FilterByCategory = ({ lang }: { lang: Locale }) => {
           className="flex flex-row  text-sm"
         />
       ))}
+
     </CheckboxGroup>
   );
 };
