@@ -1,16 +1,20 @@
 import { CheckboxGroup } from "@/components/ui/checkbox";
-import {Checkboxbtn} from "@/components/common/checkbox-btn";
+import { Checkboxbtn } from "@/components/common/checkbox-btn";
 
-export const FilterByCategory = () => {
+type FilterByCategoryProps={
+  id:string;
+  title:string;
+}
+export const FilterByCategory = ({id, title}:FilterByCategoryProps) => {
   return (
-    <CheckboxGroup className="flex flex-col gap-4 justify-start text-base rounded-xl px-8 py-6  shadow-lg">
+    <CheckboxGroup className="flex flex-col justify-start gap-4 rounded-xl px-8 py-6 text-base  shadow-lg">
       دسته بندی دوره ها
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r1" label="فرانت اند" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r2" label="بک اند" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r3" label="دیتابیس" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r4" label="امنیت" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r5" label="پایتون" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r6" label="هوش مصنوعی" />
+      <Checkboxbtn
+        className="flex flex-row gap-2 text-sm"
+        id={id}
+        label={title}
+      />
+      
     </CheckboxGroup>
   );
 };
