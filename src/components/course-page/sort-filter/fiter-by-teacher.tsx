@@ -1,3 +1,3 @@
-export const SortByTeacher = () => {
-    return(<>Sort by teacher</>)
+export const FilterByTeacher = () => {
+    return(<>جستجو براساس مدرس</>)
 };
