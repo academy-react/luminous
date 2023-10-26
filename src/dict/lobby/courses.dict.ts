@@ -1,6 +1,7 @@
 import { type Locale } from "#/i18n.config";
 
 export interface CoursesProps {
+  id:number;
   image: string;
   title: {
     [key in Locale]: string;
@@ -15,6 +16,7 @@ export interface CoursesProps {
 
 export const courses: CoursesProps[] = [
   {
+    id:1,
     image: "/images/dev/node-js.jps",
     title: {
       fa: "آموزش Node.js: دوره کامل ۱",
@@ -30,6 +32,7 @@ export const courses: CoursesProps[] = [
     },
   },
   {
+    id:2,
     image: "/images/dev/node-js.jps",
     title: {
       fa: "آموزش Node.js: دوره کامل ۲",
@@ -45,6 +48,7 @@ export const courses: CoursesProps[] = [
     },
   },
   {
+    id:3,
     image: "/images/dev/node-js.jps",
     title: {
       fa: "آموزش Node.js: دوره کامل ۳",
@@ -60,6 +64,7 @@ export const courses: CoursesProps[] = [
     },
   },
   {
+    id:4,
     image: "/images/dev/node-js.jps",
     title: {
       fa: "آموزش Node.js: دوره کامل ۴",
