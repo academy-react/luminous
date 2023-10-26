@@ -8,7 +8,7 @@ import { SortByTitle } from "./sort-filter/sort-by-title";
 export const CourseList = ({ lang }: { lang: Locale }) => {
   return (
     <div className="flex h-[700px] w-full gap-3 border border-black">
-      <div className="flex w-[30%] flex-col gap-3 border border-black">
+      <div className="flex w-[25%] flex-col gap-3 border border-black">
         <div className="w-full rounded-xl p-4 shadow"><Search/></div>
         <div className="w-full rounded-xl p-4 shadow">
           <FilterByCategory lang={lang} />
@@ -17,7 +17,7 @@ export const CourseList = ({ lang }: { lang: Locale }) => {
           <FilterByTeacher />
         </div>
       </div>
-      <div className="w-[70%] border border-black">
+      <div className="w-[75%] border border-black">
         <div className="w-full rounded-xl p-4 shadow"><SortByTitle/></div>
         <div className="w-full rounded-xl p-4 shadow">list</div>
       </div>
