@@ -4,7 +4,7 @@ export interface CourseCategoryProps{
     title:{[key in Locale]:string;}
     id:string;
   }
-  export const CourseCategory:CourseCategoryProps[]=[
+  export const courseCategory:CourseCategoryProps[]=[
     {
       id:"r1",
       title:{
@@ -54,7 +54,7 @@ export interface CourseCategoryProps{
     title:{[key in Locale]:string;}
     value:{[key in Locale]:string;}
   }
-  export const SortTitle:SortTitleProps[]=[
+  export const sortTitle:SortTitleProps[]=[
     {
       id:"r1",
       title:{
