@@ -1,11 +1,13 @@
 
 import { type Locale } from "#/i18n.config";
+import { courses } from "@/dict/lobby/courses.dict";
 
 import { FilterByCategory } from "./sort-filter/filter-by-category";
 import { FilterByTeacher } from "./sort-filter/fiter-by-teacher";
 import { Search } from "./sort-filter/search-in-courses";
 import { SortBySize } from "./sort-filter/sort-by-size";
 import { SortByTitle } from "./sort-filter/sort-by-title";
+import { CourseFullCard } from "./course-full-card";
 
 export const CourseList = ({ lang }: { lang: Locale }) => {
   return (
@@ -32,7 +34,15 @@ export const CourseList = ({ lang }: { lang: Locale }) => {
         </div>
 
         <div className="w-full rounded-xl p-4 shadow">
-          
+        {courses.map((item) => {
+            return (
+              <CourseFullCard
+                key={item.id}
+                item={item} 
+                lang={lang}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
