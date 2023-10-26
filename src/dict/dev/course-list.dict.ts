@@ -56,7 +56,7 @@ export interface CourseCategoryProps{
   }
   export const sortTitle:SortTitleProps[]=[
     {
-      id:"r1",
+      id:"s1",
       title:{
         fa:"همه ی دوره ها",
         en:"all courses",
@@ -67,7 +67,7 @@ export interface CourseCategoryProps{
         },
     },
     {
-      id:"r2",
+      id:"s2",
       title:{
         fa:"پر بازدید ترین",
         en:"The most popular",
@@ -78,7 +78,7 @@ export interface CourseCategoryProps{
           },
     },
     {
-      id:"r3",
+      id:"s3",
       title:{
         fa:"جدیدترین",
         en:"The newest",
