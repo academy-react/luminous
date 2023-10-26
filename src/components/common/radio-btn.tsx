@@ -7,19 +7,19 @@ type LabeledRadioGroupItemProps = {
   className: string;
   value: string;
   id: string;
-  label: string;
+  title: string;
 };
 
 export const LabeledRadioGroupItem = ({
   className,
   id,
   value,
-  label,
+  title,
 }: LabeledRadioGroupItemProps) => {
   return (
     <div className={cn("flex items-center space-x-2", className)}>
       <RadioGroupItem value={value} id={id} />
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id}>{title}</Label>
     </div>
   );
 };
