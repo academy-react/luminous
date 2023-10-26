@@ -7,10 +7,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 type CheckboxBtnProps = {
   id: string;
   className: string;
-  label: string;
+  title: string;
 };
 
-export const Checkboxbtn = ({id,className,label}:CheckboxBtnProps)=> {
+export const Checkboxbtn = ({id,className,title}:CheckboxBtnProps)=> {
   return (
   <div className={cn( className)} >
       <Checkbox id={id}/>
@@ -18,7 +18,7 @@ export const Checkboxbtn = ({id,className,label}:CheckboxBtnProps)=> {
         htmlFor={id}
         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
-        {label}
+        {title}
       </Label>
   </div>
   )
