@@ -1,20 +1,24 @@
+"use client";
+
+import { CourseCategory } from "@/dict/dev/course-category.dict";
+
 import { CheckboxGroup } from "@/components/ui/checkbox";
 import { Checkboxbtn } from "@/components/common/checkbox-btn";
 
-type FilterByCategoryProps={
-  id:string;
-  title:string;
-}
-export const FilterByCategory = ({id, title}:FilterByCategoryProps) => {
+import { type Locale } from "#/i18n.config";
+
+export const FilterByCategory = ({ lang }: { lang: Locale }) => {
   return (
-    <CheckboxGroup className="flex flex-col justify-start gap-4 rounded-xl px-8 py-6 text-base  shadow-lg">
+    <CheckboxGroup className="flex w-full flex-col justify-start gap-4 text-base font-bold">
       دسته بندی دوره ها
-      <Checkboxbtn
-        className="flex flex-row gap-2 text-sm"
-        id={id}
-        label={title}
-      />
-      
+      {CourseCategory.map((item) => (
+        <Checkboxbtn
+          key={item.id}
+          id={item.id}
+          title={item.title[lang]}
+          className="flex flex-row  text-sm"
+        />
+      ))}
     </CheckboxGroup>
   );
 };
