@@ -48,3 +48,44 @@ export interface CourseCategoryProps{
       }
     },
   ]
+
+  export interface SortTitleProps{
+    id:string;
+    title:{[key in Locale]:string;}
+    value:{[key in Locale]:string;}
+  }
+  export const SortTitle:SortTitleProps[]=[
+    {
+      id:"r1",
+      title:{
+        fa:"همه ی دوره ها",
+        en:"all courses",
+        },
+        value:{
+        fa:"همه ی دوره ها",
+        en:"All courses",
+        },
+    },
+    {
+      id:"r2",
+      title:{
+        fa:"پر بازدید ترین",
+        en:"The most popular",
+        },
+        value:{
+          fa:"پر بازدید ترین",
+          en:"The most popular",
+          },
+    },
+    {
+      id:"r3",
+      title:{
+        fa:"جدیدترین",
+        en:"The newest",
+        },
+        value:{
+          fa:"جدیدترین",
+          en:"The newest",
+          },
+    }, 
+  ]
