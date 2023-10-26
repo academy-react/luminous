@@ -5,6 +5,7 @@ import {ServiceSection} from "@/components/lobby/services/service-section";
 import {ThemeSwitcher} from "@/components/utils/theme-switcher";
 
 import { type Locale } from "#/i18n.config";
+import { TeachersSection } from "@/components/lobby/teachers/teachers-section";
 
 const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
