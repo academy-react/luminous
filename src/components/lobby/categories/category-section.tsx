@@ -1,7 +1,7 @@
 import { CategoriesDict } from "@/dict/lobby/categories.dict";
 import { categoriesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 
-import TitleBox from "@/components/lobby/title-box";
+import {TitleBox} from "@/components/lobby/title-box";
 import { Icons } from "@/components/utils/icons";
 
 import { type Locale } from "#/i18n.config";
