@@ -6,6 +6,8 @@ import { TitleBox } from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 
+import { NewsletterSection } from "./newsletter-card";
+
 export const NewsSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="container flex w-full flex-col items-center gap-10 px-10">
@@ -26,6 +28,7 @@ export const NewsSection = ({ lang }: { lang: Locale }) => {
           content={articlesDict.content}
         />
       </div>
+      <NewsletterSection lang={lang} />
     </section>
   );
 };
