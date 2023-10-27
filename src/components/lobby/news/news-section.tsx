@@ -16,7 +16,7 @@ export const NewsSection = ({ lang }: { lang: Locale }) => {
         title={newsTitleBox.title}
         desc={newsTitleBox.subtitle}
       />
-      <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row">
+      <div className="flex flex-col items-center justify-center gap-10 md:flex-row">
         <NewsCard
           lang={lang}
           title={newsDict.title}
