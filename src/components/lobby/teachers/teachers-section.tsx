@@ -5,7 +5,7 @@ import { useState } from "react";
 import { teachersTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 import { teachersDict } from "@/dict/lobby/teachers.dict";
 
-import TitleBox from "@/components/lobby/title-box";
+import {TitleBox} from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 
