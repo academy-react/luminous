@@ -1,22 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const CourseMidCard = () => {
+import { type Locale } from "#/i18n.config";
+
+type CourseMidCardProps = {
+  item: {
+    image: string;
+    title: { [key in Locale]: string };
+    teacher: { [key in Locale]: string };
+  };
+  lang: Locale;
+};
+export const CourseMidCard = ({
+  item: { image, title, teacher },
+  lang,
+}: CourseMidCardProps) => {
   return (
     <div className="flex w-[25%] flex-col  gap-2 rounded-xl p-4 shadow-lg">
       <Link href="#" className="relative aspect-[3/2]  ">
-        <Image
-          src="/images/node jd.svg"
-          alt=""
-          fill
-          className="rounded-xl object-cover"
-        />
+        <Image src={image} alt="" fill className="rounded-xl object-cover" />
       </Link>
       <div className=" flex flex-col gap-4 ">
-        <h2 className="text-xl font-bold ">نود جی اس:دوره کامل</h2>
+        <h2 className="text-xl font-bold ">{title[lang]}</h2>
         <div className="flex justify-between rounded-xl">
           <ul className="flex flex-col justify-start">
-            <li>استاد بحرالعلوم</li>
+            <li>{teacher[lang]}</li>
             <li>*****</li>
             <li className="rounded-xl border-2 border-[#58AD57]  px-2  text-[#58AD57] ">
               8500000تومان
