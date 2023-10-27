@@ -1,16 +1,24 @@
-import { CheckboxGroup } from "@/components/ui/checkbox";
-import {Checkboxbtn} from "@/components/common/checkbox-btn";
+"use client";
 
-export const FilterByCategory = () => {
+import { courseCategory } from "@/dict/dev/course-list.dict";
+
+import { CheckboxGroup } from "@/components/ui/checkbox";
+import { Checkboxbtn } from "@/components/common/checkbox-btn";
+
+import { type Locale } from "#/i18n.config";
+
+export const FilterByCategory = ({ lang }: { lang: Locale }) => {
   return (
-    <CheckboxGroup className="flex flex-col gap-4 justify-start text-base rounded-xl px-8 py-6  shadow-lg">
+    <CheckboxGroup className="flex w-full flex-col justify-start gap-4 text-base font-bold text-[#333]">
       دسته بندی دوره ها
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r1" label="فرانت اند" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r2" label="بک اند" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r3" label="دیتابیس" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r4" label="امنیت" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r5" label="پایتون" />
-      <Checkboxbtn className="flex flex-row gap-2 text-sm" id="r6" label="هوش مصنوعی" />
+      {courseCategory.map((item) => (
+        <Checkboxbtn
+          key={item.id}
+          id={item.id}
+          title={item.title[lang]}
+          className="flex flex-row  font-[#666] text-sm"
+        />
+      ))}
     </CheckboxGroup>
   );
 };

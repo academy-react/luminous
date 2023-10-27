@@ -1,4 +1,4 @@
-import { Menu, Search, type LucideIcon, type LucideProps } from "lucide-react";
+import { Menu, Search, type LucideIcon, type LucideProps, LayoutGrid, LayoutList } from "lucide-react";
 import { type IconBaseProps, type IconType } from "react-icons";
 
 export type Icon = IconType | LucideIcon;
@@ -23,4 +23,6 @@ export const Icons = {
   ),
   search: Search,
   menu: Menu,
+  layoutGrid: LayoutGrid,
+  layoutList: LayoutList,
 };

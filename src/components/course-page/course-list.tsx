@@ -1,18 +1,18 @@
-import { FilterByCategory } from "./sort-filter/filter-by-category";
+import { type Locale } from "#/i18n.config";
 
-export const CourseList = () =>{
-    return(
+import { CourseContent } from "./course-content";
+import { CourseSideBar } from "./course-side-bar";
 
-
-    <div className="flex h-[700px] w-full border border-black ">
-      <div className="w-[30%] border border-black">
-        <div className="w-full rounded-xl p-4 shadow">search</div>
-        <div className="w-full rounded-xl p-4 shadow"><FilterByCategory/></div>
+export const CourseList = ({ lang }: { lang: Locale }) => {
+  return (
+    <div className="flex h-full w-full gap-3 ">
+      <div className="flex w-[25%] flex-col  ">
+        <CourseSideBar lang={lang} />
       </div>
-      <div className="w-[70%] border border-black">
-        <div className="w-full rounded-xl p-4 shadow">topMenu</div>
-        <div className="w-full rounded-xl p-4 shadow">list</div>
+      <div className="flex w-[75%] flex-col ">
+        <CourseContent lang={lang} />
       </div>
+
     </div>
   );
 };

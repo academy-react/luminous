@@ -4,7 +4,7 @@ export interface CourseCategoryProps{
     title:{[key in Locale]:string;}
     id:string;
   }
-  export const CourseCategory:CourseCategoryProps[]=[
+  export const courseCategory:CourseCategoryProps[]=[
     {
       id:"r1",
       title:{
@@ -54,9 +54,9 @@ export interface CourseCategoryProps{
     title:{[key in Locale]:string;}
     value:{[key in Locale]:string;}
   }
-  export const SortTitle:SortTitleProps[]=[
+  export const sortTitle:SortTitleProps[]=[
     {
-      id:"r1",
+      id:"s1",
       title:{
         fa:"همه ی دوره ها",
         en:"all courses",
@@ -67,7 +67,7 @@ export interface CourseCategoryProps{
         },
     },
     {
-      id:"r2",
+      id:"s2",
       title:{
         fa:"پر بازدید ترین",
         en:"The most popular",
@@ -78,7 +78,7 @@ export interface CourseCategoryProps{
           },
     },
     {
-      id:"r3",
+      id:"s3",
       title:{
         fa:"جدیدترین",
         en:"The newest",
