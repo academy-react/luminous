@@ -1,31 +1,37 @@
-    "use client"
+import { sortTitle } from "@/dict/dev/course-list.dict";
 
-import { cn } from "@/lib/utils";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TabContent } from "@/components/common/tabcontent";
 
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { type Locale } from "#/i18n.config";
 
-export const SortByTitle = () => {
+export const SortByTitle = ({ lang }: { lang: Locale }) => {
   return (
-    <RadioGroup
-      defaultValue="همه ی دوره ها"
-      className="flex flex-row-reverse"
-    >
-      <div className={cn("flex items-center space-x-2")}>
-        <RadioGroupItem value="همه ی دوره ها" id="s1" />
-        <Label htmlFor="s1" className="text-[#666] text-sm">همه ی دوره ها
-        </Label>
-      </div>
-      <div className={cn("flex appearance-none items-center space-x-2")}>
-        <RadioGroupItem value="پرمخاطب ها" id="s2" />
-        <Label htmlFor="s2" className="text-[#333] text-sm">پرمخاطب ها
-        </Label>
-      </div>
-      <div className={cn("flex appearance-none items-center space-x-2")}>
-        <RadioGroupItem value="جدیدترین" id="s3" />
-        <Label htmlFor="s3" className="text-[#333] text-sm">جدیدترین ها
-        </Label>
-      </div>
-    </RadioGroup>
+    sortTitle &&
+    sortTitle[0] &&
+    (
+      <Tabs defaultValue={sortTitle[0]?.value[lang]}>
+        <TabsList className="w-full">
+          {sortTitle.map((item) => {
+            return (
+              <TabsTrigger key={item.id} value={item.value[lang]}>
+                {item.title[lang]}
+              </TabsTrigger>
+            );
+          })}
+        </TabsList>
+        {sortTitle.map((item, index) => {
+          return (
+            <TabContent
+              key={index}
+              value={item.value}
+              title={item.title}
+              className=""
+              lang={lang}
+            />
+          );
+        })}
+      </Tabs>
+    )
   );
 };
