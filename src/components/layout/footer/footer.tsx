@@ -12,7 +12,7 @@ import { type Locale } from "#/i18n.config";
 
 export const Footer = ({ lang }: { lang: Locale }) => {
   return (
-    <>
+    <div className="mt-28">
       {/* footer background */}
       <div className="relative aspect-[7/1] w-full">
         <Image
@@ -23,7 +23,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         />
       </div>
       {/* Footer Section */}
-      <footer className="grid w-full grid-rows-3 place-content-center py-16 lg:grid-cols-3 lg:grid-rows-1">
+      <footer className="grid w-full grid-rows-3 place-content-center lg:grid-cols-3 lg:grid-rows-1">
         {/* Info Area */}
         <div className="flex items-start justify-center gap-6">
           {/* Nav Bar */}
@@ -104,6 +104,6 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           </div>
         </div>
       </footer>
-    </>
+    </یهر>
   );
 };
