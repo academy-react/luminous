@@ -1,6 +1,5 @@
+import { Fragment } from "react";
 import Image from "next/image";
-
-import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -28,8 +27,8 @@ export const NewsCard = ({ lang, title, content: contents }: NewsCardProps) => {
       <CardContent>
         <div className="flex max-w-lg flex-col items-center gap-3">
           {contents.map((content, index) => (
-            <>
-              <div className="flex w-full items-center gap-5" key={index}>
+            <Fragment key={index}>
+              <div className="flex w-full items-center gap-5">
                 <Image
                   src={content.image}
                   alt="news-item"
@@ -42,7 +41,7 @@ export const NewsCard = ({ lang, title, content: contents }: NewsCardProps) => {
               {index !== contents.length - 1 && (
                 <div className="w-5/6 border" />
               )}
-            </>
+            </Fragment>
           ))}
         </div>
         <div className="flex w-full justify-end pb-4">
