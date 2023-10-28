@@ -25,7 +25,7 @@ const AuthLayout = ({
           />
         </div>
       </div>
-      <header className="sticky top-0 z-50 mx-auto flex w-full dark:bg-black">
+      <header className="fixed top-0 z-50 mx-auto flex w-full dark:bg-black">
         <div className="container flex h-16 items-center">
           <MainNav
             lang={lang}

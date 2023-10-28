@@ -91,7 +91,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
           control={form.control}
           name="remember"
           render={({ field }) => (
-            <FormItem className="flex items-center justify-start gap-1 space-y-0 text-blue-800">
+            <FormItem className="flex items-center justify-center gap-1 space-y-0 text-blue-800">
               <FormControl>
                 <Checkbox
                   checked={field.value}

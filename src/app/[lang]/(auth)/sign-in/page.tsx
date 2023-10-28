@@ -12,6 +12,7 @@ import {
 import { LoginLady } from "@/components/artworks/login/login-lady";
 import { LoginMobile } from "@/components/artworks/login/login-mobile";
 import { SignInForm } from "@/components/forms/sign-in-form";
+import { Icons } from "@/components/utils/icons";
 
 import { type Locale } from "#/i18n.config";
 
@@ -19,8 +20,11 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
       <Card className="w-[22rem] border-none bg-white px-4 shadow-lg">
-        <CardHeader className="flex items-center justify-center py-4">
-          <CardTitle className="text-2xl">{signInForm.title[lang]}</CardTitle>
+        <CardHeader className="flex items-center justify-center gap-4 py-7">
+          <CardTitle className="text-2xl font-extrabold text-purple-primary">
+            {signInForm.title[lang]}
+          </CardTitle>
+          <Icons.logInIcon className="h-10 w-10" />
         </CardHeader>
         <CardContent className="">
           <SignInForm lang={lang} />
@@ -29,18 +33,18 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           <Link
             aria-label="reset-password"
             href={`/${lang}/reset-password`}
-            className="text-sm text-blue-800"
+            className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
             {signInForm.forgot[lang]}
           </Link>
-          <div className="text-sm">
+          <div className="text-xs">
             <span className="me-1 inline-block opacity-70">
               {signInForm.question[lang]}
             </span>
             <Link
               aria-label="Sign up"
               href={`/${lang}/sign-up`}
-              className="cursor-pointer text-blue-800 underline-offset-4 transition-colors hover:underline"
+              className="cursor-pointer text-blue-800 transition-colors duration-300 hover:text-blue-500"
             >
               {signInForm.link[lang]}
             </Link>
@@ -48,10 +52,10 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
         </CardFooter>
       </Card>
       <div className="relative hidden h-full w-[40vw] flex-row md:flex xl:w-[30vw]">
-        <div className="absolute end-0 top-0 translate-y-1/4">
+        <div className="absolute end-0 top-1/2 translate-y-[-60%]">
           <LoginMobile />
         </div>
-        <div className="absolute start-0 top-0 translate-y-1/4">
+        <div className="absolute start-0 top-1/2 translate-y-[-40%]">
           <LoginLady />
         </div>
       </div>
