@@ -1,13 +1,10 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
-import Link from "next/link";
 
 import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
-import { Footer } from "@/components/layout/footer/footer";
-import { Header } from "@/components/layout/header/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
@@ -44,11 +41,7 @@ const RootLayout = ({
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex min-h-screen flex-col">
-            <Header lang={lang} />
-            {children}
-            <Footer lang={lang} />
-          </div>
+          <div className="relative flex min-h-screen flex-col">{children}</div>
           <TailwindIndicator />
         </ThemeProvider>
       </body>
