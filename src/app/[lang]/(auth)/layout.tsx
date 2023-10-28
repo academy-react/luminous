@@ -35,7 +35,7 @@ const AuthLayout = ({
           />
         </div>
       </header>
-      <div className="flex h-full w-full items-center justify-center">
+      <div className="z-10 flex h-full w-full items-center justify-center">
         <div className="h-fit w-[22rem]">{children}</div>
       </div>
     </div>
