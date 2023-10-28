@@ -1,4 +1,4 @@
-import { blogDetails, blogSortTitle } from "@/dict/dev/blog-list.dict";
+import { blogSortTitle, blogs } from "@/dict/dev/blog-list.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -9,10 +9,10 @@ import { BlogMidCard } from "./cards/blog-mid-card";
 
 export const BlogContent = ({ lang }: { lang: Locale }) => {
   //start maps.......
-  const sortGrid = blogDetails.map((item) => {
+  const sortGrid = blogs.map((item) => {
     return <BlogMidCard key={item.id} item={item} lang={lang} />;
   });
-  const sortList = blogDetails.map((item) => {
+  const sortList = blogs.map((item) => {
     return <BlogFullCard key={item.id} item={item} lang={lang} />;
   });
   const blogSortTitles = blogSortTitle.map((item) => {
