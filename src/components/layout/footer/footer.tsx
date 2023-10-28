@@ -104,6 +104,6 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           </div>
         </div>
       </footer>
-    </یهر>
+    </div>
   );
 };
