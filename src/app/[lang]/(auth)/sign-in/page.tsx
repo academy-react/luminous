@@ -9,8 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LoginLady } from "@/components/artworks/login/login-lady";
-import { LoginMobile } from "@/components/artworks/login/login-mobile";
+import { LoginLady } from "@/components/artworks/auth/sign-in-lady.artwork";
+import { LoginMobile } from "@/components/artworks/auth/sign-in-mobile.artwork";
 import { SignInForm } from "@/components/forms/sign-in-form";
 import { Icons } from "@/components/utils/icons";
 
@@ -44,7 +44,7 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
             <Link
               aria-label="Sign up"
               href={`/${lang}/sign-up`}
-              className="cursor-pointer text-blue-800 transition-colors duration-300 hover:text-blue-500"
+              className="text-blue-800 transition-colors duration-300 hover:text-blue-500"
             >
               {signInForm.link[lang]}
             </Link>

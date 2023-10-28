@@ -18,11 +18,11 @@ import { useRouter } from "next/navigation";
 import { thirdSignUpForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
 
+import { AnimatedInput } from "../common/animated-input";
 import { Button } from "../ui/button";
 
 export const ThirdSignUpForm = ({

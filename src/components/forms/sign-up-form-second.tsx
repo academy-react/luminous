@@ -13,12 +13,12 @@ import {
 import { secondSignUpForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedPasswordInput } from "@/components/ui/input";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
+import { AnimatedPasswordInput } from "../common/animated-input";
 
 export const SecondSignUpForm = ({
   lang,
