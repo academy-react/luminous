@@ -19,7 +19,7 @@ import { type Locale } from "#/i18n.config";
 const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
-      <Card className="w-[22rem] border-none bg-white px-4 shadow-lg">
+      <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
             {signInForm.title[lang]}
