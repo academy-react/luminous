@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
 
-type ServiceFullCardProps = {
+type BlogFullCardProps = {
   item: {
     image: string;
     title: { [key in Locale]: string };
@@ -12,10 +12,10 @@ type ServiceFullCardProps = {
   };
   lang: Locale;
 };
-export const ServiceFullCard = ({
+export const BlogFullCard = ({
   item: { image, title, description, category },
   lang,
-}: ServiceFullCardProps) => {
+}: BlogFullCardProps) => {
   return (
     <div className="flex h-[160px] w-full gap-3 rounded-xl px-4 py-3 shadow">
       <Link href="#" className="relative aspect-[2/1] basis-1/3 ">
