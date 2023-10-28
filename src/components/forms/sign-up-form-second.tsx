@@ -17,8 +17,8 @@ import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
 
-import { Button } from "../ui/button";
 import { AnimatedPasswordInput } from "../common/animated-input";
+import { Button } from "../ui/button";
 
 export const SecondSignUpForm = ({
   lang,
@@ -52,6 +52,7 @@ export const SecondSignUpForm = ({
                 <AnimatedPasswordInput
                   lang={lang}
                   label={secondSignUpForm.code[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>

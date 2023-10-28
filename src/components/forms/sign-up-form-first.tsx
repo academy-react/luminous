@@ -12,13 +12,12 @@ import {
 } from "@/types/validations/auth.validation";
 import { firstSignUpForm } from "@/dict/auth/auth.dict";
 
+import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import { AnimatedInput } from "@/components/common/animated-input";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
-
-import { AnimatedInput } from "../common/animated-input";
-import { Button } from "../ui/button";
 
 export const FirstSignUpForm = ({
   lang,
@@ -56,6 +55,7 @@ export const FirstSignUpForm = ({
                   lang={lang}
                   Icon={Phone}
                   label={firstSignUpForm.phone[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>

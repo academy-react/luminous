@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { cva, type VariantProps } from "class-variance-authority";
 import { Eye, EyeOff, type LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -9,28 +10,45 @@ import { Input, type InputProps } from "@/components/ui/input";
 
 import { type Locale } from "#/i18n.config";
 
-export interface AnimatedInputProps extends InputProps {
+const inputVariants = cva(
+  "peer h-full w-full rounded-[7px] border-t-transparent bg-transparent px-3 py-2.5 !pe-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all disabled:border-0 disabled:bg-gray-50",
+  {
+    variants: {
+      inputVariant: {
+        default:
+          "border border-gray-200 placeholder-shown:border placeholder-shown:border-gray-200",
+        auth: "border-2 border-purple-secondary placeholder-shown:border-2 placeholder-shown:border-purple-secondary",
+      },
+      inputError: {
+        none: "focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0",
+        error:
+          "focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0",
+      },
+    },
+    defaultVariants: {
+      inputVariant: "default",
+      inputError: "none",
+    },
+  }
+);
+
+export interface AnimatedInputProps
+  extends InputProps,
+    VariantProps<typeof inputVariants> {
   lang: Locale;
   Icon: LucideIcon;
   label: string;
-  wrapperClassName?: string;
-  inputClassName?: string;
 }
 
 export const AnimatedInput = React.forwardRef<
   HTMLInputElement,
   AnimatedInputProps
->(({ lang, Icon, label, wrapperClassName, inputClassName, ...props }, ref) => {
+>(({ lang, Icon, label, inputVariant, ...props }, ref) => {
   const { error } = useFormField();
   const [isFocused, setIsFocus] = React.useState(false);
 
   return (
-    <div
-      className={cn(
-        "group relative h-10 w-full min-w-[200px]",
-        wrapperClassName
-      )}
-    >
+    <div className="group relative h-10 w-full min-w-[200px]">
       <div
         className={cn(
           "absolute top-[42%] grid h-5 w-5 -translate-y-2/4 place-items-center",
@@ -47,11 +65,10 @@ export const AnimatedInput = React.forwardRef<
       <Input
         placeholder=" "
         className={cn(
-          "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pe-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
-          error
-            ? "focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0"
-            : "focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0",
-          inputClassName
+          inputVariants({
+            inputVariant,
+            inputError: error ? "error" : "none",
+          })
         )}
         {...props}
         ref={ref}
@@ -76,28 +93,23 @@ export const AnimatedInput = React.forwardRef<
 });
 AnimatedInput.displayName = "AnimatedInput";
 
-export interface AnimatedPasswordInputProps extends InputProps {
+export interface AnimatedPasswordInputProps
+  extends InputProps,
+    VariantProps<typeof inputVariants> {
   lang: Locale;
   label: string;
-  wrapperClassName?: string;
-  inputClassName?: string;
 }
 
 export const AnimatedPasswordInput = React.forwardRef<
   HTMLInputElement,
   AnimatedPasswordInputProps
->(({ lang, label, wrapperClassName, inputClassName, ...props }, ref) => {
+>(({ lang, label, inputVariant, ...props }, ref) => {
   const { error } = useFormField();
   const [isFocused, setIsFocus] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (
-    <div
-      className={cn(
-        "group relative h-10 w-full min-w-[200px]",
-        wrapperClassName
-      )}
-    >
+    <div className="group relative h-10 w-full min-w-[200px]">
       <div
         className={cn(
           "absolute top-[42%] grid h-5 w-5 -translate-y-2/4 place-items-center",
@@ -123,11 +135,10 @@ export const AnimatedPasswordInput = React.forwardRef<
         placeholder=" "
         type={showPassword ? "text" : "password"}
         className={cn(
-          "peer h-full w-full rounded-[7px] border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pe-9 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 disabled:border-0 disabled:bg-gray-50",
-          error
-            ? "focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0"
-            : "focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0",
-          inputClassName
+          inputVariants({
+            inputVariant,
+            inputError: error ? "error" : "none",
+          })
         )}
         {...props}
         ref={ref}

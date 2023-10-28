@@ -59,6 +59,7 @@ export const ThirdSignUpForm = ({
                   lang={lang}
                   Icon={Mail}
                   label={thirdSignUpForm.email[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>

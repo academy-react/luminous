@@ -13,6 +13,8 @@ import {
 } from "@/types/validations/auth.validation";
 import { signInForm } from "@/dict/auth/auth.dict";
 
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -26,9 +28,6 @@ import {
 } from "@/components/common/animated-input";
 
 import { type Locale } from "#/i18n.config";
-
-import { Button } from "../ui/button";
-import { Checkbox } from "../ui/checkbox";
 
 export const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -63,8 +62,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
                   lang={lang}
                   Icon={User2}
                   label={signInForm.username[lang]}
-                  wrapperClassName=""
-                  inputClassName="border-2 placeholder-shown:border-2 border-purple-secondary placeholder-shown:border-purple-secondary"
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
@@ -80,7 +78,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
                 <AnimatedPasswordInput
                   lang={lang}
                   label={signInForm.password[lang]}
-                  inputClassName="border-2 placeholder-shown:border-2 border-purple-secondary placeholder-shown:border-purple-secondary"
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
