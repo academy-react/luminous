@@ -1,14 +1,15 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
+import Link from "next/link";
 
-import { mitra, roboto } from "@/lib/fonts/fonts";
+import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
-import Footer from "@/components/layout/footer/footer";
-import Header from "@/components/layout/header/header";
-import ThemeProvider from "@/components/providers/theme-provider";
-import TailwindIndicator from "@/components/utils/tailwind-indicator";
+import { Footer } from "@/components/layout/footer/footer";
+import { Header } from "@/components/layout/header/header";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
 import { i18n, type Locale } from "#/i18n.config";
 
@@ -35,14 +36,15 @@ const RootLayout = ({
     <html lang={lang} suppressHydrationWarning>
       <body
         className={cn(
-          "h-screen min-h-screen font-multi",
+          "min-h-screen font-multi antialiased",
           roboto.variable,
+          iranSans.variable,
           mitra.variable
         )}
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="h-full w-full">
+          <div className="relative flex min-h-screen flex-col">
             <Header lang={lang} />
             {children}
             <Footer lang={lang} />

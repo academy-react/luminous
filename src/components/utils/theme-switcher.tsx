@@ -8,11 +8,11 @@ import { title } from "@/dict/lobby/header.dict";
 
 import { type Locale } from "#/i18n.config";
 
-const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
+export const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex h-52 w-full items-center justify-center gap-2 border border-black">
+    <div className="flex w-full items-center justify-center gap-2 font-black">
       <h1 className={cn(lang === "en" ? "text-sm" : "text-xl", "h-fit")}>
         {title[lang]}
       </h1>
@@ -26,5 +26,3 @@ const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
     </div>
   );
 };
-
-export default ThemeSwitcher;

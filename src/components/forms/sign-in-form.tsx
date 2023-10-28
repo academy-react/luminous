@@ -27,7 +27,7 @@ import { type Locale } from "#/i18n.config";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 
-const SignInForm = ({ lang }: { lang: Locale }) => {
+export const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -109,5 +109,3 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
     </Form>
   );
 };
-
-export default SignInForm;

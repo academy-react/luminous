@@ -20,7 +20,7 @@ import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
 
-const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
+export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -65,5 +65,3 @@ const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
     </Form>
   );
 };
-
-export default ResetPasswordForm;

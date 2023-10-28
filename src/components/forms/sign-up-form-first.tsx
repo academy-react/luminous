@@ -20,7 +20,7 @@ import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
 
-const FirstSignUpForm = ({
+export const FirstSignUpForm = ({
   lang,
   setFormState,
 }: {
@@ -73,5 +73,3 @@ const FirstSignUpForm = ({
     </Form>
   );
 };
-
-export default FirstSignUpForm;

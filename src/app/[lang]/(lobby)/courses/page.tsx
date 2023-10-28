@@ -1,9 +1,11 @@
+import { CourseList } from "@/components/course-page/course-list";
+
 import { type Locale } from "#/i18n.config";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="flex h-full items-center justify-center">
-      <h1 className="text-xl">صفحه‌ی کورس‌ها</h1>
+    <main className="mt-10 flex h-full items-center justify-center px-20">
+      <CourseList lang={lang} />
     </main>
   );
 };

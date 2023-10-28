@@ -24,3 +24,55 @@ export const mitra = localFont({
   display: "swap",
   variable: "--font-mitra",
 });
+
+export const iranSans = localFont({
+  src: [
+    {
+      path: "/IranSansX Family/IranSansX-1-Thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-2-UltraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-3-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-4-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-5-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-6-DemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-7-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-8-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "/IranSansX Family/IranSansX-9-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-iran-sans",
+});
