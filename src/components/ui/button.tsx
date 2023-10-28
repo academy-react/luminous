@@ -9,7 +9,10 @@ const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
-      variant: {},
+      variant: {
+        default: "",
+        auth: "border-2 border-green-600 bg-green-600 text-white transition-colors duration-500 hover:bg-white hover:text-green-600",
+      },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
@@ -18,6 +21,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
+      variant: "default",
       size: "default",
     },
   }

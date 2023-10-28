@@ -66,7 +66,7 @@ export const ThirdSignUpForm = ({
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} dir="ltr" className="border">
+        <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
