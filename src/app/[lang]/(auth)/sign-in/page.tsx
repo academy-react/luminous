@@ -16,15 +16,21 @@ import { type Locale } from "#/i18n.config";
 const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="flex h-full w-full items-center justify-center">
-      <Card className="w-full">
-        <CardHeader className="flex items-center justify-center">
-          <CardTitle className="text-2xl">{signInForm.title[lang]}</CardTitle>
+      <Card className="w-full border-none bg-white px-4">
+        <CardHeader className="flex items-center justify-center py-4">
+          <CardTitle className="text-2xl">
+            {signInForm.title[lang]}
+          </CardTitle>
         </CardHeader>
         <CardContent className="">
           <SignInForm lang={lang} />
         </CardContent>
-        <CardFooter className="flex flex-col items-center justify-center gap-3">
-          <Link aria-label="reset-password" href={`/${lang}/reset-password`}>
+        <CardFooter className="flex flex-col items-center justify-center gap-2 py-4">
+          <Link
+            aria-label="reset-password"
+            href={`/${lang}/reset-password`}
+            className="text-sm text-blue-800"
+          >
             {signInForm.forgot[lang]}
           </Link>
           <div className="text-sm">
@@ -34,7 +40,7 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
             <Link
               aria-label="Sign up"
               href={`/${lang}/sign-up`}
-              className="underline-offset-4 transition-colors hover:underline"
+              className="cursor-pointer text-blue-800 underline-offset-4 transition-colors hover:underline"
             >
               {signInForm.link[lang]}
             </Link>
