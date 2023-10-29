@@ -65,6 +65,7 @@ export const TeacherMiniCard = ({
 }: TeacherCardProps) => {
   return (
     <Card className="relative flex cursor-pointer p-4 shadow">
+    <Card className="relative flex cursor-pointer p-4 shadow">
       <div className="absolute -top-2 start-3">
         <div className="relative aspect-square h-16">
           <Image
