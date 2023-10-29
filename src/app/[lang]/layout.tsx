@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
+import Link from "next/link";
 
 import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";

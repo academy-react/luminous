@@ -6,7 +6,7 @@ import { type Locale } from "#/i18n.config";
 const NotFoundCard = ({ lang }: { lang: Locale }) => {
   return (
     <>
-      <div className="mx-auto flex w-1/3 flex-col items-center">
+      <div className="mx-auto flex w-2/3 flex-col items-center justify-center">
         <div className="relative aspect-[2/1] w-full">
           <Image
             alt="404-bg"
