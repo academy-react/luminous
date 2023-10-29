@@ -1,7 +1,10 @@
-import CourseSection from "@/components/lobby/courses/course-section";
-import HeroSection from "@/components/lobby/hero/hero-section";
-import ServiceSection from "@/components/lobby/services/service-section";
-import ThemeSwitcher from "@/components/utils/theme-switcher";
+import { CategoriesSection } from "@/components/lobby/categories/category-section";
+import { CourseSection } from "@/components/lobby/courses/course-section";
+import { HeroSection } from "@/components/lobby/hero/hero-section";
+import { NewsSection } from "@/components/lobby/news/news-section";
+import { ServiceSection } from "@/components/lobby/services/service-section";
+import { TeachersSection } from "@/components/lobby/teachers/teachers-section";
+import { ThemeSwitcher } from "@/components/utils/theme-switcher";
 
 import { type Locale } from "#/i18n.config";
 
@@ -11,6 +14,9 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
       <CourseSection lang={lang} />
+      <CategoriesSection lang={lang} />
+      <TeachersSection lang={lang} />
+      <NewsSection lang={lang} />
       <ThemeSwitcher lang={lang} />
     </main>
   );

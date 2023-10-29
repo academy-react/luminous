@@ -14,13 +14,13 @@ import {
 import { resetPasswordForm } from "@/dict/auth/auth.dict";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
+import { AnimatedInput } from "@/components/common/animated-input";
 
 import { type Locale } from "#/i18n.config";
 
 import { Button } from "../ui/button";
 
-const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
+export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -48,13 +48,14 @@ const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
                   lang={lang}
                   Icon={Mail}
                   label={resetPasswordForm.email[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} dir="ltr" className="border">
+        <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
@@ -65,5 +66,3 @@ const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
     </Form>
   );
 };
-
-export default ResetPasswordForm;

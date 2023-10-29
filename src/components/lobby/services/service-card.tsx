@@ -10,7 +10,7 @@ type ServiceCardProps = {
   bgColor: string;
 };
 
-const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
+export const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
   return (
     <Card className={cn("flex w-72 border-none p-4 shadow-md", bgColor)}>
       <CardContent className="flex flex-row items-center gap-3">
@@ -20,5 +20,3 @@ const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
     </Card>
   );
 };
-
-export default ServiceCard;

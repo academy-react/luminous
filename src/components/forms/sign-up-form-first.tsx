@@ -12,15 +12,14 @@ import {
 } from "@/types/validations/auth.validation";
 import { firstSignUpForm } from "@/dict/auth/auth.dict";
 
+import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
+import { AnimatedInput } from "@/components/common/animated-input";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { type Locale } from "#/i18n.config";
 
-import { Button } from "../ui/button";
-
-const FirstSignUpForm = ({
+export const FirstSignUpForm = ({
   lang,
   setFormState,
 }: {
@@ -56,13 +55,14 @@ const FirstSignUpForm = ({
                   lang={lang}
                   Icon={Phone}
                   label={firstSignUpForm.phone[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} dir="ltr" className="border">
+        <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
@@ -73,5 +73,3 @@ const FirstSignUpForm = ({
     </Form>
   );
 };
-
-export default FirstSignUpForm;

@@ -13,6 +13,8 @@ import {
 } from "@/types/validations/auth.validation";
 import { signInForm } from "@/dict/auth/auth.dict";
 
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -20,14 +22,14 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { AnimatedInput, AnimatedPasswordInput } from "@/components/ui/input";
+import {
+  AnimatedInput,
+  AnimatedPasswordInput,
+} from "@/components/common/animated-input";
 
 import { type Locale } from "#/i18n.config";
 
-import { Button } from "../ui/button";
-import { Checkbox } from "../ui/checkbox";
-
-const SignInForm = ({ lang }: { lang: Locale }) => {
+export const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -60,6 +62,7 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
                   lang={lang}
                   Icon={User2}
                   label={signInForm.username[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
@@ -75,6 +78,7 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
                 <AnimatedPasswordInput
                   lang={lang}
                   label={signInForm.password[lang]}
+                  inputVariant="auth"
                   {...field}
                 />
               </FormControl>
@@ -85,20 +89,27 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
           control={form.control}
           name="remember"
           render={({ field }) => (
-            <FormItem className="flex items-center justify-center gap-2 space-y-0">
+            <FormItem className="flex items-center justify-center gap-1 space-y-0 text-blue-800">
               <FormControl>
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
+                  className="border-2 text-blue-800"
                 />
               </FormControl>
               <div className="leading-none">
-                <FormLabel>{signInForm.remember[lang]}</FormLabel>
+                <FormLabel className="text-xs">
+                  {signInForm.remember[lang]}
+                </FormLabel>
               </div>
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} dir="ltr" className="border">
+        <Button
+          disabled={isLoading}
+          dir="ltr"
+          className="border-2 border-green-600 bg-green-600 text-white transition-colors duration-500 hover:bg-white hover:text-green-600"
+        >
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
@@ -109,5 +120,3 @@ const SignInForm = ({ lang }: { lang: Locale }) => {
     </Form>
   );
 };
-
-export default SignInForm;
