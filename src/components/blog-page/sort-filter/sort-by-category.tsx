@@ -1,10 +1,11 @@
 "use client";
 
+import { blogCategory } from "@/dict/dev/blog-list.dict";
+
 import { CheckboxGroup } from "@/components/ui/checkbox";
 import { Checkboxbtn } from "@/components/common/checkbox-btn";
 
 import { type Locale } from "#/i18n.config";
-import { blogCategory } from "@/dict/dev/blog-list.dict";
 
 export const FilterByCategory = ({ lang }: { lang: Locale }) => {
   return (

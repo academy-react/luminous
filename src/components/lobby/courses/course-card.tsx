@@ -13,7 +13,7 @@ type CourseCardProps = {
   teacher: { [key in Locale]: string };
 };
 
-const CourseCard = ({ lang, title, desc, teacher }: CourseCardProps) => {
+export const CourseCard = ({ lang, title, desc, teacher }: CourseCardProps) => {
   return (
     <Card className="h-full w-full rounded-xl border p-4 shadow">
       <CardContent className="flex h-full w-full flex-col justify-between">
@@ -48,5 +48,3 @@ const CourseCard = ({ lang, title, desc, teacher }: CourseCardProps) => {
     </Card>
   );
 };
-
-export default CourseCard;

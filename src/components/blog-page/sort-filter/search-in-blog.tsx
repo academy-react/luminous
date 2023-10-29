@@ -1,3 +1,3 @@
 export const Search = () => {
-    return(<>جستجو ...</>)
+  return <>جستجو ...</>;
 };
