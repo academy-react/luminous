@@ -1,4 +1,4 @@
-import { blogSortTitle, blogs } from "@/dict/dev/blog-list.dict";
+import { blogs, blogSortTitle } from "@/dict/dev/blog-list.dict";
 
 import { type Locale } from "#/i18n.config";
 
