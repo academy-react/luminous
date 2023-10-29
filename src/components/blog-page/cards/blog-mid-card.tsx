@@ -22,7 +22,7 @@ export const BlogMidCard = ({
         <Image src={image} alt="" fill className="rounded-xl object-cover" />
       </Link>
       <div className="flex flex-col items-start gap-2">
-        <h2 className="text-xl font-bold text-[#333]">{title[lang]}</h2>
+        <h2 className="text-xl font-semibold text-[#333]">{title[lang]}</h2>
         <p className="line-clamp-2 w-[80%] text-sm text-[#666] ">
           {description[lang]}
         </p>
