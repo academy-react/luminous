@@ -19,7 +19,7 @@ export const courses: CoursesProps[] = [
     id:1,
     image: "/images/dev/node-js.jpg",
     title: {
-      fa: "آموزش Node.js: دوره کامل ۱",
+      fa: "آموزش Node.js",
       en: "Node.js: The Complete Course 1",
     },
     description: {
@@ -35,7 +35,7 @@ export const courses: CoursesProps[] = [
     id:2,
     image: "/images/dev/node-js.jpg",
     title: {
-      fa: "آموزش Node.js: دوره کامل ۲",
+      fa: "آموزش Node.js",
       en: "Node.js: The Complete Course 2",
     },
     description: {
@@ -51,7 +51,7 @@ export const courses: CoursesProps[] = [
     id:3,
     image: "/images/dev/node-js.jpg",
     title: {
-      fa: "آموزش Node.js: دوره کامل ۳",
+      fa: "آموزش Node.js",
       en: "Node.js: The Complete Course 3",
     },
     description: {
@@ -67,7 +67,7 @@ export const courses: CoursesProps[] = [
     id:4,
     image: "/images/dev/node-js.jpg",
     title: {
-      fa: "آموزش Node.js: دوره کامل ۴",
+      fa: "آموزش Node.js",
       en: "Node.js: The Complete Course 4",
     },
     description: {
