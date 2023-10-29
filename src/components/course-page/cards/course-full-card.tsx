@@ -24,7 +24,7 @@ export const CourseFullCard = ({
       <div className=" basis-2/3">
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
-            <h2 className="text-xl font-bold text-[#333]">{title[lang]}</h2>
+            <h2 className="text-xl font-semibold text-[#333]">{title[lang]}</h2>
             <p className="line-clamp-2 w-[80%] text-sm text-[#666] ">
               {description[lang]}
             </p>
