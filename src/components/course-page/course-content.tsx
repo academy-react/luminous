@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Icons } from "../utils/icons";
 import { CourseFullCard } from "./cards/course-full-card";
 import { CourseMidCard } from "./cards/course-mid-card";
+import { Pagination } from "../common/pagination";
 
 export const CourseContent = ({ lang }: { lang: Locale }) => {
   //start maps.......
@@ -29,6 +30,7 @@ export const CourseContent = ({ lang }: { lang: Locale }) => {
   });
   //end maps........
   return (
+    <>
     <Tabs
       defaultValue="grid"
       dir={lang === "fa" ? "rtl" : "ltr"}
@@ -62,7 +64,11 @@ export const CourseContent = ({ lang }: { lang: Locale }) => {
           </TabsContent>
           {/*  tabs-content of sort by title */}
         </div>
+        
       </div>
     </Tabs>
+    <div className="mx-auto"><Pagination/></div>
+    
+    </>
   );
 };
