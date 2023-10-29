@@ -12,7 +12,7 @@ import {
 } from "@/types/validations/newsletter.validation";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/input";
+import { AnimatedInput } from "@/components/common/animated-input";
 
 import { type Locale } from "#/i18n.config";
 
