@@ -27,7 +27,7 @@ export const CourseContent = ({ lang }: { lang: Locale }) => {
       </TabsTrigger>
     );
   });
-//end maps........
+  //end maps........
   return (
     <Tabs
       defaultValue="grid"
