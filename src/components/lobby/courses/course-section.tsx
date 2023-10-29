@@ -4,13 +4,13 @@ import { courses } from "@/dict/lobby/courses.dict";
 import { coursesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 
 import { Button } from "@/components/ui/button";
-import CourseCard from "@/components/lobby/courses/course-card";
-import SideCard from "@/components/lobby/courses/course-side-card";
+import { CourseCard } from "@/components/lobby/courses/course-card";
+import { CourseSideCard } from "@/components/lobby/courses/course-side-card";
 import { TitleBox } from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 
-const CourseSection = ({ lang }: { lang: Locale }) => {
+export const CourseSection = ({ lang }: { lang: Locale }) => {
   return (
     <div className="flex w-full flex-col items-center gap-10">
       <TitleBox
@@ -31,9 +31,9 @@ const CourseSection = ({ lang }: { lang: Locale }) => {
         </div>
         <div className="w-[30%] rounded-xl border shadow">
           <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
-            <SideCard />
-            <SideCard />
-            <SideCard />
+            <CourseSideCard />
+            <CourseSideCard />
+            <CourseSideCard />
             <Button className="w-full max-w-fit rounded-lg border-2 border-purple-primary p-3 text-purple-primary duration-300 hover:bg-purple-primary hover:text-white">
               <Link href="#" className="">
                 {
@@ -50,5 +50,3 @@ const CourseSection = ({ lang }: { lang: Locale }) => {
     </div>
   );
 };
-
-export default CourseSection;

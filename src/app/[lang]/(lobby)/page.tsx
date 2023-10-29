@@ -1,5 +1,5 @@
 import { CategoriesSection } from "@/components/lobby/categories/category-section";
-import CourseSection from "@/components/lobby/courses/course-section";
+import { CourseSection } from "@/components/lobby/courses/course-section";
 import { HeroSection } from "@/components/lobby/hero/hero-section";
 import { NewsSection } from "@/components/lobby/news/news-section";
 import { ServiceSection } from "@/components/lobby/services/service-section";
