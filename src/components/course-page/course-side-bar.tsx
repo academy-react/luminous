@@ -6,7 +6,7 @@ import { Search } from "./sort-filter/search-in-courses";
 
 export const CourseSideBar = ({ lang }: { lang: Locale }) => {
   return (
-    <div className="flex flex-col gap-3"> 
+    <div className="flex flex-col gap-3">
       <div className="w-full rounded-xl p-4 shadow">
         <Search />
       </div>

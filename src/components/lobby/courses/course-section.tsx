@@ -6,7 +6,7 @@ import { coursesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/lobby/courses/course-card";
 import SideCard from "@/components/lobby/courses/course-side-card";
-import {TitleBox} from "@/components/lobby/title-box";
+import { TitleBox } from "@/components/lobby/title-box";
 
 import { type Locale } from "#/i18n.config";
 

@@ -1,6 +1,6 @@
+import { CoursePageSection } from "@/components/course-page/course-page-section";
 
 import { type Locale } from "#/i18n.config";
-import { CoursePageSection } from "@/components/course-page/course-page-section";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (

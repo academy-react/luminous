@@ -1,3 +1,3 @@
 export const FilterByTeacher = () => {
-    return(<>جستجو براساس مدرس</>)
+  return <>جستجو براساس مدرس</>;
 };

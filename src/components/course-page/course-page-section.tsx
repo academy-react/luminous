@@ -12,7 +12,6 @@ export const CoursePageSection = ({ lang }: { lang: Locale }) => {
       <div className="flex w-[75%] flex-col ">
         <CourseContent lang={lang} />
       </div>
-
     </div>
   );
 };
