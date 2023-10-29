@@ -17,7 +17,7 @@ const NotFoundCard = ({ lang }: { lang: Locale }) => {
         </div>
         <Link
           href={`/${lang}`}
-          className="rounded-xl border-2 bg-[#A644C1] px-4 py-1 text-base text-white"
+          className="rounded-xl border-2 border-[#A644C1] bg-[#A644C1] px-4 py-1 text-base text-white transition-colors duration-500 hover:bg-white hover:text-[#A644C1]"
         >
           بازگشت به صفحه اصلی
         </Link>
