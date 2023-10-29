@@ -5,6 +5,8 @@ import {
   Search,
   type LucideIcon,
   type LucideProps,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { type IconBaseProps, type IconType } from "react-icons";
 
@@ -68,4 +70,6 @@ export const Icons = {
   menu: Menu,
   layoutGrid: LayoutGrid,
   layoutList: LayoutList,
+  leftArrow: ChevronLeft,
+  rightArrow: ChevronRight,
 };
