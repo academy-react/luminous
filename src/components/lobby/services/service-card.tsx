@@ -20,4 +20,3 @@ export const ServiceCard = ({ Icon, title, bgColor }: ServiceCardProps) => {
     </Card>
   );
 };
-

@@ -1,17 +1,32 @@
-"use client";
-
-import { sortTitle } from "@/dict/dev/course-list.dict";
-import { courses } from "@/dict/lobby/courses.dict";
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icons } from "@/components/utils/icons";
+import { blogs, blogSortTitle } from "@/dict/dev/blog-list.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { CourseFullCard } from "../course-full-card";
-import { CourseMidCard } from "../course-mid-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Icons } from "../utils/icons";
+import { BlogFullCard } from "./cards/blog-full-card";
+import { BlogMidCard } from "./cards/blog-mid-card";
 
-export const SortBySize = ({ lang }: { lang: Locale }) => {
+export const BlogContent = ({ lang }: { lang: Locale }) => {
+  //start maps.......
+  const sortGrid = blogs.map((item) => {
+    return <BlogMidCard key={item.id} item={item} lang={lang} />;
+  });
+  const sortList = blogs.map((item) => {
+    return <BlogFullCard key={item.id} item={item} lang={lang} />;
+  });
+  const blogSortTitles = blogSortTitle.map((item) => {
+    return (
+      <TabsTrigger
+        key={item.id}
+        value={item.value[lang]}
+        className=" focus:border-b-2 focus:border-[#555] focus:text-[#555]"
+      >
+        {item.title[lang]}
+      </TabsTrigger>
+    );
+  });
+  //end maps........
   return (
     <Tabs
       defaultValue="grid"
@@ -22,19 +37,11 @@ export const SortBySize = ({ lang }: { lang: Locale }) => {
         <div className="flex justify-between  rounded-xl py-2 shadow">
           {/* sort-by-title */}
           <div>
-            <TabsList>
-              {sortTitle.map((item) => {
-                return (
-                  <TabsTrigger key={item.id} value={item.value[lang]} className=" focus:border-b-2 focus:border-[#555] focus:text-[#555]">
-                    {item.title[lang]}
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
+            <TabsList>{blogSortTitles}</TabsList>
           </div>
           {/* sort-by-size */}
           <div>
-            <TabsList >
+            <TabsList>
               <TabsTrigger value="grid" className="focus:text-[#555]">
                 <Icons.layoutGrid />
               </TabsTrigger>
@@ -47,14 +54,10 @@ export const SortBySize = ({ lang }: { lang: Locale }) => {
         <div>
           {/* tabs-content of sort by size */}
           <TabsContent value="grid" className="grid grid-cols-3 gap-4 ">
-            {courses.map((item) => {
-              return <CourseMidCard key={item.id} item={item} lang={lang} />;
-            })}
+            {sortGrid}
           </TabsContent>
           <TabsContent value="list" className="mt-0 flex flex-col gap-4">
-            {courses.map((item) => {
-              return <CourseFullCard key={item.id} item={item} lang={lang} />;
-            })}
+            {sortList}
           </TabsContent>
           {/*  tabs-content of sort by title */}
         </div>

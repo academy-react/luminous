@@ -55,7 +55,7 @@ export const signInForm: SignInFormProps = {
     en: "Remember me",
   },
   forgot: {
-    fa: "رمز عبور خود را فراموش کرده‌اید؟",
+    fa: "فراموشی رمز عبور",
     en: "Forgot password?",
   },
   question: {

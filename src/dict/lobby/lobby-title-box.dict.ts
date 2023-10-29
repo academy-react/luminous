@@ -53,7 +53,7 @@ export const teachersTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const blogTitleBox: LobbyTitleBoxDict = {
+export const newsTitleBox: LobbyTitleBoxDict = {
   title: {
     fa: "اخبار و مقالات",
     en: "News and Articles",
