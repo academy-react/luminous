@@ -9,10 +9,9 @@ import {
 import { ListSearch } from "@/components/list-page/side-bar-items/list-search";
 
 import { type Locale } from "#/i18n.config";
-import { ListCategory } from "@/components/list-page/side-bar-items/list-category";
-import { ListTeacher } from "@/components/list-page/side-bar-items/list-teacher";
 import { courseSortOptions } from "@/dict/list/list-options.dict";
 import { courseCategory } from "@/dict/list/list-category.dict";
+import { ListCategory, ListCommingSoon, ListFree, ListTeacher } from "@/components/list-page/side-bar-items";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
@@ -20,9 +19,11 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <ListPage className="">
         <ListTitle />
         <ListSideBar className="">
-          <ListSearch />
+          <ListSearch lang={lang}/>
           <ListCategory category={courseCategory} lang={lang} />
-          <ListTeacher/>
+          <ListFree lang={lang}/>
+          <ListCommingSoon lang={lang}/>
+          <ListTeacher lang={lang}/>
         </ListSideBar>
         <ListContent
           sortOptions={courseSortOptions}
