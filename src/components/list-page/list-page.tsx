@@ -52,10 +52,11 @@ type ListContentProps = {
   lang: Locale;
   FullCard: typeof CourseFullCard | typeof BlogFullCard;
 };
+export type switchedListStates= "grid" | "list";
 
 const ListContent = ({ className, sortOptions, lang, FullCard }: ListContentProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
-
+  const [switchedList, setSwitchedList] = useState<switchedListStates>("grid");
   return (
     <div className={cn("flex w-[80%] flex-col gap-3", className)}>
       <ContentBar
@@ -63,8 +64,10 @@ const ListContent = ({ className, sortOptions, lang, FullCard }: ListContentProp
         lang={lang}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
+        switchedList={switchedList}
+        setSwitchedList={setSwitchedList}
       />
-      <ContentBody lang={lang} selectedOption={selectedOption} FullCard={FullCard} />
+      <ContentBody lang={lang} selectedOption={selectedOption} FullCard={FullCard} switchedList={switchedList}/>
     </div>
   );
 };
