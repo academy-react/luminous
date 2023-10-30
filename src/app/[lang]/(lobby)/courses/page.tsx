@@ -1,11 +1,35 @@
-import { CoursePageSection } from "@/components/course-page/course-page-section";
+import { courseSortOptions } from "@/dict/list/list-options.dict";
+
+import { CourseFullCard } from "@/components/course-page/cards/course-full-card";
+import {
+  ListContent,
+  ListPage,
+  ListSideBar,
+  ListTitle,
+} from "@/components/list-page/list-page";
+import { ListSearch } from "@/components/list-page/side-bar-items/list-search";
 
 import { type Locale } from "#/i18n.config";
+import { ListCategory } from "@/components/list-page/side-bar-items/list-category";
+import { courseCategory } from "@/dict/dev/course-list.dict";
+import { ListTeacher } from "@/components/list-page/side-bar-items/list-teacher";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="mt-10 flex h-full items-center justify-center px-28">
-      <CoursePageSection lang={lang} />
+      <ListPage className="">
+        <ListTitle />
+        <ListSideBar className="">
+          <ListSearch />
+          <ListCategory category={courseCategory} lang={lang} />
+          <ListTeacher/>
+        </ListSideBar>
+        <ListContent
+          sortOptions={courseSortOptions}
+          lang={lang}
+          // FullCard={CourseFullCard}
+        />
+      </ListPage>
     </main>
   );
 };
