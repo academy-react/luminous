@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Icons } from "../utils/icons";
 
 export const Pagination = () => {
   return (
@@ -9,9 +9,9 @@ export const Pagination = () => {
         <li>
           <Link
             href="#"
-            className="rounded-full border hover:border-purple-primary "
+            className="px-2"
           >
-            <ChevronLeft />
+            <Icons.leftArrow />
           </Link>
         </li>
         <li>
@@ -41,9 +41,9 @@ export const Pagination = () => {
         <li>
           <Link
             href="#"
-            className="rounded-full border hover:border-purple-primary"
+            className="px-2"
           >
-            <ChevronRight />
+            <Icons.rightArrow/>
           </Link>
         </li>
       </ul>
