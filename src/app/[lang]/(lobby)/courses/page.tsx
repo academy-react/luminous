@@ -1,4 +1,3 @@
-import { courseSortOptions } from "@/dict/list/list-options.dict";
 
 import { CourseFullCard } from "@/components/course-page/cards/course-full-card";
 import {
@@ -11,8 +10,9 @@ import { ListSearch } from "@/components/list-page/side-bar-items/list-search";
 
 import { type Locale } from "#/i18n.config";
 import { ListCategory } from "@/components/list-page/side-bar-items/list-category";
-import { courseCategory } from "@/dict/dev/course-list.dict";
 import { ListTeacher } from "@/components/list-page/side-bar-items/list-teacher";
+import { courseSortOptions } from "@/dict/list/list-options.dict";
+import { courseCategory } from "@/dict/list/list-category.dict";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
