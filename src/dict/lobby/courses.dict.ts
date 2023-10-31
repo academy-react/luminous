@@ -80,130 +80,131 @@ export const courses: CoursesProps[] = [
     },
   },
   {
-  id: 5,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 1",
+    id: 5,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 1",
+    },
+    description: {
+      fa: "Node.js یک محیط اجرایی برای اجرای کدهای جاوااسکریپت است که بر پایه موتور V8 گوگل ساخته شده است. این محیط اجرایی می‌تواند در سمت سرور اجرا شود و کدهای جاوااسکریپتی را اجرا کند.",
+      en: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  description: {
-    fa: "Node.js یک محیط اجرایی برای اجرای کدهای جاوااسکریپت است که بر پایه موتور V8 گوگل ساخته شده است. این محیط اجرایی می‌تواند در سمت سرور اجرا شود و کدهای جاوااسکریپتی را اجرا کند.",
-    en: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+  {
+    id: 6,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 2",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
+  {
+    id: 7,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 3",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-},
-{
-  id: 6,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 2",
+  {
+    id: 8,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 4",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
+  {
+    id: 9,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 1",
+    },
+    description: {
+      fa: "Node.js یک محیط اجرایی برای اجرای کدهای جاوااسکریپت است که بر پایه موتور V8 گوگل ساخته شده است. این محیط اجرایی می‌تواند در سمت سرور اجرا شود و کدهای جاوااسکریپتی را اجرا کند.",
+      en: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
+  {
+    id: 10,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 2",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-},
-{
-  id: 7,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 3",
+  {
+    id: 11,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 3",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
+  {
+    id: 12,
+    image: "/images/dev/node-js.jpg",
+    title: {
+      fa: "آموزش Node.js",
+      en: "Node.js: The Complete Course 4",
+    },
+    description: {
+      fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
+      en: "In this course, you will learn Node.js and build advanced web applications with it.",
+    },
+    teacher: {
+      fa: "آرمین اسلامی",
+      en: "Armin Eslami",
+    },
   },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
-{
-  id: 8,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 4",
-  },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
-  },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
-{    id: 9,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 1",
-  },
-  description: {
-    fa: "Node.js یک محیط اجرایی برای اجرای کدهای جاوااسکریپت است که بر پایه موتور V8 گوگل ساخته شده است. این محیط اجرایی می‌تواند در سمت سرور اجرا شود و کدهای جاوااسکریپتی را اجرا کند.",
-    en: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
-  },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
-{
-  id: 10,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 2",
-  },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
-  },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
-{
-  id: 11,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 3",
-  },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
-  },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
-{
-  id: 12,
-  image: "/images/dev/node-js.jpg",
-  title: {
-    fa: "آموزش Node.js",
-    en: "Node.js: The Complete Course 4",
-  },
-  description: {
-    fa: "در این دوره آموزشی با Node.js آشنا می‌شوید و با کمک آن اپلیکیشن‌های وب پیشرفته بسازید.",
-    en: "In this course, you will learn Node.js and build advanced web applications with it.",
-  },
-  teacher: {
-    fa: "آرمین اسلامی",
-    en: "Armin Eslami",
-  },
-},
 ];
