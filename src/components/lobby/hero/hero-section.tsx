@@ -4,6 +4,7 @@ import Image from "next/image";
 import { heroDict } from "@/dict/lobby/hero.dict";
 
 import { type Locale } from "#/i18n.config";
+import Link from "next/link";
 
 export const HeroSection = ({ lang }: { lang: Locale }) => {
   return (
@@ -17,9 +18,9 @@ export const HeroSection = ({ lang }: { lang: Locale }) => {
             {heroDict.description[lang]}
           </p>
           <button className="group relative inline-flex w-fit items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-primary to-accent p-[4px] font-extrabold text-secondary transition-transform duration-300 hover:to-primary hover:text-primary focus:outline-none active:scale-90">
-            <span className="relative rounded-lg px-9 py-2 transition-all duration-300 ease-in group-hover:bg-background">
+            <Link href={`/${lang}/courses`} className="relative rounded-lg px-9 py-2 transition-all duration-300 ease-in group-hover:bg-background">
               {heroDict.button[lang]}
-            </span>
+            </Link>
           </button>
         </div>
         <div className="relative aspect-[1.5/1] h-60 sm:h-80 xl:h-96">
