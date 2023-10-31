@@ -3,15 +3,18 @@
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { SortOptionProps } from "@/dict/list/list-options.dict";
+import { type SortOptionProps } from "@/dict/list/list-options.dict";
 
-import { Locale } from "#/i18n.config";
+import { type Locale } from "#/i18n.config";
 
-import { CourseFullCard } from "../course-page/cards/course-full-card";
-import { CourseMidCard } from "../course-page/cards/course-mid-card";
+import { BlogFullCardProps, type BlogFullCard } from "../blog-page/cards/blog-full-card";
+import { BlogMidCardProps, type BlogMidCard } from "../blog-page/cards/blog-mid-card";
+import { CourseFullCardProps, type CourseFullCard } from "../course-page/cards/course-full-card";
+import { CourseMidCardProps, type CourseMidCard } from "../course-page/cards/course-mid-card";
 import { ContentBar } from "./content/content-bar";
 import { ContentBody } from "./content/content-body";
-import { BlogFullCard } from "../blog-page/cards/blog-full-card";
+import {type CoursesProps } from "@/dict/lobby/courses.dict";
+import { switchedListStates } from "@/dict/list/list-grid-switch.dict";
 
 const ListPage = ({
   children,
@@ -50,11 +53,19 @@ type ListContentProps = {
   className?: string;
   sortOptions: SortOptionProps[];
   lang: Locale;
-  FullCard: typeof CourseFullCard | typeof BlogFullCard;
+  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>
+  MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
+  data: CoursesProps[]; 
 };
-export type switchedListStates= "grid" | "list";
 
-const ListContent = ({ className, sortOptions, lang, FullCard }: ListContentProps) => {
+const ListContent = ({
+  className,
+  sortOptions,
+  lang,
+  FullCard,
+  MidCard,
+  data,
+}: ListContentProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [switchedList, setSwitchedList] = useState<switchedListStates>("grid");
   return (
@@ -67,7 +78,15 @@ const ListContent = ({ className, sortOptions, lang, FullCard }: ListContentProp
         switchedList={switchedList}
         setSwitchedList={setSwitchedList}
       />
-      <ContentBody lang={lang} selectedOption={selectedOption} FullCard={FullCard} switchedList={switchedList}/>
+      <ContentBody
+      className={""}
+        lang={lang}
+        selectedOption={selectedOption}
+        FullCard={FullCard}
+        MidCard={MidCard}
+        switchedList={switchedList}
+        data={data}
+      />
     </div>
   );
 };
