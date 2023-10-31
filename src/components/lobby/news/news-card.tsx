@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -20,8 +21,8 @@ type NewsCardProps = {
 };
 export const NewsCard = ({ lang, title, content: contents }: NewsCardProps) => {
   return (
-    <Card className="container relative w-full max-w-lg border px-4 pt-12">
-      <CardTitle className="absolute -start-4 -top-4 w-fit rounded-xl border bg-white px-7 py-2 text-lg font-semibold shadow">
+    <Card className="container relative w-full max-w-lg border-none bg-card px-4 pt-12">
+      <CardTitle className="absolute -start-4 -top-4 w-fit rounded-xl border bg-card px-7 py-2 text-lg font-semibold shadow">
         {title[lang]}
       </CardTitle>
       <CardContent>
@@ -44,8 +45,8 @@ export const NewsCard = ({ lang, title, content: contents }: NewsCardProps) => {
             </Fragment>
           ))}
         </div>
-        <div className="flex w-full justify-end pb-4">
-          <Button className="rounded-lg border border-purple-primary bg-white px-4 py-3 font-medium shadow transition-colors duration-500 hover:bg-purple-primary hover:text-white">
+        <Link href="#" className="flex w-full justify-end pb-4">
+          <Button className="rounded-lg border-2 border-primary bg-primary px-7 py-3 font-medium text-secondary shadow transition-colors duration-500 hover:bg-card hover:text-primary">
             {
               {
                 en: "More",
@@ -53,7 +54,7 @@ export const NewsCard = ({ lang, title, content: contents }: NewsCardProps) => {
               }[lang]
             }
           </Button>
-        </div>
+        </Link>
       </CardContent>
     </Card>
   );

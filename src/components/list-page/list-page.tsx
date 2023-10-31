@@ -3,18 +3,30 @@
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { type switchedListStates } from "@/dict/list/list-grid-switch.dict";
 import { type SortOptionProps } from "@/dict/list/list-options.dict";
+import { type CoursesProps } from "@/dict/lobby/courses.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { BlogFullCardProps, type BlogFullCard } from "../blog-page/cards/blog-full-card";
-import { BlogMidCardProps, type BlogMidCard } from "../blog-page/cards/blog-mid-card";
-import { CourseFullCardProps, type CourseFullCard } from "../course-page/cards/course-full-card";
-import { CourseMidCardProps, type CourseMidCard } from "../course-page/cards/course-mid-card";
+import {
+  type BlogFullCardProps,
+  type BlogFullCard,
+} from "../blog-page/cards/blog-full-card";
+import {
+  type BlogMidCardProps,
+  type BlogMidCard,
+} from "../blog-page/cards/blog-mid-card";
+import {
+  type CourseFullCardProps,
+  type CourseFullCard,
+} from "../course-page/cards/course-full-card";
+import {
+  type CourseMidCardProps,
+  type CourseMidCard,
+} from "../course-page/cards/course-mid-card";
 import { ContentBar } from "./content/content-bar";
 import { ContentBody } from "./content/content-body";
-import {type CoursesProps } from "@/dict/lobby/courses.dict";
-import { switchedListStates } from "@/dict/list/list-grid-switch.dict";
 
 const ListPage = ({
   children,
@@ -53,9 +65,9 @@ type ListContentProps = {
   className?: string;
   sortOptions: SortOptionProps[];
   lang: Locale;
-  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>
+  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
   MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
-  data: CoursesProps[]; 
+  data: CoursesProps[];
 };
 
 const ListContent = ({
@@ -79,7 +91,7 @@ const ListContent = ({
         setSwitchedList={setSwitchedList}
       />
       <ContentBody
-      className={""}
+        className={""}
         lang={lang}
         selectedOption={selectedOption}
         FullCard={FullCard}

@@ -24,14 +24,16 @@ export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
   return (
     <Card
       className={cn(
-        `rounded-xl border-purple-primary px-4 py-3 shadow-sm shadow-purple-primary sm:px-7 md:px-12`,
+        `rounded-xl border-primary px-4 py-3 text-primary shadow-sm shadow-primary sm:px-7 md:px-12`,
         className
       )}
     >
-      <CardContent className="flex flex-col items-center justify-center gap-1.5 text-purple-primary">
-        <CardTitle className="text-3xl font-black">{title[lang]}</CardTitle>
+      <CardContent className="flex flex-col items-center justify-center gap-1.5">
+        <CardTitle className="text-2xl font-black md:text-3xl">
+          {title[lang]}
+        </CardTitle>
         {desc && (
-          <CardDescription className="text-center text-lg">
+          <CardDescription className="text-center text-xs md:text-sm">
             {desc[lang]}
           </CardDescription>
         )}

@@ -30,9 +30,12 @@ export const ContentBody = ({
   console.log(data);
   return (
     <div className="rounded-xl p-4 shadow ">
-      <div className={cn("grid gap-4", 
-      switchedList === "grid" ?"grid-cols-3 ":"grid-cols-1 "
-      )}>
+      <div
+        className={cn(
+          "grid gap-4",
+          switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
+        )}
+      >
         {data.map((item) => (
           <>
             {switchedList === "grid" ? (

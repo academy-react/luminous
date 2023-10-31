@@ -25,12 +25,22 @@ const config: Config = {
       },
       colors: {
         background: "hsl(var(--background))",
+        text: "hsl(var(--text))",
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        accent: "hsl(var(--accent))",
+        card: "hsl(var(--card))",
         purple: {
           primary: "var(--purple-primary)",
           secondary: "var(--purple-secondary)",
           text: "var(--purple-text)",
           btn: "var(--purple-btn)",
         },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
