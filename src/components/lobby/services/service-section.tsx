@@ -14,7 +14,7 @@ export const ServiceSection = ({ lang }: { lang: Locale }) => {
         title={servicesTitleBox.title}
         desc={servicesTitleBox.subtitle}
       />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid gap-3 xxs:grid-cols-2 md:gap-6">
         {services.map((item) => (
           <ServiceCard
             key={item.id}
