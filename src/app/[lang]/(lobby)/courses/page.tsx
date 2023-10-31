@@ -19,19 +19,20 @@ import {
 import { ListSearch } from "@/components/list-page/side-bar-items/list-search";
 
 import { type Locale } from "#/i18n.config";
+import { Pagination } from "@/components/common/pagination";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <main className="mt-10 h-full w-full">
-      <ListPage >
-        <ListTitle/>
+      <ListPage>
+        <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
           <ListCategory category={courseCategory} lang={lang} />
-          {/* <div className="flex md:flex-col"> */}
-          <ListFree lang={lang} />
-          <ListCommingSoon lang={lang} />
-          {/* </div> */}
+          <div className="flex gap-3 md:flex-col">
+            <ListFree lang={lang} />
+            <ListCommingSoon lang={lang} />
+          </div>
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent

@@ -48,3 +48,35 @@ export const courseCategory: FilterCategoryProps[] = [
     },
   },
 ];
+
+
+export const blogCategory: FilterCategoryProps[] = [
+  {
+    id: "r1",
+    title: {
+      fa: "آموزشی",
+      en: "Educational",
+    },
+  },
+  {
+    id: "r2",
+    title: {
+      fa: "تکنولوژی",
+      en: "Technology",
+    },
+  },
+  {
+    id: "r3",
+    title: {
+      fa: "هوش مصنوعی",
+      en: "Artificial Intelligence",
+    },
+  },
+  {
+    id: "r5",
+    title: {
+      fa: "امنیت",
+      en: "security",
+    },
+  },
+];
