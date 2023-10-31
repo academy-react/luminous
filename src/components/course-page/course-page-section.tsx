@@ -6,10 +6,10 @@ import { CourseSideBar } from "./course-side-bar";
 export const CoursePageSection = ({ lang }: { lang: Locale }) => {
   return (
     <div className="flex h-full w-full gap-3 ">
-      <div className="flex w-[25%] flex-col  ">
+      <div className="flex w-[20%] flex-col  ">
         <CourseSideBar lang={lang} />
       </div>
-      <div className="flex w-[75%] flex-col ">
+      <div className="flex w-[80%] flex-col ">
         <CourseContent lang={lang} />
       </div>
     </div>
