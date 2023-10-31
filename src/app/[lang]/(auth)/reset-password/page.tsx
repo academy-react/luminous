@@ -13,6 +13,7 @@ import { ResetPasswordLady } from "@/components/artworks/auth/reset-pass-lady.ar
 import { ResetPasswordForm } from "@/components/forms/reset-password-form";
 
 import { type Locale } from "#/i18n.config";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 
 const ResetPasswordPage = ({
   params: { lang },
@@ -20,7 +21,7 @@ const ResetPasswordPage = ({
   params: { lang: Locale };
 }) => {
   return (
-    <main className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
+    <PageAnimationWrapper className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
@@ -52,7 +53,7 @@ const ResetPasswordPage = ({
           <ResetPasswordLady />
         </div>
       </div>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 

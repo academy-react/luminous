@@ -4,6 +4,7 @@ import { courses } from "@/dict/lobby/courses.dict";
 
 import { CourseFullCard } from "@/components/course-page/cards/course-full-card";
 import { CourseMidCard } from "@/components/course-page/cards/course-mid-card";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 import {
   ListContent,
   ListPage,
@@ -22,7 +23,7 @@ import { type Locale } from "#/i18n.config";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="mt-10 flex h-full items-center justify-center px-28">
+    <PageAnimationWrapper className="mt-10 flex h-full items-center justify-center px-28">
       <ListPage className="">
         <ListTitle />
         <ListSideBar className="">
@@ -40,7 +41,7 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           data={courses}
         />
       </ListPage>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 

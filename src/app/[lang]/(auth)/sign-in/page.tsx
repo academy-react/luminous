@@ -12,13 +12,14 @@ import {
 import { LoginLady } from "@/components/artworks/auth/sign-in-lady.artwork";
 import { LoginMobile } from "@/components/artworks/auth/sign-in-mobile.artwork";
 import { SignInForm } from "@/components/forms/sign-in-form";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 import { Icons } from "@/components/utils/icons";
 
 import { type Locale } from "#/i18n.config";
 
 const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
+    <PageAnimationWrapper className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
@@ -59,7 +60,7 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           <LoginLady />
         </div>
       </div>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 
