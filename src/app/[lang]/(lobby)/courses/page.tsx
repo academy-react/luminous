@@ -1,17 +1,24 @@
+import { courseCategory } from "@/dict/list/list-category.dict";
+import { courseSortOptions } from "@/dict/list/list-options.dict";
 
 import { CourseFullCard } from "@/components/course-page/cards/course-full-card";
+import { CourseMidCard } from "@/components/course-page/cards/course-mid-card";
 import {
   ListContent,
   ListPage,
   ListSideBar,
   ListTitle,
 } from "@/components/list-page/list-page";
+import {
+  ListCategory,
+  ListCommingSoon,
+  ListFree,
+  ListTeacher,
+} from "@/components/list-page/side-bar-items";
 import { ListSearch } from "@/components/list-page/side-bar-items/list-search";
 
 import { type Locale } from "#/i18n.config";
-import { courseSortOptions } from "@/dict/list/list-options.dict";
-import { courseCategory } from "@/dict/list/list-category.dict";
-import { ListCategory, ListCommingSoon, ListFree, ListTeacher } from "@/components/list-page/side-bar-items";
+import { courses } from "@/dict/lobby/courses.dict";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
@@ -19,16 +26,18 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <ListPage className="">
         <ListTitle />
         <ListSideBar className="">
-          <ListSearch lang={lang}/>
+          <ListSearch lang={lang} />
           <ListCategory category={courseCategory} lang={lang} />
-          <ListFree lang={lang}/>
-          <ListCommingSoon lang={lang}/>
-          <ListTeacher lang={lang}/>
+          <ListFree lang={lang} />
+          <ListCommingSoon lang={lang} />
+          <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent
           sortOptions={courseSortOptions}
           lang={lang}
-          // FullCard={CourseFullCard}
+          FullCard={CourseFullCard}
+          MidCard={CourseMidCard}
+          data={courses}
         />
       </ListPage>
     </main>
