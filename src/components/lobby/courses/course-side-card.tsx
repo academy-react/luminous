@@ -8,7 +8,7 @@ export const CourseSideCard = () => {
         src="/images/dev/node-js.jpg"
         alt="course-picture"
         fill
-        className="rounded-xl object-contain"
+        className="rounded-lg object-contain md:rounded-xl"
       />
     </Link>
   );

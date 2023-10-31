@@ -18,8 +18,8 @@ export const CourseSection = ({ lang }: { lang: Locale }) => {
         title={coursesTitleBox.title}
         desc={coursesTitleBox.subtitle}
       />
-      <div className="container flex w-full max-w-screen-lg gap-4">
-        <div className="w-[70%]">
+      <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row">
+        <div className="h-full grow md:w-[70%]">
           {courses[0] && (
             <CourseCard
               lang={lang}
@@ -29,19 +29,29 @@ export const CourseSection = ({ lang }: { lang: Locale }) => {
             />
           )}
         </div>
-        <div className="w-[30%] rounded-xl bg-card shadow">
-          <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
+        <div className="grow rounded-xl bg-card shadow">
+          <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
             <CourseSideCard />
             <CourseSideCard />
             <CourseSideCard />
             <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
               <Link href="#" className="">
-                {
+                <p className="hidden md:block">
                   {
-                    fa: "دوره‌های بیشتر",
-                    en: "More Courses",
-                  }[lang]
-                }
+                    {
+                      fa: "دوره‌های بیشتر",
+                      en: "More Courses",
+                    }[lang]
+                  }
+                </p>
+                <p className="md:hidden">
+                  {
+                    {
+                      fa: "بیشتر",
+                      en: "More",
+                    }[lang]
+                  }
+                </p>
               </Link>
             </Button>
           </div>
