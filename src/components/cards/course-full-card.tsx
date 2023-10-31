@@ -19,7 +19,7 @@ export const CourseFullCard = ({
   lang,
 }: CourseFullCardProps) => {
   return (
-    <div className="flex h-[170px] w-full gap-3 rounded-xl px-4 py-3 shadow">
+    <div className="flex h-[170px] w-full gap-3 rounded-xl bg-card px-4 py-3  shadow">
       <Link href="#" className="relative aspect-[2/1] basis-1/3 ">
         <Image src={image} alt="" fill className="rounded-xl object-cover" />
       </Link>

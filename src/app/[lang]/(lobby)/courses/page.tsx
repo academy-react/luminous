@@ -2,8 +2,8 @@ import { courseCategory } from "@/dict/list/list-category.dict";
 import { courseSortOptions } from "@/dict/list/list-options.dict";
 import { courses } from "@/dict/lobby/courses.dict";
 
-import { CourseFullCard } from "@/components/course-page/cards/course-full-card";
-import { CourseMidCard } from "@/components/course-page/cards/course-mid-card";
+import { CourseFullCard } from "@/components/cards/course-full-card";
+import { CourseMidCard } from "@/components/cards/course-mid-card";
 import {
   ListContent,
   ListPage,
@@ -22,14 +22,16 @@ import { type Locale } from "#/i18n.config";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="mt-10 flex h-full items-center justify-center px-28">
-      <ListPage className="">
-        <ListTitle />
-        <ListSideBar className="">
+    <main className="mt-10 h-full w-full">
+      <ListPage >
+        <ListTitle/>
+        <ListSideBar>
           <ListSearch lang={lang} />
           <ListCategory category={courseCategory} lang={lang} />
+          {/* <div className="flex md:flex-col"> */}
           <ListFree lang={lang} />
           <ListCommingSoon lang={lang} />
+          {/* </div> */}
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent

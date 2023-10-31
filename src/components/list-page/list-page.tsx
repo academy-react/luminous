@@ -9,22 +9,10 @@ import { type CoursesProps } from "@/dict/lobby/courses.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import {
-  type BlogFullCardProps,
-  type BlogFullCard,
-} from "../blog-page/cards/blog-full-card";
-import {
-  type BlogMidCardProps,
-  type BlogMidCard,
-} from "../blog-page/cards/blog-mid-card";
-import {
-  type CourseFullCardProps,
-  type CourseFullCard,
-} from "../course-page/cards/course-full-card";
-import {
-  type CourseMidCardProps,
-  type CourseMidCard,
-} from "../course-page/cards/course-mid-card";
+import { type BlogFullCardProps } from "../blog-page/cards/blog-full-card";
+import { type BlogMidCardProps } from "../blog-page/cards/blog-mid-card";
+import { type CourseFullCardProps } from "../cards/course-full-card";
+import { type CourseMidCardProps } from "../cards/course-mid-card";
 import { ContentBar } from "./content/content-bar";
 import { ContentBody } from "./content/content-body";
 
@@ -36,13 +24,23 @@ const ListPage = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex h-full w-full gap-3 ", className)}>{children}</div>
+    <div
+      className={cn(
+        "flex h-full w-full flex-col items-center justify-center gap-3 px-28 md:flex-row md:items-start  ",
+        className
+      )}
+    >
+      {children}
+    </div>
   );
 };
-
 // list-Title
+// type ListTitleProps = {
+//   title:React.ReactNode;
+//    lang: Locale;
+// }
 const ListTitle = () => {
-  return <></>;
+  return <h1></h1>;
 };
 
 // list-sidebar
@@ -54,7 +52,7 @@ const ListSideBar = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex w-[20%] flex-col  gap-3 ", className)}>
+    <div className={cn("flex w-full flex-col gap-3 md:w-[20%] ", className)}>
       {children}
     </div>
   );
@@ -81,7 +79,7 @@ const ListContent = ({
   const [selectedOption, setSelectedOption] = useState(0);
   const [switchedList, setSwitchedList] = useState<switchedListStates>("grid");
   return (
-    <div className={cn("flex w-[80%] flex-col gap-3", className)}>
+    <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       <ContentBar
         sortOptions={sortOptions}
         lang={lang}
@@ -91,7 +89,6 @@ const ListContent = ({
         setSwitchedList={setSwitchedList}
       />
       <ContentBody
-        className={""}
         lang={lang}
         selectedOption={selectedOption}
         FullCard={FullCard}
