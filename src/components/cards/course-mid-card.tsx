@@ -28,7 +28,7 @@ export const CourseMidCard = ({
           <ul className="flex flex-col justify-start">
             <li>{teacher[lang]}</li>
             <li>*****</li>
-            <li className="rounded-xl border-2 border-[#58AD57]  px-2  text-[#58AD57] ">
+            <li className="rounded-xl border-2 px-2  text-[#58AD57] ">
               8500000تومان
             </li>
           </ul>
