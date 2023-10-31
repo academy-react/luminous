@@ -1,12 +1,12 @@
 import {
+  ChevronLeft,
+  ChevronRight,
   LayoutGrid,
   LayoutList,
   Menu,
   Search,
   type LucideIcon,
   type LucideProps,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 import { type IconBaseProps, type IconType } from "react-icons";
 

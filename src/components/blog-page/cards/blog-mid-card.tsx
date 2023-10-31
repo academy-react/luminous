@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
 
-type BlogMidCardProps = {
+export type BlogMidCardProps = {
   item: {
     image: string;
     title: { [key in Locale]: string };

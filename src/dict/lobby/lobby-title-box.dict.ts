@@ -48,8 +48,8 @@ export const teachersTitleBox: LobbyTitleBoxDict = {
     en: "Top teachers",
   },
   subtitle: {
-    fa: "استاتید مهربان و دوست‌داشتنی ما",
-    en: "Our kind and friendly Teachers",
+    fa: "اساتید مهربان و دوست‌داشتنی ما",
+    en: "Our Kind and Friendly Teachers",
   },
 };
 

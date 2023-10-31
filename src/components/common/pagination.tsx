@@ -7,10 +7,7 @@ export const Pagination = () => {
     <nav>
       <ul className="flex flex-row-reverse items-center gap-1">
         <li>
-          <Link
-            href="#"
-            className="px-2"
-          >
+          <Link href="#" className="px-2">
             <Icons.leftArrow />
           </Link>
         </li>
@@ -39,11 +36,8 @@ export const Pagination = () => {
           </Link>
         </li>
         <li>
-          <Link
-            href="#"
-            className="px-2"
-          >
-            <Icons.rightArrow/>
+          <Link href="#" className="px-2">
+            <Icons.rightArrow />
           </Link>
         </li>
       </ul>

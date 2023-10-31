@@ -4,20 +4,37 @@
 
 @layer base {
   :root {
-    --background: 0, 0%, 100%;
+    --background: 220, 14%, 96%;
+    --text: 240 90% 4%;
+
+    --primary: 270, 88%, 35%;
+    --secondary: 270 33% 87%;
+    --accent: 313, 94%, 33%;
+
+    --card: 0, 0%, 100%;
 
     --purple-primary: #5a0ba9;
     --purple-secondary: #c003b2;
     --purple-text: #5a0ba9;
     --purple-btn: #e4d7f1;
 
-    --border: 0, 0%, 85%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240, 18%, 13%;
+    --text: 240 90% 96%;
+
+    --card: 237, 21%, 20%;
+
+    --primary: 270 91% 74%;
+    --secondary: 271, 36%, 17%;
+    --accent: 313, 94%, 67%;
   }
 }
 
 @layer base {
   body {
-    /* @apply bg-background; */
+    @apply bg-background text-text;
   }
 }
 

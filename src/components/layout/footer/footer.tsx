@@ -12,7 +12,7 @@ import { type Locale } from "#/i18n.config";
 
 export const Footer = ({ lang }: { lang: Locale }) => {
   return (
-    <div className="mt-28">
+    <div className="my-10">
       {/* footer background */}
       <div className="relative aspect-[7/1] w-full">
         <Image
@@ -27,12 +27,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         {/* Info Area */}
         <div className="flex items-start justify-center gap-6">
           {/* Nav Bar */}
-          <ul
-            className={cn(
-              "flex flex-col gap-1.5 font-bold",
-              lang === "en" ? "" : "text-xl md:text-lg"
-            )}
-          >
+          <ul className="flex flex-col gap-1.5 text-xl font-bold md:text-lg">
             {footerMenuOptions.map((item) => (
               <li key={item.id}>
                 <Link href={item.href} className="hover:text-gray-100">
@@ -69,13 +64,13 @@ export const Footer = ({ lang }: { lang: Locale }) => {
               <Link
                 key={item.id}
                 href={item.href}
-                className="text-5xl text-purple-primary lg:text-3xl"
+                className="text-xl text-primary transition-colors duration-500 hover:text-accent xs:text-3xl lg:text-5xl"
               >
                 <item.icon />
               </Link>
             ))}
           </div>
-          <p className="w-fit text-xl font-bold text-purple-primary lg:text-lg">
+          <p className="w-fit font-bold text-primary lg:text-lg">
             {
               {
                 fa: "ما را در شبکه‌های اجتماعی دنبال کنید",
