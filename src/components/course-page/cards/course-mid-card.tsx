@@ -1,9 +1,11 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
 
-type CourseMidCardProps = {
+export type CourseMidCardProps = {
   item: {
     image: string;
     title: { [key in Locale]: string };
