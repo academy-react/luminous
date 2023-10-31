@@ -24,13 +24,22 @@ const config: Config = {
         multi: ["var(--font-iran-sans)", "var(--font-roboto)"],
       },
       colors: {
+        text: "hsl(var(--text))",
         background: "hsl(var(--background))",
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        accent: "hsl(var(--accent))",
         purple: {
           primary: "var(--purple-primary)",
           secondary: "var(--purple-secondary)",
           text: "var(--purple-text)",
           btn: "var(--purple-btn)",
         },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },

@@ -4,20 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0, 0%, 100%;
+    --background: 0 7% 94%;
+    --text: 240 90% 4%;
+
+    --primary: 270 91% 26%;
+    --secondary: 270 33% 87%;
+    --accent: 313, 94%, 33%;
 
     --purple-primary: #5a0ba9;
     --purple-secondary: #c003b2;
     --purple-text: #5a0ba9;
     --purple-btn: #e4d7f1;
 
-    --border: 0, 0%, 85%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 7% 6%;
+    --text: 240 90% 96%;
+
+    --primary: 270 91% 74%;
+    --secondary: 271, 36%, 17%;
+    --accent: 312, 50%, 86%;
   }
 }
 
 @layer base {
   body {
-    /* @apply bg-background; */
+    @apply text-text bg-background;
   }
 }
 
