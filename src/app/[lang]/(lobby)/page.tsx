@@ -1,3 +1,4 @@
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 import { CategoriesSection } from "@/components/lobby/categories/category-section";
 import { CourseSection } from "@/components/lobby/courses/course-section";
 import { HeroSection } from "@/components/lobby/hero/hero-section";
@@ -10,7 +11,7 @@ import { type Locale } from "#/i18n.config";
 
 const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="flex w-full flex-col items-center justify-center gap-10">
+    <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
       <CourseSection lang={lang} />
@@ -18,7 +19,7 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <TeachersSection lang={lang} />
       <NewsSection lang={lang} />
       <ThemeSwitcher lang={lang} />
-    </main>
+    </PageAnimationWrapper>
   );
 };
 

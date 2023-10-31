@@ -4,6 +4,7 @@ import { courses } from "@/dict/lobby/courses.dict";
 
 import { CourseFullCard } from "@/components/cards/course-full-card";
 import { CourseMidCard } from "@/components/cards/course-mid-card";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 import {
   ListContent,
   ListPage,
@@ -23,7 +24,7 @@ import { Pagination } from "@/components/common/pagination";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="mt-10 h-full w-full">
+    <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
         <ListTitle />
         <ListSideBar>
@@ -43,7 +44,7 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           data={courses}
         />
       </ListPage>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 

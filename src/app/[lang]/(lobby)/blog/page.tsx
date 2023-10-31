@@ -2,6 +2,9 @@ import { blogs } from "@/dict/dev/blog-list.dict";
 import { blogCategory } from "@/dict/list/list-category.dict";
 import { blogSortOptions } from "@/dict/list/list-options.dict";
 
+import { BlogFullCard } from "@/components/cards/blog-full-card";
+import { BlogMidCard } from "@/components/cards/blog-mid-card";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 import {
   ListContent,
   ListPage,
@@ -17,12 +20,10 @@ import {
 } from "@/components/list-page/side-bar-items";
 
 import { type Locale } from "#/i18n.config";
-import { BlogFullCard } from "@/components/cards/blog-full-card";
-import { BlogMidCard } from "@/components/cards/blog-mid-card";
 
 const BlogPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="mt-10 h-full w-full">
+    <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
         <ListTitle />
         <ListSideBar>
@@ -42,7 +43,7 @@ const BlogPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           data={blogs}
         />
       </ListPage>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 
