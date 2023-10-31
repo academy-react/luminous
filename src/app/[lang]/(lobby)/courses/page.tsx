@@ -22,14 +22,16 @@ import { type Locale } from "#/i18n.config";
 
 const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="mt-10 flex h-full items-center justify-center px-28">
-      <ListPage className="">
-        <ListTitle />
-        <ListSideBar className="">
+    <main className="mt-10 h-full w-full">
+      <ListPage >
+        <ListTitle/>
+        <ListSideBar>
           <ListSearch lang={lang} />
           <ListCategory category={courseCategory} lang={lang} />
+          {/* <div className="flex md:flex-col"> */}
           <ListFree lang={lang} />
           <ListCommingSoon lang={lang} />
+          {/* </div> */}
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent

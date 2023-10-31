@@ -24,13 +24,23 @@ const ListPage = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex h-full w-full gap-3 ", className)}>{children}</div>
+    <div
+      className={cn(
+        "flex h-full w-full flex-col items-center justify-center gap-3 px-28 md:flex-row md:items-start ",
+        className
+      )}
+    >
+      {children}
+    </div>
   );
 };
-
 // list-Title
+// type ListTitleProps = {
+//   title:React.ReactNode;
+//    lang: Locale;
+// }
 const ListTitle = () => {
-  return <></>;
+  return <h1></h1>;
 };
 
 // list-sidebar
@@ -42,7 +52,7 @@ const ListSideBar = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex w-[20%] flex-col  gap-3 ", className)}>
+    <div className={cn("flex w-full flex-col gap-3 md:w-[20%]", className)}>
       {children}
     </div>
   );
@@ -69,7 +79,7 @@ const ListContent = ({
   const [selectedOption, setSelectedOption] = useState(0);
   const [switchedList, setSwitchedList] = useState<switchedListStates>("grid");
   return (
-    <div className={cn("flex w-[80%] flex-col gap-3", className)}>
+    <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       <ContentBar
         sortOptions={sortOptions}
         lang={lang}

@@ -5,7 +5,7 @@ import { type Locale } from "#/i18n.config";
 
 export const ListCommingSoon = ({ lang }: { lang: Locale }) => {
   return (
-    <div className="flex w-full justify-between rounded-xl p-4 shadow">
+    <div className="flex justify-between rounded-xl p-4 shadow w-full">
       <Label htmlFor="list-free">
         {lang === "fa" ? "درحال پیش فروش" : "Pre-sale"}
       </Label>

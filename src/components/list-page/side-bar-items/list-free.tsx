@@ -5,7 +5,7 @@ import { type Locale } from "#/i18n.config";
 
 export const ListFree = ({ lang }: { lang: Locale }) => {
   return (
-    <div className="flex w-full items-center justify-between rounded-xl p-4 shadow">
+    <div className="flex w-1/2 items-center justify-between rounded-xl p-4 shadow md:w-full">
       <Label htmlFor="list-free">
         {lang === "fa" ? "فقط دوره های رایگان" : "Just free courses"}
       </Label>

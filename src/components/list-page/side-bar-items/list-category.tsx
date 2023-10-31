@@ -13,7 +13,7 @@ type ListCategoryProps = {
 };
 export const ListCategory = ({ lang, category }: ListCategoryProps) => {
   return (
-    <CheckboxGroup className="flex w-full flex-col justify-start gap-4 rounded-xl p-4 text-base font-bold text-[#333] shadow">
+    <div className="flex w-full flex-col justify-start gap-4 rounded-xl p-4 text-base font-bold text-[#333] shadow">
       دسته بندی دوره ها
       {category.map((item) => (
         <Checkboxbtn
@@ -23,6 +23,6 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
           className="flex flex-row  font-[#666] text-sm"
            />
       ))}
-    </CheckboxGroup>
+    </div>
   );
 };
