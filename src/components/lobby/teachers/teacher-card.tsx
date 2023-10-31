@@ -34,7 +34,7 @@ export const TeacherFullCard = ({
 }: TeacherCardProps) => {
   return (
     <div className="px-10">
-      <Card className="relative flex max-w-sm flex-col items-center gap-4 p-4 text-center shadow md:flex-row">
+      <Card className="relative flex max-w-sm flex-col items-center gap-4 border-none bg-card p-4 text-center shadow md:flex-row">
         <div className="md:absolute md:start-0 md:top-1/2 md:-translate-y-1/2 md:ltr:-translate-x-1/2 md:rtl:translate-x-1/2">
           <div className="relative aspect-square h-24">
             <Image
@@ -64,7 +64,7 @@ export const TeacherMiniCard = ({
   position,
 }: TeacherCardProps) => {
   return (
-    <Card className="relative flex cursor-pointer p-4 shadow">
+    <Card className="relative flex cursor-pointer border-none bg-card p-4 shadow">
       <div className="absolute -top-2 start-3">
         <div className="relative aspect-square h-16">
           <Image

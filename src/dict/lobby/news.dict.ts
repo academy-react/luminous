@@ -19,28 +19,28 @@ export const newsDict: NewsDictProps = {
   },
   content: [
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است. آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است. آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
@@ -56,28 +56,28 @@ export const articlesDict: NewsDictProps = {
   },
   content: [
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",
       },
     },
     {
-      image: "/images/dev/node-js.jpg",
+      image: "/images/dev/node-dark-green.jpg",
       text: {
         fa: "آموزشگاه در تدارک دوره‌های جدید برنامه‌نویسی است",
         en: "The school is preparing new programming courses",

@@ -10,7 +10,7 @@ export interface CategoryDictProps {
   color: string;
 }
 
-export const CategoriesDict: CategoryDictProps[] = [
+export const categoriesDict: CategoryDictProps[] = [
   {
     title: {
       fa: "وب",
@@ -41,7 +41,7 @@ export const CategoriesDict: CategoryDictProps[] = [
       en: "Data Analyses",
     },
     Icon: Icons.search,
-    color: "text-zinc-500 border-zinc-500",
+    color: "text-cyan-500 border-cyan-500",
   },
   {
     title: {
@@ -53,24 +53,24 @@ export const CategoriesDict: CategoryDictProps[] = [
   },
   {
     title: {
-      en: "General",
-      fa: "کلید",
+      fa: "برنامه‌نویسی فرانت",
+      en: "Frontend",
     },
     Icon: Icons.search,
     color: "text-purple-500 border-purple-500",
   },
   {
     title: {
-      en: "General",
-      fa: "کلید",
+      en: "Backend",
+      fa: "برنامه‌نویسی بکند",
     },
     Icon: Icons.search,
-    color: "text-slate-500 border-slate-500",
+    color: "text-slate-300 border-slate-300",
   },
   {
     title: {
-      en: "General",
-      fa: "کلید",
+      fa: "برنامه‌نویسی موبایل",
+      en: "Mobile Development",
     },
     Icon: Icons.search,
     color: "text-emerald-500 border-emerald-500",
