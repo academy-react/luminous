@@ -48,7 +48,7 @@ const ResetPasswordPage = ({
         </CardFooter>
       </Card>
       <div className="relative -z-10 hidden h-full w-[40vw] flex-row md:flex">
-        <div className="absolute end-0 top-1/2 translate-y-[-50%]">
+        <div className="absolute end-0 top-1/2 translate-y-[-50%] scale-x-[-1] transform">
           <ResetPasswordLady />
         </div>
       </div>
