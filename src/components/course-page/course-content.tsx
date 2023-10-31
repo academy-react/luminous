@@ -1,3 +1,4 @@
+import { courseSortOptions } from "@/dict/list/list-options.dict";
 import { courses } from "@/dict/lobby/courses.dict";
 
 import { type Locale } from "#/i18n.config";
@@ -7,7 +8,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Icons } from "../utils/icons";
 import { CourseFullCard } from "./cards/course-full-card";
 import { CourseMidCard } from "./cards/course-mid-card";
-import { courseSortOptions } from "@/dict/list/list-options.dict";
 
 export const CourseContent = ({ lang }: { lang: Locale }) => {
   //start maps.......

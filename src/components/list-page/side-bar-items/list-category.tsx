@@ -1,11 +1,11 @@
 "use client";
 
+import { type FilterCategoryProps } from "@/dict/list/list-category.dict";
 
 import { CheckboxGroup } from "@/components/ui/checkbox";
 import { Checkboxbtn } from "@/components/common/checkbox-btn";
 
 import { type Locale } from "#/i18n.config";
-import {type FilterCategoryProps } from "@/dict/list/list-category.dict";
 
 type ListCategoryProps = {
   lang: Locale;
@@ -21,7 +21,7 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
           id={item.id}
           title={item.title[lang]}
           className="flex flex-row  font-[#666] text-sm"
-           />
+        />
       ))}
     </CheckboxGroup>
   );
