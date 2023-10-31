@@ -23,7 +23,7 @@ export const CategoryCard = ({
   return (
     <Card
       className={cn(
-        "flex items-center justify-center px-7 py-4 sm:px-10 md:h-32 md:w-48",
+        "flex items-center justify-center bg-card px-7 py-4 sm:px-10 md:h-32 md:w-48",
         color
       )}
     >

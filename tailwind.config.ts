@@ -24,11 +24,12 @@ const config: Config = {
         multi: ["var(--font-iran-sans)", "var(--font-roboto)"],
       },
       colors: {
-        text: "hsl(var(--text))",
         background: "hsl(var(--background))",
+        text: "hsl(var(--text))",
         primary: "hsl(var(--primary))",
         secondary: "hsl(var(--secondary))",
         accent: "hsl(var(--accent))",
+        card: "hsl(var(--card))",
         purple: {
           primary: "var(--purple-primary)",
           secondary: "var(--purple-secondary)",

@@ -69,13 +69,13 @@ export const Footer = ({ lang }: { lang: Locale }) => {
               <Link
                 key={item.id}
                 href={item.href}
-                className="text-5xl text-purple-primary lg:text-3xl"
+                className="text-5xl text-primary transition-colors duration-500 hover:text-accent lg:text-3xl"
               >
                 <item.icon />
               </Link>
             ))}
           </div>
-          <p className="w-fit text-xl font-bold text-purple-primary lg:text-lg">
+          <p className="w-fit text-xl font-bold text-primary lg:text-lg">
             {
               {
                 fa: "ما را در شبکه‌های اجتماعی دنبال کنید",

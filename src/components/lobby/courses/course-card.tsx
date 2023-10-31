@@ -15,7 +15,7 @@ type CourseCardProps = {
 
 export const CourseCard = ({ lang, title, desc, teacher }: CourseCardProps) => {
   return (
-    <Card className="h-full w-full rounded-xl border p-4 shadow">
+    <Card className="h-full w-full rounded-xl border-none bg-card p-4 shadow">
       <CardContent className="flex h-full w-full flex-col justify-between">
         <Link href="#" className="relative aspect-video w-full">
           <Image
@@ -26,14 +26,16 @@ export const CourseCard = ({ lang, title, desc, teacher }: CourseCardProps) => {
           />
         </Link>
         <div className="flex w-full items-center justify-between">
-          <CardTitle className="text-2xl font-bold">{title[lang]}</CardTitle>
-          <h4 className="text-lg text-gray-600">{teacher[lang]}</h4>
+          <CardTitle className="text-2xl font-extrabold">
+            {title[lang]}
+          </CardTitle>
+          <h4 className="text-lg text-text/60">{teacher[lang]}</h4>
         </div>
         <div className="flex w-full items-end justify-between">
-          <p className="line-clamp-2 pe-5 text-base text-gray-600">
+          <p className="line-clamp-2 pe-5 text-base text-text/60">
             {desc[lang]}
           </p>
-          <Button className="w-full max-w-fit rounded-lg border-2 border-purple-primary p-3 text-purple-primary duration-300 hover:bg-purple-primary hover:text-white">
+          <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-500 hover:bg-card hover:text-primary">
             <Link href="#" className="">
               {
                 {

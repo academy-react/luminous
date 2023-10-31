@@ -29,12 +29,12 @@ export const CourseSection = ({ lang }: { lang: Locale }) => {
             />
           )}
         </div>
-        <div className="w-[30%] rounded-xl border shadow">
+        <div className="w-[30%] rounded-xl bg-card shadow">
           <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
             <CourseSideCard />
             <CourseSideCard />
             <CourseSideCard />
-            <Button className="w-full max-w-fit rounded-lg border-2 border-purple-primary p-3 text-purple-primary duration-300 hover:bg-purple-primary hover:text-white">
+            <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
               <Link href="#" className="">
                 {
                   {

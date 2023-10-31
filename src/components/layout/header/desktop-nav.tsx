@@ -14,7 +14,7 @@ const mainNavTextVariants = cva(
   {
     variants: {
       textColorVariant: {
-        default: "text-purple-text hover:text-purple-secondary",
+        default: "text-primary hover:text-accent",
         auth: "text-white hover:text-black",
       },
     },
@@ -27,8 +27,8 @@ const mainNavTextVariants = cva(
 const mainNavIconVariants = cva("h-10 w-10", {
   variants: {
     iconColorVariant: {
-      default: "fill-purple-primary hover:fill-purple-secondary",
-      auth: "fill-white hover:fill-black ",
+      default: "fill-primary hover:fill-accent",
+      auth: "fill-white hover:fill-black",
     },
   },
   defaultVariants: {
@@ -84,24 +84,43 @@ export const AuthNav = ({ lang }: { lang: Locale }) => {
   return (
     <nav className="flex flex-1 items-center justify-end">
       <div className="hidden items-center gap-2 md:flex">
-        <div className="flex aspect-square h-full cursor-pointer items-center justify-center rounded-xl border-[3px] border-purple-btn bg-purple-btn p-1.5 text-purple-text transition duration-500 hover:bg-white">
+        <div className="flex aspect-square h-full cursor-pointer items-center justify-center rounded-xl border-[3px] border-primary bg-primary p-1.5 text-secondary transition duration-500 hover:bg-transparent hover:text-primary">
           <Icons.search />
         </div>
         <div className="flex h-full gap-2 font-semibold">
-          <Link
-            href={`/${lang}/sign-up`}
-            className="flex h-full items-center justify-center rounded-xl border-[3px] border-purple-btn bg-purple-btn px-7 py-1.5 text-center text-purple-text transition duration-500 hover:bg-white"
-          >
-            {{ fa: "ثبت‌نام", en: "Sign Up" }[lang]}
-          </Link>
-          <Link
-            href={`/${lang}/sign-in`}
-            className="flex h-full items-center justify-center rounded-xl border-[3px] border-purple-btn bg-purple-btn px-7 py-1.5 text-center text-purple-text transition duration-500 hover:bg-transparent"
-          >
-            {{ fa: "ورود", en: "Sign In" }[lang]}
-          </Link>
+          <LinkButton
+            lang={lang}
+            text={{ fa: "ثبت نام", en: "Sign Up" }}
+            href="sign-up"
+          />
+          <LinkButton
+            lang={lang}
+            text={{ fa: "ورود", en: "Sign In" }}
+            href="sign-in"
+          />
         </div>
       </div>
     </nav>
+  );
+};
+
+const LinkButton = ({
+  lang,
+  text,
+  href,
+}: {
+  lang: Locale;
+  text: {
+    [key in Locale]: string;
+  };
+  href: string;
+}) => {
+  return (
+    <Link
+      href={`/${lang}/${href}`}
+      className="flex h-full items-center justify-center rounded-xl border-[3px] border-primary bg-primary px-7 py-1.5 text-center text-secondary transition duration-500 hover:bg-transparent hover:text-primary"
+    >
+      {text[lang]}
+    </Link>
   );
 };

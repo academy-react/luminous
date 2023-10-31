@@ -32,7 +32,6 @@ export const TeachersSection = ({ lang }: { lang: Locale }) => {
           fullName={shownTeacher.fullName}
           position={shownTeacher.position}
           description={shownTeacher.description}
-          onClick={() => setShownTeacher(shownTeacher)}
         />
       )}
       <div className="grid gap-4 md:grid-flow-col md:grid-cols-1">
@@ -44,7 +43,6 @@ export const TeachersSection = ({ lang }: { lang: Locale }) => {
             fullName={teacher.fullName}
             position={teacher.position}
             description={teacher.description}
-            onClick={() => setShownTeacher(teacher)}
           />
         ))}
       </div>
