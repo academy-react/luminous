@@ -23,13 +23,13 @@ export const CategoryCard = ({
   return (
     <Card
       className={cn(
-        "flex items-center justify-center bg-card px-7 py-4 sm:px-10 md:h-32 md:w-48",
+        "flex items-center justify-center bg-card px-7 py-4 sm:px-8 lg:h-28 lg:w-48",
         color
       )}
     >
       <CardContent className="flex flex-col items-center justify-center gap-2">
-        <Icon className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16" />
-        <CardTitle className="text-center text-sm font-extrabold sm:text-base md:text-lg">
+        <Icon className="h-10 w-10 lg:h-14 lg:w-14" />
+        <CardTitle className="text-center text-sm font-extrabold">
           {title[lang]}
         </CardTitle>
       </CardContent>
