@@ -79,7 +79,6 @@ const ListContent = ({
         setSwitchedList={setSwitchedList}
       />
       <ContentBody
-        className={""}
         lang={lang}
         selectedOption={selectedOption}
         FullCard={FullCard}
