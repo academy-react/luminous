@@ -5,8 +5,8 @@ import { type CoursesProps } from "@/dict/lobby/courses.dict";
 
 import { type BlogFullCardProps } from "@/components/blog-page/cards/blog-full-card";
 import { type BlogMidCardProps } from "@/components/blog-page/cards/blog-mid-card";
-import { type CourseFullCardProps } from "@/components/course-page/cards/course-full-card";
-import { type CourseMidCardProps } from "@/components/course-page/cards/course-mid-card";
+import { type CourseFullCardProps } from "@/components/cards/course-full-card";
+import { type CourseMidCardProps } from "@/components/cards/course-mid-card";
 
 import { type Locale } from "#/i18n.config";
 
@@ -30,9 +30,12 @@ export const ContentBody = ({
   console.log(data);
   return (
     <div className="rounded-xl p-4 shadow ">
-      <div className={cn("grid gap-4", 
-      switchedList === "grid" ?"grid-cols-3 ":"grid-cols-1 "
-      )}>
+      <div
+        className={cn(
+          "grid gap-4",
+          switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
+        )}
+      >
         {data.map((item) => (
           <>
             {switchedList === "grid" ? (
