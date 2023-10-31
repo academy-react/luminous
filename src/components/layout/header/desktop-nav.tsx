@@ -60,7 +60,7 @@ export const MainNav = ({
         />
       </Link>
       <div className="hidden w-full md:block md:w-auto">
-        <ul className="flex gap-6 lg:gap-10">
+        <ul className="flex gap-4 lg:gap-8">
           {headerMenuOptions.map((item) => (
             <li key={item.id}>
               <Link
@@ -118,7 +118,7 @@ const LinkButton = ({
   return (
     <Link
       href={`/${lang}/${href}`}
-      className="flex h-full items-center justify-center rounded-xl border-[3px] border-primary bg-primary px-7 py-1.5 text-center text-secondary transition duration-500 hover:bg-transparent hover:text-primary"
+      className="flex h-full items-center justify-center rounded-xl border-[3px] border-primary bg-primary px-5 py-1.5 text-center text-secondary transition duration-500 hover:bg-transparent hover:text-primary"
     >
       {text[lang]}
     </Link>
