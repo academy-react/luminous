@@ -1,9 +1,11 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
 
-type CourseMidCardProps = {
+export type CourseMidCardProps = {
   item: {
     image: string;
     title: { [key in Locale]: string };
@@ -21,7 +23,7 @@ export const CourseMidCard = ({
         <Image src={image} alt="" fill className="rounded-xl object-cover" />
       </Link>
       <div className=" flex flex-col gap-4 ">
-        <h2 className="text-xl font-bold ">{title[lang]}</h2>
+        <h2 className="text-xl font-semibold ">{title[lang]}</h2>
         <div className="flex justify-between rounded-xl">
           <ul className="flex flex-col justify-start">
             <li>{teacher[lang]}</li>
