@@ -3,8 +3,8 @@ import { type BlogsProps } from "@/dict/dev/blog-list.dict";
 import { type switchedListStates } from "@/dict/list/list-grid-switch.dict";
 import { type CoursesProps } from "@/dict/lobby/courses.dict";
 
-import { type BlogFullCardProps } from "@/components/blog-page/cards/blog-full-card";
-import { type BlogMidCardProps } from "@/components/blog-page/cards/blog-mid-card";
+import { type BlogFullCardProps } from "@/components/cards/blog-full-card";
+import { type BlogMidCardProps } from "@/components/cards/blog-mid-card";
 import { type CourseFullCardProps } from "@/components/cards/course-full-card";
 import { type CourseMidCardProps } from "@/components/cards/course-mid-card";
 
