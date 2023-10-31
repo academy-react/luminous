@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
+import { gridListSwitcher, switchedListStates } from "@/dict/list/list-grid-switch.dict";
 import { type SortOptionProps } from "@/dict/list/list-options.dict";
 
 import { type Locale } from "#/i18n.config";
-import { gridListSwitcher } from "@/dict/list/list-grid-switch.dict";
-import { switchedListStates } from "../list-page";
+
 
 type ContentBarProps = {
   sortOptions: SortOptionProps[];
@@ -11,6 +11,7 @@ type ContentBarProps = {
   selectedOption: number;
   setSelectedOption: (option: number) => void;
   switchedList: switchedListStates;
+  setSwitchedList: (option: "grid" | "list") => void;
 };
 export const ContentBar = ({
   lang,
@@ -18,6 +19,7 @@ export const ContentBar = ({
   setSelectedOption,
   selectedOption,
   switchedList,
+  setSwitchedList,
 }: ContentBarProps) => {
   return (
     <div className="flex items-center justify-between rounded-xl p-4 shadow">
@@ -35,15 +37,37 @@ export const ContentBar = ({
           </li>
         ))}
       </ul>
-      <ul className="flex items-center gap-4">
-        {gridListSwitcher.map((item)=>(
-          <li key={item.id} className={cn(
-            " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
-            switchedList === "grid" && "text-purple-primary"
-          )}>
 
-            <item.Icon/></li>
-        ))}
+      <ul className="flex items-center gap-4">
+           {gridListSwitcher.map((item) => {
+          return (
+            <li
+              key={item.id}
+              className={cn(
+                " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
+                item.name === switchedList ? "text-purple-primary" : "text-[#555]"
+              )}
+              onClick={() => setSwitchedList(item.name)}
+            >
+              <item.Icon />
+            </li>
+          );
+        })}
+        {/* {gridListSwitcher.map((Icon, id) => {
+          const view = id === 1 ? "grid" : "list";
+          return (
+            <li
+              key={id}
+              className={cn(
+                " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
+                view === switchedList ? "text-purple-primary" : "text-[#555]"
+              )}
+              onClick={() => setSwitchedList(view)}
+            >
+              <Icon.Icon />
+            </li>
+          );
+        })} */}
       </ul>
     </div>
   );
