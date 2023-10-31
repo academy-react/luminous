@@ -18,10 +18,10 @@ export const MobileNav = ({ lang }: { lang: Locale }) => {
   return (
     <Sheet>
       <SheetTrigger>
-        <button className="h-full rounded-lg text-primary transition-all duration-500 hover:text-accent md:hidden">
+        <div className="h-full rounded-lg text-primary transition-all duration-500 hover:text-accent md:hidden">
           <Icons.menu />
           <span className="sr-only">Toggle Menu</span>
-        </button>
+        </div>
       </SheetTrigger>
       <SheetContent
         side={lang === "en" ? "left" : "right"}
