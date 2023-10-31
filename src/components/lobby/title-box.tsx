@@ -29,9 +29,11 @@ export const TitleBox = ({ lang, title, desc, className }: TitleBoxProps) => {
       )}
     >
       <CardContent className="flex flex-col items-center justify-center gap-1.5">
-        <CardTitle className="text-3xl font-black">{title[lang]}</CardTitle>
+        <CardTitle className="text-2xl font-black md:text-3xl">
+          {title[lang]}
+        </CardTitle>
         {desc && (
-          <CardDescription className="text-center text-lg">
+          <CardDescription className="text-center text-xs md:text-sm">
             {desc[lang]}
           </CardDescription>
         )}
