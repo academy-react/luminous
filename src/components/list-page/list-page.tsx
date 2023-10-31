@@ -26,7 +26,7 @@ const ListPage = ({
   return (
     <div
       className={cn(
-        "flex h-full w-full flex-col items-center justify-center gap-3 px-28 md:flex-row md:items-start ",
+        "flex h-full w-full flex-col items-center justify-center gap-3 px-28 md:flex-row md:items-start  ",
         className
       )}
     >
@@ -52,7 +52,7 @@ const ListSideBar = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex w-full flex-col gap-3 md:w-[20%]", className)}>
+    <div className={cn("flex w-full flex-col gap-3 md:w-[20%] ", className)}>
       {children}
     </div>
   );

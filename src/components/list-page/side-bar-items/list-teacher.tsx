@@ -10,7 +10,7 @@ export const ListTeacher = ({
   lang: Locale;
 }) => {
   return (
-    <div className={cn(" w-1/2 rounded-xl p-4 shadow md:w-full", className)}>
+    <div className={cn(" w-1/2 rounded-xl p-4 shadow md:w-full  bg-card", className)}>
       <input
         type="text"
         className="border-none text-base placeholder-[#444] focus:placeholder-transparent focus:outline-none"

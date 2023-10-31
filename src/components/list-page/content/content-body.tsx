@@ -29,7 +29,7 @@ export const ContentBody = ({
 }: ContentBodyProps) => {
   console.log(data);
   return (
-    <div className="rounded-xl p-4 shadow ">
+    <div className="">
       <div
         className={cn(
           "grid gap-4",

@@ -24,7 +24,7 @@ export const ContentBar = ({
   setSwitchedList,
 }: ContentBarProps) => {
   return (
-    <div className="flex items-center justify-between rounded-xl p-4 shadow">
+    <div className="flex items-center justify-between rounded-xl bg-card p-4  shadow">
       <ul className="flex items-center gap-4">
         {sortOptions.map((item, index) => (
           <li
