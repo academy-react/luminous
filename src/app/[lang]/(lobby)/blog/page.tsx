@@ -4,7 +4,7 @@ import { type Locale } from "#/i18n.config";
 
 const BlogPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <main className="flex h-full items-center justify-center">
+    <main className="mt-10 flex h-full items-center justify-center px-28">
       <BlogPageSection lang={lang} />
     </main>
   );

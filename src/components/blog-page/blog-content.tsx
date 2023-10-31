@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Icons } from "../utils/icons";
 import { BlogFullCard } from "./cards/blog-full-card";
 import { BlogMidCard } from "./cards/blog-mid-card";
+import { Pagination } from "../common/pagination";
 
 export const BlogContent = ({ lang }: { lang: Locale }) => {
   //start maps.......
@@ -28,6 +29,7 @@ export const BlogContent = ({ lang }: { lang: Locale }) => {
   });
   //end maps........
   return (
+    <>
     <Tabs
       defaultValue="grid"
       dir={lang === "fa" ? "rtl" : "ltr"}
@@ -53,7 +55,7 @@ export const BlogContent = ({ lang }: { lang: Locale }) => {
         </div>
         <div>
           {/* tabs-content of sort by size */}
-          <TabsContent value="grid" className="grid grid-cols-3 gap-4 ">
+          <TabsContent value="grid" className="grid grid-cols-4 gap-4 ">
             {sortGrid}
           </TabsContent>
           <TabsContent value="list" className="mt-0 flex flex-col gap-4">
@@ -63,5 +65,7 @@ export const BlogContent = ({ lang }: { lang: Locale }) => {
         </div>
       </div>
     </Tabs>
+    <div className="mx-auto"><Pagination/></div>
+    </>
   );
 };
