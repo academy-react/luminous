@@ -44,7 +44,7 @@ export const CourseFullCard = ({
             <li>*****</li>
           </ul>
 
-          <span className="rounded-xl border-2 border-[#58AD57] px-1 text-sm text-[#58AD57]">
+          <span className="rounded-xl border-2  px-1 text-sm text-[#58AD57]">
             8500000تومان
           </span>
         </div>
