@@ -1,6 +1,6 @@
 import { Label } from "@radix-ui/react-label";
 
-import { Checkbox } from "@/components/elements/ui/checkbox";
+import { Checkbox } from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
 

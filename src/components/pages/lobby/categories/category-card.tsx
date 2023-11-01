@@ -1,4 +1,4 @@
-import { Card, CardContent, CardTitle } from "@/components/elements/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/elements/ui";
 import { type Icon } from "@/components/assets/icons";
 
 import { cn } from "@/lib/utils";

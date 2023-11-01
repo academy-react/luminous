@@ -3,7 +3,7 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/components/elements/ui/card";
+} from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
 

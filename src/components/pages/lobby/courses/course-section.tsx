@@ -1,9 +1,9 @@
 import Link from "next/link";
 
+import { TitleBox } from "@/components/pages/lobby";
 import { CourseCard } from "@/components/pages/lobby/courses/course-card";
 import { CourseSideCard } from "@/components/pages/lobby/courses/course-side-card";
-import { TitleBox } from "@/components/pages/lobby/title-box";
-import { Button } from "@/components/elements/ui/button";
+import { Button } from "@/components/elements/ui";
 
 import { coursesDict } from "@/dict/dev/courses.dict";
 import { coursesTitleBoxDict } from "@/dict/pages/lobby.dict";

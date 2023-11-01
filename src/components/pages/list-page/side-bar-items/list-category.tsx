@@ -1,8 +1,8 @@
 "use client";
 
-import { Checkboxbtn } from "@/components/elements/common/checkbox-btn";
+import { Checkboxbtn } from "@/components/elements/common";
 
-import { type FilterCategoryDictProps } from "@/dict/dev/list-category.dict";
+import { type FilterCategoryDictProps } from "@/dict/dev";
 
 import { type Locale } from "#/i18n.config";
 

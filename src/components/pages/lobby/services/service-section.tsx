@@ -1,5 +1,5 @@
+import { TitleBox } from "@/components/pages/lobby";
 import { ServiceCard } from "@/components/pages/lobby/services/service-card";
-import { TitleBox } from "@/components/pages/lobby/title-box";
 
 import { servicesDict, servicesTitleBoxDict } from "@/dict/pages/lobby.dict";
 

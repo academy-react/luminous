@@ -13,7 +13,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/elements/ui/card";
+} from "@/components/elements/ui";
 import { SingUpLady } from "@/components/assets/artworks/auth/sign-up-lady.artwork";
 
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";

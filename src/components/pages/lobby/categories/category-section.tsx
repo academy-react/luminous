@@ -1,5 +1,5 @@
+import { TitleBox } from "@/components/pages/lobby";
 import { CategoryCard } from "@/components/pages/lobby/categories/category-card";
-import { TitleBox } from "@/components/pages/lobby/title-box";
 
 import {
   categoriesDict,

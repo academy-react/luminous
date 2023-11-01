@@ -10,22 +10,21 @@ import { useForm } from "react-hook-form";
 import {
   AnimatedInput,
   AnimatedPasswordInput,
-} from "@/components/elements/common/animated-input";
-import { Button } from "@/components/elements/ui/button";
-import { Checkbox } from "@/components/elements/ui/checkbox";
+} from "@/components/elements/common";
 import {
+  Button,
+  Checkbox,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from "@/components/elements/ui/form";
+} from "@/components/elements/ui";
 
 import {
   signInInputValidator,
   type SignInInputProps,
 } from "@/types/validations/auth.validation";
-
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";

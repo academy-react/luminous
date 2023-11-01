@@ -2,8 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/elements/ui/button";
-import { Card, CardContent, CardTitle } from "@/components/elements/ui/card";
+import { Button, Card, CardContent, CardTitle } from "@/components/elements/ui";
 
 import { type Locale } from "#/i18n.config";
 

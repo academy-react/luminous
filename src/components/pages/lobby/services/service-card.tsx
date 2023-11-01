@@ -1,6 +1,6 @@
 import { type LucideIcon } from "lucide-react";
 
-import { Card, CardContent } from "@/components/elements/ui/card";
+import { Card, CardContent } from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
 

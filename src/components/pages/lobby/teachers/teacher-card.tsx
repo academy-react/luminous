@@ -5,7 +5,7 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/components/elements/ui/card";
+} from "@/components/elements/ui";
 
 import { type Locale } from "#/i18n.config";
 

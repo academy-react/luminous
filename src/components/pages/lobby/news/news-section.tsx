@@ -1,7 +1,7 @@
+import { TitleBox } from "@/components/pages/lobby";
 import { NewsCard } from "@/components/pages/lobby/news/news-card";
-import { TitleBox } from "@/components/pages/lobby/title-box";
 
-import { articlesDict, newsDict } from "@/dict/dev/news.dict";
+import { articlesDict, newsDict } from "@/dict/dev";
 import { newsTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";

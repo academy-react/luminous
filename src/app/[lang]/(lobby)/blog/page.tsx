@@ -15,8 +15,8 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 
+import { blogCategory } from "@/dict/dev";
 import { blogsDict } from "@/dict/dev/blog-list.dict";
-import { blogCategory } from "@/dict/dev/list-category.dict";
 import { blogSortOptionsDict } from "@/dict/pages/list.dict";
 
 import { type Locale } from "#/i18n.config";

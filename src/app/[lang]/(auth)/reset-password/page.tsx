@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/elements/ui/card";
+} from "@/components/elements/ui";
 import { ResetPasswordLady } from "@/components/assets/artworks/auth/reset-pass-lady.artwork";
 
 import { resetPasswordFormDict } from "@/dict/pages/auth.dict";

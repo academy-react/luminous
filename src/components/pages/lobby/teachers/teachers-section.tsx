@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 
+import { TitleBox } from "@/components/pages/lobby";
 import {
   TeacherFullCard,
   TeacherMiniCard,
 } from "@/components/pages/lobby/teachers/teacher-card";
-import { TitleBox } from "@/components/pages/lobby/title-box";
 
-import { teachersDict } from "@/dict/dev/teachers.dict";
+import { teachersDict } from "@/dict/dev";
 import { teachersTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";

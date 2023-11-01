@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/elements/ui/card";
+} from "@/components/elements/ui";
 import { LoginLady } from "@/components/assets/artworks/auth/sign-in-lady.artwork";
 import { LoginMobile } from "@/components/assets/artworks/auth/sign-in-mobile.artwork";
 import { Icons } from "@/components/assets/icons";

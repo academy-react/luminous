@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 
-import { type BlogFullCardProps } from "@/components/pages/list-page/cards/blog-full-card";
-import { type BlogMidCardProps } from "@/components/pages/list-page/cards/blog-mid-card";
-import { type CourseFullCardProps } from "@/components/pages/list-page/cards/course-full-card";
-import { type CourseMidCardProps } from "@/components/pages/list-page/cards/course-mid-card";
+import {
+  type BlogFullCardProps,
+  type BlogMidCardProps,
+  type CourseFullCardProps,
+  type CourseMidCardProps,
+} from "@/components/pages/list-page/cards";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 

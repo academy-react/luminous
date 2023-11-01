@@ -11,7 +11,7 @@ import {
   type FieldValues,
 } from "react-hook-form";
 
-import { Label } from "@/components/elements/ui/label";
+import { Label } from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
 

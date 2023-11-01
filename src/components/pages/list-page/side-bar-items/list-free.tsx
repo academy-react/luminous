@@ -1,5 +1,4 @@
-import { Label } from "@/components/elements/ui/label";
-import { Switch } from "@/components/elements/ui/switch";
+import { Label, Switch } from "@/components/elements/ui";
 
 import { type Locale } from "#/i18n.config";
 

@@ -1,6 +1,8 @@
 import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
-import { CourseFullCard } from "@/components/pages/list-page/cards/course-full-card";
-import { CourseMidCard } from "@/components/pages/list-page/cards/course-mid-card";
+import {
+  CourseFullCard,
+  CourseMidCard,
+} from "@/components/pages/list-page/cards";
 import {
   ListContent,
   ListPage,
@@ -15,8 +17,8 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 
+import { courseCategoryDict } from "@/dict/dev";
 import { coursesDict } from "@/dict/dev/courses.dict";
-import { courseCategoryDict } from "@/dict/dev/list-category.dict";
 import { courseSortOptionsDict } from "@/dict/pages/list.dict";
 
 import { type Locale } from "#/i18n.config";

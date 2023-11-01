@@ -3,8 +3,12 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Eye, EyeOff, type LucideIcon } from "lucide-react";
 
-import { FormLabel, useFormField } from "@/components/elements/ui/form";
-import { Input, type InputProps } from "@/components/elements/ui/input";
+import {
+  FormLabel,
+  Input,
+  useFormField,
+  type InputProps,
+} from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
 

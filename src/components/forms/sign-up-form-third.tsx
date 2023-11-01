@@ -7,21 +7,20 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import { AnimatedInput } from "@/components/elements/common/animated-input";
-import { Button } from "@/components/elements/ui/button";
+import { AnimatedInput } from "@/components/elements/common";
 import {
+  Button,
   Form,
   FormControl,
   FormField,
   FormItem,
-} from "@/components/elements/ui/form";
+} from "@/components/elements/ui";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
 import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
