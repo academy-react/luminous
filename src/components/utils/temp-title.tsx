@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 
-export const ThemeSwitcher = ({ lang }: { lang: Locale }) => {
+export const TempTitle = ({ lang }: { lang: Locale }) => {
   const { theme, setTheme } = useTheme();
 
   return (
