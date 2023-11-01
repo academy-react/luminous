@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-  footerMenuOptions,
-  footerSocialMediaOptions,
+  footerMenuOptionsDict,
+  footerSocialMediaOptionsDict,
 } from "@/dict/layouts/root.dict";
 
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         <div className="flex items-start justify-center gap-6">
           {/* Nav Bar */}
           <ul className="flex flex-col gap-1.5 text-xl font-bold md:text-lg">
-            {footerMenuOptions.map((item) => (
+            {footerMenuOptionsDict.map((item) => (
               <li key={item.id}>
                 <Link href={item.href} className="hover:text-gray-100">
                   {item.title[lang]}
@@ -61,7 +61,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         {/* Social Media Icons */}
         <div className="flex flex-col items-center justify-center gap-3">
           <div className="flex w-fit items-center gap-4">
-            {footerSocialMediaOptions.map((item) => (
+            {footerSocialMediaOptionsDict.map((item) => (
               <Link
                 key={item.id}
                 href={item.href}

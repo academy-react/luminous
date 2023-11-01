@@ -5,8 +5,8 @@ import { CourseSideCard } from "@/components/pages/lobby/courses/course-side-car
 import { TitleBox } from "@/components/pages/lobby/title-box";
 import { Button } from "@/components/elements/ui/button";
 
-import { courses } from "@/dict/dev/courses.dict";
-import { coursesTitleBox } from "@/dict/pages/lobby.dict";
+import { coursesDict } from "@/dict/dev/courses.dict";
+import { coursesTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -15,34 +15,34 @@ export const CourseSection = ({ lang }: { lang: Locale }) => {
     <div className="flex w-full flex-col items-center gap-10">
       <TitleBox
         lang={lang}
-        title={coursesTitleBox.title}
-        desc={coursesTitleBox.subtitle}
+        title={coursesTitleBoxDict.title}
+        desc={coursesTitleBoxDict.subtitle}
       />
       <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row md:items-center">
         <div className="h-full grow md:w-[70%]">
-          {courses[0] && (
+          {coursesDict[0] && (
             <CourseCard
               lang={lang}
-              img={courses[0].image}
-              title={courses[0].title}
-              desc={courses[0].description}
-              teacher={courses[0].teacher}
+              img={coursesDict[0].image}
+              title={coursesDict[0].title}
+              desc={coursesDict[0].description}
+              teacher={coursesDict[0].teacher}
             />
           )}
         </div>
         <div className="grow rounded-xl bg-card shadow">
           <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
             <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
-              {courses &&
-                courses
+              {coursesDict &&
+                coursesDict
                   .slice(1, 5)
                   .map((course, index) => (
                     <CourseSideCard key={index} img={course.image} />
                   ))}
             </div>
             <div className="flex w-full items-center justify-center gap-4 md:hidden">
-              {courses &&
-                courses
+              {coursesDict &&
+                coursesDict
                   .slice(1, 4)
                   .map((course, index) => (
                     <CourseSideCard key={index} img={course.image} />

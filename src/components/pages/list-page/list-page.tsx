@@ -6,8 +6,8 @@ import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 
 import {
-  type SortOptionProps,
-  type switchedListStates,
+  type SortOptionDictProps,
+  type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
@@ -59,7 +59,7 @@ const ListSideBar = ({
 // list-Content
 type ListContentProps = {
   className?: string;
-  sortOptions: SortOptionProps[];
+  sortOptions: SortOptionDictProps[];
   lang: Locale;
   FullCard: unknown;
   MidCard: unknown;
@@ -75,7 +75,7 @@ const ListContent = ({
   data,
 }: ListContentProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
-  const [switchedList, setSwitchedList] = useState<switchedListStates>("grid");
+  const [switchedList, setSwitchedList] = useState<SwitchedListStates>("grid");
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       <ContentBar

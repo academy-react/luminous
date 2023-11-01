@@ -11,7 +11,7 @@ import {
 } from "@/components/elements/ui/card";
 import { ResetPasswordLady } from "@/components/assets/artworks/auth/reset-pass-lady.artwork";
 
-import { resetPasswordForm } from "@/dict/pages/auth.dict";
+import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -25,7 +25,7 @@ const ResetPasswordPage = ({
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
-            {resetPasswordForm.title[lang]}
+            {resetPasswordFormDict.title[lang]}
           </CardTitle>
         </CardHeader>
         <CardContent className="">
@@ -37,14 +37,14 @@ const ResetPasswordPage = ({
             href={`/${lang}/sign-in`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {resetPasswordForm.signIn[lang]}
+            {resetPasswordFormDict.signIn[lang]}
           </Link>
           <Link
             aria-label="sign-up"
             href={`/${lang}/sign-up`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {resetPasswordForm.signUp[lang]}
+            {resetPasswordFormDict.signUp[lang]}
           </Link>
         </CardFooter>
       </Card>

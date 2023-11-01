@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { Icons } from "@/components/assets/icons";
 
-import { headerMenuOptions } from "@/dict/layouts/root.dict";
+import { headerMenuOptionsDict } from "@/dict/layouts/root.dict";
 
 import { cn } from "@/lib/utils";
 
@@ -62,7 +62,7 @@ export const MainNav = ({
       </Link>
       <div className="hidden w-full md:block md:w-auto">
         <ul className="flex gap-4 lg:gap-8">
-          {headerMenuOptions.map((item) => (
+          {headerMenuOptionsDict.map((item) => (
             <li key={item.id}>
               <Link
                 href={`/${lang}/${item.href}`}

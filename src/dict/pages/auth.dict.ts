@@ -1,39 +1,33 @@
-export interface SignInFormProps {
+import { type Locale } from "#/i18n.config";
+
+export interface SignInFormDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   username: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   password: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   button: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   remember: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   forgot: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   question: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   link: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 
-export const signInForm: SignInFormProps = {
+export const signInFormDict: SignInFormDictProps = {
   title: {
     fa: "ورود",
     en: "Sign In",
@@ -68,26 +62,22 @@ export const signInForm: SignInFormProps = {
   },
 };
 
-export interface FirstSignUpFormProps {
+export interface FirstSignUpFormDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   phone: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   button: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   link: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 
-export const firstSignUpForm: FirstSignUpFormProps = {
+export const firstSignUpFormDict: FirstSignUpFormDictProps = {
   title: {
     fa: "ثبت‌نام",
     en: "Sign Up",
@@ -106,22 +96,19 @@ export const firstSignUpForm: FirstSignUpFormProps = {
   },
 };
 
-export interface SecondSignUpFormProps {
+export interface SecondSignUpFormDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   code: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   button: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 
-export const secondSignUpForm: SecondSignUpFormProps = {
+export const secondSignUpFormDict: SecondSignUpFormDictProps = {
   title: {
     fa: "ثبت‌نام",
     en: "Sign Up",
@@ -136,26 +123,22 @@ export const secondSignUpForm: SecondSignUpFormProps = {
   },
 };
 
-export interface ThirdSignUpFormProps {
+export interface ThirdSignUpFormDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   email: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   password: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   button: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 
-export const thirdSignUpForm: ThirdSignUpFormProps = {
+export const thirdSignUpFormDict: ThirdSignUpFormDictProps = {
   title: {
     fa: "ثبت‌نام",
     en: "Sign Up",
@@ -174,30 +157,25 @@ export const thirdSignUpForm: ThirdSignUpFormProps = {
   },
 };
 
-export interface ResetPasswordFormProps {
+export interface ResetPasswordFormDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   email: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   button: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   signIn: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   signUp: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
 
-export const resetPasswordForm: ResetPasswordFormProps = {
+export const resetPasswordFormDict: ResetPasswordFormDictProps = {
   title: {
     fa: "بازیابی رمز عبور",
     en: "Reset Password",

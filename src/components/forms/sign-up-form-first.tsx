@@ -20,7 +20,8 @@ import {
   firstSignUpInputValidator,
   type FirstSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { firstSignUpForm } from "@/dict/pages/auth.dict";
+
+import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -59,7 +60,7 @@ export const FirstSignUpForm = ({
                 <AnimatedInput
                   lang={lang}
                   Icon={Phone}
-                  label={firstSignUpForm.phone[lang]}
+                  label={firstSignUpFormDict.phone[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -71,8 +72,8 @@ export const FirstSignUpForm = ({
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {firstSignUpForm.button[lang]}
-          <span className="sr-only">{firstSignUpForm.button[lang]}</span>
+          {firstSignUpFormDict.button[lang]}
+          <span className="sr-only">{firstSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

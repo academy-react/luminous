@@ -1,6 +1,6 @@
 import { type Locale } from "#/i18n.config";
 
-export interface CoursesProps {
+export interface CoursesDictProps {
   id: number;
   image: string;
   title: {
@@ -14,7 +14,7 @@ export interface CoursesProps {
   };
 }
 
-export const courses: CoursesProps[] = [
+export const coursesDict: CoursesDictProps[] = [
   {
     id: 1,
     image: "/images/dev/node-dark-green.jpg",

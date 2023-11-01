@@ -3,26 +3,30 @@ import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
 
-interface TitleProps {
-  fa: string;
-  en: string;
+import { type Locale } from "#/i18n.config";
+
+interface TitleDictProps {
+  title: {
+    [key in Locale]: string;
+  };
 }
 
-export const title: TitleProps = {
-  fa: "پروژه ری‌اکت تیم Luminous",
-  en: "The Luminous Team React Project",
+export const titleDict: TitleDictProps = {
+  title: {
+    fa: "پروژه ری‌اکت تیم Luminous",
+    en: "The Luminous Team React Project",
+  },
 };
 
-export interface HeaderMenuOptionProps {
+export interface HeaderMenuOptionDictProps {
   id: number;
   title: {
-    en: string;
-    fa: string;
+    [key in Locale]: string;
   };
   href: string;
 }
 
-export const headerMenuOptions: HeaderMenuOptionProps[] = [
+export const headerMenuOptionsDict: HeaderMenuOptionDictProps[] = [
   {
     id: 1,
     title: {
@@ -65,16 +69,15 @@ export const headerMenuOptions: HeaderMenuOptionProps[] = [
   },
 ];
 
-export interface FooterMenuOptionProps {
+export interface FooterMenuOptionDictProps {
   id: number;
   title: {
-    en: string;
-    fa: string;
+    [key in Locale]: string;
   };
   href: string;
 }
 
-export const footerMenuOptions: FooterMenuOptionProps[] = [
+export const footerMenuOptionsDict: FooterMenuOptionDictProps[] = [
   {
     id: 1,
     title: {
@@ -117,60 +120,60 @@ export const footerMenuOptions: FooterMenuOptionProps[] = [
   },
 ];
 
-export interface FooterSocialMediaOptionProps {
+export interface FooterSocialMediaOptionDictProps {
   id: number;
   title: {
-    en: string;
-    fa: string;
+    [key in Locale]: string;
   };
   icon: IconType;
   href: string;
 }
 
-export const footerSocialMediaOptions: FooterSocialMediaOptionProps[] = [
-  {
-    id: 1,
-    title: {
-      fa: "اینستاگرام",
-      en: "Instagram",
+export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
+  [
+    {
+      id: 1,
+      title: {
+        fa: "اینستاگرام",
+        en: "Instagram",
+      },
+      icon: BiLogoInstagramAlt as IconType,
+      href: "www.instagram.com",
     },
-    icon: BiLogoInstagramAlt as IconType,
-    href: "www.instagram.com",
-  },
-  {
-    id: 2,
-    title: {
-      fa: "توئیتر",
-      en: "Twitter",
+    {
+      id: 2,
+      title: {
+        fa: "توئیتر",
+        en: "Twitter",
+      },
+      icon: BsTwitter as IconType,
+      href: "www.twitter.com",
     },
-    icon: BsTwitter as IconType,
-    href: "www.twitter.com",
-  },
-  {
-    id: 3,
-    title: {
-      fa: "یوتیوب",
-      en: "Youtube",
+    {
+      id: 3,
+      title: {
+        fa: "یوتیوب",
+        en: "Youtube",
+      },
+      icon: BsYoutube as IconType,
+      href: "www.youtube.com",
     },
-    icon: BsYoutube as IconType,
-    href: "www.youtube.com",
-  },
-  {
-    id: 4,
-    title: {
-      fa: "فیس‌بوک",
-      en: "Facebook",
+    {
+      id: 4,
+      title: {
+        fa: "فیس‌بوک",
+        en: "Facebook",
+      },
+      icon: BsFacebook as IconType,
+      href: "www.facebook.com",
     },
-    icon: BsFacebook as IconType,
-    href: "www.facebook.com",
-  },
-  {
-    id: 5,
-    title: {
-      fa: "تلگرام",
-      en: "Telegram",
+    {
+      id: 5,
+      title: {
+        fa: "تلگرام",
+        en: "Telegram",
+      },
+      icon: FaTelegramPlane as IconType,
+      href: "www.telegram.com",
     },
-    icon: FaTelegramPlane as IconType,
-    href: "www.telegram.com",
-  },
-];
+  ];

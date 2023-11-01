@@ -20,7 +20,8 @@ import {
   secondSignUpInputValidator,
   type SecondSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { secondSignUpForm } from "@/dict/pages/auth.dict";
+
+import { secondSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -55,7 +56,7 @@ export const SecondSignUpForm = ({
               <FormControl>
                 <AnimatedPasswordInput
                   lang={lang}
-                  label={secondSignUpForm.code[lang]}
+                  label={secondSignUpFormDict.code[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -67,8 +68,8 @@ export const SecondSignUpForm = ({
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {secondSignUpForm.button[lang]}
-          <span className="sr-only">{secondSignUpForm.button[lang]}</span>
+          {secondSignUpFormDict.button[lang]}
+          <span className="sr-only">{secondSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

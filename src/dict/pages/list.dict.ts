@@ -1,12 +1,13 @@
 import { LayoutGrid, LayoutList, type LucideIcon } from "lucide-react";
 
-export interface TitleProps {
+import { type Locale } from "#/i18n.config";
+
+export interface TitleDictProps {
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
 }
-export const courseTitle: TitleProps[] = [
+export const courseDictTitle: TitleDictProps[] = [
   {
     title: {
       fa: "دوره ها",
@@ -15,15 +16,15 @@ export const courseTitle: TitleProps[] = [
   },
 ];
 
-export type switchedListStates = "grid" | "list";
+export type SwitchedListStates = "grid" | "list";
 
-export interface GridListSwitcherProps {
+export interface GridListSwitcherDictProps {
   id: number;
   Icon: LucideIcon;
-  name: switchedListStates;
+  name: SwitchedListStates;
 }
 
-export const gridListSwitcher: GridListSwitcherProps[] = [
+export const gridListSwitcherDict: GridListSwitcherDictProps[] = [
   {
     id: 1,
     Icon: LayoutGrid,
@@ -36,13 +37,14 @@ export const gridListSwitcher: GridListSwitcherProps[] = [
   },
 ];
 
-export interface SortOptionProps {
+export interface SortOptionDictProps {
   id: string;
   title: { [key in Locale]: string };
   value: { [key in Locale]: string };
 }
+
 // blog sortTitle
-export const blogSortOptions: SortOptionProps[] = [
+export const blogSortOptionsDict: SortOptionDictProps[] = [
   {
     id: "s1",
     title: {
@@ -80,7 +82,7 @@ export const blogSortOptions: SortOptionProps[] = [
 
 //   course options
 
-export const courseSortOptions: SortOptionProps[] = [
+export const courseSortOptionsDict: SortOptionDictProps[] = [
   {
     id: "s1",
     title: {

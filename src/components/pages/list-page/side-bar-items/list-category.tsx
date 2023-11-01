@@ -2,13 +2,13 @@
 
 import { Checkboxbtn } from "@/components/elements/common/checkbox-btn";
 
-import { type FilterCategoryProps } from "@/dict/dev/list-category.dict";
+import { type FilterCategoryDictProps } from "@/dict/dev/list-category.dict";
 
 import { type Locale } from "#/i18n.config";
 
 type ListCategoryProps = {
   lang: Locale;
-  category: FilterCategoryProps[];
+  category: FilterCategoryDictProps[];
 };
 export const ListCategory = ({ lang, category }: ListCategoryProps) => {
   return (

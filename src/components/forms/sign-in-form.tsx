@@ -25,7 +25,8 @@ import {
   signInInputValidator,
   type SignInInputProps,
 } from "@/types/validations/auth.validation";
-import { signInForm } from "@/dict/pages/auth.dict";
+
+import { signInFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -61,7 +62,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
                 <AnimatedInput
                   lang={lang}
                   Icon={User2}
-                  label={signInForm.username[lang]}
+                  label={signInFormDict.username[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -77,7 +78,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
               <FormControl>
                 <AnimatedPasswordInput
                   lang={lang}
-                  label={signInForm.password[lang]}
+                  label={signInFormDict.password[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -99,7 +100,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
               </FormControl>
               <div className="leading-none">
                 <FormLabel className="text-xs">
-                  {signInForm.remember[lang]}
+                  {signInFormDict.remember[lang]}
                 </FormLabel>
               </div>
             </FormItem>
@@ -113,8 +114,8 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {signInForm.button[lang]}
-          <span className="sr-only">{signInForm.button[lang]}</span>
+          {signInFormDict.button[lang]}
+          <span className="sr-only">{signInFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

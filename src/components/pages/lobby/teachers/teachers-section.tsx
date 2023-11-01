@@ -9,7 +9,7 @@ import {
 import { TitleBox } from "@/components/pages/lobby/title-box";
 
 import { teachersDict } from "@/dict/dev/teachers.dict";
-import { teachersTitleBox } from "@/dict/pages/lobby.dict";
+import { teachersTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -24,8 +24,8 @@ export const TeachersSection = ({ lang }: { lang: Locale }) => {
     <section className="container flex w-full flex-col items-center gap-10">
       <TitleBox
         lang={lang}
-        title={teachersTitleBox.title}
-        desc={teachersTitleBox.subtitle}
+        title={teachersTitleBoxDict.title}
+        desc={teachersTitleBoxDict.subtitle}
       />
       {shownTeacher && (
         <TeacherFullCard

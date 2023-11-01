@@ -2,7 +2,7 @@ import { NewsCard } from "@/components/pages/lobby/news/news-card";
 import { TitleBox } from "@/components/pages/lobby/title-box";
 
 import { articlesDict, newsDict } from "@/dict/dev/news.dict";
-import { newsTitleBox } from "@/dict/pages/lobby.dict";
+import { newsTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -13,8 +13,8 @@ export const NewsSection = ({ lang }: { lang: Locale }) => {
     <section className="container flex w-full flex-col items-center gap-10 px-10">
       <TitleBox
         lang={lang}
-        title={newsTitleBox.title}
-        desc={newsTitleBox.subtitle}
+        title={newsTitleBoxDict.title}
+        desc={newsTitleBoxDict.subtitle}
       />
       <div className="flex flex-col items-center justify-center gap-10 md:flex-row">
         <NewsCard

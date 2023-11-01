@@ -21,7 +21,8 @@ import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { thirdSignUpForm } from "@/dict/pages/auth.dict";
+
+import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -58,7 +59,7 @@ export const ThirdSignUpForm = ({
                 <AnimatedInput
                   lang={lang}
                   Icon={Mail}
-                  label={thirdSignUpForm.email[lang]}
+                  label={thirdSignUpFormDict.email[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -70,8 +71,8 @@ export const ThirdSignUpForm = ({
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {thirdSignUpForm.button[lang]}
-          <span className="sr-only">{thirdSignUpForm.button[lang]}</span>
+          {thirdSignUpFormDict.button[lang]}
+          <span className="sr-only">{thirdSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

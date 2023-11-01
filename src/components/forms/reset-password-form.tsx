@@ -20,7 +20,8 @@ import {
   resetPasswordInputValidator,
   type ResetPasswordInputProps,
 } from "@/types/validations/auth.validation";
-import { resetPasswordForm } from "@/dict/pages/auth.dict";
+
+import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -51,7 +52,7 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
                 <AnimatedInput
                   lang={lang}
                   Icon={Mail}
-                  label={resetPasswordForm.email[lang]}
+                  label={resetPasswordFormDict.email[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -63,8 +64,8 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
           {isLoading && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
           )}
-          {resetPasswordForm.button[lang]}
-          <span className="sr-only">{resetPasswordForm.button[lang]}</span>
+          {resetPasswordFormDict.button[lang]}
+          <span className="sr-only">{resetPasswordFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

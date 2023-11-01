@@ -15,9 +15,9 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 
-import { blogs } from "@/dict/dev/blog-list.dict";
+import { blogsDict } from "@/dict/dev/blog-list.dict";
 import { blogCategory } from "@/dict/dev/list-category.dict";
-import { blogSortOptions } from "@/dict/pages/list.dict";
+import { blogSortOptionsDict } from "@/dict/pages/list.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -36,11 +36,11 @@ const BlogPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent
-          sortOptions={blogSortOptions}
+          sortOptions={blogSortOptionsDict}
           lang={lang}
           FullCard={BlogFullCard}
           MidCard={BlogMidCard}
-          data={blogs}
+          data={blogsDict}
         />
       </ListPage>
     </PageAnimationWrapper>

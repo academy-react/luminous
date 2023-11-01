@@ -1,7 +1,7 @@
 import {
-  gridListSwitcher,
-  type SortOptionProps,
-  type switchedListStates,
+  gridListSwitcherDict,
+  type SortOptionDictProps,
+  type SwitchedListStatesDict,
 } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 import { type Locale } from "#/i18n.config";
 
 type ContentBarProps = {
-  sortOptions: SortOptionProps[];
+  sortOptions: SortOptionDictProps[];
   lang: Locale;
   selectedOption: number;
   setSelectedOption: (option: number) => void;
-  switchedList: switchedListStates;
+  switchedList: SwitchedListStatesDict;
   setSwitchedList: (option: "grid" | "list") => void;
 };
 export const ContentBar = ({
@@ -42,7 +42,7 @@ export const ContentBar = ({
       </ul>
 
       <ul className="flex items-center gap-4">
-        {gridListSwitcher.map((item) => {
+        {gridListSwitcherDict.map((item) => {
           return (
             <li
               key={item.id}

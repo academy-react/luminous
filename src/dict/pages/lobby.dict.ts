@@ -19,7 +19,7 @@ export interface LobbyTitleBoxDict {
   };
 }
 
-export const servicesTitleBox: LobbyTitleBoxDict = {
+export const servicesTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "خدمات",
     en: "Services",
@@ -30,7 +30,7 @@ export const servicesTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const categoriesTitleBox: LobbyTitleBoxDict = {
+export const categoriesTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "دسته‌بندی‌ها",
     en: "Categories",
@@ -41,7 +41,7 @@ export const categoriesTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const coursesTitleBox: LobbyTitleBoxDict = {
+export const coursesTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "دوره‌ها",
     en: "Courses",
@@ -52,7 +52,7 @@ export const coursesTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const teachersTitleBox: LobbyTitleBoxDict = {
+export const teachersTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "اساتید برتر",
     en: "Top teachers",
@@ -63,7 +63,7 @@ export const teachersTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const newsTitleBox: LobbyTitleBoxDict = {
+export const newsTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "اخبار و مقالات",
     en: "News and Articles",
@@ -74,7 +74,7 @@ export const newsTitleBox: LobbyTitleBoxDict = {
   },
 };
 
-export const suggestionsTitleBox: LobbyTitleBoxDict = {
+export const suggestionsTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "پیشنهادات و انتقادات",
     en: "Suggestions and Criticisms",
@@ -108,7 +108,7 @@ export const heroDict: HeroDictProps = {
   },
 };
 
-export interface ServicesProps {
+export interface ServicesDictProps {
   id: number;
   title: {
     [key in Locale]: string;
@@ -117,7 +117,7 @@ export interface ServicesProps {
   bgColor: string;
 }
 
-export const services: ServicesProps[] = [
+export const servicesDict: ServicesDictProps[] = [
   {
     id: 1,
     title: {

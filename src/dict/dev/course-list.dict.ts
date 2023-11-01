@@ -1,10 +1,10 @@
 import { type Locale } from "#/i18n.config";
 
-export interface CourseCategoryProps {
+export interface CourseCategoryDictProps {
   title: { [key in Locale]: string };
   id: string;
 }
-export const courseCategory: CourseCategoryProps[] = [
+export const courseCategoryDict: CourseCategoryDictProps[] = [
   {
     id: "r1",
     title: {

@@ -9,7 +9,7 @@ import {
 } from "@/components/elements/ui/sheet";
 import { Icons } from "@/components/assets/icons";
 
-import { headerMenuOptions } from "@/dict/layouts/root.dict";
+import { headerMenuOptionsDict } from "@/dict/layouts/root.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -30,7 +30,7 @@ export const MobileNav = ({ lang }: { lang: Locale }) => {
           <SheetTitle className="text-2xl">Luminous</SheetTitle>
         </SheetHeader>
         <ul className="flex flex-col gap-2 p-3">
-          {headerMenuOptions.map((item) => (
+          {headerMenuOptionsDict.map((item) => (
             <li key={item.id} className="font-medium">
               <Link href={`/${lang}/${item.href}`} className="">
                 {item.title[lang]}
