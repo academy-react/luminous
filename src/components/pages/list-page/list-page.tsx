@@ -5,8 +5,10 @@ import { useState } from "react";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 
-import { type switchedListStates } from "@/dict/list/list-grid-switch.dict";
-import { type SortOptionProps } from "@/dict/list/list-options.dict";
+import {
+  type SortOptionProps,
+  type switchedListStates,
+} from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
 

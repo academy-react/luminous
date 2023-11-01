@@ -1,8 +1,7 @@
 import { ServiceCard } from "@/components/pages/lobby/services/service-card";
 import { TitleBox } from "@/components/pages/lobby/title-box";
 
-import { servicesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
-import { services } from "@/dict/lobby/services.dict";
+import { services, servicesTitleBox } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 

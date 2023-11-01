@@ -9,7 +9,7 @@ import {
 } from "@/components/elements/ui/sheet";
 import { Icons } from "@/components/assets/icons";
 
-import { headerMenuOptions } from "@/dict/lobby/header.dict";
+import { headerMenuOptions } from "@/dict/layouts/root.dict";
 
 import { type Locale } from "#/i18n.config";
 

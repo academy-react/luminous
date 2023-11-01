@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 
-import { title } from "@/dict/lobby/header.dict";
+import { title } from "@/dict/layouts/root.dict";
 
 import { cn } from "@/lib/utils";
 

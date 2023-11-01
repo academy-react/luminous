@@ -13,7 +13,7 @@ import { LoginLady } from "@/components/assets/artworks/auth/sign-in-lady.artwor
 import { LoginMobile } from "@/components/assets/artworks/auth/sign-in-mobile.artwork";
 import { Icons } from "@/components/assets/icons";
 
-import { signInForm } from "@/dict/auth/auth.dict";
+import { signInForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

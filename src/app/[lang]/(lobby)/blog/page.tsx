@@ -16,8 +16,8 @@ import {
 } from "@/components/pages/list-page/side-bar-items";
 
 import { blogs } from "@/dict/dev/blog-list.dict";
-import { blogCategory } from "@/dict/list/list-category.dict";
-import { blogSortOptions } from "@/dict/list/list-options.dict";
+import { blogCategory } from "@/dict/dev/list-category.dict";
+import { blogSortOptions } from "@/dict/pages/list.dict";
 
 import { type Locale } from "#/i18n.config";
 

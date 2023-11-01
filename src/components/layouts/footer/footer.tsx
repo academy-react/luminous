@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   footerMenuOptions,
   footerSocialMediaOptions,
-} from "@/dict/lobby/footer.dict";
+} from "@/dict/layouts/root.dict";
 
 import { cn } from "@/lib/utils";
 

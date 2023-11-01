@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { Icons } from "@/components/assets/icons";
 
-import { headerMenuOptions } from "@/dict/lobby/header.dict";
+import { headerMenuOptions } from "@/dict/layouts/root.dict";
 
 import { cn } from "@/lib/utils";
 

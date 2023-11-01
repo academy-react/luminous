@@ -15,9 +15,9 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 
-import { courseCategory } from "@/dict/list/list-category.dict";
-import { courseSortOptions } from "@/dict/list/list-options.dict";
-import { courses } from "@/dict/lobby/courses.dict";
+import { courses } from "@/dict/dev/courses.dict";
+import { courseCategory } from "@/dict/dev/list-category.dict";
+import { courseSortOptions } from "@/dict/pages/list.dict";
 
 import { type Locale } from "#/i18n.config";
 

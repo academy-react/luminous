@@ -1,8 +1,7 @@
 import { CategoryCard } from "@/components/pages/lobby/categories/category-card";
 import { TitleBox } from "@/components/pages/lobby/title-box";
 
-import { categoriesDict } from "@/dict/lobby/categories.dict";
-import { categoriesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
+import { categoriesDict, categoriesTitleBox } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 

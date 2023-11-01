@@ -1,4 +1,40 @@
-import { type Locale } from "#/i18n.config";
+import { LayoutGrid, LayoutList, type LucideIcon } from "lucide-react";
+
+export interface TitleProps {
+  title: {
+    fa: string;
+    en: string;
+  };
+}
+export const courseTitle: TitleProps[] = [
+  {
+    title: {
+      fa: "دوره ها",
+      en: "Courses",
+    },
+  },
+];
+
+export type switchedListStates = "grid" | "list";
+
+export interface GridListSwitcherProps {
+  id: number;
+  Icon: LucideIcon;
+  name: switchedListStates;
+}
+
+export const gridListSwitcher: GridListSwitcherProps[] = [
+  {
+    id: 1,
+    Icon: LayoutGrid,
+    name: "grid",
+  },
+  {
+    id: 2,
+    Icon: LayoutList,
+    name: "list",
+  },
+];
 
 export interface SortOptionProps {
   id: string;

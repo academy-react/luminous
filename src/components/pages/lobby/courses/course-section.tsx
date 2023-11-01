@@ -5,8 +5,8 @@ import { CourseSideCard } from "@/components/pages/lobby/courses/course-side-car
 import { TitleBox } from "@/components/pages/lobby/title-box";
 import { Button } from "@/components/elements/ui/button";
 
-import { courses } from "@/dict/lobby/courses.dict";
-import { coursesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
+import { courses } from "@/dict/dev/courses.dict";
+import { coursesTitleBox } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 

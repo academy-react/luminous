@@ -1,8 +1,8 @@
 import {
   gridListSwitcher,
+  type SortOptionProps,
   type switchedListStates,
-} from "@/dict/list/list-grid-switch.dict";
-import { type SortOptionProps } from "@/dict/list/list-options.dict";
+} from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
 

@@ -20,8 +20,7 @@ import {
   resetPasswordInputValidator,
   type ResetPasswordInputProps,
 } from "@/types/validations/auth.validation";
-
-import { resetPasswordForm } from "@/dict/auth/auth.dict";
+import { resetPasswordForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

@@ -25,8 +25,7 @@ import {
   signInInputValidator,
   type SignInInputProps,
 } from "@/types/validations/auth.validation";
-
-import { signInForm } from "@/dict/auth/auth.dict";
+import { signInForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

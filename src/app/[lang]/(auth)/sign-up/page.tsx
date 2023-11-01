@@ -16,7 +16,7 @@ import {
 } from "@/components/elements/ui/card";
 import { SingUpLady } from "@/components/assets/artworks/auth/sign-up-lady.artwork";
 
-import { firstSignUpForm } from "@/dict/auth/auth.dict";
+import { firstSignUpForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

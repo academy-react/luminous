@@ -2,7 +2,7 @@
 
 import { Checkboxbtn } from "@/components/elements/common/checkbox-btn";
 
-import { type FilterCategoryProps } from "@/dict/list/list-category.dict";
+import { type FilterCategoryProps } from "@/dict/dev/list-category.dict";
 
 import { type Locale } from "#/i18n.config";
 

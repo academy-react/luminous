@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { heroDict } from "@/dict/lobby/hero.dict";
+import { heroDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
 

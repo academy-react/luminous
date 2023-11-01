@@ -4,8 +4,8 @@ import { type CourseFullCardProps } from "@/components/pages/list-page/cards/cou
 import { type CourseMidCardProps } from "@/components/pages/list-page/cards/course-mid-card";
 
 import { type BlogsProps } from "@/dict/dev/blog-list.dict";
-import { type switchedListStates } from "@/dict/list/list-grid-switch.dict";
-import { type CoursesProps } from "@/dict/lobby/courses.dict";
+import { type CoursesProps } from "@/dict/dev/courses.dict";
+import { type switchedListStates } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
 

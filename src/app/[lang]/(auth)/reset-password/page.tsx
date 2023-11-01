@@ -11,7 +11,7 @@ import {
 } from "@/components/elements/ui/card";
 import { ResetPasswordLady } from "@/components/assets/artworks/auth/reset-pass-lady.artwork";
 
-import { resetPasswordForm } from "@/dict/auth/auth.dict";
+import { resetPasswordForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

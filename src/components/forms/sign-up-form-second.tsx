@@ -20,8 +20,7 @@ import {
   secondSignUpInputValidator,
   type SecondSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
-import { secondSignUpForm } from "@/dict/auth/auth.dict";
+import { secondSignUpForm } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
