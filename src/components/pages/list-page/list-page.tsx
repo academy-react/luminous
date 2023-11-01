@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 
+import { type BlogFullCardProps } from "@/components/pages/list-page/cards/blog-full-card";
+import { type BlogMidCardProps } from "@/components/pages/list-page/cards/blog-mid-card";
+import { type CourseFullCardProps } from "@/components/pages/list-page/cards/course-full-card";
+import { type CourseMidCardProps } from "@/components/pages/list-page/cards/course-mid-card";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 
+import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
+import { type CoursesDictProps } from "@/dict/dev/courses.dict";
 import {
   type SortOptionDictProps,
   type SwitchedListStates,
@@ -61,9 +67,9 @@ type ListContentProps = {
   className?: string;
   sortOptions: SortOptionDictProps[];
   lang: Locale;
-  FullCard: unknown;
-  MidCard: unknown;
-  data: unknown;
+  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
+  MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
+  data: CoursesDictProps[] | BlogsPropsDict[];
 };
 
 const ListContent = ({

@@ -5,7 +5,7 @@ import { type CourseMidCardProps } from "@/components/pages/list-page/cards/cour
 
 import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
 import { type CoursesDictProps } from "@/dict/dev/courses.dict";
-import { type SwitchedListStatesDict } from "@/dict/pages/list.dict";
+import { type SwitchedListStates } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
 
@@ -16,7 +16,7 @@ type ContentBodyProps = {
   selectedOption: number;
   FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
   MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
-  switchedList: SwitchedListStatesDict;
+  switchedList: SwitchedListStates;
   data: CoursesDictProps[] | BlogsPropsDict[];
 };
 
