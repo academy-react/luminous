@@ -7,18 +7,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 
+import { AnimatedInput } from "@/components/elements/common/animated-input";
+import { Button } from "@/components/elements/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui/form";
+
 import {
   resetPasswordInputValidator,
   type ResetPasswordInputProps,
 } from "@/types/validations/auth.validation";
+
 import { resetPasswordForm } from "@/dict/auth/auth.dict";
 
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/common/animated-input";
-
 import { type Locale } from "#/i18n.config";
-
-import { Button } from "../ui/button";
 
 export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);

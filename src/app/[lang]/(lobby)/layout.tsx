@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 
-import { Footer } from "@/components/layout/footer/footer";
-import { Header } from "@/components/layout/header/header";
+import { Footer } from "@/components/layouts/footer/footer";
+import { Header } from "@/components/layouts/header/header";
 
 import { type Locale } from "#/i18n.config";
 

@@ -1,4 +1,4 @@
-import { Icons, type Icon } from "@/components/utils/icons";
+import { Icons, type Icon } from "@/components/assets/icons";
 
 import { type Locale } from "#/i18n.config";
 

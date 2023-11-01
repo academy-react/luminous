@@ -3,20 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { firstSignUpForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
+import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
+import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { SingUpLady } from "@/components/artworks/auth/sign-up-lady.artwork";
-import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
-import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
-import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
+} from "@/components/elements/ui/card";
+import { SingUpLady } from "@/components/assets/artworks/auth/sign-up-lady.artwork";
+
+import { firstSignUpForm } from "@/dict/auth/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

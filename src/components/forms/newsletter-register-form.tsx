@@ -6,13 +6,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Mailbox } from "lucide-react";
 import { useForm } from "react-hook-form";
 
+import { AnimatedInput } from "@/components/elements/common/animated-input";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui/form";
+
 import {
   newsletterRegisterInputValidator,
   type NewsletterRegisterInputProps,
 } from "@/types/validations/newsletter.validation";
-
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/common/animated-input";
 
 import { type Locale } from "#/i18n.config";
 

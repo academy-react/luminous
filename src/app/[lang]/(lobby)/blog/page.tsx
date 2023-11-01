@@ -1,23 +1,23 @@
-import { blogs } from "@/dict/dev/blog-list.dict";
-import { blogCategory } from "@/dict/list/list-category.dict";
-import { blogSortOptions } from "@/dict/list/list-options.dict";
-
-import { BlogFullCard } from "@/components/cards/blog-full-card";
-import { BlogMidCard } from "@/components/cards/blog-mid-card";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { BlogFullCard } from "@/components/pages/list-page/cards/blog-full-card";
+import { BlogMidCard } from "@/components/pages/list-page/cards/blog-mid-card";
 import {
   ListContent,
   ListPage,
   ListSideBar,
   ListTitle,
-} from "@/components/list-page/list-page";
+} from "@/components/pages/list-page/list-page";
 import {
   ListCategory,
   ListCommingSoon,
   ListFree,
   ListSearch,
   ListTeacher,
-} from "@/components/list-page/side-bar-items";
+} from "@/components/pages/list-page/side-bar-items";
+
+import { blogs } from "@/dict/dev/blog-list.dict";
+import { blogCategory } from "@/dict/list/list-category.dict";
+import { blogSortOptions } from "@/dict/list/list-options.dict";
 
 import { type Locale } from "#/i18n.config";
 

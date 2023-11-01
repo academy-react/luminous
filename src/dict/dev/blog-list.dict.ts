@@ -1,5 +1,3 @@
-
-
 // blog detailsblog
 export interface BlogsProps {
   id: string;

@@ -1,4 +1,4 @@
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
 
 import { type Locale } from "#/i18n.config";
 

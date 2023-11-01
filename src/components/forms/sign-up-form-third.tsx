@@ -1,29 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import { AnimatedInput } from "@/components/elements/common/animated-input";
+import { Button } from "@/components/elements/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui/form";
+import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
 
-import "@/dict/auth/auth.dict";
-
-import { useRouter } from "next/navigation";
-
 import { thirdSignUpForm } from "@/dict/auth/auth.dict";
 
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
-
 import { type Locale } from "#/i18n.config";
-
-import { AnimatedInput } from "../common/animated-input";
-import { Button } from "../ui/button";
 
 export const ThirdSignUpForm = ({
   lang,

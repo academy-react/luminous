@@ -3,8 +3,9 @@
 import { useTheme } from "next-themes";
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 
-import { cn } from "@/lib/utils";
 import { title } from "@/dict/lobby/header.dict";
+
+import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 

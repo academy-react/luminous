@@ -1,19 +1,19 @@
 import Link from "next/link";
 
-import { resetPasswordForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { ResetPasswordForm } from "@/components/forms/reset-password-form";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { ResetPasswordLady } from "@/components/artworks/auth/reset-pass-lady.artwork";
-import { ResetPasswordForm } from "@/components/forms/reset-password-form";
+} from "@/components/elements/ui/card";
+import { ResetPasswordLady } from "@/components/assets/artworks/auth/reset-pass-lady.artwork";
+
+import { resetPasswordForm } from "@/dict/auth/auth.dict";
 
 import { type Locale } from "#/i18n.config";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 
 const ResetPasswordPage = ({
   params: { lang },
@@ -49,7 +49,7 @@ const ResetPasswordPage = ({
         </CardFooter>
       </Card>
       <div className="relative -z-10 hidden h-full w-[40vw] flex-row md:flex">
-        <div className="absolute end-0 top-1/2 translate-y-[-50%] scale-x-[-1] transform">
+        <div className="absolute end-0 top-1/2 translate-y-[-50%] scale-x-[-1]">
           <ResetPasswordLady />
         </div>
       </div>

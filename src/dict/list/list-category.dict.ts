@@ -49,7 +49,6 @@ export const courseCategory: FilterCategoryProps[] = [
   },
 ];
 
-
 export const blogCategory: FilterCategoryProps[] = [
   {
     id: "r1",

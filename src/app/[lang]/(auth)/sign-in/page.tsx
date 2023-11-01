@@ -1,19 +1,19 @@
 import Link from "next/link";
 
-import { signInForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { SignInForm } from "@/components/forms/sign-in-form";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { LoginLady } from "@/components/artworks/auth/sign-in-lady.artwork";
-import { LoginMobile } from "@/components/artworks/auth/sign-in-mobile.artwork";
-import { SignInForm } from "@/components/forms/sign-in-form";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
-import { Icons } from "@/components/utils/icons";
+} from "@/components/elements/ui/card";
+import { LoginLady } from "@/components/assets/artworks/auth/sign-in-lady.artwork";
+import { LoginMobile } from "@/components/assets/artworks/auth/sign-in-mobile.artwork";
+import { Icons } from "@/components/assets/icons";
+
+import { signInForm } from "@/dict/auth/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 

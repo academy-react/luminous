@@ -1,10 +1,10 @@
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
-import { CategoriesSection } from "@/components/lobby/categories/category-section";
-import { CourseSection } from "@/components/lobby/courses/course-section";
-import { HeroSection } from "@/components/lobby/hero/hero-section";
-import { NewsSection } from "@/components/lobby/news/news-section";
-import { ServiceSection } from "@/components/lobby/services/service-section";
-import { TeachersSection } from "@/components/lobby/teachers/teachers-section";
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { CategoriesSection } from "@/components/pages/lobby/categories/category-section";
+import { CourseSection } from "@/components/pages/lobby/courses/course-section";
+import { HeroSection } from "@/components/pages/lobby/hero/hero-section";
+import { NewsSection } from "@/components/pages/lobby/news/news-section";
+import { ServiceSection } from "@/components/pages/lobby/services/service-section";
+import { TeachersSection } from "@/components/pages/lobby/teachers/teachers-section";
 import { ThemeSwitcher } from "@/components/utils/theme-switcher";
 
 import { type Locale } from "#/i18n.config";

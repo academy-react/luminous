@@ -8,24 +8,25 @@ import { Loader2, User2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import {
-  signInInputValidator,
-  type SignInInputProps,
-} from "@/types/validations/auth.validation";
-import { signInForm } from "@/dict/auth/auth.dict";
-
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+  AnimatedInput,
+  AnimatedPasswordInput,
+} from "@/components/elements/common/animated-input";
+import { Button } from "@/components/elements/ui/button";
+import { Checkbox } from "@/components/elements/ui/checkbox";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from "@/components/ui/form";
+} from "@/components/elements/ui/form";
+
 import {
-  AnimatedInput,
-  AnimatedPasswordInput,
-} from "@/components/common/animated-input";
+  signInInputValidator,
+  type SignInInputProps,
+} from "@/types/validations/auth.validation";
+
+import { signInForm } from "@/dict/auth/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
