@@ -1,4 +1,6 @@
 import {
+  ChevronLeft,
+  ChevronRight,
   LayoutGrid,
   LayoutList,
   Menu,
@@ -68,4 +70,6 @@ export const Icons = {
   menu: Menu,
   layoutGrid: LayoutGrid,
   layoutList: LayoutList,
+  leftArrow: ChevronLeft,
+  rightArrow: ChevronRight,
 };

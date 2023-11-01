@@ -1,17 +1,14 @@
 import Link from "next/link";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Icons } from "../utils/icons";
 
 export const Pagination = () => {
   return (
     <nav>
       <ul className="flex flex-row-reverse items-center gap-1">
         <li>
-          <Link
-            href="#"
-            className="rounded-full border hover:border-purple-primary "
-          >
-            <ChevronLeft />
+          <Link href="#" className="px-2">
+            <Icons.leftArrow />
           </Link>
         </li>
         <li>
@@ -39,11 +36,8 @@ export const Pagination = () => {
           </Link>
         </li>
         <li>
-          <Link
-            href="#"
-            className="rounded-full border hover:border-purple-primary"
-          >
-            <ChevronRight />
+          <Link href="#" className="px-2">
+            <Icons.rightArrow />
           </Link>
         </li>
       </ul>

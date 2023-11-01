@@ -16,6 +16,7 @@ import { SingUpLady } from "@/components/artworks/auth/sign-up-lady.artwork";
 import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
 import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
 import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
+import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 
 import { type Locale } from "#/i18n.config";
 
@@ -25,7 +26,7 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   const [formState, setFormState] = useState<SignUpFormStates>("first");
 
   return (
-    <main className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
+    <PageAnimationWrapper className="flex h-full w-full items-center justify-center gap-10 xl:gap-24">
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
@@ -62,7 +63,7 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           <SingUpLady />
         </div>
       </div>
-    </main>
+    </PageAnimationWrapper>
   );
 };
 

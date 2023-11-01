@@ -1,4 +1,4 @@
-import { CategoriesDict } from "@/dict/lobby/categories.dict";
+import { categoriesDict } from "@/dict/lobby/categories.dict";
 import { categoriesTitleBox } from "@/dict/lobby/lobby-title-box.dict";
 
 import { TitleBox } from "@/components/lobby/title-box";
@@ -16,8 +16,8 @@ export const CategoriesSection = ({ lang }: { lang: Locale }) => {
         title={categoriesTitleBox.title}
         desc={categoriesTitleBox.subtitle}
       />
-      <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
-        {CategoriesDict.map((category) => (
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+        {categoriesDict.map((category) => (
           <CategoryCard
             key={category.title[lang]}
             lang={lang}
