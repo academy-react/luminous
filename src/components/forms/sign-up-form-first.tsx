@@ -20,6 +20,7 @@ import {
   firstSignUpInputValidator,
   type FirstSignUpInputProps,
 } from "@/types/validations/auth.validation";
+
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";

@@ -6,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/elements/ui";
+} from "@/components/elements/ui/client";
 import { Icons } from "@/components/assets/icons";
 
 import { headerMenuOptionsDict } from "@/dict/layouts/root.dict";

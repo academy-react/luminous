@@ -1,4 +1,4 @@
-import { Tabs, TabsContent } from "@/components/elements/ui";
+import { Tabs, TabsContent } from "@/components/elements/ui/client";
 
 import { cn } from "@/lib/utils";
 

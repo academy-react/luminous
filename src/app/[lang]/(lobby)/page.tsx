@@ -5,8 +5,8 @@ import {
   HeroSection,
   NewsSection,
   ServiceSection,
-  TeachersSection,
 } from "@/components/pages/lobby";
+import { TeachersSection } from "@/components/pages/lobby/client";
 import { TempTitle } from "@/components/utils/temp-title";
 
 import { type Locale } from "#/i18n.config";

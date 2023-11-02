@@ -21,6 +21,7 @@ import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
+
 import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";

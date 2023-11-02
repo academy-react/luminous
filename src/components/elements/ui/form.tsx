@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import type * as LabelPrimitive from "@radix-ui/react-label";
@@ -11,7 +13,7 @@ import {
   type FieldValues,
 } from "react-hook-form";
 
-import { Label } from "@/components/elements/ui";
+import { Label } from "@/components/elements/ui/client";
 
 import { cn } from "@/lib/utils";
 

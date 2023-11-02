@@ -1,4 +1,4 @@
-import { SelectItem } from "@/components/elements/ui";
+import { SelectItem } from "@/components/elements/ui/client";
 
 type SelectOptionProps = {
   value: string;

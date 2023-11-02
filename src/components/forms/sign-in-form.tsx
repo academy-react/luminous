@@ -13,18 +13,19 @@ import {
 } from "@/components/elements/common";
 import {
   Button,
-  Checkbox,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
 } from "@/components/elements/ui";
+import { Checkbox } from "@/components/elements/ui/client";
 
 import {
   signInInputValidator,
   type SignInInputProps,
 } from "@/types/validations/auth.validation";
+
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
