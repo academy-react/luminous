@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { AnimatedPasswordInput } from "@/components/elements/common";
@@ -20,10 +19,11 @@ import {
   secondSignUpInputValidator,
   type SecondSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
 import { secondSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const SecondSignUpForm = ({
   lang,
@@ -66,7 +66,10 @@ export const SecondSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
           {secondSignUpFormDict.button[lang]}
           <span className="sr-only">{secondSignUpFormDict.button[lang]}</span>

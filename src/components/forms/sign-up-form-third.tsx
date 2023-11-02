@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { AnimatedInput } from "@/components/elements/common";
@@ -21,10 +20,11 @@ import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
 import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const ThirdSignUpForm = ({
   lang,
@@ -58,7 +58,7 @@ export const ThirdSignUpForm = ({
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Mail}
+                  Icon={Icons.mail}
                   label={thirdSignUpFormDict.email[lang]}
                   inputVariant="auth"
                   {...field}
@@ -69,7 +69,10 @@ export const ThirdSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
           {thirdSignUpFormDict.button[lang]}
           <span className="sr-only">{thirdSignUpFormDict.button[lang]}</span>

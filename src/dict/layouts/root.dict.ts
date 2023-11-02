@@ -1,7 +1,4 @@
-import { type IconType } from "react-icons";
-import { BiLogoInstagramAlt } from "react-icons/bi";
-import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
-import { FaTelegramPlane } from "react-icons/fa";
+import { Icons, type Icon } from "@/components/assets/icons";
 
 import { type Locale } from "#/i18n.config";
 
@@ -125,7 +122,7 @@ export interface FooterSocialMediaOptionDictProps {
   title: {
     [key in Locale]: string;
   };
-  icon: IconType;
+  icon: Icon;
   href: string;
 }
 
@@ -137,7 +134,7 @@ export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
         fa: "اینستاگرام",
         en: "Instagram",
       },
-      icon: BiLogoInstagramAlt as IconType,
+      icon: Icons.instagram,
       href: "www.instagram.com",
     },
     {
@@ -146,7 +143,7 @@ export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
         fa: "توئیتر",
         en: "Twitter",
       },
-      icon: BsTwitter as IconType,
+      icon: Icons.twitter,
       href: "www.twitter.com",
     },
     {
@@ -155,7 +152,7 @@ export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
         fa: "یوتیوب",
         en: "Youtube",
       },
-      icon: BsYoutube as IconType,
+      icon: Icons.youtube,
       href: "www.youtube.com",
     },
     {
@@ -164,7 +161,7 @@ export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
         fa: "فیس‌بوک",
         en: "Facebook",
       },
-      icon: BsFacebook as IconType,
+      icon: Icons.facebook,
       href: "www.facebook.com",
     },
     {
@@ -173,7 +170,7 @@ export const footerSocialMediaOptionsDict: FooterSocialMediaOptionDictProps[] =
         fa: "تلگرام",
         en: "Telegram",
       },
-      icon: FaTelegramPlane as IconType,
+      icon: Icons.telegram,
       href: "www.telegram.com",
     },
   ];

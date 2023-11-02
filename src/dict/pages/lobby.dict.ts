@@ -1,11 +1,3 @@
-import {
-  FileCheck,
-  Network,
-  ScrollText,
-  User,
-  type LucideIcon,
-} from "lucide-react";
-
 import { Icons, type Icon } from "@/components/assets/icons";
 
 import { type Locale } from "#/i18n.config";
@@ -113,7 +105,7 @@ export interface ServicesDictProps {
   title: {
     [key in Locale]: string;
   };
-  icon: LucideIcon;
+  icon: Icon;
   bgColor: string;
 }
 
@@ -124,7 +116,7 @@ export const servicesDict: ServicesDictProps[] = [
       fa: "مدرک معتبر",
       en: "Valid Certificate",
     },
-    icon: ScrollText,
+    icon: Icons.scrollText,
     bgColor: "bg-[#E3B709]",
   },
   {
@@ -133,7 +125,7 @@ export const servicesDict: ServicesDictProps[] = [
       fa: "امتحان",
       en: "Exam",
     },
-    icon: FileCheck,
+    icon: Icons.fileCheck,
     bgColor: "bg-[#D23120]",
   },
   {
@@ -142,7 +134,7 @@ export const servicesDict: ServicesDictProps[] = [
       fa: "فرصت‌های شغلی",
       en: "Job Opportunity",
     },
-    icon: Network,
+    icon: Icons.network,
     bgColor: "bg-[#267AB2]",
   },
   {
@@ -151,7 +143,7 @@ export const servicesDict: ServicesDictProps[] = [
       fa: "مشاوره",
       en: "Counseling",
     },
-    icon: User,
+    icon: Icons.user,
     bgColor: "bg-[#7D329A]",
   },
 ];

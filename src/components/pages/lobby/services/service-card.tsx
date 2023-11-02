@@ -1,12 +1,11 @@
-import { type LucideIcon } from "lucide-react";
-
 import { Card, CardContent } from "@/components/elements/ui";
+import { type Icon } from "@/components/assets/icons";
 
 import { cn } from "@/lib/utils";
 
 type ServiceCardProps = {
   title: string;
-  Icon: LucideIcon;
+  Icon: Icon;
   bgColor: string;
 };
 

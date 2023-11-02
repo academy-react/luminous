@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { cva, type VariantProps } from "class-variance-authority";
-import { Eye, EyeOff, type LucideIcon } from "lucide-react";
 
 import {
   FormLabel,
@@ -9,6 +8,7 @@ import {
   useFormField,
   type InputProps,
 } from "@/components/elements/ui";
+import { Icons, type Icon } from "@/components/assets/icons";
 
 import { cn } from "@/lib/utils";
 
@@ -40,7 +40,7 @@ export interface AnimatedInputProps
   extends InputProps,
     VariantProps<typeof inputVariants> {
   lang: Locale;
-  Icon: LucideIcon;
+  Icon: Icon;
   label: string;
 }
 
@@ -127,9 +127,9 @@ export const AnimatedPasswordInput = React.forwardRef<
         onClick={() => setShowPassword((prev) => !prev)}
       >
         {showPassword ? (
-          <EyeOff aria-hidden="true" />
+          <Icons.eyeOff aria-hidden="true" />
         ) : (
-          <Eye aria-hidden="true" />
+          <Icons.eye aria-hidden="true" />
         )}
         <span className="sr-only">
           {showPassword ? "Hide password" : "Show password"}

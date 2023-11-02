@@ -1,6 +1,5 @@
-import { LayoutGrid, LayoutList, type LucideIcon } from "lucide-react";
-
 import { type Locale } from "#/i18n.config";
+import { Icon, Icons } from "@/components/assets/icons";
 
 export interface TitleDictProps {
   title: {
@@ -20,19 +19,19 @@ export type SwitchedListStates = "grid" | "list";
 
 export interface GridListSwitcherDictProps {
   id: number;
-  Icon: LucideIcon;
+  Icon: Icon;
   name: SwitchedListStates;
 }
 
 export const gridListSwitcherDict: GridListSwitcherDictProps[] = [
   {
     id: 1,
-    Icon: LayoutGrid,
+    Icon: Icons.layoutGrid,
     name: "grid",
   },
   {
     id: 2,
-    Icon: LayoutList,
+    Icon: Icons.layoutList,
     name: "list",
   },
 ];

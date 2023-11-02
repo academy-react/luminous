@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, User2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -25,10 +24,11 @@ import {
   signInInputValidator,
   type SignInInputProps,
 } from "@/types/validations/auth.validation";
-
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -61,7 +61,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={User2}
+                  Icon={Icons.user}
                   label={signInFormDict.username[lang]}
                   inputVariant="auth"
                   {...field}
@@ -112,7 +112,10 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
           className="border-2 border-green-600 bg-green-600 text-white transition-colors duration-500 hover:bg-white hover:text-green-600"
         >
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
           {signInFormDict.button[lang]}
           <span className="sr-only">{signInFormDict.button[lang]}</span>

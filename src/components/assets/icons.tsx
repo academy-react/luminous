@@ -1,14 +1,31 @@
 import {
+  Check,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
+  Circle,
+  Eye,
+  EyeOff,
+  FileCheck,
   LayoutGrid,
   LayoutList,
+  Loader2,
+  Mail,
+  Mailbox,
   Menu,
+  Network,
+  Phone,
+  ScrollText,
   Search,
+  User,
+  X,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
 import { type IconBaseProps, type IconType } from "react-icons";
+import { BiLogoInstagramAlt } from "react-icons/bi";
+import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
+import { FaTelegramPlane } from "react-icons/fa";
 
 export type Icon = IconType | LucideIcon;
 
@@ -72,4 +89,23 @@ export const Icons = {
   layoutList: LayoutList,
   leftArrow: ChevronLeft,
   rightArrow: ChevronRight,
+  downArrow: ChevronDown,
+  eye: Eye,
+  eyeOff: EyeOff,
+  check: Check,
+  x: X,
+  circle: Circle,
+  fileCheck: FileCheck,
+  network: Network,
+  scrollText: ScrollText,
+  user: User,
+  loader: Loader2,
+  mail: Mail,
+  mailBox: Mailbox,
+  phone: Phone,
+  telegram: FaTelegramPlane as IconType,
+  facebook: BsFacebook as IconType,
+  twitter: BsTwitter as IconType,
+  youtube: BsYoutube as IconType,
+  instagram: BiLogoInstagramAlt as IconType,
 };

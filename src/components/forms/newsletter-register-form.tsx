@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mailbox } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { AnimatedInput } from "@/components/elements/common";
@@ -20,6 +19,8 @@ import {
 } from "@/types/validations/newsletter.validation";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const NewsletterRegisterForm = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
@@ -46,7 +47,7 @@ export const NewsletterRegisterForm = ({ lang }: { lang: Locale }) => {
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Mailbox}
+                  Icon={Icons.mailBox}
                   label={"عضویت در خبرنامه"}
                   {...field}
                 />

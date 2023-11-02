@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { AnimatedInput } from "@/components/elements/common";
@@ -20,10 +19,11 @@ import {
   firstSignUpInputValidator,
   type FirstSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const FirstSignUpForm = ({
   lang,
@@ -59,7 +59,7 @@ export const FirstSignUpForm = ({
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Phone}
+                  Icon={Icons.phone}
                   label={firstSignUpFormDict.phone[lang]}
                   inputVariant="auth"
                   {...field}
@@ -70,7 +70,10 @@ export const FirstSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
           {firstSignUpFormDict.button[lang]}
           <span className="sr-only">{firstSignUpFormDict.button[lang]}</span>
