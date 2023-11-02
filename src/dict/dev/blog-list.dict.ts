@@ -1,24 +1,21 @@
-
+import { type Locale } from "#/i18n.config";
 
 // blog detailsblog
-export interface BlogsProps {
+export interface BlogsPropsDict {
   id: string;
   title: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   category: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   description: {
-    fa: string;
-    en: string;
+    [key in Locale]: string;
   };
   image: string;
 }
 
-export const blogs: BlogsProps[] = [
+export const blogsDict: BlogsPropsDict[] = [
   {
     id: "1",
     title: {

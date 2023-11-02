@@ -1,13 +1,12 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
-import Link from "next/link";
-
-import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
-import { cn } from "@/lib/utils";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
+
+import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
+import { cn } from "@/lib/utils";
 
 import { i18n, type Locale } from "#/i18n.config";
 

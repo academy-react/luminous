@@ -3,22 +3,27 @@
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import { AnimatedPasswordInput } from "@/components/elements/common";
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui";
+import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import {
   secondSignUpInputValidator,
   type SecondSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { secondSignUpForm } from "@/dict/auth/auth.dict";
-
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
+import { secondSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { AnimatedPasswordInput } from "../common/animated-input";
-import { Button } from "../ui/button";
+import { Icons } from "../assets/icons";
 
 export const SecondSignUpForm = ({
   lang,
@@ -51,7 +56,7 @@ export const SecondSignUpForm = ({
               <FormControl>
                 <AnimatedPasswordInput
                   lang={lang}
-                  label={secondSignUpForm.code[lang]}
+                  label={secondSignUpFormDict.code[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -61,10 +66,13 @@ export const SecondSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
-          {secondSignUpForm.button[lang]}
-          <span className="sr-only">{secondSignUpForm.button[lang]}</span>
+          {secondSignUpFormDict.button[lang]}
+          <span className="sr-only">{secondSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

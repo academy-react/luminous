@@ -1,29 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import { AnimatedInput } from "@/components/elements/common";
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui";
+import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import {
   thirdSignUpInputValidator,
   type ThirdSignUpInputProps,
 } from "@/types/validations/auth.validation";
-
-import "@/dict/auth/auth.dict";
-
-import { useRouter } from "next/navigation";
-
-import { thirdSignUpForm } from "@/dict/auth/auth.dict";
-
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
+import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { AnimatedInput } from "../common/animated-input";
-import { Button } from "../ui/button";
+import { Icons } from "../assets/icons";
 
 export const ThirdSignUpForm = ({
   lang,
@@ -57,8 +58,8 @@ export const ThirdSignUpForm = ({
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Mail}
-                  label={thirdSignUpForm.email[lang]}
+                  Icon={Icons.mail}
+                  label={thirdSignUpFormDict.email[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -68,10 +69,13 @@ export const ThirdSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
-          {thirdSignUpForm.button[lang]}
-          <span className="sr-only">{thirdSignUpForm.button[lang]}</span>
+          {thirdSignUpFormDict.button[lang]}
+          <span className="sr-only">{thirdSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

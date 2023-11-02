@@ -4,21 +4,26 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import { AnimatedInput } from "@/components/elements/common";
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui";
 
 import {
   resetPasswordInputValidator,
   type ResetPasswordInputProps,
 } from "@/types/validations/auth.validation";
-import { resetPasswordForm } from "@/dict/auth/auth.dict";
-
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/common/animated-input";
+import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { Button } from "../ui/button";
+import { Icons } from "../assets/icons";
 
 export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,8 +51,8 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Mail}
-                  label={resetPasswordForm.email[lang]}
+                  Icon={Icons.mail}
+                  label={resetPasswordFormDict.email[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -57,10 +62,13 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
-          {resetPasswordForm.button[lang]}
-          <span className="sr-only">{resetPasswordForm.button[lang]}</span>
+          {resetPasswordFormDict.button[lang]}
+          <span className="sr-only">{resetPasswordFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

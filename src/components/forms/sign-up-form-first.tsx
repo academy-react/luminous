@@ -3,21 +3,27 @@
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+import { AnimatedInput } from "@/components/elements/common";
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/elements/ui";
+import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import {
   firstSignUpInputValidator,
   type FirstSignUpInputProps,
 } from "@/types/validations/auth.validation";
-import { firstSignUpForm } from "@/dict/auth/auth.dict";
-
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/common/animated-input";
-import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
+import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
+
+import { Icons } from "../assets/icons";
 
 export const FirstSignUpForm = ({
   lang,
@@ -53,8 +59,8 @@ export const FirstSignUpForm = ({
               <FormControl>
                 <AnimatedInput
                   lang={lang}
-                  Icon={Phone}
-                  label={firstSignUpForm.phone[lang]}
+                  Icon={Icons.phone}
+                  label={firstSignUpFormDict.phone[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -64,10 +70,13 @@ export const FirstSignUpForm = ({
         />
         <Button disabled={isLoading} dir="ltr" variant="auth">
           {isLoading && (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            <Icons.loader
+              className="mr-2 h-4 w-4 animate-spin"
+              aria-hidden="true"
+            />
           )}
-          {firstSignUpForm.button[lang]}
-          <span className="sr-only">{firstSignUpForm.button[lang]}</span>
+          {firstSignUpFormDict.button[lang]}
+          <span className="sr-only">{firstSignUpFormDict.button[lang]}</span>
         </Button>
       </form>
     </Form>

@@ -1,19 +1,19 @@
 import Link from "next/link";
 
-import { signInForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { SignInForm } from "@/components/forms/sign-in-form";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { LoginLady } from "@/components/artworks/auth/sign-in-lady.artwork";
-import { LoginMobile } from "@/components/artworks/auth/sign-in-mobile.artwork";
-import { SignInForm } from "@/components/forms/sign-in-form";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
-import { Icons } from "@/components/utils/icons";
+} from "@/components/elements/ui";
+import { LoginLady } from "@/components/assets/artworks/auth/sign-in-lady.artwork";
+import { LoginMobile } from "@/components/assets/artworks/auth/sign-in-mobile.artwork";
+import { Icons } from "@/components/assets/icons";
+
+import { signInFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -23,7 +23,7 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
-            {signInForm.title[lang]}
+            {signInFormDict.title[lang]}
           </CardTitle>
           <Icons.logInIcon className="h-10 w-10" />
         </CardHeader>
@@ -36,18 +36,18 @@ const SignInPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
             href={`/${lang}/reset-password`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {signInForm.forgot[lang]}
+            {signInFormDict.forgot[lang]}
           </Link>
           <div className="text-xs">
             <span className="me-1 inline-block opacity-70">
-              {signInForm.question[lang]}
+              {signInFormDict.question[lang]}
             </span>
             <Link
               aria-label="Sign up"
               href={`/${lang}/sign-up`}
               className="text-blue-800 transition-colors duration-300 hover:text-blue-500"
             >
-              {signInForm.link[lang]}
+              {signInFormDict.link[lang]}
             </Link>
           </div>
         </CardFooter>

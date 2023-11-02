@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# due to developers using different OS's, package-lock.json may be different
+# from machine to machine. This is why we ignore it.
+package-lock.json

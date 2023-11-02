@@ -1,19 +1,19 @@
 import Link from "next/link";
 
-import { resetPasswordForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { ResetPasswordForm } from "@/components/forms/reset-password-form";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { ResetPasswordLady } from "@/components/artworks/auth/reset-pass-lady.artwork";
-import { ResetPasswordForm } from "@/components/forms/reset-password-form";
+} from "@/components/elements/ui";
+import { ResetPasswordLady } from "@/components/assets/artworks/auth/reset-pass-lady.artwork";
+
+import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
 
 const ResetPasswordPage = ({
   params: { lang },
@@ -25,7 +25,7 @@ const ResetPasswordPage = ({
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
-            {resetPasswordForm.title[lang]}
+            {resetPasswordFormDict.title[lang]}
           </CardTitle>
         </CardHeader>
         <CardContent className="">
@@ -37,19 +37,19 @@ const ResetPasswordPage = ({
             href={`/${lang}/sign-in`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {resetPasswordForm.signIn[lang]}
+            {resetPasswordFormDict.signIn[lang]}
           </Link>
           <Link
             aria-label="sign-up"
             href={`/${lang}/sign-up`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {resetPasswordForm.signUp[lang]}
+            {resetPasswordFormDict.signUp[lang]}
           </Link>
         </CardFooter>
       </Card>
       <div className="relative -z-10 hidden h-full w-[40vw] flex-row md:flex">
-        <div className="absolute end-0 top-1/2 translate-y-[-50%] scale-x-[-1] transform">
+        <div className="absolute end-0 top-1/2 translate-y-[-50%] scale-x-[-1]">
           <ResetPasswordLady />
         </div>
       </div>

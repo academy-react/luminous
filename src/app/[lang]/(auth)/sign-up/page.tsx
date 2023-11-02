@@ -3,20 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { firstSignUpForm } from "@/dict/auth/auth.dict";
-
+import PageAnimationWrapper from "@/components/layouts/animation/page-animation-wrapper";
+import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
+import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
+import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { SingUpLady } from "@/components/artworks/auth/sign-up-lady.artwork";
-import { FirstSignUpForm } from "@/components/forms/sign-up-form-first";
-import { SecondSignUpForm } from "@/components/forms/sign-up-form-second";
-import { ThirdSignUpForm } from "@/components/forms/sign-up-form-third";
-import PageAnimationWrapper from "@/components/layout/animation/page-animation-wrapper";
+} from "@/components/elements/ui";
+import { SingUpLady } from "@/components/assets/artworks/auth/sign-up-lady.artwork";
+
+import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
 import { type Locale } from "#/i18n.config";
 
@@ -30,7 +30,7 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <Card className="w-[22rem] border-none bg-white px-5 shadow-lg">
         <CardHeader className="flex items-center justify-center gap-4 py-7">
           <CardTitle className="text-2xl font-extrabold text-purple-primary">
-            {firstSignUpForm.title[lang]}
+            {firstSignUpFormDict.title[lang]}
           </CardTitle>
         </CardHeader>
         <CardContent className="">
@@ -54,7 +54,7 @@ const SignUpPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
             href={`/${lang}/sign-in`}
             className="text-xs text-blue-800 transition-colors duration-300 hover:text-blue-500"
           >
-            {firstSignUpForm.link[lang]}
+            {firstSignUpFormDict.link[lang]}
           </Link>
         </CardFooter>
       </Card>
