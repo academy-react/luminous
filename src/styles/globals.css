@@ -43,3 +43,12 @@
     @apply scroll-smooth scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-zinc-700 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-corner-rounded-full;
   }
 }
+
+@layer components {
+  .shadow-light {
+    --tw-shadow: 0 1px 60px rgba(0, 0, 0, 5%);
+    --tw-shadow-colored: 0 1px 60px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
