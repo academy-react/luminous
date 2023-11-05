@@ -1,5 +1,37 @@
-export const SideBar = ({ children }: { children: React.ReactNode }) => {
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const sideBarVariants = cva("space-y-5", {
+  variants: {
+    variant: {
+      default: "",
+      sticky: "sticky top-[5.4rem] shrink-0",
+    },
+    size: {
+      default: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
+  },
+});
+
+export interface SideBarProps extends VariantProps<typeof sideBarVariants> {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const SideBar = ({
+  children,
+  className,
+  variant,
+  size,
+}: SideBarProps) => {
   return (
-    <div className="sticky top-[5.4rem] shrink-0 space-y-5">{children}</div>
+    <div className={cn(sideBarVariants({ variant, size, className }))}>
+      {children}
+    </div>
   );
 };
