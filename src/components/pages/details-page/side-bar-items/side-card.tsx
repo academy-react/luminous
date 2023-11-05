@@ -1,5 +1,3 @@
-import { Card } from "@/components/elements/ui";
-
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
