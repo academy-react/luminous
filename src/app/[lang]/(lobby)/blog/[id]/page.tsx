@@ -2,8 +2,8 @@
 
 import { ContentBody, SideBar } from "@/components/pages/details-page";
 import {
-  BlogPostBody,
   CommentSection,
+  PostBody,
 } from "@/components/pages/details-page/content";
 import {
   CategoriesSideCard,
@@ -29,7 +29,7 @@ const BlogIDPage = ({
       <div className="shadow-light mt-5 rounded-xl bg-card px-3 py-8"></div>
       <section className="mt-5 grid grid-cols-3 items-start gap-5">
         <ContentBody>
-          <BlogPostBody />
+          <PostBody />
           <CommentSection lang={lang} />
         </ContentBody>
         <SideBar>

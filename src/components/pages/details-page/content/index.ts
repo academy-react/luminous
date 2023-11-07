@@ -1,2 +1,2 @@
-export * from "./blog-post-body";
+export * from "./post-body";
 export * from "./comment-section";
