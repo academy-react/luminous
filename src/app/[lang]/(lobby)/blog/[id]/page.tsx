@@ -8,8 +8,8 @@ import {
 import {
   CategoriesSideCard,
   LinkSideCard,
-  PostSuggestionSideCard,
 } from "@/components/pages/details-page/side-bar-items";
+import { PostSuggestionSideCard } from "@/components/pages/details-page/side-bar-items/client";
 
 import {
   categoriesDict,
