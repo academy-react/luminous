@@ -1,6 +1,6 @@
 "use client";
 
-import { ContentBody, SideBar } from "@/components/pages/details-page";
+import { ContentBody, SideBar, UrlBar } from "@/components/pages/details-page";
 import {
   CommentSection,
   PostBody,
@@ -26,7 +26,7 @@ const BlogIDPage = ({
 }) => {
   return (
     <main className="container">
-      <div className="shadow-light mt-5 rounded-xl bg-card px-3 py-8"></div>
+      <UrlBar />
       <section className="mt-5 grid grid-cols-3 items-start gap-5">
         <ContentBody>
           <PostBody />
