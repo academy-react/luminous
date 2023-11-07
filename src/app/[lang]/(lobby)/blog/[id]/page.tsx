@@ -1,5 +1,3 @@
-"use client";
-
 import { ContentBody, SideBar, UrlBar } from "@/components/pages/details-page";
 import {
   CommentSection,
