@@ -20,11 +20,9 @@ import {
 } from "@/components/elements/ui";
 import { Checkbox } from "@/components/elements/ui/client";
 
-import {
-  signInInputValidator,
-  type SignInInputProps,
-} from "@/types/validations/auth.validation";
 import { signInFormDict } from "@/dict/pages/auth.dict";
+
+import { signInInputSchema, type SignInInputProps } from "@/core/validators";
 
 import { type Locale } from "#/i18n.config";
 
@@ -35,7 +33,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
 
   const form = useForm<SignInInputProps>({
-    resolver: zodResolver(signInInputValidator),
+    resolver: zodResolver(signInInputSchema),
     defaultValues: {
       username: "",
       password: "",

@@ -15,11 +15,12 @@ import {
   FormItem,
 } from "@/components/elements/ui";
 
-import {
-  resetPasswordInputValidator,
-  type ResetPasswordInputProps,
-} from "@/types/validations/auth.validation";
 import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
+
+import {
+  resetPasswordInputSchema,
+  type ResetPasswordInputProps,
+} from "@/core/validators";
 
 import { type Locale } from "#/i18n.config";
 
@@ -30,7 +31,7 @@ export const ResetPasswordForm = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
 
   const form = useForm<ResetPasswordInputProps>({
-    resolver: zodResolver(resetPasswordInputValidator),
+    resolver: zodResolver(resetPasswordInputSchema),
   });
 
   const onSubmit = (data: ResetPasswordInputProps) => {
