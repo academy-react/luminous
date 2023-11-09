@@ -9,9 +9,14 @@ import {
 import { TeachersSection } from "@/components/pages/lobby/client";
 import { TempTitle } from "@/components/utils/temp-title";
 
+import { getTopCoursesList } from "@/core/services/api";
+
 import { type Locale } from "#/i18n.config";
 
-const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
+const HomePage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
+  // const data = await getTopCoursesList();
+  // console.log(data);
+
   return (
     <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
       <HeroSection lang={lang} />
