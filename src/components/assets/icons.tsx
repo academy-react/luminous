@@ -7,9 +7,13 @@ import {
   Eye,
   EyeOff,
   FileCheck,
+  FileEdit,
+  FolderClosed,
+  Home,
   LayoutGrid,
   LayoutList,
   Loader2,
+  LogOut,
   Mail,
   Mailbox,
   Menu,
@@ -21,10 +25,6 @@ import {
   X,
   type LucideIcon,
   type LucideProps,
-  Home,
-  LogOut,
-  FolderClosed,
-  FileEdit,
 } from "lucide-react";
 import { type IconBaseProps, type IconType } from "react-icons";
 import { BiLogoInstagramAlt } from "react-icons/bi";
@@ -110,7 +110,7 @@ export const Icons = {
   home: Home,
   logOut: LogOut,
   myCourses: FolderClosed,
-  edit: FileEdit,   
+  edit: FileEdit,
   telegram: FaTelegramPlane as IconType,
   facebook: BsFacebook as IconType,
   twitter: BsTwitter as IconType,
