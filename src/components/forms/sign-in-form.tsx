@@ -46,8 +46,6 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
 
     const result = await login(data);
 
-    console.log("login result", result);
-
     if (result === "Success") {
       router.push(`/${lang}`);
     }

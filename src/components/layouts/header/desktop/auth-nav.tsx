@@ -22,11 +22,7 @@ export const AuthNav = ({
   console.log("token in AuthNav", token);
 
   const handleLogOut = async () => {
-    console.log("handleLogOut");
-
     const res = await logOut();
-
-    console.log("res", res);
 
     if (res) {
       router.refresh();
