@@ -1,2 +1,1 @@
-export * from "./get-top-courses";
-export * from "./auth/login.api";
+export * from "./course/get-top-courses.api";
