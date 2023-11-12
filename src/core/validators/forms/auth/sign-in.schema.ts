@@ -18,18 +18,3 @@ export const signInInputSchema = z.object({
 });
 
 export type SignInInputProps = z.infer<typeof signInInputSchema>;
-
-export const loginResponseSchema = z.object({
-  apiKey: z.string().min(1).nullable(),
-  phoneNumber: z
-    .string()
-    .regex(/^09\d{9}$/)
-    .nullable(),
-  id: z.number(),
-  token: z.string().min(1).nullable(),
-  message: z.string().min(1),
-  success: z.boolean(),
-  errors: z.unknown(),
-});
-
-export type LoginResponseProps = z.infer<typeof loginResponseSchema>;

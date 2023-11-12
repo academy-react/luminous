@@ -17,9 +17,3 @@ export const thirdSignUpInputSchema = z.object({
 });
 
 export type ThirdSignUpInputProps = z.infer<typeof thirdSignUpInputSchema>;
-
-export const resetPasswordInputSchema = z.object({
-  email: z.string().email(),
-});
-
-export type ResetPasswordInputProps = z.infer<typeof resetPasswordInputSchema>;

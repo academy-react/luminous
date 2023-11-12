@@ -1,2 +1,3 @@
-export * from "./course/course.schema";
-export * from "./news/news.schema";
+export * from "./course";
+export * from "./news";
+export * from "./auth";
