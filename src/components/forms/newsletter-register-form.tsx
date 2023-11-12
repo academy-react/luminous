@@ -16,7 +16,7 @@ import {
 import {
   newsletterRegisterInputSchema,
   type NewsletterRegisterInputProps,
-} from "@/core/validators";
+} from "@/core/validators/forms/newsletter.schema";
 
 import { type Locale } from "#/i18n.config";
 

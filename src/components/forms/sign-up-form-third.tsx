@@ -21,7 +21,7 @@ import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 import {
   thirdSignUpInputSchema,
   type ThirdSignUpInputProps,
-} from "@/core/validators";
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 

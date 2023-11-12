@@ -62,14 +62,14 @@ export const Icons = {
       <g data-name="log-in">
         <path
           d="M41.027.036C40.967.03 40.917 0 40.855 0H15.168C11.216 0 8 3.216 8 7.168v2.39a2.39 2.39 0 0 0 4.779 0v-2.39a2.393 2.393 0 0 1 2.39-2.389H26.3l-.729.244a4.804 4.804 0 0 0-3.235 4.535V45.4h-7.169a2.393 2.393 0 0 1-2.389-2.39v-4.778a2.39 2.39 0 0 0-4.779 0v4.779c0 3.952 3.216 7.168 7.168 7.168h7.169v2.39a4.784 4.784 0 0 0 4.779 4.779c.511 0 .996-.074 1.522-.237l14.356-4.786a4.803 4.803 0 0 0 3.238-4.535V4.779c0-2.786-2.402-4.97-5.205-4.743Z"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           fill='url("#a")'
           transform="translate(1388.14 392.842)"
           data-name="Path 702"
         />
         <path
           d="M25.584 15.258 16.026 5.7a2.39 2.39 0 0 0-4.079 1.69v7.168H2.39a2.39 2.39 0 0 0 0 4.78h9.558v7.168a2.39 2.39 0 0 0 4.079 1.69l9.558-9.559a2.387 2.387 0 0 0 0-3.379Z"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           fill='url("#b")'
           transform="translate(1377.023 399.79)"
           data-name="Path 703"
@@ -77,12 +77,12 @@ export const Icons = {
       </g>
       <defs>
         <linearGradient x1="-.246" y1="-.073" x2="1.215" y2=".955" id="a">
-          <stop stop-color="#9600ce" offset="0" />
-          <stop stop-color="#b902b3" offset="1" />
+          <stop stopColor="#9600ce" offset="0" />
+          <stop stopColor="#b902b3" offset="1" />
         </linearGradient>
         <linearGradient x1="-.246" y1="-.073" x2="1.215" y2=".955" id="b">
-          <stop stop-color="#9600ce" offset="0" />
-          <stop stop-color="#b902b3" offset="1" />
+          <stop stopColor="#9600ce" offset="0" />
+          <stop stopColor="#b902b3" offset="1" />
         </linearGradient>
       </defs>
     </svg>

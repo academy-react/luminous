@@ -1,13 +1,5 @@
 import { z } from "zod";
 
-export const signInInputSchema = z.object({
-  username: z.string().min(5).max(35),
-  password: z.string().min(1),
-  remember: z.boolean().default(true).optional(),
-});
-
-export type SignInInputProps = z.infer<typeof signInInputSchema>;
-
 export const firstSignUpInputSchema = z.object({
   phone: z.string().regex(/^09\d{9}$/),
 });
@@ -25,9 +17,3 @@ export const thirdSignUpInputSchema = z.object({
 });
 
 export type ThirdSignUpInputProps = z.infer<typeof thirdSignUpInputSchema>;
-
-export const resetPasswordInputSchema = z.object({
-  email: z.string().email(),
-});
-
-export type ResetPasswordInputProps = z.infer<typeof resetPasswordInputSchema>;

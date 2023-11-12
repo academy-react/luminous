@@ -19,14 +19,17 @@ import {
   FormLabel,
 } from "@/components/elements/ui";
 import { Checkbox } from "@/components/elements/ui/client";
+import { Icons } from "@/components/assets/icons";
 
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
-import { signInInputSchema, type SignInInputProps } from "@/core/validators";
+import {
+  signInInputSchema,
+  type SignInInputProps,
+} from "@/core/validators/forms";
+import { login } from "@/lib/actions/log-in.action";
 
 import { type Locale } from "#/i18n.config";
-
-import { Icons } from "../assets/icons";
 
 export const SignInForm = ({ lang }: { lang: Locale }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,14 +38,22 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
   const form = useForm<SignInInputProps>({
     resolver: zodResolver(signInInputSchema),
     defaultValues: {
-      username: "",
+      phoneOrGmail: "",
       password: "",
-      remember: true,
+      rememberMe: true,
     },
   });
 
-  const onSubmit = (data: SignInInputProps) => {
-    router.push(`/${lang}`);
+  const onSubmit = async (data: SignInInputProps) => {
+    setIsLoading(true);
+
+    const result = await login(data);
+
+    if (result === "Success") {
+      router.push(`/${lang}`);
+    }
+
+    setIsLoading(false);
   };
 
   return (
@@ -53,14 +64,14 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
       >
         <FormField
           control={form.control}
-          name="username"
+          name="phoneOrGmail"
           render={({ field }) => (
             <FormItem>
               <FormControl>
                 <AnimatedInput
                   lang={lang}
                   Icon={Icons.user}
-                  label={signInFormDict.username[lang]}
+                  label={signInFormDict.phoneOrGmail[lang]}
                   inputVariant="auth"
                   {...field}
                 />
@@ -86,7 +97,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
         />
         <FormField
           control={form.control}
-          name="remember"
+          name="rememberMe"
           render={({ field }) => (
             <FormItem className="flex items-center justify-center gap-1 space-y-0 text-blue-800">
               <FormControl>
@@ -98,7 +109,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
               </FormControl>
               <div className="leading-none">
                 <FormLabel className="text-xs">
-                  {signInFormDict.remember[lang]}
+                  {signInFormDict.rememberMe[lang]}
                 </FormLabel>
               </div>
             </FormItem>
