@@ -3,8 +3,9 @@ import { type Metadata } from "next";
 import { Footer } from "@/components/layouts/footer/footer";
 import { Header } from "@/components/layouts/header/header";
 
-import { type Locale } from "#/i18n.config";
 import { auth } from "@/lib/auth";
+
+import { type Locale } from "#/i18n.config";
 
 export const metadata: Metadata = {
   title: "Luminous",
@@ -21,7 +22,7 @@ const LobbyLayout = async ({
   children: React.ReactNode;
   params: { lang: Locale };
 }) => {
-  const session = await auth()
+  const session = await auth();
 
   return (
     <div className="relative flex min-h-screen flex-col">

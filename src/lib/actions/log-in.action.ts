@@ -1,6 +1,6 @@
 "use server";
 
-import { type SignInInputProps } from "@/core/validators";
+import { type SignInInputProps } from "@/core/validators/forms";
 import { signIn } from "@/lib/auth";
 
 export const login = async (data: SignInInputProps) => {
