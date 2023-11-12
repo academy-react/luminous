@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const newsSchema = z.object({
+export const newsSchema = z.object({
   id: z.string(),
   title: z.string(),
   miniDescribe: z.string(),
@@ -19,7 +19,7 @@ const newsSchema = z.object({
 
 export type NewsType = z.infer<typeof newsSchema>;
 
-const newsFilterPagesSchema = z.object({
+export const newsFilterPagesSchema = z.object({
   news: z.array(newsSchema),
   totalCount: z.number(),
 });
