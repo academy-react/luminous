@@ -20,7 +20,7 @@ import { resetPasswordFormDict } from "@/dict/pages/auth.dict";
 import {
   resetPasswordInputSchema,
   type ResetPasswordInputProps,
-} from "@/core/validators";
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 

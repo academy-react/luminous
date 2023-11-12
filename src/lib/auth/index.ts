@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 import { login } from "@/core/services/api";
-import { signInInputSchema } from "@/core/validators";
+import { signInInputSchema } from "@/core/validators/forms";
 
 import { authConfig } from "#/auth.config";
 

@@ -20,7 +20,7 @@ import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 import {
   firstSignUpInputSchema,
   type FirstSignUpInputProps,
-} from "@/core/validators";
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 

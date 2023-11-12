@@ -1,5 +1,6 @@
 import http from "@/core/services/interceptor";
-import { loginResponseSchema, type SignInInputProps } from "@/core/validators";
+import { loginResponseSchema } from "@/core/validators/api";
+import { type SignInInputProps } from "@/core/validators/forms";
 
 export const login = async (credentials: SignInInputProps) => {
   const response = await http.post("/Sign/Login", credentials);

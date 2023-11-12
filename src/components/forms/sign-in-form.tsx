@@ -23,7 +23,10 @@ import { Icons } from "@/components/assets/icons";
 
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
-import { signInInputSchema, type SignInInputProps } from "@/core/validators";
+import {
+  signInInputSchema,
+  type SignInInputProps,
+} from "@/core/validators/forms";
 import { login } from "@/lib/actions/log-in.action";
 
 import { type Locale } from "#/i18n.config";
