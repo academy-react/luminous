@@ -17,7 +17,7 @@ export const getNewsFilterPages = async (
   if (!parsedResult.success) {
     console.error(parsedResult.error);
 
-    return [];
+    return null;
   }
 
   return parsedResult.data;
