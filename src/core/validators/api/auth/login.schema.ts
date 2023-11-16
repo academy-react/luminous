@@ -8,6 +8,7 @@ export const loginResponseSchema = z.object({
     .nullable(),
   id: z.number(),
   token: z.string().min(1).nullable(),
+  roles: z.array(z.union([z.literal("Administrator"), z.literal("Teacher")])),
   message: z.string().min(1),
   success: z.boolean(),
   errors: z.unknown(),
