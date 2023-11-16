@@ -12,18 +12,19 @@ import { TempTitle } from "@/components/utils/temp-title";
 import { getTopCoursesList } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
+import { getAllTeacher } from "@/core/services/api/teacher/get-all-teachers";
 
 const HomePage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
-  // const data = await getTopCoursesList();
-  // console.log(data);
+  const courseData = await getTopCoursesList();
+  const teacherData = await getAllTeacher();
 
   return (
     <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
-      <CourseSection lang={lang} />
+      <CourseSection lang={lang}/>
       <CategoriesSection lang={lang} />
-      <TeachersSection lang={lang} />
+      <TeachersSection lang={lang} data={teacherData} />
       <NewsSection lang={lang} />
       <TempTitle lang={lang} />
     </PageAnimationWrapper>
