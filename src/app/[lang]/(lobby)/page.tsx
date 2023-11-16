@@ -14,14 +14,13 @@ import { getTopCoursesList } from "@/core/services/api";
 import { type Locale } from "#/i18n.config";
 
 const HomePage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
-  // const data = await getTopCoursesList();
-  // console.log(data);
+  const data = await getTopCoursesList();
 
   return (
     <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
-      <CourseSection lang={lang} />
+      <CourseSection lang={lang} data={data}/>
       <CategoriesSection lang={lang} />
       <TeachersSection lang={lang} />
       <NewsSection lang={lang} />
