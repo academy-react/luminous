@@ -4,7 +4,7 @@ export const teacherSchema = z.object({
     teacherId: z.number(),
     fullName: z.string(),
     linkdinProfileLink: z.string(),
-    pictureAddress: z.null().optional(),
+    pictureAddress: z.string().nullable(),
     courseCounts: z.number(),
     newsCount: z.number()
   });
