@@ -9,7 +9,7 @@ import { Home } from "lucide-react";
 type CategoryCardProps = {
   title: string;
   icon: string;
-   color: string;
+   color: string | undefined;
 };
 
 export const CategoryCard = ({
