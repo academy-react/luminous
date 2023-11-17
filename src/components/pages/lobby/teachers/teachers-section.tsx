@@ -8,15 +8,15 @@ import {
   TeacherMiniCard,
 } from "@/components/pages/lobby/teachers/teacher-card";
 
-import { teachersDict } from "@/dict/dev";
 import { teachersTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { type Locale } from "#/i18n.config";
+import { type TeacherType } from "@/core/validators/api";
 
-export const TeachersSection = ({ lang }: { lang: Locale }) => {
-  const [shownTeacher, setShownTeacher] = useState(teachersDict[0]);
+export const TeachersSection = ({ lang , data }: { lang: Locale; data:TeacherType;}) => {
+  const [shownTeacher, setShownTeacher] = useState({data[0]});
 
-  const restTeachers = teachersDict.filter(
+  const restTeachers = data.filter(
     (teacher) => teacher.fullName[lang] !== shownTeacher?.fullName[lang]
   );
 
