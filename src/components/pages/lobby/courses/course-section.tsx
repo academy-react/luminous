@@ -38,26 +38,13 @@ export const CourseSection = ({
         <div className="grow rounded-xl bg-card shadow">
           <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
             <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
-              {/* {coursesDict &&
-                coursesDict
-                  .slice(1, 5)
-                  .map((course, index) => (
-                    <CourseSideCard key={index} img={course.image} />
-                  ))} */}
-
 
                   {/* new */}
               {/* {data.map((course, index) => (
                 <CourseSideCard key={index} img={course.tumbImageAddress} />
-              ))} */}
+              ))}  */}
             </div>
             <div className="flex w-full items-center justify-center gap-4 md:hidden">
-              {/* {coursesDict &&
-                coursesDict
-                  .slice(1, 4)
-                  .map((course, index) => (
-                    <CourseSideCard key={index} img={course.iamge} />
-                  ))} */}
 
                     {/* new */}
               {/* {data.map((course, index) => (
