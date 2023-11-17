@@ -15,11 +15,12 @@ import {
 } from "@/components/elements/ui";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
-import {
-  firstSignUpInputValidator,
-  type FirstSignUpInputProps,
-} from "@/types/validations/auth.validation";
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
+
+import {
+  firstSignUpInputSchema,
+  type FirstSignUpInputProps,
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 
@@ -35,7 +36,7 @@ export const FirstSignUpForm = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<FirstSignUpInputProps>({
-    resolver: zodResolver(firstSignUpInputValidator),
+    resolver: zodResolver(firstSignUpInputSchema),
     defaultValues: {
       phone: "",
     },

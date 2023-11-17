@@ -15,11 +15,12 @@ import {
 } from "@/components/elements/ui";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
-import {
-  secondSignUpInputValidator,
-  type SecondSignUpInputProps,
-} from "@/types/validations/auth.validation";
 import { secondSignUpFormDict } from "@/dict/pages/auth.dict";
+
+import {
+  secondSignUpInputSchema,
+  type SecondSignUpInputProps,
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 
@@ -35,7 +36,7 @@ export const SecondSignUpForm = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<SecondSignUpInputProps>({
-    resolver: zodResolver(secondSignUpInputValidator),
+    resolver: zodResolver(secondSignUpInputSchema),
   });
 
   const onSubmit = (data: SecondSignUpInputProps) => {

@@ -1,12 +1,15 @@
-import { NextResponse } from "next/server";
-import type { NextFetchEvent, NextRequest } from "next/server";
+import {
+  NextResponse,
+  type NextFetchEvent,
+  type NextRequest,
+} from "next/server";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-import { i18n } from "#/i18n.config";
+import { type MiddlewareFactory } from "@/middlewares/chain";
 
-import { type MiddlewareFactory } from "./chain";
+import { i18n } from "#/i18n.config";
 
 const getLocale = (req: NextRequest) => {
   const negotiatorHeaders: Record<string, string> = {};

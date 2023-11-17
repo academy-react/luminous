@@ -8,9 +8,17 @@ import { Button } from "@/components/elements/ui";
 import { coursesDict } from "@/dict/dev/courses.dict";
 import { coursesTitleBoxDict } from "@/dict/pages/lobby.dict";
 
+import { type CourseListType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
-export const CourseSection = ({ lang }: { lang: Locale }) => {
+export const CourseSection = ({
+  lang,
+  data,
+}: {
+  lang: Locale;
+  data: CourseListType;
+}) => {
   return (
     <div className="flex w-full flex-col items-center gap-10">
       <TitleBox
@@ -20,33 +28,41 @@ export const CourseSection = ({ lang }: { lang: Locale }) => {
       />
       <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row md:items-center">
         <div className="h-full grow md:w-[70%]">
-          {coursesDict[0] && (
+          {data[0] && (//coursesDict change to data
             <CourseCard
               lang={lang}
-              img={coursesDict[0].image}
-              title={coursesDict[0].title}
-              desc={coursesDict[0].description}
-              teacher={coursesDict[0].teacher}
+              data={data[0]}
             />
           )}
         </div>
         <div className="grow rounded-xl bg-card shadow">
           <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
             <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
-              {coursesDict &&
+              {/* {coursesDict &&
                 coursesDict
                   .slice(1, 5)
                   .map((course, index) => (
                     <CourseSideCard key={index} img={course.image} />
-                  ))}
+                  ))} */}
+
+
+                  {/* new */}
+              {/* {data.map((course, index) => (
+                <CourseSideCard key={index} img={course.tumbImageAddress} />
+              ))} */}
             </div>
             <div className="flex w-full items-center justify-center gap-4 md:hidden">
-              {coursesDict &&
+              {/* {coursesDict &&
                 coursesDict
                   .slice(1, 4)
                   .map((course, index) => (
-                    <CourseSideCard key={index} img={course.image} />
-                  ))}
+                    <CourseSideCard key={index} img={course.iamge} />
+                  ))} */}
+
+                    {/* new */}
+              {/* {data.map((course, index) => (
+                <CourseSideCard key={index} img={course.tumbImageAddress} />
+              ))} */}
             </div>
             <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
               <Link href="#" className="">
