@@ -1,9 +1,10 @@
 "use server";
 
-import axios, { type AxiosError, type AxiosResponse, type InternalAxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig, type AxiosError, type AxiosResponse, type InternalAxiosRequestConfig } from "axios";
 
 import { parsedEnv } from "@/core/config/env.config";
 import { courseListSchema } from "@/core/validators/api";
+import { type Course } from "./types";
 
 const env = parsedEnv();
 
@@ -24,6 +25,17 @@ instance.interceptors.request.use((opt) => {
   opt.headers["MessageTest"] = "Hello world!";
   return opt;
 });//new
+// interface MyRequestConfig extends AxiosRequestConfig {
+//   data?: Course[] ;
+//  }
+//  interface MyResponseConfig extends AxiosResponse {
+//   data: Course[];
+//  }
+
+// interface MySchemas {
+//   '/Home/GetCoursesTop': typeof courseListSchema;
+//   // Add other URLs here...
+// }
 
 // const requestSchemas = {
 //   '/Home/GetCoursesTop': courseListSchema,
@@ -34,17 +46,19 @@ instance.interceptors.request.use((opt) => {
 //   '/Home/GetCoursesTop': courseListSchema,
  
 //  };
-//  instance.interceptors.request.use((request: InternalAxiosRequestConfig<any>) => {
-//   const schema = requestSchemas[request.url as keyof typeof requestSchemas];
+//  instance.interceptors.request.use((request: InternalAxiosRequestConfig) => {
+//   const myRequest = request as MyRequestConfig;
+//   const schema = requestSchemas[myRequest.url as keyof MySchemas];
  
 //   if (schema) {
-//     const result = schema.safeParse(request.data);
+//     const result = schema.safeParse(myRequest.data);
+//     console.log(result)
  
 //     if (!result.success) {
 //       throw new Error('Request validation failed');
 //     }
  
-//     request.data = result.data;
+//     myRequest.data = result.data;
 //   }
  
 //   return request;
@@ -53,16 +67,17 @@ instance.interceptors.request.use((opt) => {
 //  });
  
 //  instance.interceptors.response.use((response: AxiosResponse) => {
-//   const schema = responseSchemas[response.config.url as keyof typeof responseSchemas];
+//   const MyResponse = response as MyResponseConfig;
+//   const schema = responseSchemas[MyResponse.config.url as keyof MySchemas];
  
 //   if (schema) {
-//     const result = schema.safeParse(response.data);
+//     const result = schema.safeParse(MyResponse.data);
  
 //     if (!result.success) {
 //       throw new Error('Response validation failed');
 //     }
  
-//     response.data = result.data;
+//     MyResponse.data = result.data;
 //   }
  
 //   return response;
