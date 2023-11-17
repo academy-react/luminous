@@ -22,7 +22,7 @@ const HomePage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
     <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
-      <CourseSection lang={lang}/>
+      <CourseSection lang={lang} data={courseData}/>
       <CategoriesSection lang={lang} />
       <TeachersSection lang={lang} data={teacherData} />
       <NewsSection lang={lang} />
