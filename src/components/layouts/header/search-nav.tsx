@@ -25,16 +25,16 @@ export const SearchNav = () => {
         <Icons.search />
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="جستجو بر اساس عنوان..." />
         <CommandList>
           <CommandEmpty
             className={cn(isPending ? "hidden" : "py-6 text-center text-sm")}
           >
-            No results found.
+            یافت نشد.
           </CommandEmpty>
           <div className="flex">
             <CommandGroup
-              heading="Suggestions"
+              heading="اخبار و مقالات"
               className="text-purple-primary "
             >
               <CommandItem>Calculator</CommandItem>
@@ -42,9 +42,11 @@ export const SearchNav = () => {
 
             <div className="divide-x border "></div>
             <CommandGroup
-              heading="Settings"
+              heading="دوره ها"
               className="text-purple-primary "
-            ></CommandGroup>
+            >
+              <CommandItem>Calculator</CommandItem>
+            </CommandGroup>
           </div>
         </CommandList>
       </CommandDialog>
