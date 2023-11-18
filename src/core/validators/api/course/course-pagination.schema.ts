@@ -14,7 +14,7 @@ export const coursePaginationSchema = z.object({
   courseRate: z.number(),
   title: z.string(),
   describe: z.string(),
-  tumbImageAddress: z.string().url(),
+  tumbImageAddress: z.string().url().nullable(),
   lastUpdate: z.string(), // or z.date() if you convert the string to a Date object
   courseId: z.string().uuid(),
   technologyList: z.string(),
