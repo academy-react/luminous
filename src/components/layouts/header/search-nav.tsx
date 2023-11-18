@@ -1,4 +1,4 @@
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 
 import { Button } from "@/components/elements/ui";
 import {
@@ -11,11 +11,24 @@ import {
 } from "@/components/elements/ui/command";
 import { Icons } from "@/components/assets/icons";
 
+import { getCoursesByQuery } from "@/core/services/api";
 import { cn } from "@/lib/utils";
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [courseList, setCourseList] = useState();
+  const getCourseQuery = async () => {
+    const courses = await getCoursesByQuery();
+    setCourseList(courses);
+    console.log("coursssssssssssssssssssss: ",courses);
+  };
+
+  
+  useEffect(() => {
+    getCourseQuery();
+  }, []);
+
   return (
     <>
       <Button
@@ -41,10 +54,7 @@ export const SearchNav = () => {
             </CommandGroup>
 
             <div className="divide-x border "></div>
-            <CommandGroup
-              heading="دوره ها"
-              className="text-purple-primary "
-            >
+            <CommandGroup heading="دوره ها" className="text-purple-primary ">
               <CommandItem>Calculator</CommandItem>
             </CommandGroup>
           </div>
