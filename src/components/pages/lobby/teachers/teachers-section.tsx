@@ -10,14 +10,20 @@ import {
 
 import { teachersTitleBoxDict } from "@/dict/pages/lobby.dict";
 
+import { type TeacherListType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
-import { type TeacherType } from "@/core/validators/api";
 
-export const TeachersSection = ({ lang , data }: { lang: Locale; data:TeacherType;}) => {
-  const [shownTeacher, setShownTeacher] = useState({data[0]});
-
+export const TeachersSection = ({
+  lang,
+  data,
+}: {
+  lang: Locale;
+  data: TeacherListType;
+}) => {
+  const [shownTeacher, setShownTeacher] = useState(data[0]);
   const restTeachers = data.filter(
-    (teacher) => teacher.fullName[lang] !== shownTeacher?.fullName[lang]
+    (teacher) => teacher.fullName !== shownTeacher?.fullName
   );
 
   return (
@@ -27,25 +33,10 @@ export const TeachersSection = ({ lang , data }: { lang: Locale; data:TeacherTyp
         title={teachersTitleBoxDict.title}
         desc={teachersTitleBoxDict.subtitle}
       />
-      {shownTeacher && (
-        <TeacherFullCard
-          lang={lang}
-          image={shownTeacher.image}
-          fullName={shownTeacher.fullName}
-          position={shownTeacher.position}
-          description={shownTeacher.description}
-        />
-      )}
+      {shownTeacher && <TeacherFullCard lang={lang} data={shownTeacher} />}
       <div className="grid gap-4 md:grid-flow-col md:grid-cols-1">
-        {restTeachers.map((teacher) => (
-          <TeacherMiniCard
-            key={teacher.fullName[lang]}
-            lang={lang}
-            image={teacher.image}
-            fullName={teacher.fullName}
-            position={teacher.position}
-            description={teacher.description}
-          />
+        {restTeachers.slice(1, 5).map((teacher, index) => (
+          <TeacherMiniCard key={index} lang={lang} data={teacher} />
         ))}
       </div>
     </section>
