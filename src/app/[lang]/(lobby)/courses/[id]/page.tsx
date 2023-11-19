@@ -18,30 +18,40 @@ import {
 
 import { shortLinkSideCardDict } from "@/dict/dev/details.dict";
 
+import { getCourseById } from "@/core/services/api/course/get-course-id.api";
+
 import { type Locale } from "#/i18n.config";
 
-const CoursesIDPage = ({
-  params: { lang, id: _id },
+const CoursesIDPage = async ({
+  params: { lang, id },
 }: {
-  params: { lang: Locale; id: number };
+  params: { lang: Locale; id: string };
 }) => {
+  const data = await getCourseById(id);
+
+  console.log(data);
+
   return (
     <main className="container">
-      <UrlBar />
-      <CourseInfo />
-      <DetailsSection>
-        <ContentBody>
-          <CourseDetailsGrid />
-          <CourseLessons />
-          <PostBody />
-          <CommentSection lang={lang} />
-        </ContentBody>
-        <SideBar variant="sticky">
-          <CourseInfoSideCard />
-          <TeacherSideCard />
-          <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
-        </SideBar>
-      </DetailsSection>
+      {data && (
+        <>
+          <UrlBar />
+          <CourseInfo data={data} />
+          <DetailsSection>
+            <ContentBody>
+              <CourseDetailsGrid />
+              <CourseLessons />
+              <PostBody />
+              <CommentSection lang={lang} />
+            </ContentBody>
+            <SideBar variant="sticky">
+              <CourseInfoSideCard data={data} />
+              <TeacherSideCard />
+              <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
+            </SideBar>
+          </DetailsSection>
+        </>
+      )}
     </main>
   );
 };
