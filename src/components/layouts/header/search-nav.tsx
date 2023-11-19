@@ -48,12 +48,16 @@ export const SearchNav = () => {
             یافت نشد.
           </CommandEmpty>
           <div className="flex">
-            <CommandGroup
+            {courseList?.map((item , index)=>(
+              <CommandGroup
+              key={index}
               heading="اخبار و مقالات"
               className="text-purple-primary "
             >
               <CommandItem>Calculator</CommandItem>
             </CommandGroup>
+            ))}
+            
 
             <div className="divide-x border "></div>
             <CommandGroup heading="دوره ها" className="text-purple-primary ">
