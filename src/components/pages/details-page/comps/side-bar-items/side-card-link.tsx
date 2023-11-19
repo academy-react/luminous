@@ -22,7 +22,7 @@ export const LinkSideCard = ({
       color={linkSideCardDict.color}
     >
       <div
-        className="flex items-center justify-between gap-x-2.5 rounded-xl border border-dashed border-gray-600/30 bg-background p-4 text-text/60"
+        className="flex items-center justify-between gap-x-2.5 rounded-xl border border-dashed border-gray-600/30 bg-background p-5 text-text/60"
         dir="rtl"
       >
         <Button size="icon" className="">

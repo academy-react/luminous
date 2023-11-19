@@ -4,7 +4,7 @@ import { commentsDict } from "@/dict/dev/comments.dict";
 
 import { type Locale } from "#/i18n.config";
 
-import { Comment } from "./comment/comment";
+import { Comment } from "./comment";
 
 export const CommentSection = ({ lang }: { lang: Locale }) => {
   return (

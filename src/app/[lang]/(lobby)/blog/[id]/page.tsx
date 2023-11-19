@@ -1,13 +1,14 @@
-import { ContentBody, SideBar, UrlBar } from "@/components/pages/details-page";
+import { UrlBar } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
   PostBody,
-} from "@/components/pages/details-page/content";
+} from "@/components/pages/details-page/comps/content-body";
 import {
   CategoriesSideCard,
   LinkSideCard,
-} from "@/components/pages/details-page/side-bar-items";
-import { PostSuggestionSideCard } from "@/components/pages/details-page/side-bar-items/client";
+} from "@/components/pages/details-page/comps/side-bar-items";
+import { PostSuggestionSideCard } from "@/components/pages/details-page/comps/side-bar-items/side-card-post-suggestions";
+import { ContentBody, SideBar } from "@/components/pages/details-page/wrappers";
 
 import {
   categoriesDict,
@@ -18,7 +19,7 @@ import {
 import { type Locale } from "#/i18n.config";
 
 const BlogIDPage = ({
-  params: { lang, id },
+  params: { lang, id: _id },
 }: {
   params: { lang: Locale; id: number };
 }) => {
