@@ -30,7 +30,6 @@ export const ContentBody = ({
   MidCard,
   data,
 }: ContentBodyProps) => {
-  console.log(data);
   return (
     <div className="">
       <div
