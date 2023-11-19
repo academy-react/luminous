@@ -8,7 +8,11 @@ import {
   LinkSideCard,
 } from "@/components/pages/details-page/comps/side-bar-items";
 import { PostSuggestionSideCard } from "@/components/pages/details-page/comps/side-bar-items/side-card-post-suggestions";
-import { ContentBody, SideBar } from "@/components/pages/details-page/wrappers";
+import {
+  ContentBody,
+  DetailsSection,
+  SideBar,
+} from "@/components/pages/details-page/wrappers";
 
 import {
   categoriesDict,
@@ -26,7 +30,7 @@ const BlogIDPage = ({
   return (
     <main className="container">
       <UrlBar />
-      <section className="mt-5 grid grid-cols-3 items-start gap-5">
+      <DetailsSection>
         <ContentBody>
           <PostBody />
           <CommentSection lang={lang} />
@@ -39,7 +43,7 @@ const BlogIDPage = ({
           />
           <CategoriesSideCard lang={lang} categories={categoriesDict.links} />
         </SideBar>
-      </section>
+      </DetailsSection>
     </main>
   );
 };

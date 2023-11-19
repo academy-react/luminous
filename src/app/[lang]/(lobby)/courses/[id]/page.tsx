@@ -1,10 +1,20 @@
 import { CourseInfo, UrlBar } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
+  CourseDetailsGrid,
+  CourseLessons,
   PostBody,
 } from "@/components/pages/details-page/comps/content-body";
-import { LinkSideCard } from "@/components/pages/details-page/comps/side-bar-items";
-import { ContentBody, SideBar } from "@/components/pages/details-page/wrappers";
+import {
+  CourseInfoSideCard,
+  LinkSideCard,
+  TeacherSideCard,
+} from "@/components/pages/details-page/comps/side-bar-items";
+import {
+  ContentBody,
+  DetailsSection,
+  SideBar,
+} from "@/components/pages/details-page/wrappers";
 
 import { shortLinkSideCardDict } from "@/dict/dev/details.dict";
 
@@ -19,15 +29,19 @@ const CoursesIDPage = ({
     <main className="container">
       <UrlBar />
       <CourseInfo />
-      <section className="mt-5 grid grid-cols-3 items-start gap-5">
+      <DetailsSection>
         <ContentBody>
+          <CourseDetailsGrid />
+          <CourseLessons />
           <PostBody />
           <CommentSection lang={lang} />
         </ContentBody>
         <SideBar variant="sticky">
+          <CourseInfoSideCard />
+          <TeacherSideCard />
           <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
         </SideBar>
-      </section>
+      </DetailsSection>
     </main>
   );
 };
