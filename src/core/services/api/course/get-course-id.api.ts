@@ -2,7 +2,7 @@ import http from "@/core/services/interceptor";
 import { courseIdSchema } from "@/core/validators/api/course";
 
 export const getCourseById = async (courseId: string) => {
-  const response = await http.get(`/Home/GetCourseById?CourseId=${courseId}`);
+  const response = await http.get(`/Home/GetCourseDetails?CourseId=${courseId}`);
   
   const parsedResult = courseIdSchema.safeParse(response.data);
 
