@@ -6,7 +6,8 @@ export const getCoursesByQuery = async (
   query: string = ""
 ) => {
   const response = await http.get(
-    `/Home/GetCoursesWithPagination?Query=${query}`
+    "/Home/GetCoursesWithPagination",
+    {params: query}
   );
 
   const parsedResult = coursePaginationListSchema.safeParse(response.data);

@@ -13,20 +13,22 @@ import { Icons } from "@/components/assets/icons";
 
 import { getCoursesByQuery } from "@/core/services/api";
 import { cn } from "@/lib/utils";
+import { type CoursePaginationListType } from "@/core/validators/api";
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [courseList, setCourseList] = useState();
+  const [courseList, setCourseList] = useState<CoursePaginationListType| null | undefined>();
   const getCourseQuery = async () => {
-    const courses = await getCoursesByQuery();
+    const params={Query:"jhjh"};
+    const courses = await getCoursesByQuery(params.Query);
     setCourseList(courses);
-    console.log("coursssssssssssssssssssss: ",courses);
+ 
   };
 
   
   useEffect(() => {
-    getCourseQuery();
+    void getCourseQuery();
   }, []);
 
   return (
