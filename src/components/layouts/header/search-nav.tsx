@@ -12,21 +12,21 @@ import {
 import { Icons } from "@/components/assets/icons";
 
 import { getCoursesByQuery } from "@/core/services/api";
-import { cn } from "@/lib/utils";
 import { type CoursePaginationListType } from "@/core/validators/api";
+import { cn } from "@/lib/utils";
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [courseList, setCourseList] = useState<CoursePaginationListType| null | undefined>();
+  const [courseList, setCourseList] = useState<
+    CoursePaginationListType | null | undefined
+  >();
   const getCourseQuery = async () => {
-    const params={Query:"jhjh"};
+    const params = { Query: "jhjh" };
     const courses = await getCoursesByQuery(params.Query);
     setCourseList(courses);
- 
   };
 
-  
   useEffect(() => {
     void getCourseQuery();
   }, []);
@@ -48,19 +48,29 @@ export const SearchNav = () => {
             یافت نشد.
           </CommandEmpty>
           <div className="flex">
-            {courseList?.map((item , index)=>(
-              <CommandGroup
-              key={index}
-              heading="اخبار و مقالات"
-              className="text-purple-primary "
-            >
-              <CommandItem>Calculator</CommandItem>
-            </CommandGroup>
-            ))}
             
+              <CommandGroup
+                heading="دوره ها"
+                className="text-purple-primary "
+              >
+                {courseList?.map((item) => (
+                <CommandItem
+                  key={item.courseId}
+                  value={item.title}
+                  onSelect={() =>{}
+                    // handleSelect(() => router.push(`/product/${item.id}`))
+                  }
+                >
+                 {item.title}
+                </CommandItem>
+                 ))}
+              </CommandGroup>
+           
 
             <div className="divide-x border "></div>
-            <CommandGroup heading="دوره ها" className="text-purple-primary ">
+            <CommandGroup 
+            heading="اخبار و مقالات"
+             className="text-purple-primary ">
               <CommandItem>Calculator</CommandItem>
             </CommandGroup>
           </div>
