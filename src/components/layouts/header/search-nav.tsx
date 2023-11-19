@@ -47,30 +47,30 @@ export const SearchNav = () => {
           >
             یافت نشد.
           </CommandEmpty>
-          <div className="flex">
-            
-              <CommandGroup
-                heading="دوره ها"
-                className="text-purple-primary "
-              >
-                {courseList?.map((item) => (
+          <div className="mx-auto flex justify-center ">
+            <CommandGroup
+              heading="دوره ها"
+              className="flex basis-1/2 flex-col items-center py-2 text-purple-primary"
+            >
+              {courseList?.map((item) => (
                 <CommandItem
                   key={item.courseId}
                   value={item.title}
-                  onSelect={() =>{}
+                  onSelect={
+                    () => {}
                     // handleSelect(() => router.push(`/product/${item.id}`))
                   }
                 >
-                 {item.title}
+                  {item.title}
                 </CommandItem>
-                 ))}
-              </CommandGroup>
-           
+              ))}
+            </CommandGroup>
 
             <div className="divide-x border "></div>
-            <CommandGroup 
-            heading="اخبار و مقالات"
-             className="text-purple-primary ">
+            <CommandGroup
+              heading="اخبار و مقالات"
+              className="items-center flex basis-1/2 flex-col  py-2 text-purple-primary "
+            >
               <CommandItem>Calculator</CommandItem>
             </CommandGroup>
           </div>
