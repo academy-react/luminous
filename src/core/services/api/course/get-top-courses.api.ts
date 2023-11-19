@@ -3,7 +3,6 @@ import { courseListSchema } from "@/core/validators/api";
 
 export const getTopCoursesList = async (count: number = 5) => {
   const response = await http.get(`/Home/GetCoursesTop?Count=${count}`);
-
   const parsedResult = courseListSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
@@ -13,4 +12,5 @@ export const getTopCoursesList = async (count: number = 5) => {
   }
 
   return parsedResult.data;
+  // return response.data;//new
 };
