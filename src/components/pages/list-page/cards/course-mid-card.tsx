@@ -5,6 +5,8 @@ import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
 
+import { Rating } from "./ratting";
+
 export type CourseMidCardProps = {
   item: {
     image: string;
@@ -24,18 +26,15 @@ export const CourseMidCard = ({
       </Link>
       <div className=" flex flex-col gap-4 ">
         <h2 className="text-xl font-semibold ">{title[lang]}</h2>
-        <div className="flex justify-between rounded-xl">
-          <ul className="flex flex-col justify-start">
-            <li>{teacher[lang]}</li>
-            <li>*****</li>
-            <li className="rounded-xl border-2 px-2  text-[#58AD57] ">
+        <div className="flex flex-col rounded-xl gap-y-4">
+          <div>{teacher[lang]}</div>
+          <ul className="flex justify-between ">
+            <li>
+              <Rating />
+            </li>
+            <li className="text-md rounded-xl  text-[#58AD57] ">
               8500000تومان
             </li>
-          </ul>
-          <ul className="flex  flex-col rounded-xl px-2 shadow-lg">
-            <li className="">1</li>
-            <li className=" ">20</li>
-            <li className="">30</li>
           </ul>
         </div>
       </div>
