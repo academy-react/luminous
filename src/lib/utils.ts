@@ -27,3 +27,26 @@ export function toEnglishDigits(num: string) {
     return id[w] || w;
   });
 }
+
+export function toPersianDigits(num: string) {
+  interface ID {
+    [key: string]: string;
+  }
+
+  const id: ID = {
+    "0": "۰",
+    "1": "۱",
+    "2": "۲",
+    "3": "۳",
+    "4": "۴",
+    "5": "۵",
+    "6": "۶",
+    "7": "۷",
+    "8": "۸",
+    "9": "۹",
+  };
+
+  return num.toString().replace(/[0-9]/g, function (w) {
+    return id[w] || w;
+  });
+}
