@@ -1,12 +1,21 @@
+import { Comment } from "@/components/pages/details-page/comps/content-body/comment/comment";
 import { Button, H3 } from "@/components/elements/ui";
 
-import { commentsDict } from "@/dict/dev/comments.dict";
+import { getCourseComments } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
-import { Comment } from "./comment";
+export const CommentSection = async ({
+  lang,
+  courseId,
+  commentCount,
+}: {
+  lang: Locale;
+  courseId: string;
+  commentCount: number;
+}) => {
+  const comments = commentCount > 0 ? await getCourseComments(courseId) : [];
 
-export const CommentSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="rounded-xl bg-card px-7 py-6">
       <div className="mb-5 flex items-center justify-between">
@@ -19,7 +28,7 @@ export const CommentSection = ({ lang }: { lang: Locale }) => {
         </Button>
       </div>
       <section className="space-y-5">
-        {commentsDict.map((comment, index) => (
+        {comments.map((comment, index) => (
           <Comment lang={lang} key={index} comment={comment} />
         ))}
       </section>

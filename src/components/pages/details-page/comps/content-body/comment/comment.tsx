@@ -4,26 +4,30 @@ import { Button } from "@/components/elements/ui";
 
 import { type CommentDictProps } from "@/dict/dev/comments.dict";
 
+import { type CourseCommentType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
 type CommentProps = {
   lang: Locale;
-  comment: CommentDictProps;
+  comment: CourseCommentType;
 };
 
 export const Comment = ({ lang, comment }: CommentProps) => {
+  const replies = comment.acceptReplysCount > 0 ? [] : [];
+
   return (
     <div className="rounded-2xl bg-gray-100 p-5">
       <div className="flex items-start gap-x-5">
         <UserAvatar
-          avatar={comment.sender.avatar}
-          userType={comment.sender.userType}
+          avatar={"/images/dev/person-avatar.jpg"}
+          userType={"student"}
         />
         <div className="w-full">
-          <UserInfo name={comment.sender.name[lang]} date={comment.date} />
-          <CommentText text={comment.text[lang]} />
+          <UserInfo name={comment.author} date={comment.insertDate} />
+          <CommentText text={comment.describe} />
           <section className="mt-7 space-y-4">
-            {comment.replies?.map((reply, index) => (
+            {replies.map((reply, index) => (
               <Reply key={index} lang={lang} reply={reply} />
             ))}
           </section>

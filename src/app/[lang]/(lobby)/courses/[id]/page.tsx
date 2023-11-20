@@ -18,7 +18,7 @@ import {
 
 import { shortLinkSideCardDict } from "@/dict/dev/details.dict";
 
-import { getCourseById } from "@/core/services/api/course/get-course-id.api";
+import { getCourseById } from "@/core/services/api/course";
 
 import { type Locale } from "#/i18n.config";
 
@@ -42,7 +42,11 @@ const CoursesIDPage = async ({
               <CourseDetailsGrid />
               <CourseLessons />
               <PostBody />
-              <CommentSection lang={lang} />
+              <CommentSection
+                lang={lang}
+                courseId={id}
+                commentCount={data.commentCount}
+              />
             </ContentBody>
             <SideBar variant="sticky">
               <CourseInfoSideCard data={data} />
