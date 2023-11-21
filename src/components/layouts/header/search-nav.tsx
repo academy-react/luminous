@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 import { useDebounce } from "use-debounce";
-import { string } from "zod";
 
 import { Button } from "@/components/elements/ui";
 import {
@@ -18,6 +17,7 @@ import { Icons } from "@/components/assets/icons";
 import { getCoursesByQuery } from "@/core/services/api";
 import { type CoursePaginationListType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/elements/ui/skeleton";
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
@@ -26,7 +26,7 @@ export const SearchNav = () => {
     CoursePaginationListType | null | undefined
   >();
   const [query, setQuery] = useState("");
-  const debouncedQuery = useDebounce(query, 300);
+  const [debouncedQuery] = useDebounce(query, 300);
   const router = useRouter();
   useEffect(() => {
     if (debouncedQuery.length <= 0) {
@@ -80,6 +80,7 @@ export const SearchNav = () => {
             یافت نشد.
           </CommandEmpty>
           <div className="mx-auto flex justify-center ">
+            
             {isPending ? (
               <div className="space-y-1 overflow-hidden px-1 py-2">
                 <Skeleton className="h-4 w-10 rounded" />
@@ -106,6 +107,7 @@ export const SearchNav = () => {
                 ))}
               </CommandGroup>
             )}
+            
             <div className="divide-x border "></div>
             <CommandGroup
               heading="اخبار و مقالات"
