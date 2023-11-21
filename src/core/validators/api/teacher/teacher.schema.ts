@@ -1,13 +1,15 @@
 import { z } from "zod";
 
-export const teacherSchema = z.object({
+export const teacherSchema = z
+  .object({
     teacherId: z.number(),
     fullName: z.string(),
     linkdinProfileLink: z.string(),
     pictureAddress: z.string().nullable(),
     courseCounts: z.number(),
-    newsCount: z.number()
-  });
+    newsCount: z.number(),
+  })
+  .strict();
 
 export type TeacherType = z.infer<typeof teacherSchema>;
 
