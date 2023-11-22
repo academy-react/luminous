@@ -10,6 +10,7 @@ import {
   FileEdit,
   FolderClosed,
   Home,
+  Image,
   LayoutGrid,
   LayoutList,
   Loader2,
@@ -63,6 +64,7 @@ export const Icons = {
   twitter: BsTwitter as IconType,
   youtube: BsYoutube as IconType,
   instagram: BiLogoInstagramAlt as IconType,
+  placeholder: Image,
   logo: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
