@@ -2,19 +2,41 @@ import { Comment } from "@/components/pages/details-page/comps/content-body/comm
 import { Button, H3 } from "@/components/elements/ui";
 
 import { getCourseComments } from "@/core/services/api";
+import { getNewsComments } from "@/core/services/api/news/get-news-comments.api";
 
 import { type Locale } from "#/i18n.config";
 
-export const CommentSection = async ({
-  lang,
-  courseId,
-  commentCount,
-}: {
+type CommentProps = {
   lang: Locale;
-  courseId: string;
   commentCount: number;
-}) => {
-  const comments = commentCount > 0 ? await getCourseComments(courseId) : [];
+} & (CourseCommentProps | NewsCommentProps);
+
+type CourseCommentProps = {
+  typeOf: "course";
+  courseId: string;
+};
+
+type NewsCommentProps = {
+  typeOf: "news";
+  newsId: string;
+};
+
+export const CommentSection = async (props: CommentProps) => {
+  const { lang, commentCount, typeOf } = props;
+
+  const comments = [];
+
+  if (typeOf === "course") {
+    const courseComments =
+      commentCount > 0 ? await getCourseComments(props.courseId) : [];
+
+    comments.push(...courseComments);
+  } else if (typeOf === "news") {
+    const newsComments =
+      commentCount > 0 ? await getNewsComments(props.newsId) : [];
+
+    comments.push(...newsComments);
+  }
 
   return (
     <section className="rounded-xl bg-card px-7 py-6">

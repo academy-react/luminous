@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { UrlBar } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
@@ -20,20 +22,31 @@ import {
   shortLinkSideCardDict,
 } from "@/dict/dev/details.dict";
 
+import { getNewsById } from "@/core/services/api/news/get-news-by-id.api";
+
 import { type Locale } from "#/i18n.config";
 
-const BlogIDPage = ({
-  params: { lang, id: _id },
+const BlogIDPage = async ({
+  params: { lang, id },
 }: {
   params: { lang: Locale; id: number };
 }) => {
+  const data = await getNewsById(id);
+
+  if (!data) notFound();
+
   return (
     <main className="container">
       <UrlBar />
       <DetailsSection>
         <ContentBody>
-          <PostBody />
-          <CommentSection lang={lang} />
+          <PostBody lang={lang} data={data} />
+          <CommentSection
+            lang={lang}
+            typeOf="news"
+            commentCount={data.detailsNewsDto.commentsCount}
+            newsId={data.detailsNewsDto.id}
+          />
         </ContentBody>
         <SideBar>
           <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />

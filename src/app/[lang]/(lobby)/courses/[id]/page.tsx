@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { CourseInfo, UrlBar } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
@@ -29,31 +31,30 @@ const CoursesIDPage = async ({
 }) => {
   const data = await getCourseById(id);
 
+  if (!data) notFound();
+
   return (
     <main className="container">
-      {data && (
-        <>
-          <UrlBar />
-          <CourseInfo lang={lang} data={data} />
-          <DetailsSection>
-            <ContentBody>
-              <CourseDetailsGrid lang={lang} />
-              {/* <CourseLessons /> */}
-              {/* <PostBody /> */}
-              <CommentSection
-                lang={lang}
-                courseId={id}
-                commentCount={data.commentCount}
-              />
-            </ContentBody>
-            <SideBar variant="sticky">
-              <CourseInfoSideCard lang={lang} data={data} />
-              <TeacherSideCard lang={lang} teacherId={data.teacherId} />
-              <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
-            </SideBar>
-          </DetailsSection>
-        </>
-      )}
+      <UrlBar />
+      <CourseInfo lang={lang} data={data} />
+      <DetailsSection>
+        <ContentBody>
+          <CourseDetailsGrid lang={lang} />
+          {/* <CourseLessons /> */}
+          {/* <PostBody /> */}
+          <CommentSection
+            lang={lang}
+            typeOf="course"
+            courseId={id}
+            commentCount={data.commentCount}
+          />
+        </ContentBody>
+        <SideBar variant="sticky">
+          <CourseInfoSideCard lang={lang} data={data} />
+          <TeacherSideCard lang={lang} teacherId={data.teacherId} />
+          <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
+        </SideBar>
+      </DetailsSection>
     </main>
   );
 };
