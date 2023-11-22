@@ -9,6 +9,7 @@ import {
   FileCheck,
   FileEdit,
   FolderClosed,
+  Heart,
   Home,
   Image,
   LayoutGrid,
@@ -22,6 +23,8 @@ import {
   Phone,
   ScrollText,
   Search,
+  ThumbsDown,
+  ThumbsUp,
   User,
   X,
   type LucideIcon,
@@ -64,6 +67,9 @@ export const Icons = {
   twitter: BsTwitter as IconType,
   youtube: BsYoutube as IconType,
   instagram: BiLogoInstagramAlt as IconType,
+  heart: Heart,
+  thumbsUp: ThumbsUp,
+  thumbsDown: ThumbsDown,
   placeholder: Image,
   logo: (props: LucideProps) => (
     <svg
