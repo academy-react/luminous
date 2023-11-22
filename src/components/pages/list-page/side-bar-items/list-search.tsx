@@ -1,6 +1,7 @@
 'use client';
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
+import { useDebouncedCallback } from 'use-debounce';
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
@@ -16,15 +17,16 @@ export const ListSearch = ({
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleSearch = (term: string) => {
+  const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
+      params.set('PageNumber', '1');
     if (term) {
       params.set("Query", term);
     } else {
       params.delete("Query");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  };
+  }, 300);
   return (
     <div className={cn("w-full rounded-xl bg-card p-4 shadow", className)}>
       <input
