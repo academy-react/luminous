@@ -39,7 +39,11 @@ export const CourseInfo = ({
           </span>
         </div>
       </div>
-      <div className="aspect-video h-[360px] rounded-xl bg-indigo-950"></div>
+      <div className="aspect-video h-[360px]">
+        <div className="flex h-full w-full items-center justify-center rounded-2xl bg-gray-300">
+          <Icons.placeholder className="h-8 w-8 text-slate-600" />
+        </div>
+      </div>
     </section>
   );
 };

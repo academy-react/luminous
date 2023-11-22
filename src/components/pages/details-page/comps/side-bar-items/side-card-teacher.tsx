@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Link as LinkIcon } from "lucide-react";
 
 import { H4 } from "@/components/elements/ui";
+import { Icons } from "@/components/assets/icons";
 
 import { getTeacherById } from "@/core/services/api/teacher";
 
@@ -19,7 +20,11 @@ export const TeacherSideCard = async ({
 
   return (
     <div className="shadow-light flex flex-col items-center justify-center rounded-2xl bg-card px-5 py-6 text-center">
-      <div className="mx-auto mb-2 aspect-square w-24 rounded-full bg-gray-300 p-4"></div>
+      <div className="mx-auto mb-2 aspect-square w-24">
+        <div className="flex h-full w-full items-center justify-center rounded-full bg-gray-300 p-4">
+          <Icons.placeholder className="h-6 w-6 text-slate-600" />
+        </div>
+      </div>
       <H4 className="mb-0.5 text-2xl">{data?.fullName}</H4>
       <Link
         href="#"
