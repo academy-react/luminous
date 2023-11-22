@@ -16,6 +16,7 @@ export const courseIdSchema = z
     }),
     title: z.string(),
     imageAddress: z.string().nullable(),
+    currentRate: z.number(),
     cost: z.number(),
     googleTitle: z.string(),
     googleSchema: z.string().nullable(),
@@ -34,6 +35,10 @@ export const courseIdSchema = z
     courseGroupCount: z.number(),
     isCourseUser: z.union([z.literal("0"), z.literal("1")]),
     isCourseReseve: z.union([z.literal("0"), z.literal("1")]),
+    courseReseveId: z.string(),
+    userFavoriteId: z.string(),
+    userLikeId: z.string(),
+    techs: z.array(z.string()),
   })
   .strict();
 
