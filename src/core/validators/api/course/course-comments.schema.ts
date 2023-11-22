@@ -12,6 +12,8 @@ export const courseCommentSchema = z
     acceptReplysCount: z.number(),
     disslikeCount: z.number(),
     likeCount: z.number(),
+    currentUserEmotion: z.string(),
+    currentUserLikeId: z.string(),
   })
   .strict();
 

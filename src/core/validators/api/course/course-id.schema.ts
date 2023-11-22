@@ -37,6 +37,7 @@ export const courseIdSchema = z
     isCourseReseve: z.union([z.literal("0"), z.literal("1")]),
     courseReseveId: z.string(),
     userFavoriteId: z.string(),
+    isUserFavorite: z.boolean(),
     userLikeId: z.string(),
     techs: z.array(z.string()),
   })
