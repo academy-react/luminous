@@ -26,7 +26,7 @@ export const getCourseCommentReplies = async (
   commentId: string
 ) => {
   const response = await http.get(
-    `/Course/GetCourseReplyComments/${courseId}/${commentId}`
+    `/Course/GetCourseReplyCommnets/${courseId}/${commentId}`
   );
 
   const parsedResult = courseCommentReplyListSchema.safeParse(response.data);
