@@ -4,7 +4,7 @@ import {
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
 import {
-  ListContent,
+  // ListContent,
   ListPage,
   ListSideBar,
   ListTitle,
@@ -18,12 +18,27 @@ import {
 } from "@/components/pages/list-page/side-bar-items";
 
 import { courseCategoryDict } from "@/dict/dev";
-import { coursesDict } from "@/dict/dev/courses.dict";
 import { courseSortOptionsDict } from "@/dict/pages/list.dict";
+
+import { getCoursesByQuery } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
-const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
+const CoursesPage = async ({
+  params: { lang },
+  searchParams
+}: {
+  params: { lang: Locale };
+  searchParams?: {
+    Query?: string;
+    PageNumber?: string;
+  };
+
+}) => {
+  const query = searchParams?.Query || '';
+  const currentPage = Number(searchParams?.PageNumber) || 1;
+  const searchData = await getCoursesByQuery(currentPage,query,);
+console.log(searchData);
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
@@ -37,13 +52,13 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           </div>
           <ListTeacher lang={lang} />
         </ListSideBar>
-        <ListContent
+        {/* <ListContent
           sortOptions={courseSortOptionsDict}
           lang={lang}
           FullCard={CourseFullCard}
           MidCard={CourseMidCard}
-          data={coursesDict}
-        />
+          data={searchData}
+        /> */}
       </ListPage>
     </PageAnimationWrapper>
   );

@@ -5,13 +5,12 @@ import {
   type CourseMidCardProps,
 } from "@/components/pages/list-page/cards";
 
-import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
-import { type CoursesDictProps } from "@/dict/dev/courses.dict";
 import { type SwitchedListStates } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
+import { type CoursePaginationListType, type NewsFilterPagesType } from "@/core/validators/api";
 
 type ContentBodyProps = {
   lang: Locale;
@@ -19,7 +18,7 @@ type ContentBodyProps = {
   FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
   MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
   switchedList: SwitchedListStates;
-  data: CoursesDictProps[] | BlogsPropsDict[];
+  data: CoursePaginationListType | NewsFilterPagesType;
 };
 
 export const ContentBody = ({

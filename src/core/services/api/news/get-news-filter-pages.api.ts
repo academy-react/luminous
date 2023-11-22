@@ -1,5 +1,5 @@
 import http from "@/core/services/interceptor";
-import { coursePaginationListSchema} from "@/core/validators/api";
+import { newsFilterPagesSchema} from "@/core/validators/api";
 
 export const getNewsFilterPages = async (
   pageNumber: number = 1,
@@ -12,7 +12,7 @@ export const getNewsFilterPages = async (
     `/News?PageNumber=${pageNumber}&RowsOfPage=${rowsOfPage}&SortingCol=${sortingCol}&SortType=${sortType}&Query=${query}`
   );
 
-  const parsedResult = coursePaginationListSchema.safeParse(response.data);
+  const parsedResult = newsFilterPagesSchema.safeParse(response.data);
 console.log(parsedResult)
 
   if (!parsedResult.success) {

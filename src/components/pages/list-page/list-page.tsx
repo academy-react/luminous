@@ -11,8 +11,6 @@ import {
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 
-import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
-import { type CoursesDictProps } from "@/dict/dev/courses.dict";
 import {
   type SortOptionDictProps,
   type SwitchedListStates,
@@ -21,6 +19,7 @@ import {
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
+import {type CoursePaginationListType, type NewsFilterPagesType } from "@/core/validators/api";
 
 const ListPage = ({
   children,
@@ -71,7 +70,7 @@ type ListContentProps = {
   lang: Locale;
   FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
   MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
-  data: CoursesDictProps[] | BlogsPropsDict[];
+  data: CoursePaginationListType | NewsFilterPagesType;
 };
 
 const ListContent = ({
