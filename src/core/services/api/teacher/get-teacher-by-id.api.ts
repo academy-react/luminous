@@ -1,7 +1,7 @@
 import http from "@/core/services/interceptor";
 import { teacherIdSchema } from "@/core/validators/api/teacher";
 
-export const getTeacherById = async (teacherId: string) => {
+export const getTeacherById = async (teacherId: number) => {
   const response = await http.get(
     `/Home/GetTeacherDetails?TeacherId=${teacherId}`
   );

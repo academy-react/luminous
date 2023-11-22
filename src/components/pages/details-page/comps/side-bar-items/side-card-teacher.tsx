@@ -13,11 +13,9 @@ export const TeacherSideCard = async ({
   teacherId,
 }: {
   lang: Locale;
-  teacherId: string;
+  teacherId: number;
 }) => {
   const data = await getTeacherById(teacherId);
-
-  console.log(data);
 
   return (
     <div className="shadow-light flex flex-col items-center justify-center rounded-2xl bg-card px-5 py-6 text-center">

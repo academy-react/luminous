@@ -29,8 +29,6 @@ const CoursesIDPage = async ({
 }) => {
   const data = await getCourseById(id);
 
-  console.log(data);
-
   return (
     <main className="container">
       {data && (
@@ -50,7 +48,7 @@ const CoursesIDPage = async ({
             </ContentBody>
             <SideBar variant="sticky">
               <CourseInfoSideCard data={data} />
-              <TeacherSideCard teacherId={data.teacherId} />
+              <TeacherSideCard lang={lang} teacherId={data.teacherId} />
               <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
             </SideBar>
           </DetailsSection>
