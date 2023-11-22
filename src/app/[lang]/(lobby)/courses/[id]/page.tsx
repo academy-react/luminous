@@ -38,8 +38,8 @@ const CoursesIDPage = async ({
           <DetailsSection>
             <ContentBody>
               <CourseDetailsGrid lang={lang} />
-              <CourseLessons />
-              <PostBody />
+              {/* <CourseLessons /> */}
+              {/* <PostBody /> */}
               <CommentSection
                 lang={lang}
                 courseId={id}
