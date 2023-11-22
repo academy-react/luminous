@@ -10,7 +10,10 @@ export const getCourseComments = async (courseId: string) => {
   const parsedResult = courseCommentListSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error(
+      "error in get-course-comments.api",
+      parsedResult.error.errors
+    );
 
     return [];
   }
@@ -29,7 +32,10 @@ export const getCourseCommentReplies = async (
   const parsedResult = courseCommentReplyListSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error(
+      "error in get-course-comment-replies.api",
+      parsedResult.error.errors
+    );
 
     return [];
   }
