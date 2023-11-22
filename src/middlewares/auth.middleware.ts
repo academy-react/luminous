@@ -40,7 +40,7 @@ export const withAuthNMiddleware = (middleware: CustomMiddleware) => {
     req.nextauth = req.nextauth || {};
     // @ts-expect-error - nextauth is not defined on NextRequest
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    req.nextauth.token = token;
+    req.nextauth.token = session?.user?.token;
 
     const pathname = req.nextUrl.pathname;
 
