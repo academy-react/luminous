@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { UrlBar } from "@/components/pages/details-page/comps";
+import { Breadcrumbs } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
   PostBody,
@@ -37,7 +37,19 @@ const BlogIDPage = async ({
 
   return (
     <main className="container">
-      <UrlBar />
+      <Breadcrumbs
+        lang={lang}
+        segments={[
+          {
+            title: { fa: "اخبار", en: "News" }[lang],
+            href: `/${lang}/blog`,
+          },
+          {
+            title: data.detailsNewsDto.title,
+            href: `/${lang}/lobby/blog/${data.detailsNewsDto.id}`,
+          },
+        ]}
+      />
       <DetailsSection>
         <ContentBody>
           <PostBody lang={lang} data={data} />

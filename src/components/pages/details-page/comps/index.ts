@@ -1,2 +1,2 @@
-export * from "./url-bar";
+export * from "./breadcrumbs";
 export * from "./course-info";

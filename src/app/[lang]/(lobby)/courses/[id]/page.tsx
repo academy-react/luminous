@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { CourseInfo, UrlBar } from "@/components/pages/details-page/comps";
+import { Breadcrumbs, CourseInfo } from "@/components/pages/details-page/comps";
 import {
   CommentSection,
   CourseDetailsGrid,
@@ -35,7 +35,19 @@ const CoursesIDPage = async ({
 
   return (
     <main className="container">
-      <UrlBar />
+      <Breadcrumbs
+        lang={lang}
+        segments={[
+          {
+            title: { fa: "دوره‌ها", en: "Courses" }[lang],
+            href: `/${lang}/courses`,
+          },
+          {
+            title: data.title,
+            href: `/${lang}/courses/${data.courseId}`,
+          },
+        ]}
+      />
       <CourseInfo lang={lang} data={data} />
       <DetailsSection>
         <ContentBody>
