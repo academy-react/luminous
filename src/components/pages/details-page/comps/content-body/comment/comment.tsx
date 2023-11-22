@@ -5,6 +5,7 @@ import { Icons } from "@/components/assets/icons";
 
 import { getCourseCommentReplies } from "@/core/services/api";
 import { type CourseCommentType } from "@/core/validators/api";
+import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 
@@ -25,7 +26,7 @@ export const Comment = async ({
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo name={author} date={insertDate} />
+          <UserInfo lang={lang} name={author} date={insertDate} />
           <CommentText text={describe} />
           {replies.length > 0 && (
             <section className="mt-7 space-y-4">
@@ -41,7 +42,7 @@ export const Comment = async ({
 };
 
 const Reply = ({
-  lang: _lang,
+  lang,
   reply: { author, insertDate, describe },
 }: {
   lang: Locale;
@@ -52,7 +53,7 @@ const Reply = ({
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo name={author} date={insertDate} />
+          <UserInfo lang={lang} name={author} date={insertDate} />
           <CommentText text={describe} />
         </div>
       </div>
@@ -90,14 +91,29 @@ const UserAvatar = ({
   );
 };
 
-const UserInfo = ({ name, date }: { name: string; date: string }) => {
+const UserInfo = ({
+  name,
+  date,
+  lang,
+}: {
+  name: string;
+  date: string;
+  lang: Locale;
+}) => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex justify-between">
       <div className="flex flex-col gap-1">
         <span className="text-xl font-medium">{name}</span>
         <span className="text-xs">{date}</span>
       </div>
-      <Button>reply</Button>
+      <Button className="h-5 p-0">
+        <Icons.reply
+          className={cn(
+            "h-5 w-5 text-slate-600 transition-colors duration-500 hover:text-slate-400",
+            lang === "en" && "-scale-x-100"
+          )}
+        />
+      </Button>
     </div>
   );
 };
