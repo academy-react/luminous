@@ -24,7 +24,12 @@ export const Breadcrumbs = ({ lang, segments }: BreadcrumbsProps) => {
         <Link href={`/${lang}`} className="text-gray-700">
           <Icons.home className="me-2 ms-5 h-7 w-7" />
         </Link>
-        <PiCaretLeft className="h-14 w-14 scale-[160%] text-background" />
+        <PiCaretLeft
+          className={cn(
+            "h-14 w-14 scale-[160%] text-background",
+            lang === "en" && "-scale-x-100"
+          )}
+        />
         {segments.map((segment, index) => (
           <Fragment key={index}>
             <Link
@@ -37,7 +42,12 @@ export const Breadcrumbs = ({ lang, segments }: BreadcrumbsProps) => {
               {segment.title}
             </Link>
             {index !== segments.length - 1 && (
-              <PiCaretLeft className="h-14 w-14 scale-[160%] text-background" />
+              <PiCaretLeft
+                className={cn(
+                  "h-14 w-14 scale-[160%] text-background",
+                  lang === "en" && "-scale-x-100"
+                )}
+              />
             )}
           </Fragment>
         ))}
