@@ -34,7 +34,7 @@ const CoursesIDPage = async ({
       {data && (
         <>
           <UrlBar />
-          <CourseInfo data={data} />
+          <CourseInfo lang={lang} data={data} />
           <DetailsSection>
             <ContentBody>
               <CourseDetailsGrid />

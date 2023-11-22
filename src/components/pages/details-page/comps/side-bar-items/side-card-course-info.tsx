@@ -1,7 +1,7 @@
 import { Icons, type Icon } from "@/components/assets/icons";
 
 import { type CourseIdType } from "@/core/validators/api";
-import { cn, toPersianDigits } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 
@@ -19,17 +19,13 @@ export const CourseInfoSideCard = ({
       <div className="flex gap-5">
         <DetailCard
           text={lang === "fa" ? "دانشجو" : "Student"}
-          num={
-            lang === "fa"
-              ? toPersianDigits(currentRegistrants)
-              : currentRegistrants
-          }
+          num={currentRegistrants.toLocaleString(lang)}
           Icon={Icons.usersFill}
           iconColor="fill-green-500"
         />
         <DetailCard
           text={lang === "fa" ? "رضایت" : "Satisfaction"}
-          num={lang === "fa" ? toPersianDigits(currentRate) : currentRate}
+          num={currentRate.toLocaleString(lang)}
           Icon={Icons.starFilled}
           iconColor="fill-yellow-400"
         />
