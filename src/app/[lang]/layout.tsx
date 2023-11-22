@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
+import { Toaster } from "@/components/elements/ui/toaster";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
@@ -44,6 +45,7 @@ const RootLayout = ({
           <div className="relative flex min-h-screen flex-col">{children}</div>
           <TailwindIndicator />
         </ThemeProvider>
+        <Toaster lang={lang} />
       </body>
     </html>
   );
