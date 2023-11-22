@@ -5,10 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function toEnglishDigits(num: string) {
+export function toEnglishDigits(num: string | number) {
   interface ID {
     [key: string]: string;
   }
+
+  num = typeof num === "number" ? num.toString() : num;
 
   const id: ID = {
     "۰": "0",
@@ -28,10 +30,12 @@ export function toEnglishDigits(num: string) {
   });
 }
 
-export function toPersianDigits(num: string) {
+export function toPersianDigits(num: string | number) {
   interface ID {
     [key: string]: string;
   }
+
+  num = typeof num === "number" ? num.toString() : num;
 
   const id: ID = {
     "0": "۰",

@@ -47,7 +47,7 @@ const CoursesIDPage = async ({
               />
             </ContentBody>
             <SideBar variant="sticky">
-              <CourseInfoSideCard data={data} />
+              <CourseInfoSideCard lang={lang} data={data} />
               <TeacherSideCard lang={lang} teacherId={data.teacherId} />
               <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
             </SideBar>
