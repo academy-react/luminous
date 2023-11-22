@@ -9,7 +9,7 @@ export const getTeacherById = async (teacherId: string) => {
   const parsedResult = teacherIdSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error("error in get-teacher-by-id.api", parsedResult.error.errors);
 
     return null;
   }

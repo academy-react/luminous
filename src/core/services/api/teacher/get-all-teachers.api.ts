@@ -6,7 +6,7 @@ export const getAllTeacher = async () => {
   const parsedResult = teacherListSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error("error in get-all-teachers.api", parsedResult.error.errors);
 
     return [];
   }

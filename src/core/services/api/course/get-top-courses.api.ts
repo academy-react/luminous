@@ -6,11 +6,10 @@ export const getTopCoursesList = async (count: number = 5) => {
   const parsedResult = courseListSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error("error in get-top-courses.api", parsedResult.error.errors);
 
     return [];
   }
 
   return parsedResult.data;
-  // return response.data;//new
 };
