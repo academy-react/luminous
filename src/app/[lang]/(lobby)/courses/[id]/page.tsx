@@ -37,7 +37,7 @@ const CoursesIDPage = async ({
           <CourseInfo lang={lang} data={data} />
           <DetailsSection>
             <ContentBody>
-              <CourseDetailsGrid />
+              <CourseDetailsGrid lang={lang} />
               <CourseLessons />
               <PostBody />
               <CommentSection
