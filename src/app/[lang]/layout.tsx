@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { type Metadata } from "next";
 
 import { Toaster } from "@/components/elements/ui/toaster";
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ProgressBarProvider, ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
 import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
@@ -42,8 +42,12 @@ const RootLayout = ({
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex min-h-screen flex-col">{children}</div>
-          <TailwindIndicator />
+          <ProgressBarProvider>
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+            <TailwindIndicator />
+          </ProgressBarProvider>
         </ThemeProvider>
         <Toaster lang={lang} />
       </body>
