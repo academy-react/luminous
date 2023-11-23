@@ -1,56 +1,16 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { type Locale } from "#/i18n.config";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function toEnglishDigits(num: string | number) {
-  interface ID {
-    [key: string]: string;
-  }
-
-  num = typeof num === "number" ? num.toString() : num;
-
-  const id: ID = {
-    "۰": "0",
-    "۱": "1",
-    "۲": "2",
-    "۳": "3",
-    "۴": "4",
-    "۵": "5",
-    "۶": "6",
-    "۷": "7",
-    "۸": "8",
-    "۹": "9",
-  };
-
-  return num.toString().replace(/[^0-9.]/g, function (w) {
-    return id[w] || w;
-  });
-}
-
-export function toPersianDigits(num: string | number) {
-  interface ID {
-    [key: string]: string;
-  }
-
-  num = typeof num === "number" ? num.toString() : num;
-
-  const id: ID = {
-    "0": "۰",
-    "1": "۱",
-    "2": "۲",
-    "3": "۳",
-    "4": "۴",
-    "5": "۵",
-    "6": "۶",
-    "7": "۷",
-    "8": "۸",
-    "9": "۹",
-  };
-
-  return num.toString().replace(/[0-9]/g, function (w) {
-    return id[w] || w;
-  });
+export function formatDate(date: string, locale: Locale) {
+  return new Intl.DateTimeFormat(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(date));
 }
