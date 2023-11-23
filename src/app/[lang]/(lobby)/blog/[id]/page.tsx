@@ -5,10 +5,8 @@ import {
   CommentSection,
   PostBody,
 } from "@/components/pages/details-page/comps/content-body";
-import {
-  CategoriesSideCard,
-  LinkSideCard,
-} from "@/components/pages/details-page/comps/side-bar-items";
+import { CategoriesSideCard } from "@/components/pages/details-page/comps/side-bar-items";
+import { LinkSideCard } from "@/components/pages/details-page/comps/side-bar-items/client";
 import { PostSuggestionSideCard } from "@/components/pages/details-page/comps/side-bar-items/side-card-post-suggestions";
 import {
   ContentBody,
@@ -19,7 +17,6 @@ import {
 import {
   categoriesDict,
   latestPostsSideCardDict,
-  shortLinkSideCardDict,
 } from "@/dict/dev/details.dict";
 
 import { getNewsById } from "@/core/services/api/news/get-news-by-id.api";
@@ -61,7 +58,7 @@ const BlogIDPage = async ({
           />
         </ContentBody>
         <SideBar>
-          <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
+          <LinkSideCard lang={lang} link={`/b/${data.detailsNewsDto.id}`} />
           <PostSuggestionSideCard
             lang={lang}
             links={latestPostsSideCardDict.links}

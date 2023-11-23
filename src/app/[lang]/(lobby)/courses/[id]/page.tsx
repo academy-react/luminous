@@ -9,9 +9,9 @@ import {
 } from "@/components/pages/details-page/comps/content-body";
 import {
   CourseInfoSideCard,
-  LinkSideCard,
   TeacherSideCard,
 } from "@/components/pages/details-page/comps/side-bar-items";
+import { LinkSideCard } from "@/components/pages/details-page/comps/side-bar-items/client";
 import {
   ContentBody,
   DetailsSection,
@@ -64,7 +64,7 @@ const CoursesIDPage = async ({
         <SideBar variant="sticky">
           <CourseInfoSideCard lang={lang} data={data} />
           <TeacherSideCard lang={lang} teacherId={data.teacherId} />
-          <LinkSideCard lang={lang} link={shortLinkSideCardDict.href} />
+          <LinkSideCard lang={lang} link={`/c/${data.courseId}`} />
         </SideBar>
       </DetailsSection>
     </main>
