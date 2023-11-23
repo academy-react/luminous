@@ -69,21 +69,24 @@ type ListContentProps = {
   className?: string;
   sortOptions: SortOptionDictProps[];
   lang: Locale;
-  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
-  MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
-  data: CoursePaginationListType | NewsFilterPagesType;
-};
+}&(CourseContentProps | NewsContentProps)
+type CourseContentProps ={
+  typeOf: "course";
+    FullCard: React.FC<CourseFullCardProps> 
+  MidCard: React.FC<CourseMidCardProps> 
+  data: CoursePaginationListType 
+}
 
-const ListContent = ({
-  className,
-  sortOptions,
-  lang,
-  FullCard,
-  MidCard,
-  data,
-}: ListContentProps) => {
+type NewsContentProps ={
+  typeOf: "news";
+    FullCard: React.FC<BlogFullCardProps>;
+  MidCard: React.FC<BlogMidCardProps>;
+  data: NewsFilterPagesType;
+}
+const ListContent = (props: ListContentProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [switchedList, setSwitchedList] = useState<SwitchedListStates>("grid");
+  const { lang, sortOptions, className, typeOf } = props;
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       <ContentBar

@@ -4,7 +4,7 @@ import {
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
 import {
-  // ListContent,
+  ListContent,
   ListPage,
   ListSideBar,
   ListTitle,
@@ -52,13 +52,14 @@ console.log(searchData);
           </div>
           <ListTeacher lang={lang} />
         </ListSideBar>
-        {/* <ListContent
+        <ListContent
           sortOptions={courseSortOptionsDict}
           lang={lang}
+          typeOf="course"
           FullCard={CourseFullCard}
           MidCard={CourseMidCard}
           data={searchData}
-        /> */}
+        />
       </ListPage>
     
     </PageAnimationWrapper>
