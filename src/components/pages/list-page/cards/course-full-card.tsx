@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
+import { Rating } from "./ratting";
 
 export type CourseFullCardProps = {
   item: {
@@ -31,20 +32,16 @@ export const CourseFullCard = ({
               {description[lang]}
             </p>
           </div>
-          <ul className="flex flex-col justify-center rounded-xl px-2 text-xs shadow-lg">
-            <li className="">1</li>
-            <li className=" ">20</li>
-            <li className="">30</li>
-          </ul>
+          
         </div>
         <div className="mt-10 flex items-end justify-between">
           <ul className="flex gap-4 text-xs  text-[#505050] ">
             <li>مدرس:{teacher[lang]}</li>
             <li>مدت زمان دوره:80ساعت</li>
-            <li>*****</li>
+            <li><Rating/></li>
           </ul>
 
-          <span className="rounded-xl border-2  px-1 text-sm text-[#58AD57]">
+          <span className="rounded-xl px-1 text-md text-[#58AD57]">
             8500000تومان
           </span>
         </div>

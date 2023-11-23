@@ -45,6 +45,7 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           data={coursesDict}
         />
       </ListPage>
+    
     </PageAnimationWrapper>
   );
 };
