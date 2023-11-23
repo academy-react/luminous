@@ -7,14 +7,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function handleDate(date: string, lang: Locale) {
-  const d = new Date(date);
-
-  const options: Intl.DateTimeFormatOptions = {
+export function formatDate(date: string, locale: Locale) {
+  return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "long",
     day: "numeric",
-  };
-  
-  return d.toLocaleDateString(lang, options);
+  }).format(new Date(date));
 }
