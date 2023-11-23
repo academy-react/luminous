@@ -2,12 +2,10 @@
 
 import axios, { type AxiosError, type AxiosResponse } from "axios";
 
-import { parsedEnv } from "@/core/config/env.config";
-
-const env = parsedEnv();
+import { parsedEnv } from "@/core/config/env.config.mjs";
 
 const instance = axios.create({
-  baseURL: env.BASE_API_URL,
+  baseURL: parsedEnv.BASE_API_URL,
 });
 
 const onSuccess = (response: AxiosResponse) => {
