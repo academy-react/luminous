@@ -16,7 +16,7 @@ export const getNewsFilterPages = async (
 console.log(parsedResult)
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.error("errors in get-news-filter-page.api", parsedResult.error.errors);
 
     return null;
   }

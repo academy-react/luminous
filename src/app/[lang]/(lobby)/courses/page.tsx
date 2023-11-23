@@ -60,6 +60,7 @@ console.log(searchData);
           data={searchData}
         /> */}
       </ListPage>
+    
     </PageAnimationWrapper>
   );
 };

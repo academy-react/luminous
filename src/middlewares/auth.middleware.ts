@@ -5,38 +5,64 @@ import {
 } from "next/server";
 
 import { auth } from "@/lib/auth";
+import { type CustomMiddleware } from "@/middlewares";
 
-import { type MiddlewareFactory } from "./chain";
+import { i18n, type Locale } from "#/i18n.config";
 
-export const withAuthNMiddleware: MiddlewareFactory = (nextMiddleware) => {
-  return async (req: NextRequest, _next: NextFetchEvent) => {
-    const session = await auth();
+const protectedRoutes = ["/dashboard"];
+const authRoutes = ["/sign-in", "/sign-up", "/reset-password"];
 
-    const pathnameLocale = req.nextUrl.pathname.split("/")[1];
-    const pathnameWithoutLocale = req.nextUrl.pathname.replace(
-      `/${pathnameLocale}`,
-      ""
+const getRoutesLocaleCombo = (routes: string[], locales: Locale[]) => {
+  let pathsWithLocale = [...routes];
+
+  routes.forEach((route) => {
+    locales.forEach(
+      (locale) => (pathsWithLocale = [...pathsWithLocale, `/${locale}${route}`])
     );
+  });
 
+  return pathsWithLocale;
+};
+
+export const withAuthNMiddleware = (middleware: CustomMiddleware) => {
+  return async (req: NextRequest, event: NextFetchEvent) => {
+    const response = NextResponse.next();
+
+    const session = await auth();
     const isLoggedIn = !!session?.user;
 
-    const isAuthPage =
-      pathnameWithoutLocale.startsWith("/sign-in") ||
-      pathnameWithoutLocale.startsWith("/sign-up") ||
-      pathnameWithoutLocale.startsWith("/reset-password");
+    // If the user is logged in, add the token to the request
+    // so that it can be used in API routes
+    // At least I think that's what this does
 
-    const isDashboardPage = pathnameWithoutLocale.startsWith("/dashboard");
+    // @ts-expect-error - nextauth is not defined on NextRequest
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    req.nextauth = req.nextauth || {};
+    // @ts-expect-error - nextauth is not defined on NextRequest
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    req.nextauth.token = session?.user?.token;
 
-    if (isAuthPage && isLoggedIn) {
-      return NextResponse.redirect(new URL(`/${pathnameLocale}`, req.url));
+    const pathname = req.nextUrl.pathname;
+
+    const protectedPathsWithLocale = getRoutesLocaleCombo(protectedRoutes, [
+      ...i18n.locales,
+    ]);
+
+    const authPathsWithLocale = getRoutesLocaleCombo(authRoutes, [
+      ...i18n.locales,
+    ]);
+
+    if (isLoggedIn && authPathsWithLocale.includes(pathname)) {
+      return NextResponse.redirect(new URL("/", req.url));
     }
 
-    if (isDashboardPage && !isLoggedIn) {
-      return NextResponse.redirect(
-        new URL(`/${pathnameLocale}/sign-in`, req.url)
-      );
+    if (!isLoggedIn && protectedPathsWithLocale.includes(pathname)) {
+      const signInUrl = new URL(`/sign-in`, req.url);
+      signInUrl.searchParams.set("callbackUrl", pathname);
+
+      return NextResponse.redirect(signInUrl);
     }
 
-    return nextMiddleware(req, _next);
+    return middleware(req, event, response);
   };
 };
