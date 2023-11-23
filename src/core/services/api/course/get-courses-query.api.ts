@@ -1,5 +1,5 @@
 import http from "@/core/services/interceptor";
-import { coursePaginationListSchema } from "@/core/validators/api";
+import { courseByPaginationSchema } from "@/core/validators/api";
 
 export const getCoursesByQuery = async (currentPage:number = 1, query:string = "",)=> {
 
@@ -8,7 +8,7 @@ export const getCoursesByQuery = async (currentPage:number = 1, query:string = "
     `/Home/GetCoursesWithPagination?PageNumber=${currentPage}${query!= "" && `&Query=${query}`}`
   );
 
-  const parsedResult = coursePaginationListSchema.safeParse(response.data);
+  const parsedResult = courseByPaginationSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
     console.error("error in get-course-query.api", parsedResult.error.errors);
