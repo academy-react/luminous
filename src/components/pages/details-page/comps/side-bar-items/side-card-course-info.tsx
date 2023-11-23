@@ -1,3 +1,4 @@
+import { Progress } from "@/components/elements/ui/progress";
 import { Icons, type Icon } from "@/components/assets/icons";
 
 import { type CourseIdType } from "@/core/validators/api";
@@ -12,7 +13,7 @@ type CourseInfoSideCardProps = {
 
 export const CourseInfoSideCard = ({
   lang,
-  data: { currentRegistrants, currentRate },
+  data: { currentRegistrants, currentRate, commentCount },
 }: CourseInfoSideCardProps) => {
   return (
     <div className="shadow-light rounded-2xl bg-card p-5">
@@ -31,7 +32,7 @@ export const CourseInfoSideCard = ({
         />
       </div>
       <div className="mt-6">
-        <div className="mb-2 flex items-center justify-between text-xl text-zinc-700">
+        <div className="mb-3 flex items-center justify-between text-xl text-zinc-700">
           <span>
             {
               {
@@ -41,15 +42,13 @@ export const CourseInfoSideCard = ({
             }
           </span>
           <span>
-            {
-              {
-                fa: "۴۰%",
-                en: "40%",
-              }[lang]
-            }
+            {(commentCount / 100).toLocaleString(lang, {
+              style: "percent",
+              maximumFractionDigits: 0,
+            })}
           </span>
         </div>
-        <div className="h-2 w-full rounded-xl bg-zinc-100"></div>
+        <Progress value={commentCount} />
       </div>
     </div>
   );
