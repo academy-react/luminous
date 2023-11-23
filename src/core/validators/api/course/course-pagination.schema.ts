@@ -24,6 +24,10 @@ export const courseFilterDtoSchema = z.object({
   technologyList: z.string(),
 });
 
+export const allCourseFilterDtoSchema = z.array(courseFilterDtoSchema);
+
+export type AllCourseFilterDtoType = z.infer<typeof allCourseFilterDtoSchema>;
+
 export const courseByPaginationSchema = z.object({
   courseFilterDtos: z.array(courseFilterDtoSchema),
   totalCount: z.number(),
