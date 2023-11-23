@@ -17,6 +17,7 @@ import {
   type SortOptionDictProps,
   type SwitchedListStates,
 } from "@/dict/pages/list.dict";
+import { Pagination } from "@/components/elements/common";
 
 import { cn } from "@/lib/utils";
 
@@ -102,6 +103,7 @@ const ListContent = ({
         switchedList={switchedList}
         data={data}
       />
+      <Pagination className="w-fit mx-auto mt-4"/>
     </div>
   );
 };
