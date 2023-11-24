@@ -15,15 +15,15 @@ import {
 import { Icons } from "@/components/assets/icons";
 
 import { getCoursesByQuery } from "@/core/services/api";
-import { type CoursePaginationListType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/elements/ui/skeleton";
+import { AllCourseFilterDtoType} from '@/core/validators/api';
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [courseList, setCourseList] = useState<
-    CoursePaginationListType | null | undefined
+  AllCourseFilterDtoType | null | undefined
   >();
   const [query, setQuery] = useState("");
   const [debouncedQuery] = useDebounce(query, 300);
@@ -36,8 +36,12 @@ export const SearchNav = () => {
 
     const getCourse = async () => {
       try {
-        const data = await getCoursesByQuery(debouncedQuery);
-        setCourseList(data);
+        console.log(query)
+        console.log(debouncedQuery);
+        const data = await getCoursesByQuery({query: debouncedQuery});
+
+        console.log(data);
+        setCourseList(data?.courseFilterDtos);
       } catch (err) {
         console.log(err);
       }
