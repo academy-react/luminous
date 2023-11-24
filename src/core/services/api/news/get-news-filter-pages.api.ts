@@ -1,13 +1,21 @@
 import http from "@/core/services/interceptor";
 import { newsFilterPagesSchema } from "@/core/validators/api";
 
-export const getNewsFilterPages = async (
-  pageNumber: number = 1,
-  rowsOfPage: number = 10,
-  sortingCol: string = "InsertDate",
-  sortType: string = "DESC",
-  query: string = ""
-) => {
+type NewsFilterPagesParams = {
+  pageNumber?: number;
+  rowsOfPage?: number;
+  sortingCol?: string;
+  sortType?: string;
+  query?: string;
+};
+
+export const getNewsFilterPages = async ({
+  pageNumber = 1,
+  query = "",
+  rowsOfPage = 10,
+  sortType = "DESC",
+  sortingCol = "InsertDate",
+}: NewsFilterPagesParams = {}) => {
   const response = await http.get(
     `/News?PageNumber=${pageNumber}&RowsOfPage=${rowsOfPage}&SortingCol=${sortingCol}&SortType=${sortType}&Query=${query}`
   );
@@ -15,7 +23,10 @@ export const getNewsFilterPages = async (
   const parsedResult = newsFilterPagesSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error("errors in get-news-filter-page.api", parsedResult.error.errors);
+    console.error(
+      "errors in get-news-filter-page.api",
+      parsedResult.error.errors
+    );
 
     return null;
   }
