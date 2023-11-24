@@ -20,7 +20,8 @@ import { Pagination } from "@/components/elements/common";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
-import {type CoursePaginationListType, type NewsFilterPagesType } from "@/core/validators/api";
+import {AllNewsType } from "@/core/validators/api";
+import { AllCourseFilterDtoType } from './../../../core/validators/api/course/course-pagination.schema';
 
 const ListPage = ({
   children,
@@ -69,24 +70,24 @@ type ListContentProps = {
   className?: string;
   sortOptions: SortOptionDictProps[];
   lang: Locale;
-}&(CourseContentProps | NewsContentProps)
+}&(CourseContentProps )
 type CourseContentProps ={
   typeOf: "course";
     FullCard: React.FC<CourseFullCardProps> 
   MidCard: React.FC<CourseMidCardProps> 
-  data: CoursePaginationListType 
+  data: AllCourseFilterDtoType 
 }
 
-type NewsContentProps ={
-  typeOf: "news";
-    FullCard: React.FC<BlogFullCardProps>;
-  MidCard: React.FC<BlogMidCardProps>;
-  data: NewsFilterPagesType;
-}
+// type NewsContentProps ={
+//   typeOf: "news";
+//     FullCard: React.FC<BlogFullCardProps>;
+//   MidCard: React.FC<BlogMidCardProps>;
+//   data: AllNewsType;
+// }
 const ListContent = (props: ListContentProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [switchedList, setSwitchedList] = useState<SwitchedListStates>("grid");
-  const { lang, sortOptions, className, typeOf } = props;
+  const { lang, sortOptions, className, typeOf , FullCard , MidCard, data} = props;
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       <ContentBar
@@ -104,8 +105,12 @@ const ListContent = (props: ListContentProps) => {
         MidCard={MidCard}
         switchedList={switchedList}
         data={data}
+        typeOf="course"
       />
-      <Pagination className="w-fit mx-auto mt-4"/>
+      <Pagination 
+      className="w-fit mx-auto mt-4"
+      // totalPages = {paginationData}
+      />
     </div>
   );
 };

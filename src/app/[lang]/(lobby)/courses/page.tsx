@@ -20,7 +20,7 @@ import {
 import { courseCategoryDict } from "@/dict/dev";
 import { courseSortOptionsDict } from "@/dict/pages/list.dict";
 
-import { getCoursesByQuery } from "@/core/services/api";
+import { getCourseByPagination, getCoursesByQuery } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
@@ -38,7 +38,9 @@ const CoursesPage = async ({
   const query = searchParams?.Query || '';
   const currentPage = Number(searchParams?.PageNumber) || 1;
   const searchData = await getCoursesByQuery(currentPage,query,);
-console.log(searchData);
+  const paginationData = await getCourseByPagination(query);
+
+  if(!searchData){return null}
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
@@ -58,7 +60,8 @@ console.log(searchData);
           typeOf="course"
           FullCard={CourseFullCard}
           MidCard={CourseMidCard}
-          data={searchData}
+          data={searchData?.courseFilterDtos}
+          // paginationData={paginationData}
         />
       </ListPage>
     

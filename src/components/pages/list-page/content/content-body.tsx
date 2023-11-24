@@ -10,30 +10,29 @@ import { type SwitchedListStates } from "@/dict/pages/list.dict";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
-import { type CourseByPaginationType, type NewsFilterPagesType } from "@/core/validators/api";
+import { AllCourseFilterDtoType, AllNewsType } from "@/core/validators/api";
 
 type ContentBodyProps = {
   lang: Locale;
   selectedOption: number;
   switchedList: SwitchedListStates;
-}&(CourseContentProps | NewsContentProps)
+}&(CourseContentProps )
 type CourseContentProps ={
   typeOf: "course";
   FullCard: React.FC<CourseFullCardProps> 
   MidCard: React.FC<CourseMidCardProps> 
-  data: CourseByPaginationType 
+  data: AllCourseFilterDtoType 
 }
 
-type NewsContentProps ={
-  typeOf: "news";
-  FullCard: React.FC<BlogFullCardProps>;
-  MidCard: React.FC<BlogMidCardProps>;
-  data: NewsFilterPagesType;
-}
+// type NewsContentProps ={
+//   typeOf: "news";
+//   FullCard: React.FC<BlogFullCardProps>;
+//   MidCard: React.FC<BlogMidCardProps>;
+//   data: AllNewsType;
+// }
 
 export const ContentBody = (props: ContentBodyProps) => {
   const { lang, selectedOption, switchedList,FullCard,MidCard,data, typeOf } = props;
-  const filterdData = typeOf === 'course'? data.courseFilterDtos : data.news; 
   return (
     <div className="">
       <div
@@ -42,7 +41,7 @@ export const ContentBody = (props: ContentBodyProps) => {
           switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
         )}
       >
-        {typeOf === "course" && data.courseFilterDtos.map((item , index) => (
+        {typeOf === "course" && data.map((item , index) => (
           <>
             {switchedList === "grid" ? (
             <MidCard key={index} item={item} lang={lang} />
@@ -51,7 +50,7 @@ export const ContentBody = (props: ContentBodyProps) => {
             )}
           </>
         ))}
-           {typeOf === "news" && data.news.map((item , index) => (
+           {/* {typeOf === "news" && data.map((item , index) => (
           <>
             {switchedList === "grid" ? (
             <MidCard key={index} item={item} lang={lang} />
@@ -59,7 +58,7 @@ export const ContentBody = (props: ContentBodyProps) => {
               <FullCard key={index} item={item} lang={lang} />
             )}
           </>
-        ))}
+        ))} */}
       </div>
     </div>
   );
