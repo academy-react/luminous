@@ -13,7 +13,7 @@ export const getNewsFilterPages = async (
   );
 
   const parsedResult = newsFilterPagesSchema.safeParse(response.data);
-console.log(parsedResult)
+// console.log(parsedResult)
 
   if (!parsedResult.success) {
     console.error("errors in get-news-filter-page.api", parsedResult.error.errors);
