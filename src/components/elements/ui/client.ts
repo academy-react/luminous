@@ -7,3 +7,4 @@ export * from "./select";
 export * from "./sheet";
 export * from "./switch";
 export * from "./tabs";
+export * from "./toaster";
