@@ -12,17 +12,13 @@ type ContentBarProps = {
   sortOptions: SortOptionDictProps[];
   lang: Locale;
   selectedOption: number;
-  setSelectedOption: (option: number) => void;
   switchedList: SwitchedListStatesDict;
-  setSwitchedList: (option: "grid" | "list") => void;
 };
 export const ContentBar = ({
   lang,
   sortOptions,
-  setSelectedOption,
   selectedOption,
   switchedList,
-  setSwitchedList,
 }: ContentBarProps) => {
   return (
     <div className="flex items-center justify-between rounded-xl bg-card p-4  shadow">
@@ -34,7 +30,7 @@ export const ContentBar = ({
               " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
               selectedOption === index && "text-purple-primary"
             )}
-            onClick={() => setSelectedOption(index)}
+            // onClick={() => setSelectedOption(index)}
           >
             {item.title[lang]}
           </li>
@@ -52,7 +48,7 @@ export const ContentBar = ({
                   ? "text-purple-primary"
                   : "text-[#555]"
               )}
-              onClick={() => setSwitchedList(item.name)}
+              // onClick={() => setSwitchedList(item.name)}
             >
               <item.Icon />
             </li>

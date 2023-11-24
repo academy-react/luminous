@@ -66,51 +66,12 @@ const ListSideBar = ({
 };
 
 // list-Content
-type ListContentProps = {
-  className?: string;
-  sortOptions: SortOptionDictProps[];
-  lang: Locale;
-}&(CourseContentProps )
-type CourseContentProps ={
-  typeOf: "course";
-    FullCard: React.FC<CourseFullCardProps> 
-  MidCard: React.FC<CourseMidCardProps> 
-  data: AllCourseFilterDtoType 
-}
 
-// type NewsContentProps ={
-//   typeOf: "news";
-//     FullCard: React.FC<BlogFullCardProps>;
-//   MidCard: React.FC<BlogMidCardProps>;
-//   data: AllNewsType;
-// }
-const ListContent = (props: ListContentProps) => {
-  const [selectedOption, setSelectedOption] = useState(0);
-  const [switchedList, setSwitchedList] = useState<SwitchedListStates>("grid");
-  const { lang, sortOptions, className, typeOf , FullCard , MidCard, data} = props;
+const ListContent = ({children, className}:{children: React.ReactNode; className?:string;}) => {
+
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
-      <ContentBar
-        sortOptions={sortOptions}
-        lang={lang}
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-        switchedList={switchedList}
-        setSwitchedList={setSwitchedList}
-      />
-      <ContentBody
-        lang={lang}
-        selectedOption={selectedOption}
-        FullCard={FullCard}
-        MidCard={MidCard}
-        switchedList={switchedList}
-        data={data}
-        typeOf="course"
-      />
-      <Pagination 
-      className="w-fit mx-auto mt-4"
-      // totalPages = {paginationData}
-      />
+    {children}
     </div>
   );
 };
