@@ -31,7 +31,7 @@ export const allNewsSchema = z.array(newsSchema);
 export type AllNewsType = z.infer<typeof allNewsSchema>;
 
 export const newsFilterPagesSchema = z.object({
-  news: z.array(newsSchema),
+  news: allNewsSchema,
   totalCount: z.number(),
 });
 

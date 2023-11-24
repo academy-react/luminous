@@ -18,12 +18,35 @@ import {
 } from "@/components/pages/list-page/side-bar-items";
 
 import { courseCategoryDict } from "@/dict/dev";
-import { coursesDict } from "@/dict/dev/courses.dict";
-import { courseSortOptionsDict } from "@/dict/pages/list.dict";
+import { SwitchedListStates, courseSortOptionsDict} from "@/dict/pages/list.dict";
+
+import { getCoursesByQuery } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
+import { ContentBar } from "@/components/pages/list-page/content/content-bar";
+import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import { Pagination } from "@/components/elements/common";
 
-const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
+const CoursesPage = async ({
+  params: { lang },
+  searchParams,
+}: {
+  params: { lang: Locale };
+  searchParams?: {
+    Query?: string;
+    PageNumber?: string;
+    view?: SwitchedListStates;
+    sortOption?: string;
+  };
+
+}) => {
+  const query = searchParams?.Query || '';
+  const currentPage = Number(searchParams?.PageNumber) || 1;
+  const view = searchParams?.view || "grid";
+  const sortOption = Number(searchParams?.sortOption )|| 0;
+  const searchData = await getCoursesByQuery({currentPage,query});
+
+  if(!searchData){return null}
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
@@ -37,13 +60,27 @@ const CoursesPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
           </div>
           <ListTeacher lang={lang} />
         </ListSideBar>
-        <ListContent
-          sortOptions={courseSortOptionsDict}
-          lang={lang}
-          FullCard={CourseFullCard}
-          MidCard={CourseMidCard}
-          data={coursesDict}
-        />
+        <ListContent>
+        <ContentBar
+        sortOptions={courseSortOptionsDict}
+        lang={lang}
+        selectedOption={sortOption}
+        switchedList={view}
+      />
+      <ContentBody
+        lang={lang}
+        selectedOption={sortOption}
+        FullCard={CourseFullCard}
+        MidCard={CourseMidCard}
+        data={searchData?.courseFilterDtos}
+        switchedList={view}
+        typeOf="course"
+      />
+      <Pagination
+      className="w-fit mx-auto mt-4"
+      // totalPages = {paginationData}
+      />
+        </ListContent>
       </ListPage>
     
     </PageAnimationWrapper>

@@ -4,14 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { type Locale } from "#/i18n.config";
+import { NewsType } from "@/core/validators/api";
 
 export type BlogFullCardProps = {
-  item: {
-    image: string;
-    title: { [key in Locale]: string };
-    description: { [key in Locale]: string };
-    category: { [key in Locale]: string };
-  };
+  item: NewsType;
   lang: Locale;
 };
 export const BlogFullCard = ({

@@ -29,7 +29,7 @@ export const allCourseFilterDtoSchema = z.array(courseFilterDtoSchema);
 export type AllCourseFilterDtoType = z.infer<typeof allCourseFilterDtoSchema>;
 
 export const courseByPaginationSchema = z.object({
-  courseFilterDtos: z.array(courseFilterDtoSchema),
+  courseFilterDtos: allCourseFilterDtoSchema,
   totalCount: z.number(),
 });
 
