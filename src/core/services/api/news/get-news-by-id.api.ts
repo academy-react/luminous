@@ -1,7 +1,7 @@
 import http from "@/core/services/interceptor";
 import { newsIdSchema } from "@/core/validators/api/news";
 
-export const getNewsById = async (newsId: string) => {
+export const getNewsById = async (newsId: string | number) => {
   const response = await http.get(`/News/${newsId}`);
 
   const parsedResult = newsIdSchema.safeParse(response.data);
