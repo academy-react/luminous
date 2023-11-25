@@ -6,6 +6,7 @@ export interface PanelAsideOptionProps {
   id: number;
   Icon: Icon;
   title: { [lang in Locale]: string };
+  href: string;
 }
 export const panelAsideOption: PanelAsideOptionProps[] = [
   {
@@ -15,6 +16,7 @@ export const panelAsideOption: PanelAsideOptionProps[] = [
       fa: "پیشخوان",
       en: "Dashboard",
     },
+    href: "account",
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ export const panelAsideOption: PanelAsideOptionProps[] = [
       fa: "دوره های من",
       en: "My courses",
     },
+    href: "courses",
   },
   {
     id: 3,
@@ -31,13 +34,6 @@ export const panelAsideOption: PanelAsideOptionProps[] = [
       fa: "ویرایش پروفایل",
       en: "Edit profile",
     },
-  },
-  {
-    id: 4,
-    Icon: Icons.logOut,
-    title: {
-      fa: "خروج",
-      en: "Loug out",
-    },
+    href: "edit",
   },
 ];
