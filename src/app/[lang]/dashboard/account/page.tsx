@@ -7,4 +7,5 @@ const AccountPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
     </div>
   );
 };
+
 export default AccountPage;
