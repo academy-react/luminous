@@ -7,24 +7,28 @@ import { cn, generatePagination } from "@/lib/utils";
 import { CourseByPaginationType } from "@/core/validators/api";
 import { usePathname, useSearchParams } from "next/navigation";
 import clsx from "clsx";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon, CloudCog } from "lucide-react";
 
 export const Pagination = (
   {className , totalCount}
-  :{className:string; totalCount: CourseByPaginationType;}
+  :{className:string; totalCount: number;}
   ) => {
 
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    const currentPage = Number(searchParams.get('PageNumber')) || 1;
+    const currentPage = Number(searchParams.get('page')) ;
+    const rows = Number(searchParams.get('perPage')) | 2; 
+    const totalPages = Math.ceil(totalCount/rows) 
+
   
-    const createPageURL = (pageNumber: number | string=1) => {
+    const createPageURL = (pageNumber: number | string=0) => {
       const params = new URLSearchParams(searchParams);
-      params.set('PageNumber', pageNumber.toString());
+      params.set('page', pageNumber.toString());
+      params.set('perPage' , rows.toString());
       return `${pathname}?${params.toString()}`;
     };
 
-    const allPages = generatePagination(currentPage, totalCount);
+    const allPages = generatePagination(currentPage, totalPages);
 
     return (
       <div className="inline-flex">
@@ -35,7 +39,7 @@ export const Pagination = (
         />
   
         <div className="flex -space-x-px">
-          {allPages.map((page:string, index:number) => {
+          {allPages.map((page, index) => {
             let position: 'first' | 'last' | 'single' | 'middle' | undefined;
   
             if (index === 0) position = 'first';
@@ -80,8 +84,8 @@ export const Pagination = (
       {
         'rounded-r-md': position === 'first' || position === 'single',
         'rounded-l-md': position === 'last' || position === 'single',
-        'z-10  text-white': isActive,
-        'hover:border-purple-primary ': !isActive && position !== 'middle',
+        'z-10  text-primary': isActive,
+        'hover:border-primary ': !isActive && position !== 'middle',
         'text-gray-300': position === 'middle',
       },
     );
@@ -128,50 +132,5 @@ export const Pagination = (
         {icon}
       </Link>
     );
-  }
+   }
 
-//   return (
-//     <nav >
-//       <ul className={cn(" bg-card rounded-xl h-10 px-5 flex flex-row-reverse items-center gap-1",className)}>
-//         <li>
-//           <Link href="#" className="px-2">
-//             <Icons.leftArrow 
-//               href={createPageURL(currentPage - 1)}
-//               // isDisabled={currentPage <= 1}
-            
-//             />
-//           </Link>
-//         </li>
-//         <li>
-//           <Link
-//             href="#"
-//             className="rounded-full  border px-2  hover:border-purple-primary focus:bg-purple-primary "
-//           >
-//             1
-//           </Link>
-//         </li>
-//         <li>
-//           <Link
-//             href="#"
-//             className="rounded-full  border px-2  hover:border-purple-primary focus:bg-purple-primary "
-//           >
-//             1
-//           </Link>
-//         </li>
-//         <li>
-//           <Link
-//             href="#"
-//             className="rounded-full  border px-2  hover:border-purple-primary focus:bg-purple-primary "
-//           >
-//             1
-//           </Link>
-//         </li>
-//         <li>
-//           <Link href="#" className="px-2">
-//             <Icons.rightArrow />
-//           </Link>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// };

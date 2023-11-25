@@ -17,18 +17,18 @@ export function formatDate(date: string, locale: Locale) {
 }
 
 
-export const generatePagination = ({currentPage,totalCount}:{currentPage: number; totalCount: CourseByPaginationType;}) => {
+export const generatePagination = (currentPage:number,totalPages:number) => {
 
-  if (totalCount <= 4) {
-    return Array.from({ length: totalCount }, (_, i) => i + 1);
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
   if (currentPage <= 3) {
-    return [1, 2, 3, '...', totalCount - 1, totalCount];
+    return [1, 2, 3, '...', totalPages - 1, totalPages];
   }
 
-  if (currentPage >= totalCount - 2) {
-    return [1, 2, '...', totalCount - 2, totalCount - 1, totalCount];
+  if (currentPage >= totalPages - 2) {
+    return [1, 2, '...', totalPages - 2, totalPages - 1, totalPages];
   }
 
 
@@ -39,6 +39,6 @@ export const generatePagination = ({currentPage,totalCount}:{currentPage: number
     currentPage,
     currentPage + 1,
     '...',
-    totalCount,
+    totalPages,
   ];
 };

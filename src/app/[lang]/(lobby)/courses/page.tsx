@@ -33,19 +33,20 @@ const CoursesPage = async ({
 }: {
   params: { lang: Locale };
   searchParams?: {
-    Query?: string;
-    PageNumber?: string;
-    
+    query?: string;
+    page?: string;
+    perPage?: number;
     view?: SwitchedListStates;
-    sortOption?: string;
+    sort?: string;
   };
 
 }) => {
-  const query = searchParams?.Query || '';
-  const currentPage = Number(searchParams?.PageNumber) || 1;
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 0;
+  const rows = searchParams?.perPage || 2;
   const view = searchParams?.view || "grid";
-  const sortOption = Number(searchParams?.sortOption )|| 0;
-  const data = await getCoursesByQuery({currentPage,query});
+  const sortOption = Number(searchParams?.sort )|| 0;
+  const data = await getCoursesByQuery({currentPage,query,rows});
 
   if(!data){return null}
   return (
