@@ -35,6 +35,7 @@ const CoursesPage = async ({
   searchParams?: {
     Query?: string;
     PageNumber?: string;
+    
     view?: SwitchedListStates;
     sortOption?: string;
   };
@@ -44,9 +45,9 @@ const CoursesPage = async ({
   const currentPage = Number(searchParams?.PageNumber) || 1;
   const view = searchParams?.view || "grid";
   const sortOption = Number(searchParams?.sortOption )|| 0;
-  const searchData = await getCoursesByQuery({currentPage,query});
+  const data = await getCoursesByQuery({currentPage,query});
 
-  if(!searchData){return null}
+  if(!data){return null}
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
@@ -72,13 +73,14 @@ const CoursesPage = async ({
         selectedOption={sortOption}
         FullCard={CourseFullCard}
         MidCard={CourseMidCard}
-        data={searchData?.courseFilterDtos}
+        data={data?.courseFilterDtos}
         switchedList={view}
         typeOf="course"
       />
       <Pagination
-      className="w-fit mx-auto mt-4"
-      // totalPages = {paginationData}
+      className=" mt-4"
+      totalCount ={data.totalCount}
+      
       />
         </ListContent>
       </ListPage>
