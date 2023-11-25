@@ -1,5 +1,6 @@
-import { PanelAsideOption } from "@/components/pages/user-panel/panel-sidebar-items/panel-aside-option";
-import { PanelAvatar } from "@/components/pages/user-panel/panel-sidebar-items/panel-avatar";
+import { LogOutButton } from "@/components/pages/user-panel/side-bar-items/log-out-button";
+import { PanelAvatar } from "@/components/pages/user-panel/side-bar-items/panel-avatar";
+import { SideBarNav } from "@/components/pages/user-panel/side-bar-items/side-nav-bar";
 
 import { type Locale } from "#/i18n.config";
 
@@ -11,20 +12,19 @@ const DashboardLayout = ({
   params: { lang: Locale };
 }) => {
   return (
-    <div className="mt-10 flex flex-row lg:px-[5%] xl:px-[8%]">
-      <aside className="sticky  top-10 hidden h-full flex-col gap-10  lg:flex lg:w-1/4">
-        <div className="mt-5 flex w-10/12 gap-4 border border-black pr-2  ">
-          <PanelAvatar />
-        </div>
-        <div className="">
-          <PanelAsideOption lang={lang} />
-        </div>
-      </aside>
-
-      <div></div>
-      <section className="h-[900px] rounded-xl border border-black bg-card shadow md:w-full lg:w-3/4">
-        {children}
-      </section>
+    <div className="flex h-screen max-h-screen min-h-screen w-full items-center px-24 py-16">
+      <div className="flex h-full w-full rounded-2xl bg-primary py-3 pe-3">
+        <aside className="hidden h-full flex-col items-center justify-between lg:flex lg:w-1/4">
+          <div className="flex w-full flex-col items-center">
+            <PanelAvatar lang={lang} />
+            <SideBarNav lang={lang} />
+          </div>
+          <LogOutButton lang={lang} />
+        </aside>
+        <section className="h-full w-full rounded-xl bg-card">
+          {children}
+        </section>
+      </div>
     </div>
   );
 };

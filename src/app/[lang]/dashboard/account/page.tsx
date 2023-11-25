@@ -1,14 +1,10 @@
 import { type Locale } from "#/i18n.config";
 
-const CourseDashboard = ({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) => {
+const AccountPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      courses
+      account
     </div>
   );
 };
-export default CourseDashboard;
+export default AccountPage;
