@@ -3,6 +3,8 @@ import { type Metadata } from "next";
 import { Footer } from "@/components/layouts/footer/footer";
 import { Header } from "@/components/layouts/header/header";
 
+import { auth } from "@/lib/auth";
+
 import { type Locale } from "#/i18n.config";
 
 export const metadata: Metadata = {
@@ -13,16 +15,18 @@ export const metadata: Metadata = {
   },
 };
 
-const LobbyLayout = ({
+const LobbyLayout = async ({
   children,
   params: { lang },
 }: {
   children: React.ReactNode;
   params: { lang: Locale };
 }) => {
+  const session = await auth();
+
   return (
     <div className="relative flex min-h-screen flex-col">
-      <Header lang={lang} />
+      <Header lang={lang} token={session?.user.token} />
       {children}
       <Footer lang={lang} />
     </div>

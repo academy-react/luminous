@@ -14,9 +14,9 @@ import {
 } from "@/components/elements/ui";
 
 import {
-  newsletterRegisterInputValidator,
+  newsletterRegisterInputSchema,
   type NewsletterRegisterInputProps,
-} from "@/types/validations/newsletter.validation";
+} from "@/core/validators/forms/newsletter.schema";
 
 import { type Locale } from "#/i18n.config";
 
@@ -26,7 +26,7 @@ export const NewsletterRegisterForm = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
 
   const form = useForm<NewsletterRegisterInputProps>({
-    resolver: zodResolver(newsletterRegisterInputValidator),
+    resolver: zodResolver(newsletterRegisterInputSchema),
     defaultValues: {
       email: "",
     },

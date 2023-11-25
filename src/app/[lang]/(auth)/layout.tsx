@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 import Image from "next/image";
 
-import { MainNav } from "@/components/layouts/header/desktop-nav";
+import { MainNav } from "@/components/layouts/header/desktop";
 
 import { type Locale } from "#/i18n.config";
 

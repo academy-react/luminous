@@ -4,7 +4,7 @@ export interface SignInFormDictProps {
   title: {
     [key in Locale]: string;
   };
-  username: {
+  phoneOrGmail: {
     [key in Locale]: string;
   };
   password: {
@@ -13,7 +13,7 @@ export interface SignInFormDictProps {
   button: {
     [key in Locale]: string;
   };
-  remember: {
+  rememberMe: {
     [key in Locale]: string;
   };
   forgot: {
@@ -32,9 +32,9 @@ export const signInFormDict: SignInFormDictProps = {
     fa: "ورود",
     en: "Sign In",
   },
-  username: {
-    fa: "نام‌ کاربری",
-    en: "Username",
+  phoneOrGmail: {
+    fa: "شماره‌ تلفن یا ایمیل",
+    en: "Phone or Email",
   },
   password: {
     fa: "رمز عبور",
@@ -44,7 +44,7 @@ export const signInFormDict: SignInFormDictProps = {
     fa: "ورود",
     en: "Sign In",
   },
-  remember: {
+  rememberMe: {
     fa: "مرا به خاطر بسپار",
     en: "Remember me",
   },

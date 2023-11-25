@@ -16,11 +16,12 @@ import {
 } from "@/components/elements/ui";
 import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
-import {
-  thirdSignUpInputValidator,
-  type ThirdSignUpInputProps,
-} from "@/types/validations/auth.validation";
 import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
+
+import {
+  thirdSignUpInputSchema,
+  type ThirdSignUpInputProps,
+} from "@/core/validators/forms";
 
 import { type Locale } from "#/i18n.config";
 
@@ -37,7 +38,7 @@ export const ThirdSignUpForm = ({
   const router = useRouter();
 
   const form = useForm<ThirdSignUpInputProps>({
-    resolver: zodResolver(thirdSignUpInputValidator),
+    resolver: zodResolver(thirdSignUpInputSchema),
   });
 
   const onSubmit = (data: ThirdSignUpInputProps) => {

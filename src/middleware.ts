@@ -1,7 +1,6 @@
-import { chain } from "@/middlewares/chain";
-import { withI18NMiddleware } from "@/middlewares/i18n-middleware";
+import { chain, withAuthNMiddleware, withI18NMiddleware } from "@/middlewares";
 
-export default chain([withI18NMiddleware]);
+export default chain([withAuthNMiddleware, withI18NMiddleware]);
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`

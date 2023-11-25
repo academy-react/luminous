@@ -2,14 +2,20 @@
 
 import { useEffect, useState } from "react";
 
-import { AuthNav, MainNav } from "@/components/layouts/header/desktop-nav";
+import { AuthNav, MainNav } from "@/components/layouts/header/desktop";
 import { MobileNav } from "@/components/layouts/header/mobile-nav";
 
 import { cn } from "@/lib/utils";
 
 import type { Locale } from "#/i18n.config";
 
-export const Header = ({ lang }: { lang: Locale }) => {
+export const Header = ({
+  lang,
+  token,
+}: {
+  lang: Locale;
+  token: string | undefined;
+}) => {
   const [backgroundOpacity, setBackgroundOpacity] = useState(
     "bg-opacity-50 dark:bg-opacity-50"
   );
@@ -41,7 +47,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
     >
       <div className="container flex h-16 items-center">
         <MainNav lang={lang} />
-        <AuthNav lang={lang} />
+        <AuthNav lang={lang} token={token} />
         <MobileNav lang={lang} />
       </div>
     </header>
