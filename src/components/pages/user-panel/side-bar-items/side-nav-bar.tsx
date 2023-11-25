@@ -19,8 +19,9 @@ export const SideBarNav = ({ lang }: { lang: Locale }) => {
           <li
             key={index}
             className={cn(
-              "ms-10 flex cursor-pointer items-center gap-2 rounded-r-xl px-4 py-2 text-sm font-semibold text-white",
-              segment === item.href && "bg-white text-primary"
+              "ms-10 flex cursor-pointer items-center gap-2 rounded-s-xl px-4 py-2 text-sm font-semibold text-white transition-all duration-500",
+              segment === item.href && "bg-white text-primary",
+              segment !== item.href && "hover:bg-white/30"
             )}
           >
             <item.Icon />

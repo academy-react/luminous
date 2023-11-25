@@ -1,9 +1,13 @@
 import { H1 } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
-import { type Locale } from "#/i18n.config";
+type UserAvatarProps = {
+  fName: string;
+  lName: string;
+  picture: string;
+};
 
-export const PanelAvatar = ({ lang }: { lang: Locale }) => {
+export const UserAvatar = ({ fName, lName, picture }: UserAvatarProps) => {
   return (
     <div className="flex w-fit flex-col items-center justify-center gap-3 p-7">
       <div className="relative aspect-square h-24 rounded-full">
@@ -19,9 +23,7 @@ export const PanelAvatar = ({ lang }: { lang: Locale }) => {
         <div className="absolute bottom-0 start-0 h-3 w-3 -translate-x-2 -translate-y-2 rounded-full bg-green-500" />
       </div>
       <div className="flex flex-col justify-center gap-1 text-sm">
-        <H1 className="font-extrabold text-white">
-          {{ fa: "فرشته احمدی", en: "Fereshteh Ahmadi" }[lang]}
-        </H1>
+        <H1 className="font-extrabold text-white">{`${fName} ${lName}`}</H1>
       </div>
     </div>
   );
