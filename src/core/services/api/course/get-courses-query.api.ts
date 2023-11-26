@@ -1,3 +1,5 @@
+"use server";
+
 import http from "@/core/services/interceptor";
 import { courseByPaginationSchema } from "@/core/validators/api";
 type GetCoursesQueryParams={

@@ -1,3 +1,4 @@
+'use server';
 import http from "@/core/services/interceptor";
 import { newsFilterPagesSchema} from "@/core/validators/api";
 
@@ -16,6 +17,7 @@ export const getNewsFilterPages = async ({
   sortType = "DESC",
   sortingCol = "InsertDate",
 }: NewsFilterPagesParams = {}) => {
+ 
   const response = await http.get(
     `/News?PageNumber=${pageNumber}&RowsOfPage=${rowsOfPage}&SortingCol=${sortingCol}&SortType=${sortType}&Query=${query}`
   );
@@ -31,7 +33,8 @@ export const getNewsFilterPages = async ({
 
     return null;
   }
-
   return parsedResult.data;
+
+  
 };
 
