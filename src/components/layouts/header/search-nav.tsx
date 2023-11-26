@@ -14,10 +14,10 @@ import {
 } from "@/components/elements/ui/command";
 import { Icons } from "@/components/assets/icons";
 
-import { getCoursesByQuery } from "@/core/services/api";
+import { getCoursesByQuery, getNewsFilterPages } from "@/core/services/api";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/elements/ui/skeleton";
-import { AllCourseFilterDtoType} from '@/core/validators/api';
+import { AllCourseFilterDtoType , AllNewsType} from '@/core/validators/api';
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
@@ -25,31 +25,50 @@ export const SearchNav = () => {
   const [courseList, setCourseList] = useState<
   AllCourseFilterDtoType | null | undefined
   >();
+  const [newsList, setNewsList] = useState<
+  AllNewsType | null | undefined
+  >();
   const [query, setQuery] = useState("");
   const [debouncedQuery] = useDebounce(query, 300);
   const router = useRouter();
   useEffect(() => {
     if (debouncedQuery.length <= 0) {
       setCourseList(null);
+      setNewsList(null);
       return;
     }
 
     const getCourse = async () => {
       try {
-        console.log(query)
-        console.log(debouncedQuery);
+
         const data = await getCoursesByQuery({query: debouncedQuery});
 
-        console.log(data);
         setCourseList(data?.courseFilterDtos);
       } catch (err) {
         console.log(err);
       }
     };
 
-    startTransition(getCourse);
+    const getNews = async () => {
+      try {
 
-    return () => setCourseList(null);
+        const data = await getNewsFilterPages({query: debouncedQuery});
+        console.log(data);
+        setNewsList(data?.news);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    startTransition(async()=>{
+      await getCourse()
+      await getNews()
+    });
+
+    return () => {
+      setCourseList(null);
+      setNewsList(null);
+    }
   }, [debouncedQuery]);
 
   const handleSelect = useCallback((callback: () => unknown) => {
@@ -109,16 +128,41 @@ export const SearchNav = () => {
                     {item.title}
                   </CommandItem>
                 ))}
+
+                  
+           
               </CommandGroup>
             )}
             
             <div className="divide-x border "></div>
+
+            {isPending ? (
+              <div className="space-y-1 overflow-hidden px-1 py-2">
+                <Skeleton className="h-4 w-10 rounded" />
+                <Skeleton className="h-8 rounded-sm" />
+                <Skeleton className="h-8 rounded-sm" />
+              </div>
+            ) : (
             <CommandGroup
+
               heading="اخبار و مقالات"
               className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
             >
-              <CommandItem>Calculator</CommandItem>
+                {newsList?.map((item) => (
+                  <CommandItem
+                    key={item.id}
+                    value={item.title}
+                    onSelect={() => {
+                      handleSelect(() =>
+                        router.push(`/blog/${item.id}`)
+                      );
+                    }}
+                  >
+                    {item.title}
+                  </CommandItem>
+                ))}
             </CommandGroup>
+             )}
           </div>
         </CommandList>
       </CommandDialog>
