@@ -14,7 +14,7 @@ import {
 } from "@/components/elements/ui/command";
 import { Icons } from "@/components/assets/icons";
 
-import { getCoursesByQuery, getNewsFilterPages } from "@/core/services/api";
+import { getCoursesByPagination, getNewsFilterPages } from "@/core/services/api";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/elements/ui/skeleton";
 import { AllCourseFilterDtoType , AllNewsType} from '@/core/validators/api';
@@ -41,7 +41,7 @@ export const SearchNav = () => {
     const getCourse = async () => {
       try {
 
-        const data = await getCoursesByQuery({query: debouncedQuery});
+        const data = await getCoursesByPagination({query: debouncedQuery});
 
         setCourseList(data?.courseFilterDtos);
       } catch (err) {

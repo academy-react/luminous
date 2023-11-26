@@ -20,7 +20,7 @@ import {
 import { courseCategoryDict } from "@/dict/dev";
 import { SwitchedListStates, courseSortOptionsDict} from "@/dict/pages/list.dict";
 
-import { getCoursesByQuery } from "@/core/services/api";
+import { getCoursesByPagination } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
