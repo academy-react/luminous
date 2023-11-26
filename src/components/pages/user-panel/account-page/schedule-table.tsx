@@ -32,7 +32,7 @@ export const ScheduleTable = ({
             {index % 5 === 0 ? (
               <div
                 className={cn(
-                  "relative z-10 flex h-full w-full -translate-y-1 rotate-[-10deg] items-center rounded-xl bg-blue-400",
+                  "relative z-10 flex h-full w-full -translate-y-1 rotate-[-10deg] cursor-pointer items-center rounded-xl bg-blue-400 transition-all duration-500 hover:scale-110",
                   colors[index % (colors.length - 1)]
                 )}
               >
