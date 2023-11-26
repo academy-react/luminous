@@ -9,7 +9,11 @@ import {
 import { TeachersSection } from "@/components/pages/lobby/client";
 import { TempTitle } from "@/components/utils/temp-title";
 
-import { getAllTeacher, getTopCoursesList } from "@/core/services/api";
+import {
+  getAllTeacher,
+  getTopCoursesList,
+  getUserProfileInfo,
+} from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 

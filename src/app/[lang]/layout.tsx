@@ -6,7 +6,11 @@ import { Toaster } from "@/components/elements/ui/toaster";
 import { ProgressBarProvider, ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
-import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
+import {
+  fontIranSans,
+  fontRoboto,
+  fontSans,
+} from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
 import { i18n, type Locale } from "#/i18n.config";
@@ -35,9 +39,9 @@ const RootLayout = ({
       <body
         className={cn(
           "min-h-screen font-multi antialiased",
-          roboto.variable,
-          iranSans.variable,
-          mitra.variable
+          fontRoboto.variable,
+          fontSans.variable,
+          fontIranSans.variable,
         )}
         dir={lang === "en" ? "ltr" : "rtl"}
       >

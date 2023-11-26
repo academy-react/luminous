@@ -1,31 +1,21 @@
-import { Roboto } from "next/font/google";
+import { Inter as FontSans, Roboto as RobotoFont } from "next/font/google";
 import localFont from "next/font/local";
 
-export const roboto = Roboto({
+export const fontRoboto = RobotoFont({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-roboto",
 });
 
-export const mitra = localFont({
-  src: [
-    {
-      path: "/Mitra Family/Mitra - Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "/Mitra Family/Mitra - Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+export const fontSans = FontSans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-mitra",
+  variable: "--font-sans",
 });
 
-export const iranSans = localFont({
+export const fontIranSans = localFont({
   src: [
     {
       path: "./IranSansX Family/IRANSansX-1-Thin.woff2",
