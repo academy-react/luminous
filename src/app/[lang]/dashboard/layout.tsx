@@ -35,7 +35,7 @@ const DashboardLayout = async ({
           </div>
           <LogOutButton lang={lang} />
         </aside>
-        <section className="h-full w-full rounded-xl bg-card">
+        <section className="h-full w-full rounded-xl bg-card p-10">
           {children}
         </section>
       </div>
