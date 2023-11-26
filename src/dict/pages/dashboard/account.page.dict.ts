@@ -8,6 +8,15 @@ export interface DashboardAccoundPageDict {
   welcomeText: {
     [key in Locale]: string;
   };
+  profileCompletion: {
+    [key in Locale]: string;
+  };
+  profileCompletionGift: {
+    [key in Locale]: string;
+  };
+  latestUpdates: {
+    [keu in Locale]: string;
+  };
   weeklySchedule: {
     [key in Locale]: string;
   };
@@ -17,9 +26,6 @@ export interface DashboardAccoundPageDict {
     Icon: Icon;
     color: string;
   }[];
-  latestUpdates: {
-    [keu in Locale]: string;
-  };
 }
 
 export const dashboardAccountPageDict: DashboardAccoundPageDict = {
@@ -27,13 +33,25 @@ export const dashboardAccountPageDict: DashboardAccoundPageDict = {
     fa: "، خوش آمدید!",
     en: ", Welcome!",
   },
+  profileCompletion: {
+    fa: "درصد تکمیل پروفایل",
+    en: "Profile Completion",
+  },
+  profileCompletionGift: {
+    fa: "با تکمیل پروفایل خود، هدیه‌ای از ما دریافت کنید!",
+    en: "Complete your profile and get a gift from us!",
+  },
+  latestUpdates: {
+    fa: "آخرین به‌روز‌رسانی‌ها",
+    en: "Latest Updates",
+  },
   weeklySchedule: {
     fa: "برنامه هفتگی",
     en: "Weekly Schedule",
   },
   smallDetailsCardKeys: [
     {
-      title: { fa: "تکلیف‌های بررسی نشده", en: "Unreviewed Homeworks" },
+      title: { fa: "تکلیف‌های انجام نشده", en: "Unfinished Homeworks" },
       subtitle: {
         fa: "تکلیف",
         en: "Homework",
@@ -78,36 +96,7 @@ export const dashboardAccountPageDict: DashboardAccoundPageDict = {
       Icon: Rocket,
       color: "bg-blue-400",
     },
-
-    {
-      title: {
-        fa: "دوره‌های در حال برگزاری",
-        en: "Courses in Progress",
-      },
-      subtitle: {
-        fa: "دوره",
-        en: "Course",
-      },
-      Icon: Rocket,
-      color: "bg-green-400",
-    },
-    {
-      title: {
-        fa: "دوره‌های تکمیل شده",
-        en: "Completed Courses",
-      },
-      subtitle: {
-        fa: "دوره",
-        en: "Course",
-      },
-      Icon: Rocket,
-      color: "bg-red-400",
-    },
   ],
-  latestUpdates: {
-    fa: "آخرین به‌روز‌رسانی‌ها",
-    en: "Latest Updates",
-  },
 };
 
 export interface MockDashboardAccountPageDict {

@@ -2,7 +2,7 @@ import { CalendarPlus } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-export const LatestPostsCard = ({
+export const LatestUpdatesCard = ({
   index,
   post,
 }: {
@@ -28,7 +28,7 @@ export const LatestPostsCard = ({
   return (
     <div
       className={cn(
-        "flex w-64 snap-start flex-col gap-2 rounded-2xl bg-emerald-400 p-4",
+        "flex w-60 snap-start flex-col gap-2 rounded-2xl bg-emerald-400 p-4",
         colors[index % colors.length]
       )}
     >

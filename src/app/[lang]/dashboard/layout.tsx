@@ -40,7 +40,7 @@ const DashboardLayout = async ({
         </aside>
         <section className="flex h-full w-full flex-col items-center justify-center rounded-xl bg-card p-10">
           <header className="flex w-full items-center justify-between pb-5">
-            <H3 className="text-2xl font-extrabold text-zinc-700">
+            <H3 className="text-2xl font-extrabold text-text">
               {data.fName + " " + data.lName + dict.welcomeText[lang]}
             </H3>
             <UserDashboardNotification />
