@@ -1,8 +1,12 @@
+import { UserDashboardNotification } from "@/components/pages/user-panel/account-page";
 import {
   LogOutButton,
   UserAvatar,
 } from "@/components/pages/user-panel/side-bar-items";
 import { SideBarNav } from "@/components/pages/user-panel/side-bar-items/client";
+import { H3 } from "@/components/elements/ui";
+
+import { dashboardAccountPageDict } from "@/dict/pages/dashboard/account.page.dict";
 
 import { getUserProfileInfo } from "@/core/services/api";
 
@@ -16,8 +20,7 @@ const DashboardLayout = async ({
   params: { lang: Locale };
 }) => {
   const data = await getUserProfileInfo();
-
-  console.log(data);
+  const dict = dashboardAccountPageDict;
 
   if (!data) return null;
 
@@ -35,7 +38,13 @@ const DashboardLayout = async ({
           </div>
           <LogOutButton lang={lang} />
         </aside>
-        <section className="h-full w-full rounded-xl bg-card p-10">
+        <section className="flex h-full w-full flex-col items-center justify-center rounded-xl bg-card p-10">
+          <header className="flex w-full items-center justify-between pb-5">
+            <H3 className="text-2xl font-extrabold text-zinc-700">
+              {data.fName + " " + data.lName + dict.welcomeText[lang]}
+            </H3>
+            <UserDashboardNotification />
+          </header>
           {children}
         </section>
       </div>

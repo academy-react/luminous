@@ -17,6 +17,9 @@ export interface DashboardAccoundPageDict {
     Icon: Icon;
     color: string;
   }[];
+  mockMonth: {
+    [key in Locale]: string;
+  };
 }
 
 export const dashboardAccountPageDict: DashboardAccoundPageDict = {
@@ -101,4 +104,8 @@ export const dashboardAccountPageDict: DashboardAccoundPageDict = {
       color: "bg-red-400",
     },
   ],
+  mockMonth: {
+    fa: "آذر ۱۴۰۲",
+    en: "December 2023",
+  },
 };

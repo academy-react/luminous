@@ -6,24 +6,23 @@ import { type Locale } from "#/i18n.config";
 
 type SmallDetailCardProps = {
   lang: Locale;
-  title: {
-    [key in Locale]: string;
-  };
-  subtitle: {
-    [key in Locale]: string;
-  };
   count: number;
-  Icon: Icon;
-  color: string;
+  card: {
+    title: {
+      [key in Locale]: string;
+    };
+    subtitle: {
+      [key in Locale]: string;
+    };
+    Icon: Icon;
+    color: string;
+  };
 };
 
 export const SmallDetailCard = ({
   lang,
-  title,
-  subtitle,
   count,
-  Icon,
-  color,
+  card: { title, subtitle, Icon, color },
 }: SmallDetailCardProps) => {
   return (
     <div
