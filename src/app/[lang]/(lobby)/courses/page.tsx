@@ -46,7 +46,7 @@ const CoursesPage = async ({
   const rows = searchParams?.perPage || 2;
   const view = searchParams?.view || "grid";
   const sortOption = Number(searchParams?.sort )|| 0;
-  const data = await getCoursesByQuery({currentPage,query,rows});
+  const data = await getCoursesByPagination({currentPage,query,rows});
 
   if(!data){return null}
   return (

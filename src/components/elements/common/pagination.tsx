@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 
-import { Icons } from "@/components/assets/icons";
 import { cn, generatePagination } from "@/lib/utils";
-import { CourseByPaginationType } from "@/core/validators/api";
 import { usePathname, useSearchParams } from "next/navigation";
 import clsx from "clsx";
 import { ArrowLeftIcon, ArrowRightIcon, CloudCog } from "lucide-react";
@@ -62,7 +60,7 @@ export const Pagination = (
         <PaginationArrow
           direction="right"
           href={createPageURL(currentPage + 1)}
-          isDisabled={currentPage >= totalCount}
+          isDisabled={currentPage >= totalPages}
         />
       </div>
     );

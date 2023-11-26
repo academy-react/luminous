@@ -5,13 +5,14 @@ import { courseByPaginationSchema } from "@/core/validators/api";
 type GetCoursesQueryParams={
   query?: string;
   currentPage?: number;
+  rows?: number;
 }
 
-export const getCoursesByPagination = async ({currentPage = 0 , query = ""}:GetCoursesQueryParams = {})=> {
+export const getCoursesByPagination = async ({currentPage = 0 , query = "",rows = 2}:GetCoursesQueryParams = {})=> {
 const finalQuery = query!= "" ?`&Query=${query}`: ""
 
   const response = await http.get(
-    `/Home/GetCoursesWithPagination?PageNumber=${currentPage}${finalQuery}`
+    `/Home/GetCoursesWithPagination?PageNumber=${currentPage}&RowsOfPage=${rows}${finalQuery}`
   );
 
   const parsedResult = courseByPaginationSchema.safeParse(response.data);

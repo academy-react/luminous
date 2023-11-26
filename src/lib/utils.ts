@@ -2,7 +2,6 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 import { type Locale } from "#/i18n.config";
-import { CourseByPaginationType } from "@/core/validators/api";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
