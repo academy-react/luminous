@@ -1,11 +1,11 @@
-import {
-  ScheduleTable,
-  UserDashboardNotification,
-} from "@/components/pages/user-panel/account-page";
-import { SmallDetailCard } from "@/components/pages/user-panel/cards/small-detail-card";
-import { H3 } from "@/components/elements/ui";
+import { ScheduleTable } from "@/components/pages/user-panel/account-page";
+import { LatestPostsCard } from "@/components/pages/user-panel/account-page/latest-posts-card";
+import { SmallDetailCard } from "@/components/pages/user-panel/account-page/small-detail-card";
 
-import { dashboardAccountPageDict } from "@/dict/pages/dashboard/account.page.dict";
+import {
+  dashboardAccountPageDict,
+  mockDashboardAccountPageDict,
+} from "@/dict/pages/dashboard/account.page.dict";
 
 import { getUserProfileInfo } from "@/core/services/api";
 
@@ -18,21 +18,34 @@ const AccountPage = async ({
 }) => {
   const data = await getUserProfileInfo();
   const dict = dashboardAccountPageDict;
+  const mockData = mockDashboardAccountPageDict;
 
   if (!data) return null;
 
   return (
     <div className="grid h-full w-full grid-cols-5 items-center justify-center">
-      <div className="col-span-3 flex h-full flex-col items-center">
-        <div className="flex w-full items-center justify-between py-3 text-xl font-semibold">
-          <p>{dict.weeklySchedule[lang]}</p>
-          <p>{dict.mockMonth[lang]}</p>
+      <div className="col-span-3 flex h-full flex-col items-start justify-between">
+        <div className="h-full w-full">
+          <p className="py-2 text-xl font-semibold">
+            {dict.latestUpdates[lang]}
+          </p>
+          <div className="grid max-w-full snap-x grid-flow-col gap-3 overflow-auto scrollbar-none">
+            {mockData.latestUpdates.map((post, index) => (
+              <LatestPostsCard key={index} index={index} post={post} />
+            ))}
+          </div>
         </div>
-        <ScheduleTable lang={lang} />
+        <div>
+          <div className="flex w-full items-center justify-between py-3 text-xl font-semibold">
+            <p>{dict.weeklySchedule[lang]}</p>
+            <p>{mockData.month[lang]}</p>
+          </div>
+          <ScheduleTable lang={lang} schedule={mockData.schedule} />
+        </div>
       </div>
       <div className="col-span-2 grid h-full grid-cols-2">
         <div className="h-full "></div>
-        <div className="flex h-full flex-col justify-between">
+        <div className="flex h-full flex-col justify-between p-2">
           {dict.smallDetailsCardKeys.map((card, index) => (
             <SmallDetailCard key={index} lang={lang} card={card} count={5} />
           ))}
