@@ -17,8 +17,8 @@ export interface DashboardAccoundPageDict {
     Icon: Icon;
     color: string;
   }[];
-  mockMonth: {
-    [key in Locale]: string;
+  latestUpdates: {
+    [keu in Locale]: string;
   };
 }
 
@@ -104,8 +104,67 @@ export const dashboardAccountPageDict: DashboardAccoundPageDict = {
       color: "bg-red-400",
     },
   ],
-  mockMonth: {
+  latestUpdates: {
+    fa: "آخرین به‌روز‌رسانی‌ها",
+    en: "Latest Updates",
+  },
+};
+
+export interface MockDashboardAccountPageDict {
+  month: {
+    [key in Locale]: string;
+  };
+  latestUpdates: {
+    courseTitle: string;
+    update: string;
+  }[];
+  schedule: {
+    title: string;
+    time: string;
+  };
+}
+
+export const mockDashboardAccountPageDict: MockDashboardAccountPageDict = {
+  month: {
     fa: "آذر ۱۴۰۲",
     en: "December 2023",
+  },
+  latestUpdates: [
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۰ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۱ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۲ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۳ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۴ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۵ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۶ اضافه شد",
+    },
+    {
+      courseTitle: "دوره آموزشی ری‌اکت",
+      update: "درس ۱۷ اضافه شد",
+    },
+  ],
+  schedule: {
+    title: "آموزش Next.js",
+    time: "۱۰:۰۰ صبح",
   },
 };
