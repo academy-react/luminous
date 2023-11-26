@@ -20,7 +20,7 @@ export const UserAvatar = ({ fName, lName, picture }: UserAvatarProps) => {
         <div className="flex h-full items-center justify-center rounded-full bg-gray-200">
           <Icons.placeholder className="h-7 w-7 text-slate-400" />
         </div>
-        <div className="absolute bottom-0 start-0 h-3 w-3 -translate-x-2 -translate-y-2 rounded-full bg-green-500" />
+        <div className="absolute bottom-2 start-2 h-3 w-3 rounded-full bg-green-500" />
       </div>
       <div className="flex flex-col justify-center gap-1 text-sm">
         <H1 className="font-extrabold text-white">{`${fName} ${lName}`}</H1>
