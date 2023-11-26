@@ -20,7 +20,7 @@ import {
 import { courseCategoryDict } from "@/dict/dev";
 import { SwitchedListStates, courseSortOptionsDict} from "@/dict/pages/list.dict";
 
-import { getCoursesByQuery } from "@/core/services/api";
+import { getCoursesByPagination } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
@@ -44,7 +44,7 @@ const CoursesPage = async ({
   const currentPage = Number(searchParams?.PageNumber) || 1;
   const view = searchParams?.view || "grid";
   const sortOption = Number(searchParams?.sortOption )|| 0;
-  const searchData = await getCoursesByQuery({currentPage,query});
+  const searchData = await getCoursesByPagination({currentPage,query});
 
   if(!searchData){return null}
   return (

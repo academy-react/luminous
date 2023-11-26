@@ -7,7 +7,7 @@ type GetCoursesQueryParams={
   currentPage?: number;
 }
 
-export const getCoursesByQuery = async ({currentPage = 0 , query = ""}:GetCoursesQueryParams = {})=> {
+export const getCoursesByPagination = async ({currentPage = 0 , query = ""}:GetCoursesQueryParams = {})=> {
 const finalQuery = query!= "" ?`&Query=${query}`: ""
 
   const response = await http.get(
