@@ -10,18 +10,19 @@ import {
 } from "@/components/pages/list-page/cards";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import { Pagination } from "@/components/elements/common";
 
 import {
   type SortOptionDictProps,
   type SwitchedListStates,
 } from "@/dict/pages/list.dict";
-import { Pagination } from "@/components/elements/common";
 
+import { AllNewsType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
-import {AllNewsType } from "@/core/validators/api";
-import { AllCourseFilterDtoType } from './../../../core/validators/api/course/course-pagination.schema';
+
+import { AllCourseFilterDtoType } from "./../../../core/validators/api/course/course-pagination.schema";
 
 const ListPage = ({
   children,
@@ -67,11 +68,16 @@ const ListSideBar = ({
 
 // list-Content
 
-const ListContent = ({children, className}:{children: React.ReactNode; className?:string;}) => {
-
+const ListContent = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
-    {children}
+      {children}
     </div>
   );
 };

@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { type CourseFilterDtoType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
 import { Rating } from "./ratting";
-import { CourseFilterDtoType } from "@/core/validators/api";
 
 export type CourseMidCardProps = {
   item: CourseFilterDtoType;
@@ -23,7 +24,7 @@ export const CourseMidCard = ({
       </Link>
       <div className=" flex flex-col gap-4 ">
         <h2 className="text-xl font-semibold ">{title}</h2>
-        <div className="flex flex-col rounded-xl gap-y-4">
+        <div className="flex flex-col gap-y-4 rounded-xl">
           <div>{teacherName}</div>
           <ul className="flex justify-between ">
             <li>

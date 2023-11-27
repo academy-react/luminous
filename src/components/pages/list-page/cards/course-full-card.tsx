@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { type CourseFilterDtoType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
 import { Rating } from "./ratting";
-import { CourseFilterDtoType } from "@/core/validators/api";
 
 export type CourseFullCardProps = {
-  item: CourseFilterDtoType ;
+  item: CourseFilterDtoType;
   lang: Locale;
 };
 export const CourseFullCard = ({

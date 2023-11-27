@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { type NewsType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
-import { NewsType } from "@/core/validators/api";
 
 export type BlogFullCardProps = {
   item: NewsType;

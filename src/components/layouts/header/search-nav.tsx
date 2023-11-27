@@ -12,22 +12,26 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/elements/ui/command";
+import { Skeleton } from "@/components/elements/ui/skeleton";
 import { Icons } from "@/components/assets/icons";
 
-import { getCoursesByPagination, getNewsFilterPages } from "@/core/services/api";
+import {
+  getCoursesByPagination,
+  getNewsFilterPages,
+} from "@/core/services/api";
+import {
+  type AllCourseFilterDtoType,
+  type AllNewsType,
+} from "@/core/validators/api";
 import { cn } from "@/lib/utils";
-import { Skeleton } from "@/components/elements/ui/skeleton";
-import { AllCourseFilterDtoType , AllNewsType} from '@/core/validators/api';
 
 export const SearchNav = () => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [courseList, setCourseList] = useState<
-  AllCourseFilterDtoType | null | undefined
+    AllCourseFilterDtoType | null | undefined
   >();
-  const [newsList, setNewsList] = useState<
-  AllNewsType | null | undefined
-  >();
+  const [newsList, setNewsList] = useState<AllNewsType | null | undefined>();
   const [query, setQuery] = useState("");
   const [debouncedQuery] = useDebounce(query, 300);
   const router = useRouter();
@@ -40,8 +44,7 @@ export const SearchNav = () => {
 
     const getCourse = async () => {
       try {
-
-        const data = await getCoursesByPagination({query: debouncedQuery});
+        const data = await getCoursesByPagination({ query: debouncedQuery });
 
         setCourseList(data?.courseFilterDtos);
       } catch (err) {
@@ -51,8 +54,7 @@ export const SearchNav = () => {
 
     const getNews = async () => {
       try {
-
-        const data = await getNewsFilterPages({query: debouncedQuery});
+        const data = await getNewsFilterPages({ query: debouncedQuery });
         console.log(data);
         setNewsList(data?.news);
       } catch (err) {
@@ -60,15 +62,15 @@ export const SearchNav = () => {
       }
     };
 
-    startTransition(async()=>{
-      await getCourse()
-      await getNews()
+    startTransition(async () => {
+      await getCourse();
+      await getNews();
     });
 
     return () => {
       setCourseList(null);
       setNewsList(null);
-    }
+    };
   }, [debouncedQuery]);
 
   const handleSelect = useCallback((callback: () => unknown) => {
@@ -103,7 +105,6 @@ export const SearchNav = () => {
             یافت نشد.
           </CommandEmpty>
           <div className="mx-auto flex justify-center ">
-            
             {isPending ? (
               <div className="space-y-1 overflow-hidden px-1 py-2">
                 <Skeleton className="h-4 w-10 rounded" />
@@ -128,12 +129,9 @@ export const SearchNav = () => {
                     {item.title}
                   </CommandItem>
                 ))}
-
-                  
-           
               </CommandGroup>
             )}
-            
+
             <div className="divide-x border "></div>
 
             {isPending ? (
@@ -143,26 +141,23 @@ export const SearchNav = () => {
                 <Skeleton className="h-8 rounded-sm" />
               </div>
             ) : (
-            <CommandGroup
-
-              heading="اخبار و مقالات"
-              className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
-            >
+              <CommandGroup
+                heading="اخبار و مقالات"
+                className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
+              >
                 {newsList?.map((item) => (
                   <CommandItem
                     key={item.id}
                     value={item.title}
                     onSelect={() => {
-                      handleSelect(() =>
-                        router.push(`/blog/${item.id}`)
-                      );
+                      handleSelect(() => router.push(`/blog/${item.id}`));
                     }}
                   >
                     {item.title}
                   </CommandItem>
                 ))}
-            </CommandGroup>
-             )}
+              </CommandGroup>
+            )}
           </div>
         </CommandList>
       </CommandDialog>
