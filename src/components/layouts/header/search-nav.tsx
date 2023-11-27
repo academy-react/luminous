@@ -13,6 +13,7 @@ import {
   CommandList,
 } from "@/components/elements/ui/command";
 import { Skeleton } from "@/components/elements/ui/skeleton";
+import { Skeleton } from "@/components/elements/ui/skeleton";
 import { Icons } from "@/components/assets/icons";
 
 import {
@@ -27,7 +28,9 @@ export const SearchNav = () => {
   const [isPending, startTransition] = useTransition();
   const [courseList, setCourseList] = useState<
     AllCourseFilterDtoType | null | undefined
+    AllCourseFilterDtoType | null | undefined
   >();
+  const [newsList, setNewsList] = useState<AllNewsType | null | undefined>();
   const [newsList, setNewsList] = useState<AllNewsType | null | undefined>();
   const [query, setQuery] = useState("");
   const [debouncedQuery] = useDebounce(query, 300);
@@ -42,6 +45,7 @@ export const SearchNav = () => {
     const getCourse = async () => {
       try {
         const data = await getCoursesByPagination({ query: debouncedQuery });
+        const data = await getCoursesByPagination({ query: debouncedQuery });
 
         setCourseList(data?.courseFilterDtos);
       } catch (err) {
@@ -51,6 +55,7 @@ export const SearchNav = () => {
 
     const getNews = async () => {
       try {
+        const data = await getNewsFilterPages({ query: debouncedQuery });
         const data = await getNewsFilterPages({ query: debouncedQuery });
         console.log(data);
         setNewsList(data?.news);
@@ -62,11 +67,15 @@ export const SearchNav = () => {
     startTransition(async () => {
       await getCourse();
       await getNews();
+    startTransition(async () => {
+      await getCourse();
+      await getNews();
     });
 
     return () => {
       setCourseList(null);
       setNewsList(null);
+    };
     };
   }, [debouncedQuery]);
 
@@ -129,6 +138,7 @@ export const SearchNav = () => {
               </CommandGroup>
             )}
 
+
             <div className="divide-x border "></div>
 
             {isPending ? (
@@ -142,17 +152,24 @@ export const SearchNav = () => {
                 heading="اخبار و مقالات"
                 className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
               >
+              <CommandGroup
+                heading="اخبار و مقالات"
+                className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
+              >
                 {newsList?.map((item) => (
                   <CommandItem
                     key={item.id}
                     value={item.title}
                     onSelect={() => {
                       handleSelect(() => router.push(`/blog/${item.id}`));
+                      handleSelect(() => router.push(`/blog/${item.id}`));
                     }}
                   >
                     {item.title}
                   </CommandItem>
                 ))}
+              </CommandGroup>
+            )}
               </CommandGroup>
             )}
           </div>

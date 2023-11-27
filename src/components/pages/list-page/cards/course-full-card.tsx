@@ -11,6 +11,7 @@ import { Rating } from "./ratting";
 
 export type CourseFullCardProps = {
   item: CourseFilterDtoType;
+  item: CourseFilterDtoType;
   lang: Locale;
 };
 export const CourseFullCard = ({

@@ -18,8 +18,6 @@ import {
   SideBar,
 } from "@/components/pages/details-page/wrappers";
 
-import { shortLinkSideCardDict } from "@/dict/dev/details.dict";
-
 import { getCourseById } from "@/core/services/api/course";
 
 import { type Locale } from "#/i18n.config";

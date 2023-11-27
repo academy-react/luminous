@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { CourseFilterDtoType } from "@/core/validators/api";
+import { type CourseFilterDtoType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 

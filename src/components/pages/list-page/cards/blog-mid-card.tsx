@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { NewsType } from "@/core/validators/api";
+import { type NewsType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 

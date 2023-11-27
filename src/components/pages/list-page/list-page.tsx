@@ -51,8 +51,16 @@ const ListContent = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+const ListContent = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
+      {children}
       {children}
     </div>
   );

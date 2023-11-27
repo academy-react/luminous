@@ -5,6 +5,8 @@ import {
 } from "@/components/pages/list-page/cards";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import { ContentBar } from "@/components/pages/list-page/content/content-bar";
+import { ContentBody } from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,

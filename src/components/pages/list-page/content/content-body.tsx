@@ -7,7 +7,10 @@ import {
 
 import { type SwitchedListStates } from "@/dict/pages/list.dict";
 
-import { AllCourseFilterDtoType, AllNewsType } from "@/core/validators/api";
+import {
+  AllNewsType,
+  type AllCourseFilterDtoType,
+} from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
