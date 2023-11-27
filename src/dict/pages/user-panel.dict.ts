@@ -31,8 +31,8 @@ export const panelAsideOption: PanelAsideOptionProps[] = [
     id: 3,
     Icon: Icons.edit,
     title: {
-      fa: "جزئیات حساب",
-      en: "Account details",
+      fa: "جزئیات پروفایل",
+      en: "Profile Details",
     },
     href: "edit",
   },

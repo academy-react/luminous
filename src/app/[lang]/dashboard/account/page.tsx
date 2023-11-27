@@ -49,14 +49,6 @@ const AccountPage = async ({
           )}
         </div>
         <div className="h-full w-full">
-          <p className="py-2 text-xl font-bold">{dict.latestUpdates[lang]}</p>
-          <div className="grid max-w-full snap-x grid-flow-col gap-3 overflow-auto scrollbar-none">
-            {mockData.latestUpdates.map((post, index) => (
-              <LatestUpdatesCard key={index} index={index} post={post} />
-            ))}
-          </div>
-        </div>
-        <div className="h-full w-full">
           <div className="flex w-full items-center justify-between py-3 text-xl font-bold">
             <p>{dict.weeklySchedule[lang]}</p>
             <p>{mockData.month[lang]}</p>
@@ -65,7 +57,15 @@ const AccountPage = async ({
         </div>
       </div>
       <div className="col-span-3 flex h-full flex-col justify-end">
-        <div className="grid grid-cols-2 grid-rows-2 gap-3">
+        <div className="h-full w-full">
+          <p className="py-2 text-xl font-bold">{dict.latestUpdates[lang]}</p>
+          <div className="grid max-w-full snap-x grid-flow-col gap-3 overflow-auto scrollbar-none">
+            {mockData.latestUpdates.map((post, index) => (
+              <LatestUpdatesCard key={index} index={index} post={post} />
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-rows-4 gap-3">
           {dict.smallDetailsCardKeys.map((card, index) => (
             <SmallDetailCard key={index} lang={lang} card={card} count={5} />
           ))}
