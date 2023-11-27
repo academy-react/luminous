@@ -28,11 +28,8 @@ export const CourseSection = ({
       />
       <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row md:items-center">
         <div className="h-full grow md:w-[70%]">
-          {data[0] && (//coursesDict change to data
-            <CourseCard
-              lang={lang}
-              data={data[0]}
-            />
+          {data[0] && ( //coursesDict change to data
+            <CourseCard lang={lang} data={data[0]} />
           )}
         </div>
         <div className="grow rounded-xl bg-card shadow">
@@ -45,8 +42,7 @@ export const CourseSection = ({
                     <CourseSideCard key={index} img={course.image} />
                   ))} */}
 
-
-                  {/* new */}
+              {/* new */}
               {/* {data.map((course, index) => (
                 <CourseSideCard key={index} img={course.tumbImageAddress} />
               ))} */}
@@ -59,7 +55,7 @@ export const CourseSection = ({
                     <CourseSideCard key={index} img={course.iamge} />
                   ))} */}
 
-                    {/* new */}
+              {/* new */}
               {/* {data.map((course, index) => (
                 <CourseSideCard key={index} img={course.tumbImageAddress} />
               ))} */}

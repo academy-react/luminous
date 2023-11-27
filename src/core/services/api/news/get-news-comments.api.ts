@@ -22,9 +22,7 @@ export const getNewsCommentReplies = async (
   newsId: string,
   commentId: string
 ) => {
-  const response = await http.get(
-    `/News/GetRepliesComments?Id=${commentId}`
-  );
+  const response = await http.get(`/News/GetRepliesComments?Id=${commentId}`);
 
   const parsedResult = newsCommentReplyListSchema.safeParse(response.data);
 

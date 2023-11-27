@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { type Locale } from "#/i18n.config";
 import { NewsType } from "@/core/validators/api";
 
+import { type Locale } from "#/i18n.config";
+
 export type BlogMidCardProps = {
-  item:NewsType;
+  item: NewsType;
   lang: Locale;
 };
 export const BlogMidCard = ({

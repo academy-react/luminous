@@ -1,7 +1,9 @@
-'use client';
+"use client";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { useDebouncedCallback } from 'use-debounce';
+import { useDebouncedCallback } from "use-debounce";
+
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
@@ -19,7 +21,7 @@ export const ListSearch = ({
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
-      params.set('page', '1');
+    params.set("page", "1");
     if (term) {
       params.set("query", term);
     } else {
@@ -41,4 +43,3 @@ export const ListSearch = ({
     </div>
   );
 };
-

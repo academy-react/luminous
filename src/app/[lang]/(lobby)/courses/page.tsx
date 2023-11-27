@@ -3,6 +3,8 @@ import {
   CourseFullCard,
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
+import { ContentBar } from "@/components/pages/list-page/content/content-bar";
+import { ContentBody } from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,
@@ -16,16 +18,20 @@ import {
   ListSearch,
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
+import { Pagination } from "@/components/elements/common";
 
-import { SwitchedListStates, courseSortOptionsDict} from "@/dict/pages/list.dict";
+import {
+  courseSortOptionsDict,
+  SwitchedListStates,
+} from "@/dict/pages/list.dict";
 
-import { getCourseCategories, getCoursesByPagination } from "@/core/services/api";
+import {
+  getCourseCategories,
+  getCoursesByPagination,
+} from "@/core/services/api";
+import { CourseCategoriesSchemaType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
-import { ContentBar } from "@/components/pages/list-page/content/content-bar";
-import { ContentBody } from "@/components/pages/list-page/content/content-body";
-import { Pagination } from "@/components/elements/common";
-import { CourseCategoriesSchemaType } from "@/core/validators/api";
 
 const CoursesPage = async ({
   params: { lang },
@@ -40,19 +46,20 @@ const CoursesPage = async ({
     sort?: string;
     tech?: string;
   };
-
 }) => {
-  const query = searchParams?.query || '';
+  const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 0;
   const rows = searchParams?.perPage || 2;
   const view = searchParams?.view || "grid";
-  const sortOption = Number(searchParams?.sort )|| 0;
-  const data = await getCoursesByPagination({currentPage,query,rows});
-  const categoriesData= await getCourseCategories();
-  if(!data || !categoriesData ){return null}
- console.log("data",data);
- console.log("category",categoriesData);
-//تابع:عملیات فیلتر ر انجام و ب کانتت پاس داده بشه
+  const sortOption = Number(searchParams?.sort) || 0;
+  const data = await getCoursesByPagination({ currentPage, query, rows });
+  const categoriesData = await getCourseCategories();
+  if (!data || !categoriesData) {
+    return null;
+  }
+  console.log("data", data);
+  console.log("category", categoriesData);
+  //تابع:عملیات فیلتر ر انجام و ب کانتت پاس داده بشه
 
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
@@ -68,30 +75,24 @@ const CoursesPage = async ({
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent>
-        <ContentBar
-        sortOptions={courseSortOptionsDict}
-        lang={lang}
-        selectedOption={sortOption}
-        switchedList={view}
-      />
-      <ContentBody
-        lang={lang}
-        selectedOption={sortOption}
-        FullCard={CourseFullCard}
-        MidCard={CourseMidCard}
-        data={data?.courseFilterDtos}
-        
-        switchedList={view}
-        typeOf="course"
-      />
-      <Pagination
-      className=" mt-4"
-      totalCount ={data.totalCount}
-      
-      />
+          <ContentBar
+            sortOptions={courseSortOptionsDict}
+            lang={lang}
+            selectedOption={sortOption}
+            switchedList={view}
+          />
+          <ContentBody
+            lang={lang}
+            selectedOption={sortOption}
+            FullCard={CourseFullCard}
+            MidCard={CourseMidCard}
+            data={data?.courseFilterDtos}
+            switchedList={view}
+            typeOf="course"
+          />
+          <Pagination className=" mt-4" totalCount={data.totalCount} />
         </ListContent>
       </ListPage>
-    
     </PageAnimationWrapper>
   );
 };
