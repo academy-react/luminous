@@ -1,7 +1,21 @@
-import { useState } from "react";
+
+import { setCourseRatting } from "@/core/services/api";
+import { useEffect, useState } from "react";
   
- export const Rating= () => {
+ export const Rating= (id:string)  => {
     const [rating, setRating] = useState(0);
+
+   useEffect(()=>{
+    const courseRatting =async()=>{ 
+      const  data= await setCourseRatting( id,rating );
+      // console.log(data);
+    }
+    courseRatting();
+   },[rating]);
+    
+    
+   
+    
     return (
       <div className="flex">
         {[1, 2, 3, 4, 5].map((value) => {

@@ -17,15 +17,15 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 
-import { courseCategoryDict } from "@/dict/dev";
 import { SwitchedListStates, courseSortOptionsDict} from "@/dict/pages/list.dict";
 
-import { getCoursesByPagination } from "@/core/services/api";
+import { getCourseCategories, getCoursesByPagination } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
 import { Pagination } from "@/components/elements/common";
+import { CourseCategoriesSchemaType } from "@/core/validators/api";
 
 const CoursesPage = async ({
   params: { lang },
@@ -38,6 +38,7 @@ const CoursesPage = async ({
     perPage?: number;
     view?: SwitchedListStates;
     sort?: string;
+    tech?: string;
   };
 
 }) => {
@@ -47,15 +48,19 @@ const CoursesPage = async ({
   const view = searchParams?.view || "grid";
   const sortOption = Number(searchParams?.sort )|| 0;
   const data = await getCoursesByPagination({currentPage,query,rows});
+  const categoriesData= await getCourseCategories();
+  if(!data || !categoriesData ){return null}
+ console.log("data",data);
+ console.log("category",categoriesData);
+//تابع:عملیات فیلتر ر انجام و ب کانتت پاس داده بشه
 
-  if(!data){return null}
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory category={courseCategoryDict} lang={lang} />
+          <ListCategory category={categoriesData} lang={lang} />
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
@@ -75,6 +80,7 @@ const CoursesPage = async ({
         FullCard={CourseFullCard}
         MidCard={CourseMidCard}
         data={data?.courseFilterDtos}
+        
         switchedList={view}
         typeOf="course"
       />

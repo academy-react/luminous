@@ -1,10 +1,9 @@
 'use client';
 
 import {
-  courseSortOptionsDict,
   gridListSwitcherDict,
   type SortOptionDictProps,
-  type SwitchedListStatesDict,
+  type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";
@@ -16,7 +15,7 @@ type ContentBarProps = {
   sortOptions: SortOptionDictProps[];
   lang: Locale;
   selectedOption: number;
-  switchedList: SwitchedListStatesDict;
+  switchedList: SwitchedListStates;
 };
 export const ContentBar = ({
   lang,
@@ -28,13 +27,18 @@ export const ContentBar = ({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-  // const sortopt = Number(searchParams.get('sort')) | 0; //???????
   
-  const handleOptionClick = (index:number | string  ) => {
+  const handleSortClick = (value:string  ) => {
     const params = new URLSearchParams(searchParams);
 
-    params.set('sort', index);
-    params.set('view',gridListSwitcherDict.name)
+    params.set('sort', value);
+    router.push(`${pathname}?${params}`);
+   };
+
+   const handleViewClick = (value: string  ) => {
+    const params = new URLSearchParams(searchParams);
+
+    params.set('view',value )
     router.push(`${pathname}?${params}`);
    };
 
@@ -49,7 +53,7 @@ export const ContentBar = ({
               " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
               selectedOption === index && "text-purple-primary"
             )}
-            onClick={() => handleOptionClick(index )}
+            onClick={() => handleSortClick(String(index ))}
           >
             {item.title[lang]}
           </li>
@@ -67,7 +71,7 @@ export const ContentBar = ({
                   ? "text-primary"
                   : "text-[#555]"
               )}
-              onClick={() => handleOptionClick(item.name)}
+              onClick={() => handleViewClick(item.name)}
             >
               <item.Icon />
             </li>
