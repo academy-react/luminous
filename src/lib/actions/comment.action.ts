@@ -21,3 +21,20 @@ export const courseCommentLikeAction = async (
 
   return res;
 };
+
+export const courseCommentDissLikeAction = async (
+  courseId: string,
+  commentId: string,
+  lang: Locale
+) => {
+  console.log(commentId);
+  
+  const res = await addCourseCommentLike(commentId);
+
+  console.log(res);
+
+  revalidatePath(`${lang}/courses/${courseId}`);
+
+  return res;
+};
+
