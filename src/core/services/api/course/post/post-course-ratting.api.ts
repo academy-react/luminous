@@ -8,7 +8,7 @@ export const setCourseRatting = async (id: string, rating: number) => {
     `/Course/SetCourseRating?CourseId=${id}&RateNumber=${rating}`
   );
 
-  const parsedResult = courseRatingResponseSchema.safeParse(response.data); //change schema
+  const parsedResult = courseRatingResponseSchema.safeParse(response.data); 
 
   if (!parsedResult.success) {
     console.error(parsedResult.error);
