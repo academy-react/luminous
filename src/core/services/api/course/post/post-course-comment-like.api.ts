@@ -1,3 +1,5 @@
+"use server";
+
 import http from "@/core/services/interceptor";
 import { courseCommentLikeResponseSchema } from "@/core/validators/api/course/post/post-course-comment-like-result.schema";
 

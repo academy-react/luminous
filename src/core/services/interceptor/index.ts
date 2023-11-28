@@ -35,7 +35,7 @@ instance.interceptors.request.use(
   (error) => {
     console.log("error in interceptor request", error);
 
-    return Promise.reject((error as AxiosError).message);
+    return Promise.reject(error);
   }
 );
 

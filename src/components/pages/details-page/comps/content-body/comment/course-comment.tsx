@@ -1,23 +1,23 @@
 import Image from "next/image";
 
-import { Button } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
 import { getCourseCommentReplies } from "@/core/services/api";
 import { type CourseCommentType } from "@/core/validators/api";
-import { cn, formatDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
+
+import { CourseCommentButtons } from "./course-comment-buttons";
 
 type CommentProps = {
   lang: Locale;
   comment: CourseCommentType;
 };
 
-export const CourseComment = async ({
-  lang,
-  comment: { id, courseId, acceptReplysCount, author, insertDate, describe },
-}: CommentProps) => {
+export const CourseComment = async ({ lang, comment }: CommentProps) => {
+  const { id, courseId, acceptReplysCount, describe } = comment;
+
   const replies =
     acceptReplysCount > 0 ? await getCourseCommentReplies(courseId, id) : [];
 
@@ -26,7 +26,7 @@ export const CourseComment = async ({
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo lang={lang} name={author} date={insertDate} />
+          <UserInfo lang={lang} data={comment} />
           <CommentText text={describe} />
           {replies.length > 0 && (
             <section className="mt-7 space-y-4">
@@ -41,19 +41,15 @@ export const CourseComment = async ({
   );
 };
 
-const Reply = ({
-  lang,
-  reply: { author, insertDate, describe },
-}: {
-  lang: Locale;
-  reply: CourseCommentType;
-}) => {
+const Reply = ({ lang, reply }: { lang: Locale; reply: CourseCommentType }) => {
+  const { describe } = reply;
+
   return (
     <div className="rounded-2xl bg-gray-200 p-5">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo lang={lang} name={author} date={insertDate} />
+          <UserInfo lang={lang} data={reply} />
           <CommentText text={describe} />
         </div>
       </div>
@@ -92,28 +88,21 @@ const UserAvatar = ({
 };
 
 const UserInfo = ({
-  name,
-  date,
   lang,
+  data,
 }: {
-  name: string;
-  date: string;
   lang: Locale;
+  data: CourseCommentType;
 }) => {
+  const { author: name, insertDate: date } = data;
+
   return (
     <div className="flex justify-between">
       <div className="flex flex-col gap-1">
         <span className="text-xl font-medium">{name}</span>
         <span className="text-xs">{formatDate(date, lang)}</span>
       </div>
-      <Button className="h-5 p-0">
-        <Icons.reply
-          className={cn(
-            "h-5 w-5 text-slate-600 transition-colors duration-500 hover:text-slate-400",
-            lang === "en" && "-scale-x-100"
-          )}
-        />
-      </Button>
+      <CourseCommentButtons lang={lang} data={data} />
     </div>
   );
 };
