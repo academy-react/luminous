@@ -4,12 +4,12 @@ export const newsCommentSchema = z
   .object({
     id: z.string(),
     newsId: z.string(),
-    parentId: z.string(),
+    parentId: z.string().nullable(),
     userIpAddress: z.string(),
     title: z.string(),
     describe: z.string(),
     userId: z.number(),
-    insertDate: z.string(),
+    inserDate: z.string(),
     commentLike: z.number(),
     replyCount: z.number(),
   })

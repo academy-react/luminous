@@ -8,7 +8,7 @@ import { Button } from "@/components/elements/ui";
 import { coursesDict } from "@/dict/dev/courses.dict";
 import { coursesTitleBoxDict } from "@/dict/pages/lobby.dict";
 
-import { type CourseListType } from "@/core/validators/api";
+import { type TopCourseListType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 
@@ -17,7 +17,7 @@ export const CourseSection = ({
   data,
 }: {
   lang: Locale;
-  data: CourseListType;
+  data: TopCourseListType;
 }) => {
   return (
     <div className="flex w-full flex-col items-center gap-10">

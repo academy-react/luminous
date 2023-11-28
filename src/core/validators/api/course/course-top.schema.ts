@@ -8,10 +8,16 @@ export const courseSchema = z
     statusName: z.string(),
     levelName: z.string(),
     cost: z.string(),
+    dissLikeCount: z.number(),
     likeCount: z.number(),
     commandCount: z.number(),
     userIsLiked: z.boolean(),
-    userFavorite: z.number(),
+    userIsDissLiked: z.boolean(),
+    isCourseReseve: z.boolean(),
+    isUserFavorite: z.boolean(),
+    courseReseveId: z.string(),
+    userFavoriteId: z.string(),
+    userLikeId: z.string(),
     title: z.string(),
     describe: z.string(),
     tumbImageAddress: z.string().nullable(),
@@ -24,6 +30,6 @@ export const courseSchema = z
 
 export type CourseType = z.infer<typeof courseSchema>;
 
-export const courseListSchema = z.array(courseSchema);
+export const topCourseListSchema = z.array(courseSchema);
 
-export type CourseListType = z.infer<typeof courseListSchema>;
+export type TopCourseListType = z.infer<typeof topCourseListSchema>;
