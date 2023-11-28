@@ -5,8 +5,6 @@ import {
 } from "@/components/pages/list-page/cards";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
-import { ContentBar } from "@/components/pages/list-page/content/content-bar";
-import { ContentBody } from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,
@@ -31,7 +29,6 @@ import {
   getCourseCategories,
   getCoursesByPagination,
 } from "@/core/services/api";
-import { CourseCategoriesSchemaType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 
@@ -59,6 +56,7 @@ const CoursesPage = async ({
   if (!data || !categoriesData) {
     return null;
   }
+
   console.log("data", data);
   console.log("category", categoriesData);
   //تابع:عملیات فیلتر ر انجام و ب کانتت پاس داده بشه
