@@ -7,7 +7,7 @@ import { type CourseCommentType } from "@/core/validators/api";
 import {
   courseCommentDissLikeAction,
   courseCommentLikeAction,
-} from "@/lib/actions/comment.action";
+} from "@/lib/actions/course.action";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
