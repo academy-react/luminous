@@ -19,4 +19,3 @@ export const addCourseCommentDissLike = async (courseId: number | string) => {
 
   return parsedResult.data;
 };
-
