@@ -12,7 +12,7 @@ export const addCourseCommentLike = async (courseId: number | string) => {
 
   if (!parsedResult.success) {
     console.log(response);
-    console.error(parsedResult.error);
+    console.error(parsedResult.error.errors);
 
     return null;
   }

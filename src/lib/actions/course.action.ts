@@ -2,10 +2,21 @@
 
 import { revalidatePath } from "next/cache";
 
-import { addCourseCommentDissLike } from "@/core/services/api/course/post/post-course-comment-diss-like.api";
-import { addCourseCommentLike } from "@/core/services/api/course/post/post-course-comment-like.api";
+import {
+  addCourseCommentDissLike,
+  addCourseCommentLike,
+  addCourseLike,
+} from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
+
+export const courseLikeAction = async (courseId: string, lang: Locale) => {
+  const res = await addCourseLike(courseId);
+
+  revalidatePath(`${lang}/courses/${courseId}`);
+
+  return res;
+};
 
 export const courseCommentLikeAction = async (
   courseId: string,
