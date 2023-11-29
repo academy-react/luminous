@@ -29,7 +29,6 @@ export const courseCommentDissLikeAction = async (
   lang: Locale
 ) => {
   const res = await addCourseCommentDissLike(commentId);
-  const res2 = await addCourseCommentDissLike(commentId);
 
   revalidatePath(`${lang}/courses/${courseId}`);
 
