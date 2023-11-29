@@ -4,4 +4,5 @@ export * from "./course-id.schema";
 export * from "./course-comments.schema";
 export * from "./course-status.schema";
 export * from "./course-categories.schema";
-export * from "./post/post-course-rating.schema";
+export * from "./post";
+
