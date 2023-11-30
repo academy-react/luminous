@@ -14,7 +14,7 @@ export const courseCommentSchema = z
     likeCount: z.number(),
     currentUserEmotion: z.string(),
     currentUserLikeId: z.string(),
-    pictureAddress: z.string(),
+    pictureAddress: z.string().nullable(),
   })
   .strict();
 
