@@ -5,13 +5,17 @@ export const newsCommentSchema = z
     id: z.string(),
     newsId: z.string(),
     parentId: z.string().nullable(),
-    userIpAddress: z.string(),
+    currentUserLikeId: z.string(),
+    inserDate: z.string(),
     title: z.string(),
     describe: z.string(),
-    userId: z.number(),
-    inserDate: z.string(),
-    commentLike: z.number(),
+    likeCount: z.number(),
+    dissLikeCount: z.number(),
     replyCount: z.number(),
+    currentUserIsLike: z.boolean(),
+    currentUserIsDissLike: z.boolean(),
+    autor: z.string(),
+    pictureAddress: z.string().nullable(),
   })
   .strict();
 

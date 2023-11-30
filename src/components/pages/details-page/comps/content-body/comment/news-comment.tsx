@@ -14,10 +14,9 @@ type NewsProps = {
   comment: NewsCommentType;
 };
 
-export const NewsComment = async ({
-  lang,
-  comment: { id, newsId, replyCount, userId, inserDate, describe },
-}: NewsProps) => {
+export const NewsComment = async ({ lang, comment }: NewsProps) => {
+  const { id, newsId, replyCount, describe } = comment;
+
   const replies = replyCount > 0 ? await getNewsCommentReplies(newsId, id) : [];
 
   return (
@@ -25,7 +24,7 @@ export const NewsComment = async ({
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo lang={lang} userId={userId} date={inserDate} />
+          <UserInfo lang={lang} data={comment} />
           <CommentText text={describe} />
           {replies.length > 0 && (
             <section className="mt-7 space-y-4">
@@ -40,19 +39,15 @@ export const NewsComment = async ({
   );
 };
 
-const Reply = ({
-  lang,
-  reply: { userId, inserDate, describe },
-}: {
-  lang: Locale;
-  reply: NewsCommentType;
-}) => {
+const Reply = ({ lang, reply }: { lang: Locale; reply: NewsCommentType }) => {
+  const { describe } = reply;
+
   return (
     <div className="rounded-2xl bg-gray-200 p-5">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
-          <UserInfo lang={lang} userId={userId} date={inserDate} />
+          <UserInfo lang={lang} data={reply} />
           <CommentText text={describe} />
         </div>
       </div>
@@ -90,19 +85,12 @@ const UserAvatar = ({
   );
 };
 
-const UserInfo = ({
-  userId,
-  date,
-  lang,
-}: {
-  userId: number;
-  date: string;
-  lang: Locale;
-}) => {
+const UserInfo = ({ lang, data }: { lang: Locale; data: NewsCommentType }) => {
+  const { autor, inserDate: date } = data;
   return (
     <div className="flex justify-between">
       <div className="flex flex-col gap-1">
-        <span className="text-xl font-medium">{userId}</span>
+        <span className="text-xl font-medium">{autor}</span>
         <span className="text-xs">{formatDate(date, lang)}</span>
       </div>
       <Button className="h-5 p-0">
