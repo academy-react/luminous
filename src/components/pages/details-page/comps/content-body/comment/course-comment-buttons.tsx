@@ -27,7 +27,7 @@ export const CourseCommentButtons = ({
     console.log(res);
   };
 
-  const dissLikeAction = async () => {
+  const dislikeAction = async () => {
     const res = await courseCommentDissLikeAction(courseId, commentId, lang);
 
     console.log(res);
@@ -35,22 +35,20 @@ export const CourseCommentButtons = ({
 
   return (
     <div className="flex gap-2">
-      <Button className="h-5 p-0">
+      <Button className="h-5 p-0" onClick={() => void dislikeAction()}>
         <Icons.thumbsDown
           className={cn(
             "h-5 w-5 text-slate-600 transition-all duration-500 hover:fill-slate-600",
             currentUserEmotion === "DISSLIKED" && "fill-slate-600"
           )}
-          onClick={() => void dissLikeAction()}
         />
       </Button>
-      <Button className="h-5 p-0">
+      <Button className="h-5 p-0" onClick={() => void likeAction()}>
         <Icons.thumbsUp
           className={cn(
             "h-5 w-5 text-slate-600 transition-all duration-500 hover:fill-slate-600",
             currentUserEmotion === "LIKED" && "fill-slate-600"
           )}
-          onClick={() => void likeAction()}
         />
       </Button>
       <Button className="h-5 p-0">

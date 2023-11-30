@@ -29,6 +29,8 @@ const CoursesIDPage = async ({
 }) => {
   const data = await getCourseById(id);
 
+  // console.log(data);
+
   if (!data) notFound();
 
   return (

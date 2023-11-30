@@ -3,7 +3,7 @@ import { courseLikeResponseSchema } from "@/core/validators/api";
 
 export const addCourseDislike = async (courseId: number | string) => {
   const response = await http.post(
-    `/Course/AddCourseDissLike?CourseCommandId=${courseId}`
+    `/Course/AddCourseDissLike?CourseId=${courseId}`
   );
 
   const parsedResult = courseLikeResponseSchema.safeParse(response.data);

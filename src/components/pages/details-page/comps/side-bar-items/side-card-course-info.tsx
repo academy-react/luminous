@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 
+import { CourseInfoSideCardButtons } from "./side-card-course-info-buttons";
+
 type CourseInfoSideCardProps = {
   lang: Locale;
   data: CourseIdType;
@@ -13,7 +15,17 @@ type CourseInfoSideCardProps = {
 
 export const CourseInfoSideCard = ({
   lang,
-  data: { currentRegistrants, currentRate, commentCount },
+  data: {
+    courseId,
+    currentRegistrants,
+    currentRate,
+    commentCount,
+    likeCount,
+    dissLikeCount,
+    currentUserLike,
+    currentUserDissLike,
+    isUserFavorite,
+  },
 }: CourseInfoSideCardProps) => {
   return (
     <div className="shadow-light rounded-2xl bg-card p-5">
@@ -31,6 +43,15 @@ export const CourseInfoSideCard = ({
           iconColor="fill-yellow-400"
         />
       </div>
+      <CourseInfoSideCardButtons
+        lang={lang}
+        courseId={courseId}
+        likeCount={likeCount}
+        dissLikeCount={dissLikeCount}
+        currentUserLike={currentUserLike}
+        currentUserDissLike={currentUserDissLike}
+        isUserFavorite={isUserFavorite}
+      />
       <div className="mt-6">
         <div className="mb-3 flex items-center justify-between text-xl text-zinc-700">
           <span>
