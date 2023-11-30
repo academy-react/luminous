@@ -1,5 +1,5 @@
 export * from "./post-course-like.api";
-export * from "./post-course-dislike-api";
+export * from "./post-course-dislike.api";
 export * from "./post-course-favorite.api";
 export * from "./post-course-rating.api";
 export * from "./post-course-comment-like.api";

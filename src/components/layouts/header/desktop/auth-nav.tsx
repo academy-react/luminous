@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/elements/ui";
 
-import { logOut } from "@/lib/actions/log-out.action";
+import { logOutAction } from "@/core/actions";
 
 import { type Locale } from "#/i18n.config";
 
@@ -21,7 +21,7 @@ export const AuthNav = ({
   const router = useRouter();
 
   const handleLogOut = async () => {
-    const res = await logOut();
+    const res = await logOutAction();
 
     if (res) {
       router.refresh();

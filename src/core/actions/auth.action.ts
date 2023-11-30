@@ -1,9 +1,9 @@
 "use server";
 
 import { type SignInInputProps } from "@/core/validators/forms";
-import { signIn } from "@/lib/auth";
+import { signIn, signOut } from "@/lib/auth";
 
-export const login = async (data: SignInInputProps) => {
+export const loginAction = async (data: SignInInputProps) => {
   try {
     await signIn("credentials", {
       ...data,
@@ -19,5 +19,19 @@ export const login = async (data: SignInInputProps) => {
     console.log(err);
 
     return "Something went wrong";
+  }
+};
+
+export const logOutAction = async () => {
+  try {
+    await signOut({
+      redirect: false,
+    });
+
+    return true;
+  } catch (err) {
+    console.log(err);
+
+    return false;
   }
 };
