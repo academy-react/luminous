@@ -3,11 +3,11 @@
 import { Button } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
-import { type CourseCommentType } from "@/core/validators/api";
 import {
   courseCommentDissLikeAction,
   courseCommentLikeAction,
-} from "@/lib/actions/course.action";
+} from "@/core/actions";
+import { type CourseCommentType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
