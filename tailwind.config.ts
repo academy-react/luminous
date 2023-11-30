@@ -1,6 +1,5 @@
 import scrollbar from "tailwind-scrollbar";
 import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config: Config = {
   darkMode: ["class"],
@@ -20,7 +19,6 @@ const config: Config = {
       },
       fontFamily: {
         roboto: ["var(--font-roboto)"],
-        sans: ["var(--font-sans)", ...fontFamily.sans],
         iranSans: ["var(--font-iran-sans)"],
         multi: ["var(--font-iran-sans)", "var(--font-roboto)"],
       },
