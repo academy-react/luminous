@@ -3,15 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { type NewsType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
 export type BlogMidCardProps = {
-  item: {
-    image: string;
-    title: { [key in Locale]: string };
-    description: { [key in Locale]: string };
-    category: { [key in Locale]: string };
-  };
+  item: NewsType;
   lang: Locale;
 };
 export const BlogMidCard = ({

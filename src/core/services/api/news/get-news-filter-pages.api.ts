@@ -1,3 +1,5 @@
+"use server";
+
 import http from "@/core/services/interceptor";
 import { newsFilterPagesSchema } from "@/core/validators/api";
 
@@ -30,6 +32,5 @@ export const getNewsFilterPages = async ({
 
     return null;
   }
-
   return parsedResult.data;
 };

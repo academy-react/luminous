@@ -20,6 +20,10 @@ export const newsSchema = z
     likeId: z.string(),
     isCurrentUserFavorite: z.boolean(),
     currentUserFavoriteId: z.string(),
+    currentUserSetRate: z.boolean(),
+    currentUserRateNumber: z.number(),
+    currentUserIsDissLike: z.boolean(),
+    currentDissLikeCount: z.number(),
     totalCount: z.number(),
   })
   .strict();
@@ -31,7 +35,7 @@ export const allNewsSchema = z.array(newsSchema);
 export type AllNewsType = z.infer<typeof allNewsSchema>;
 
 export const newsFilterPagesSchema = z.object({
-  news: z.array(newsSchema),
+  news: allNewsSchema,
   totalCount: z.number(),
 });
 

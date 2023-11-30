@@ -39,6 +39,8 @@ export const courseIdSchema = z
     userFavoriteId: z.string(),
     isUserFavorite: z.boolean(),
     userLikeId: z.string(),
+    currentUserSetRate: z.boolean(),
+    currentUserRateNumber: z.number(),
     techs: z.array(z.string()),
   })
   .strict();

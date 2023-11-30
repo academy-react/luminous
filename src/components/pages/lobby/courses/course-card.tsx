@@ -3,8 +3,9 @@ import Link from "next/link";
 
 import { Button, Card, CardContent, CardTitle } from "@/components/elements/ui";
 
+import { type CourseType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
-import { CourseType } from "@/core/validators/api";
 
 type CourseCardProps = {
   lang: Locale;
@@ -13,12 +14,7 @@ type CourseCardProps = {
 
 export const CourseCard = ({
   lang,
-  data:{
-tumbImageAddress,
-title,
-teacherName,
-describe,
-  },
+  data: { tumbImageAddress, title, teacherName, describe },
 }: CourseCardProps) => {
   return (
     <Card className="h-full w-full rounded-xl border-none bg-card p-4 shadow">

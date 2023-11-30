@@ -18,8 +18,6 @@ import {
   SideBar,
 } from "@/components/pages/details-page/wrappers";
 
-import { shortLinkSideCardDict } from "@/dict/dev/details.dict";
-
 import { getCourseById } from "@/core/services/api/course";
 
 import { type Locale } from "#/i18n.config";
@@ -30,6 +28,8 @@ const CoursesIDPage = async ({
   params: { lang: Locale; id: string };
 }) => {
   const data = await getCourseById(id);
+
+  // console.log(data);
 
   if (!data) notFound();
 
