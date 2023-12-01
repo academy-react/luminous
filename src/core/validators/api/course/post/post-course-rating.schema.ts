@@ -2,7 +2,7 @@ import {z} from "zod";
 
 export const courseRatingResponseSchema =z.object(
     {
-        id: z.boolean(),
+        id: z.string(),
         message: z.enum([
             "عملیات با موفقیت انجام شد.",
              "شما قبلا به این دوره امتیاز داده اید",

@@ -54,7 +54,7 @@ const ListContent = ({
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
       {children}
-      {children}
+  
     </div>
   );
 };

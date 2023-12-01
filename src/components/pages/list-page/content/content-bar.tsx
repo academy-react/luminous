@@ -4,6 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import {
   gridListSwitcherDict,
+  SortTypeStates,
   type SortOptionDictProps,
   type SwitchedListStates,
 } from "@/dict/pages/list.dict";
@@ -15,7 +16,7 @@ import { type Locale } from "#/i18n.config";
 type ContentBarProps = {
   sortOptions: SortOptionDictProps[];
   lang: Locale;
-  selectedOption: number;
+  selectedOption: {col: string; type: SortTypeStates;};
   switchedList: SwitchedListStates;
 };
 export const ContentBar = ({
@@ -28,18 +29,19 @@ export const ContentBar = ({
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const handleSortClick = (value: string) => {
+  const handleSortClick = (value: {col: string; type: SortTypeStates;}) => {
     const params = new URLSearchParams(searchParams);
 
-    params.set("sort", value);
-    router.push(`${pathname}?${params}`);
+    params.set("sort", value.col);
+    params.set("order", value.type);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   const handleViewClick = (value: string) => {
     const params = new URLSearchParams(searchParams);
 
     params.set("view", value);
-    router.push(`${pathname}?${params}`);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   return (
@@ -48,12 +50,12 @@ export const ContentBar = ({
         <ul className="flex items-center gap-4">
           {sortOptions.map((item, index) => (
             <li
-              key={item.id}
+              key={index}
               className={cn(
                 " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
-                selectedOption === index && "text-purple-primary"
+               ( selectedOption.col === item.option.col  && selectedOption.type === item.option.type) && "text-purple-primary"
               )}
-              onClick={() => handleSortClick(String(index))}
+              onClick={() => handleSortClick(item.option)}
             >
               {item.title[lang]}
             </li>

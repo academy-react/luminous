@@ -16,7 +16,10 @@ export const courseDictTitle: TitleDictProps[] = [
   },
 ];
 
+export type SortTypeStates =  "ASC" | "DESC";
+
 export type SwitchedListStates = "grid" | "list";
+
 
 export interface GridListSwitcherDictProps {
   id: number;
@@ -38,82 +41,81 @@ export const gridListSwitcherDict: GridListSwitcherDictProps[] = [
 ];
 
 export interface SortOptionDictProps {
-  id: string;
   title: { [key in Locale]: string };
-  value: { [key in Locale]: string };
+  option: {
+    col: string;
+    type: SortTypeStates;
+  }
 }
 
 // blog sortTitle
-export const blogSortOptionsDict: SortOptionDictProps[] = [
-  {
-    id: "s1",
-    title: {
-      fa: "همه ی اخبار",
-      en: "all news",
-    },
-    value: {
-      fa: "همه ی اخبار",
-      en: "All news",
-    },
-  },
-  {
-    id: "s3",
-    title: {
-      fa: "جدیدترین",
-      en: "The newest",
-    },
-    value: {
-      fa: "جدیدترین",
-      en: "The newest",
-    },
-  },
-  {
-    id: "s2",
-    title: {
-      fa: "پربازدیدترین",
-      en: "The most popular",
-    },
-    value: {
-      fa: "پربازدیدترین",
-      en: "The most popular",
-    },
-  },
-];
+// export const blogSortOptionsDict: SortOptionDictProps[] = [
+//   {
+//     id: "s1",
+//     title: {
+//       fa: "همه ی اخبار",
+//       en: "all news",
+//     },
+//     value: {
+//       fa: "همه ی اخبار",
+//       en: "All news",
+//     },
+//   },
+//   {
+//     id: "s3",
+//     title: {
+//       fa: "جدیدترین",
+//       en: "The newest",
+//     },
+//     value: {
+//       fa: "جدیدترین",
+//       en: "The newest",
+//     },
+//   },
+//   {
+//     id: "s2",
+//     title: {
+//       fa: "پربازدیدترین",
+//       en: "The most popular",
+//     },
+//     value: {
+//       fa: "پربازدیدترین",
+//       en: "The most popular",
+//     },
+//   },
+// ];
 
 //   course options
 
 export const courseSortOptionsDict: SortOptionDictProps[] = [
   {
-    id: "s1",
     title: {
       fa: "همه ی دوره ها",
       en: "all courses",
     },
-    value: {
-      fa: "همه ی دوره ها",
-      en: "All courses",
-    },
+   option: {
+    col: "Active",
+    type: "DESC",
+   }
   },
   {
-    id: "s2",
     title: {
-      fa: "پربازدیدترین",
-      en: "The most popular",
+      fa: "ارزان ترین",
+      en: "cheapest ",
     },
-    value: {
-      fa: "پربازدیدترین",
-      en: "The most popular",
-    },
+   option: {
+    col: "cost",
+    type: "ASC",
+   }
   },
   {
-    id: "s3",
     title: {
-      fa: "جدیدترین",
-      en: "The newest",
+      fa: "گران ترین",
+      en: "the most expensive ",
     },
-    value: {
-      fa: "جدیدترین",
-      en: "The newest",
-    },
+   option: {
+    col: "cost",
+    type: "DESC",
+   }
   },
 ];

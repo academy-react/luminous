@@ -22,6 +22,7 @@ import { Pagination } from "@/components/elements/common";
 
 import {
   courseSortOptionsDict,
+  SortTypeStates,
   SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
@@ -42,24 +43,27 @@ const CoursesPage = async ({
     page?: string;
     perPage?: number;
     view?: SwitchedListStates;
-    sort?: string;
+    sort?: string; //sort option of content bar
+    order?: SortTypeStates; 
     tech?: string;
+
   };
 }) => {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 0;
   const rows = searchParams?.perPage || 2;
   const view = searchParams?.view || "grid";
-  const sortOption = Number(searchParams?.sort) || 0;
-  const data = await getCoursesByPagination({ currentPage, query, rows });
+  const sortCol = searchParams?.sort || "Active";
+  const sortType = searchParams?.order || "DESC";
+  const listTech = searchParams?.tech || "";
+  const data = await getCoursesByPagination({ currentPage, query, rows , sortCol , sortType , listTech });
   const categoriesData = await getCourseCategories();
   if (!data || !categoriesData) {
     return null;
   }
 
-  console.log("data", data);
-  console.log("category", categoriesData);
-  //تابع:عملیات فیلتر ر انجام و ب کانتت پاس داده بشه
+console.log(data);
+console.log(sortType , sortCol);
 
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
@@ -78,12 +82,13 @@ const CoursesPage = async ({
           <ContentBar
             sortOptions={courseSortOptionsDict}
             lang={lang}
-            selectedOption={sortOption}
+            selectedOption={{col: sortCol , type: sortType}}
             switchedList={view}
+            
+
           />
           <ContentBody
             lang={lang}
-            selectedOption={sortOption}
             FullCard={CourseFullCard}
             MidCard={CourseMidCard}
             data={data?.courseFilterDtos}

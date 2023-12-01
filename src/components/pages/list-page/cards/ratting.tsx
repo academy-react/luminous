@@ -5,13 +5,12 @@ import { setCourseRatting } from "@/core/services/api";
 export const Rating = (id: string) => {
   const [rating, setRating] = useState(0);
 
-  useEffect(() => {
-    const courseRatting = async () => {
-      const data = await setCourseRatting(id, rating);
-      // console.log(data);
-    };
-    courseRatting();
-  }, [rating]);
+  // useEffect(() => {
+  //   const courseRatting = async () => {
+  //     const data = await setCourseRatting(id, rating);
+  //   };
+  //   courseRatting();
+  // }, [rating]);
 
   return (
     <div className="flex">
