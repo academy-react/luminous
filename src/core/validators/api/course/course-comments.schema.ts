@@ -4,6 +4,7 @@ export const courseCommentSchema = z
   .object({
     id: z.string(),
     courseId: z.string(),
+    parentId: z.string(),
     title: z.string(),
     describe: z.string(),
     author: z.string(),
