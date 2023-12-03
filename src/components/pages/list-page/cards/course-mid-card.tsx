@@ -14,7 +14,7 @@ export type CourseMidCardProps = {
   lang: Locale;
 };
 export const CourseMidCard = ({
-  item: { tumbImageAddress, title, teacherName, courseId , cost},
+  item: { tumbImageAddress, title, teacherName, courseId , cost, courseRate},
   lang,
 }: CourseMidCardProps) => {
   return (
@@ -32,8 +32,9 @@ export const CourseMidCard = ({
           <ul className="flex justify-between ">
             <li>
               {/* <Rating /> */}
+              {courseRate}
             </li>
-            <li className="text-md rounded-xl  text-[#58AD57] ">
+            <li className="text-base rounded-xl  text-[#58AD57] ">
              {cost.toLocaleString(lang)}تومان
             </li>
           </ul>

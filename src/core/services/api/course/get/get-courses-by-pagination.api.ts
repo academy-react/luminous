@@ -11,6 +11,7 @@ type GetCoursesQueryParams = {
   sortCol?: string;
   sortType?: SortTypeStates;
   listTech?:string;
+  count?:number;
 };
 
 export const getCoursesByPagination = async ({
@@ -20,6 +21,7 @@ export const getCoursesByPagination = async ({
   sortCol= "cost",  
   sortType= "DESC",
   listTech = "",
+  count= 1,
 }: GetCoursesQueryParams = {}) => {
   
   const response = await http.get(`/Home/GetCoursesWithPagination`,
@@ -30,7 +32,8 @@ export const getCoursesByPagination = async ({
       ...(query  && {Query: query}),
       SortCol: sortCol,
       SortType: sortType,
-      ...(listTech  && {ListTech: listTech} )
+      ...(listTech  && {ListTech: listTech} ),
+      TechCount: count
     }
   }
       );

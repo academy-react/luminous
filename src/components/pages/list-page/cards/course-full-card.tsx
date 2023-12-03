@@ -39,7 +39,7 @@ export const CourseFullCard = ({
             <li>مدرس:{teacherName}</li>
             <li>مدت زمان دوره:80ساعت</li>
             <li>
-              <Rating id={courseId} />
+              {/* <Rating id={courseId} /> */}
             </li>
           </ul>
 

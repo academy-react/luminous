@@ -46,6 +46,7 @@ const CoursesPage = async ({
     sort?: string; //sort option of content bar
     order?: SortTypeStates; 
     tech?: string;
+    techCount?: number;
 
   };
 }) => {
@@ -56,7 +57,10 @@ const CoursesPage = async ({
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
   const listTech = searchParams?.tech || "";
-  const data = await getCoursesByPagination({ currentPage, query, rows , sortCol , sortType , listTech });
+  const count = searchParams?.techCount || 1;
+  const data = await getCoursesByPagination(
+    { currentPage, query, rows, sortCol, sortType, listTech, count }
+    )
   const categoriesData = await getCourseCategories();
   if (!data || !categoriesData) {
     return null;

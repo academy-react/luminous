@@ -7,20 +7,31 @@ import { CourseCategoriesSchemaType } from "@/core/validators/api";
 import { type Locale } from "#/i18n.config";
 import { Checkbox } from "@/components/elements/ui/checkbox";
 import { Label } from "@/components/elements/ui/label";
+import { useId } from "react";
+import { Accessibility } from "lucide-react";
 
 type ListCategoryProps = {
   lang: Locale;
   category: CourseCategoriesSchemaType;
 };
 export const ListCategory = ({ lang, category }: ListCategoryProps) => {
+  const id = useId();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const handelChek= (techName: string)=>{
-    const params = new URLSearchParams(searchParams);
-    params.set("tech",techName);
-    router.push(`${pathname}?${params.toString()}`);
-  }
+  const router = useRouter(); 
+  const active = searchParams?.get("active") ?? "true";
+  // const handelCheck= (techName: string[])=>{
+    // const techList = searchParams.get("tech").split(",");
+    
+// ;;    const params = new URLSearchParams(searchParams);
+// if(active ?? "true"){
+//  params.set("tech",techName.join(","));
+// }
+// else{
+//   params.delete("tech")
+// }
+// router.push(`${pathname}?${params.toString()}`);
+  // }
   
 
   return (
@@ -29,10 +40,12 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
       {category.map((item) => (
         <div key={item.id} className="flex flex-row  font-[#666] text-sm">
         <Checkbox   
-          id={String(item.id)} 
-          onCheckedChange={()=>handelChek(item.techName)}/>
+          id={`active-${id}`}
+          // checked= {active === "true"}
+          // onCheckedChange={()=>handelCheck(item.techName)}
+          />
         <Label
-          htmlFor={String(item.id)} 
+          htmlFor={`active-${id}`} 
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           {item.techName}
