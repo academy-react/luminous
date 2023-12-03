@@ -6,6 +6,7 @@ export const courseLikeResponseSchema = z.object({
     "قادر به ثبت دوباره پسندیدن دوره نمی باشید.",
     "دوره ای یافت نشد.",
     "عملیات با موفقیت انجام شد.",
+    "واکنش شما ویرایش شد.",
   ]),
   success: z.boolean(),
   errors: z.array(z.string()).nullable(),
