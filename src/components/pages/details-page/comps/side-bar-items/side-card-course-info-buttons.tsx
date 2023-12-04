@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "sonner";
+
 import { Button } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
@@ -34,19 +36,19 @@ export const CourseInfoSideCardButtons = ({
   const likeAction = async () => {
     const res = await courseLikeAction(courseId, lang);
 
-    console.log(res);
+    toast.success(res);
   };
 
   const dislikeAction = async () => {
     const res = await courseDislikeAction(courseId, lang);
 
-    console.log(res);
+    toast.success(res);
   };
 
   const favoriteAction = async () => {
     const res = await courseFavoriteAction(courseId, lang);
 
-    console.log(res);
+    toast.success(res);
   };
 
   return (

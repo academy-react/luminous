@@ -22,6 +22,10 @@ export const courseFilterDtoSchema = z.object({
   }),
   courseId: z.string(),
   technologyList: z.string(),
+  dissLikeCount: z.number(),
+  currentUserDissLike: z.boolean(),
+  currentUserSetRate: z.boolean(),
+  currentUserRateNumber: z.number(),
 });
 
 export type CourseFilterDtoType = z.infer<typeof courseFilterDtoSchema>;
