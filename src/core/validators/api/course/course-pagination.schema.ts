@@ -38,5 +38,4 @@ export const courseByPaginationSchema = z.object({
   totalCount: z.number(),
 });
 
-
 export type CourseByPaginationType = z.infer<typeof courseByPaginationSchema>;

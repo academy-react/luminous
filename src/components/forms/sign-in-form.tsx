@@ -23,11 +23,11 @@ import { Icons } from "@/components/assets/icons";
 
 import { signInFormDict } from "@/dict/pages/auth.dict";
 
+import { loginAction } from "@/core/actions";
 import {
   signInInputSchema,
   type SignInInputProps,
 } from "@/core/validators/forms";
-import { login } from "@/lib/actions/log-in.action";
 
 import { type Locale } from "#/i18n.config";
 
@@ -47,7 +47,7 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
   const onSubmit = async (data: SignInInputProps) => {
     setIsLoading(true);
 
-    const result = await login(data);
+    const result = await loginAction(data);
 
     if (result === "Success") {
       router.push(`/${lang}`);

@@ -1,12 +1,17 @@
-import { Comment } from "@/components/pages/details-page/comps/content-body/comment/comment";
 import { Button, H3 } from "@/components/elements/ui";
 
-import { getCourseComments } from "@/core/services/api";
-import { getNewsComments } from "@/core/services/api/news/get-news-comments.api";
+import { getCourseComments, getNewsComments } from "@/core/services/api";
+import {
+  type CourseCommentListType,
+  type NewsCommentListType,
+} from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 
-type CommentProps = {
+import { CourseComment } from "./course-comment";
+import { NewsComment } from "./news-comment";
+
+type CommentSectionProps = {
   lang: Locale;
   commentCount: number;
 } & (CourseCommentProps | NewsCommentProps);
@@ -21,22 +26,26 @@ type NewsCommentProps = {
   newsId: string;
 };
 
-export const CommentSection = async (props: CommentProps) => {
+export const CommentSection = async (props: CommentSectionProps) => {
   const { lang, commentCount, typeOf } = props;
 
-  const comments = [];
+  const courseComments: CourseCommentListType = [];
+  const newsComments: NewsCommentListType = [];
 
   if (typeOf === "course") {
-    const courseComments =
+    const comments =
       commentCount > 0 ? await getCourseComments(props.courseId) : [];
 
-    comments.push(...courseComments);
+    courseComments.push(...comments);
   } else if (typeOf === "news") {
-    const newsComments =
+    const comments =
       commentCount > 0 ? await getNewsComments(props.newsId) : [];
 
-    comments.push(...newsComments);
+    newsComments.push(...comments);
   }
+
+  const isThereComments =
+    typeOf === "course" ? courseComments.length > 0 : newsComments.length > 0;
 
   return (
     <section className="rounded-xl bg-card px-7 py-6">
@@ -61,11 +70,15 @@ export const CommentSection = async (props: CommentProps) => {
           }
         </Button>
       </div>
-      {comments.length > 0 ? (
+      {isThereComments ? (
         <section className="space-y-5">
-          {comments.map((comment, index) => (
-            <Comment lang={lang} key={index} comment={comment} />
-          ))}
+          {typeOf === "course"
+            ? courseComments.map((comment, index) => (
+                <CourseComment lang={lang} key={index} comment={comment} />
+              ))
+            : newsComments.map((comment, index) => (
+                <NewsComment lang={lang} key={index} comment={comment} />
+              ))}
         </section>
       ) : (
         <p>
