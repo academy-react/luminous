@@ -7,12 +7,13 @@ import {
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-import { type MiddlewareFactory } from "@/middlewares/chain";
+import { type CustomMiddleware } from "@/middlewares";
 
 import { i18n } from "#/i18n.config";
 
 const getLocale = (req: NextRequest) => {
   const negotiatorHeaders: Record<string, string> = {};
+
   req.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
   const locales: string[] = [...i18n.locales];
@@ -23,9 +24,8 @@ const getLocale = (req: NextRequest) => {
   return locale;
 };
 
-export const withI18NMiddleware: MiddlewareFactory = (nextMiddleware) => {
-  return (req: NextRequest, _next: NextFetchEvent) => {
-    // Check if there is any supported locale in the pathname.
+export const withI18NMiddleware = (middleware: CustomMiddleware) => {
+  return async (req: NextRequest, event: NextFetchEvent, res: NextResponse) => {
     const { pathname } = req.nextUrl;
 
     const pathnameIsMissingLocale = i18n.locales.every(
@@ -38,14 +38,22 @@ export const withI18NMiddleware: MiddlewareFactory = (nextMiddleware) => {
     if (pathnameIsMissingLocale) {
       const locale = getLocale(req);
 
-      return NextResponse.redirect(
-        new URL(
-          `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-          req.url
-        )
+      const urlWithLocale = new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        req.url
       );
+
+      // If the locale is the default locale,
+      // rewrite the URL to the same path with the default locale.
+      // this way, the locale will be available in the request object,
+      // but not shown in the URL in the browser.
+      if (locale === i18n.defaultLocale) {
+        return NextResponse.rewrite(urlWithLocale);
+      }
+
+      return NextResponse.redirect(new URL(urlWithLocale));
     }
 
-    return nextMiddleware(req, _next);
+    return middleware(req, event, res);
   };
 };

@@ -1,1 +1,2 @@
-export * from "./get-top-courses.api";
+export * from "./get";
+export * from "./post";

@@ -20,7 +20,6 @@ const config: Config = {
       fontFamily: {
         roboto: ["var(--font-roboto)"],
         iranSans: ["var(--font-iran-sans)"],
-        mitra: ["var(--font-mitra)"],
         multi: ["var(--font-iran-sans)", "var(--font-roboto)"],
       },
       colors: {

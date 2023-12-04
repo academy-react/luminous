@@ -2,10 +2,11 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { Toaster } from "@/components/elements/ui/toaster";
+import { ProgressBarProvider, ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 
-import { iranSans, mitra, roboto } from "@/lib/fonts/fonts";
+import { fontIranSans, fontRoboto } from "@/lib/fonts/fonts";
 import { cn } from "@/lib/utils";
 
 import { i18n, type Locale } from "#/i18n.config";
@@ -34,16 +35,20 @@ const RootLayout = ({
       <body
         className={cn(
           "min-h-screen font-multi antialiased",
-          roboto.variable,
-          iranSans.variable,
-          mitra.variable
+          fontRoboto.variable,
+          fontIranSans.variable
         )}
         dir={lang === "en" ? "ltr" : "rtl"}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex min-h-screen flex-col">{children}</div>
-          <TailwindIndicator />
+          <ProgressBarProvider>
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+            <TailwindIndicator />
+          </ProgressBarProvider>
         </ThemeProvider>
+        <Toaster lang={lang} />
       </body>
     </html>
   );
