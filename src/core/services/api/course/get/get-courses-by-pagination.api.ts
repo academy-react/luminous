@@ -2,7 +2,7 @@
 
 import http from "@/core/services/interceptor";
 import { courseByPaginationSchema } from "@/core/validators/api";
-import { SortTypeStates } from "@/dict/pages/list.dict";
+import { type SortTypeStates } from "@/dict/pages/list.dict";
 
 type GetCoursesQueryParams = {
   query?: string;
@@ -21,7 +21,7 @@ export const getCoursesByPagination = async ({
   sortCol= "cost",  
   sortType= "DESC",
   listTech = "",
-  count= 1,
+  count= 0,
 }: GetCoursesQueryParams = {}) => {
   
   const response = await http.get(`/Home/GetCoursesWithPagination`,

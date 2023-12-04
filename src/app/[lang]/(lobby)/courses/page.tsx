@@ -57,7 +57,7 @@ const CoursesPage = async ({
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
   const listTech = searchParams?.tech || "";
-  const count = searchParams?.techCount || 1;
+  const count = searchParams?.techCount || listTech === ""? 0 : 1;
   const data = await getCoursesByPagination(
     { currentPage, query, rows, sortCol, sortType, listTech, count }
     )
