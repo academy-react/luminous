@@ -19,10 +19,7 @@ import {
   getCoursesByPagination,
   getNewsFilterPages,
 } from "@/core/services/api";
-import {
-  type AllCourseFilterDtoType,
-  type AllNewsType,
-} from "@/core/validators/api";
+import { AllCourseFilterDtoType, AllNewsType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 export const SearchNav = () => {

@@ -20,13 +20,16 @@ import {
 } from "@/components/pages/list-page/side-bar-items";
 import { Pagination } from "@/components/elements/common";
 
-import { courseCategoryDict } from "@/dict/dev";
 import {
   courseSortOptionsDict,
-  type SwitchedListStates,
+  SortTypeStates,
+  SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
-import { getCoursesByPagination } from "@/core/services/api";
+import {
+  getCourseCategories,
+  getCoursesByPagination,
+} from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
@@ -36,28 +39,43 @@ const CoursesPage = async ({
 }: {
   params: { lang: Locale };
   searchParams?: {
-    Query?: string;
-    PageNumber?: string;
+    query?: string;
+    page?: string;
+    perPage?: number;
     view?: SwitchedListStates;
-    sortOption?: string;
+    sort?: string; //sort option of content bar
+    order?: SortTypeStates; 
+    techIds?: string;
+    techCount?: number;
+
   };
 }) => {
-  const query = searchParams?.Query || "";
-  const currentPage = Number(searchParams?.PageNumber) || 1;
+  const query = searchParams?.query || "";
+  const currentPage = Number(searchParams?.page) || 0;
+  const rows = searchParams?.perPage || 2;
   const view = searchParams?.view || "grid";
-  const sortOption = Number(searchParams?.sortOption) || 0;
-  const searchData = await getCoursesByPagination({ currentPage, query });
-
-  if (!searchData) {
+  const sortCol = searchParams?.sort || "Active";
+  const sortType = searchParams?.order || "DESC";
+  const listTech = searchParams?.techIds || "";
+  const count = searchParams?.techCount || listTech === ""? 0 : 1;
+  const data = await getCoursesByPagination(
+    { currentPage, query, rows, sortCol, sortType, listTech, count }
+    )
+  const categoriesData = await getCourseCategories();
+  if (!data || !categoriesData) {
     return null;
   }
+
+console.log(data);
+console.log(listTech);
+
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory category={courseCategoryDict} lang={lang} />
+          <ListCategory category={categoriesData} lang={lang} />
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
@@ -68,22 +86,20 @@ const CoursesPage = async ({
           <ContentBar
             sortOptions={courseSortOptionsDict}
             lang={lang}
-            selectedOption={sortOption}
+            selectedOption={{col: sortCol , type: sortType}}
             switchedList={view}
+            
+
           />
           <ContentBody
             lang={lang}
-            selectedOption={sortOption}
             FullCard={CourseFullCard}
             MidCard={CourseMidCard}
-            data={searchData?.courseFilterDtos}
+            data={data?.courseFilterDtos}
             switchedList={view}
             typeOf="course"
           />
-          <Pagination
-            className="mx-auto mt-4 w-fit"
-            // totalPages = {paginationData}
-          />
+          <Pagination className=" mt-4" totalCount={data.totalCount} />
         </ListContent>
       </ListPage>
     </PageAnimationWrapper>

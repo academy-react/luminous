@@ -1,4 +1,5 @@
 "use client";
+"use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
@@ -21,11 +22,11 @@ export const ListSearch = ({
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
-    params.set("PageNumber", "1");
+    params.set("page", "1");
     if (term) {
-      params.set("Query", term);
+      params.set("query", term);
     } else {
-      params.delete("Query");
+      params.delete("query");
     }
     router.replace(`${pathname}?${params.toString()}`);
   }, 300);
