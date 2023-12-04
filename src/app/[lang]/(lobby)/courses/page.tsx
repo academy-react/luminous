@@ -45,7 +45,7 @@ const CoursesPage = async ({
     view?: SwitchedListStates;
     sort?: string; //sort option of content bar
     order?: SortTypeStates; 
-    tech?: string;
+    techIds?: string;
     techCount?: number;
 
   };
@@ -56,7 +56,7 @@ const CoursesPage = async ({
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
-  const listTech = searchParams?.tech || "";
+  const listTech = searchParams?.techIds || "";
   const count = searchParams?.techCount || listTech === ""? 0 : 1;
   const data = await getCoursesByPagination(
     { currentPage, query, rows, sortCol, sortType, listTech, count }
@@ -67,7 +67,7 @@ const CoursesPage = async ({
   }
 
 console.log(data);
-console.log(sortType , sortCol);
+console.log(listTech);
 
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">

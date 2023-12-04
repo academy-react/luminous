@@ -14,7 +14,7 @@ export type CourseMidCardProps = {
   lang: Locale;
 };
 export const CourseMidCard = ({
-  item: { tumbImageAddress, title, teacherName, courseId , cost, courseRate},
+  item: { tumbImageAddress, title, teacherName, courseId , cost, courseRate, technologyList},
   lang,
 }: CourseMidCardProps) => {
   return (
@@ -26,12 +26,19 @@ export const CourseMidCard = ({
         {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
       </Link>
       <div className=" flex flex-col gap-4 ">
+      {/* const [categoryIds, setCategoryIds] = useState<number[] | []>(
+        technologyList.split(",").map(Number) : []
+  )
+      {categoryId.map((i)=>{
+              <div className="px-2 py-1 w-fit text-sm rounded-md bg-secondary text-primary">#</div>
+      })} */}
+        <div className="px-2 py-1 w-fit text-xs rounded-md bg-accent text-primary">#{technologyList}</div>
         <h2 className="text-xl font-semibold ">{title}</h2>
         <div className="flex flex-col gap-y-4 rounded-xl">
           <div>{teacherName}</div>
           <ul className="flex justify-between ">
-            <li>
-              {/* <Rating /> */}
+            <li className="text-yellow-500">
+              <span className="text-yellow-500 text-xl ">★</span>
               {courseRate}
             </li>
             <li className="text-base rounded-xl  text-[#58AD57] ">

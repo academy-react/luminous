@@ -2,13 +2,12 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { CourseCategoriesSchemaType } from "@/core/validators/api";
+import {type CourseCategoriesSchemaType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 import { Checkbox } from "@/components/elements/ui/checkbox";
 import { Label } from "@/components/elements/ui/label";
-import { useId } from "react";
-import { Accessibility } from "lucide-react";
+import { useEffect, useId, useState } from "react";
 
 type ListCategoryProps = {
   lang: Locale;
@@ -19,34 +18,41 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter(); 
-  const active = searchParams?.get("active") ?? "true";
-  // const handelCheck= (techName: string[])=>{
-    // const techList = searchParams.get("tech").split(",");
-    
-// ;;    const params = new URLSearchParams(searchParams);
-// if(active ?? "true"){
-//  params.set("tech",techName.join(","));
-// }
-// else{
-//   params.delete("tech")
-// }
-// router.push(`${pathname}?${params.toString()}`);
-  // }
+  const techIds = searchParams.get("tech")
   
+  const [categoryIds, setCategoryIds] = useState<number[] | []>(
+    techIds ? techIds?.split(",").map(Number) : []
+  )
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set('techIds', categoryIds.join(","));
+    router.push(`${pathname}?${params.toString()}`)
+
+  }, [categoryIds])
 
   return (
     <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-base font-bold text-[#333] shadow">
-      دسته بندی دوره ها
+     {{fa: "دسته بندی دوره ها", en: "Course Category"}[lang]}
       {category.map((item) => (
         <div key={item.id} className="flex flex-row  font-[#666] text-sm">
         <Checkbox   
-          id={`active-${id}`}
-          // checked= {active === "true"}
-          // onCheckedChange={()=>handelCheck(item.techName)}
+          id={`${id}-category${item.id}`}
+          checked= {categoryIds?.includes(item.id) ?? false}
+          onCheckedChange={(value) => {
+            if (value) {
+              setCategoryIds([...(categoryIds ?? []), item.id])
+            } else {
+              setCategoryIds(
+                categoryIds?.filter((id) => id !== item.id) ??
+                  null
+              )
+            }
+          }}
           />
         <Label
-          htmlFor={`active-${id}`} 
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          htmlFor={`${id}-category${item.id}`} 
+          className="text-sm mr-2 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           {item.techName}
         </Label>
