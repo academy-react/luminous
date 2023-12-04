@@ -1,38 +1,43 @@
 import { Card, CardContent, CardTitle } from "@/components/elements/ui";
-import { type Icon } from "@/components/assets/icons";
+import { categoriesColorDict } from "@/dict/pages/lobby.dict";
 
 import { cn } from "@/lib/utils";
 
-import { type Locale } from "#/i18n.config";
+
+import { Home } from "lucide-react";
 
 type CategoryCardProps = {
-  lang: Locale;
-  title: {
-    [key in Locale]: string;
-  };
-  Icon: Icon;
-  color: string;
+  title: string;
+  icon: string;
+   color: string | undefined;
 };
 
 export const CategoryCard = ({
-  lang,
   title,
-  Icon,
+  icon,
   color,
 }: CategoryCardProps) => {
+  
   return (
-    <Card
+  
+    <Card 
       className={cn(
         "flex items-center justify-center bg-card px-7 py-4 sm:px-8 lg:h-28 lg:w-48",
-        color
+     color
       )}
     >
-      <CardContent className="flex flex-col items-center justify-center gap-2">
-        <Icon className="h-10 w-10 lg:h-14 lg:w-14" />
+           <CardContent className={cn("flex flex-col items-center justify-center gap-2",
+      
+      )}
+      >
+        {/* <Icon className="h-10 w-10 lg:h-14 lg:w-14" /> */}
+        <i>{icon? icon: <Home className="h-10 w-10 lg:h-14 lg:w-14" />}</i>
         <CardTitle className="text-center text-sm font-extrabold">
-          {title[lang]}
+          {title}
         </CardTitle>
       </CardContent>
+     
+   
     </Card>
   );
 };
