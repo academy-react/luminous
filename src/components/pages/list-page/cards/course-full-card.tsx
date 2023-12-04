@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { CourseFilterDtoType } from "@/core/validators/api";
+import { type CourseFilterDtoType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 
@@ -38,9 +38,7 @@ export const CourseFullCard = ({
           <ul className="flex gap-4 text-xs  text-[#505050] ">
             <li>مدرس:{teacherName}</li>
             <li>مدت زمان دوره:80ساعت</li>
-            <li>
-              {/* <Rating id={courseId} /> */}
-            </li>
+            <li>{/* <Rating id={courseId} /> */}</li>
           </ul>
 
           <span className="text-md rounded-xl px-1 text-[#58AD57]">

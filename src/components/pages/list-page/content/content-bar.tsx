@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import {
   gridListSwitcherDict,
-  SortTypeStates,
+  type SortTypeStates,
   type SortOptionDictProps,
   type SwitchedListStates,
 } from "@/dict/pages/list.dict";
@@ -16,7 +16,7 @@ import { type Locale } from "#/i18n.config";
 type ContentBarProps = {
   sortOptions: SortOptionDictProps[];
   lang: Locale;
-  selectedOption: {col: string; type: SortTypeStates;};
+  selectedOption: { col: string; type: SortTypeStates };
   switchedList: SwitchedListStates;
 };
 export const ContentBar = ({
@@ -29,7 +29,7 @@ export const ContentBar = ({
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const handleSortClick = (value: {col: string; type: SortTypeStates;}) => {
+  const handleSortClick = (value: { col: string; type: SortTypeStates }) => {
     const params = new URLSearchParams(searchParams);
 
     params.set("sort", value.col);
@@ -53,7 +53,9 @@ export const ContentBar = ({
               key={index}
               className={cn(
                 " cursor-pointer focus:border-b-2 focus:border-[#555] focus:text-[#555]",
-               ( selectedOption.col === item.option.col  && selectedOption.type === item.option.type) && "text-purple-primary"
+                selectedOption.col === item.option.col &&
+                  selectedOption.type === item.option.type &&
+                  "text-purple-primary"
               )}
               onClick={() => handleSortClick(item.option)}
             >

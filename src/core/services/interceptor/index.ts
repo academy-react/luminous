@@ -45,7 +45,7 @@ const onError = (error: AxiosError) => {
       });
     default:
       console.error("Unrecognized Error in interceptor");
-      console.error("Full Error: ", error)
+      console.error("Full Error: ", error);
 
       return Promise.reject({
         fa: "خطایی رخ داده است.",

@@ -7,21 +7,18 @@ import {
   CardTitle,
 } from "@/components/elements/ui";
 
-import { type Locale } from "#/i18n.config";
 import { type TeacherType } from "@/core/validators/api";
+
+import { type Locale } from "#/i18n.config";
 
 type TeacherCardProps = {
   lang: Locale;
-  data:TeacherType;
+  data: TeacherType;
 };
 
 export const TeacherFullCard = ({
   lang,
- data:{
-  fullName,
-  pictureAddress,
-  linkdinProfileLink,
- }
+  data: { fullName, pictureAddress, linkdinProfileLink },
 }: TeacherCardProps) => {
   return (
     <div className="px-10">
@@ -40,7 +37,8 @@ export const TeacherFullCard = ({
           <CardTitle className="text-xl font-bold">{fullName}</CardTitle>
           <h4 className="text-lg font-semibold">{linkdinProfileLink}</h4>
           <CardDescription className="pt-4 text-center text-sm font-medium md:text-start">
-           استاد فلانی عضو هیت علمی دانشگاه علم کامپیوتر و خلاصه اینکه قدرت تکلم فووول قدرت شیرفهم کردن عااالی. 
+            استاد فلانی عضو هیت علمی دانشگاه علم کامپیوتر و خلاصه اینکه قدرت
+            تکلم فووول قدرت شیرفهم کردن عااالی.
           </CardDescription>
         </CardContent>
       </Card>
@@ -50,11 +48,7 @@ export const TeacherFullCard = ({
 
 export const TeacherMiniCard = ({
   lang,
- data:{
-  fullName,
-  pictureAddress,
-  linkdinProfileLink,
- }
+  data: { fullName, pictureAddress, linkdinProfileLink },
 }: TeacherCardProps) => {
   return (
     <Card className="relative flex cursor-pointer border-none bg-card p-4 shadow">
@@ -69,9 +63,7 @@ export const TeacherMiniCard = ({
         </div>
       </div>
       <CardContent className="flex flex-col ps-[70px]">
-        <CardTitle className="text-sm font-semibold">
-          {fullName}
-        </CardTitle>
+        <CardTitle className="text-sm font-semibold">{fullName}</CardTitle>
         <h4 className="text-xs font-medium">{linkdinProfileLink}</h4>
       </CardContent>
     </Card>

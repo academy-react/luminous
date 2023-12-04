@@ -14,7 +14,15 @@ export type CourseMidCardProps = {
   lang: Locale;
 };
 export const CourseMidCard = ({
-  item: { tumbImageAddress, title, teacherName, courseId , cost, courseRate, technologyList},
+  item: {
+    tumbImageAddress,
+    title,
+    teacherName,
+    courseId,
+    cost,
+    courseRate,
+    technologyList,
+  },
   lang,
 }: CourseMidCardProps) => {
   return (
@@ -26,23 +34,25 @@ export const CourseMidCard = ({
         {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
       </Link>
       <div className=" flex flex-col gap-4 ">
-      {/* const [categoryIds, setCategoryIds] = useState<number[] | []>(
+        {/* const [categoryIds, setCategoryIds] = useState<number[] | []>(
         technologyList.split(",").map(Number) : []
   )
       {categoryId.map((i)=>{
               <div className="px-2 py-1 w-fit text-sm rounded-md bg-secondary text-primary">#</div>
       })} */}
-        <div className="px-2 py-1 w-fit text-xs rounded-md bg-accent text-primary">#{technologyList}</div>
+        <div className="w-fit rounded-md bg-accent px-2 py-1 text-xs text-primary">
+          #{technologyList}
+        </div>
         <h2 className="text-xl font-semibold ">{title}</h2>
         <div className="flex flex-col gap-y-4 rounded-xl">
           <div>{teacherName}</div>
           <ul className="flex justify-between ">
             <li className="text-yellow-500">
-              <span className="text-yellow-500 text-xl ">★</span>
+              <span className="text-xl text-yellow-500 ">★</span>
               {courseRate}
             </li>
-            <li className="text-base rounded-xl  text-[#58AD57] ">
-             {cost.toLocaleString(lang)}تومان
+            <li className="rounded-xl text-base  text-[#58AD57] ">
+              {cost.toLocaleString(lang)}تومان
             </li>
           </ul>
         </div>
