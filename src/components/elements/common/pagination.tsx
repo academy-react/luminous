@@ -2,10 +2,17 @@ import Link from "next/link";
 
 import { Icons } from "@/components/assets/icons";
 
-export const Pagination = () => {
+import { cn } from "@/lib/utils";
+
+export const Pagination = ({ className }: { className: string }) => {
   return (
     <nav>
-      <ul className="flex flex-row-reverse items-center gap-1">
+      <ul
+        className={cn(
+          " flex h-10 flex-row-reverse items-center gap-1 rounded-xl bg-card px-5",
+          className
+        )}
+      >
         <li>
           <Link href="#" className="px-2">
             <Icons.leftArrow />

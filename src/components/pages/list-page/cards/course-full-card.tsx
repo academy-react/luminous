@@ -3,48 +3,44 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { type CourseFilterDtoType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
+import { Rating } from "./ratting";
+
 export type CourseFullCardProps = {
-  item: {
-    image: string;
-    title: { [key in Locale]: string };
-    description: { [key in Locale]: string };
-    teacher: { [key in Locale]: string };
-  };
+  item: CourseFilterDtoType;
   lang: Locale;
 };
 export const CourseFullCard = ({
-  item: { image, title, description, teacher },
+  item: { tumbImageAddress, title, describe, teacherName },
   lang,
 }: CourseFullCardProps) => {
   return (
     <div className="flex h-[170px] w-full gap-3 rounded-xl bg-card px-4 py-3  shadow">
       <Link href="#" className="relative aspect-[2/1] basis-1/3 ">
-        <Image src={image} alt="" fill className="rounded-xl object-cover" />
+        {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
       </Link>
       <div className=" basis-2/3">
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
-            <h2 className="text-xl font-semibold text-[#333]">{title[lang]}</h2>
+            <h2 className="text-xl font-semibold text-[#333]">{title}</h2>
             <p className="line-clamp-2 w-[80%] text-sm text-[#666] ">
-              {description[lang]}
+              {describe}
             </p>
           </div>
-          <ul className="flex flex-col justify-center rounded-xl px-2 text-xs shadow-lg">
-            <li className="">1</li>
-            <li className=" ">20</li>
-            <li className="">30</li>
-          </ul>
         </div>
         <div className="mt-10 flex items-end justify-between">
           <ul className="flex gap-4 text-xs  text-[#505050] ">
-            <li>مدرس:{teacher[lang]}</li>
+            <li>مدرس:{teacherName}</li>
             <li>مدت زمان دوره:80ساعت</li>
-            <li>*****</li>
+            <li>
+              <Rating />
+            </li>
           </ul>
 
-          <span className="rounded-xl border-2  px-1 text-sm text-[#58AD57]">
+          <span className="text-md rounded-xl px-1 text-[#58AD57]">
             8500000تومان
           </span>
         </div>

@@ -5,10 +5,12 @@ import {
   type CourseMidCardProps,
 } from "@/components/pages/list-page/cards";
 
-import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
-import { type CoursesDictProps } from "@/dict/dev/courses.dict";
 import { type SwitchedListStates } from "@/dict/pages/list.dict";
 
+import {
+  AllNewsType,
+  type AllCourseFilterDtoType,
+} from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
@@ -16,21 +18,32 @@ import { type Locale } from "#/i18n.config";
 type ContentBodyProps = {
   lang: Locale;
   selectedOption: number;
-  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
-  MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
   switchedList: SwitchedListStates;
-  data: CoursesDictProps[] | BlogsPropsDict[];
+} & CourseContentProps;
+type CourseContentProps = {
+  typeOf: "course";
+  FullCard: React.FC<CourseFullCardProps>;
+  MidCard: React.FC<CourseMidCardProps>;
+  data: AllCourseFilterDtoType;
 };
 
-export const ContentBody = ({
-  lang,
-  selectedOption,
-  FullCard,
-  switchedList,
-  MidCard,
-  data,
-}: ContentBodyProps) => {
-  console.log(data);
+// type NewsContentProps ={
+//   typeOf: "news";
+//   FullCard: React.FC<BlogFullCardProps>;
+//   MidCard: React.FC<BlogMidCardProps>;
+//   data: AllNewsType;
+// }
+
+export const ContentBody = (props: ContentBodyProps) => {
+  const {
+    lang,
+    selectedOption,
+    switchedList,
+    FullCard,
+    MidCard,
+    data,
+    typeOf,
+  } = props;
   return (
     <div className="">
       <div
@@ -39,15 +52,25 @@ export const ContentBody = ({
           switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
         )}
       >
-        {data.map((item) => (
+        {typeOf === "course" &&
+          data.map((item, index) => (
+            <>
+              {switchedList === "grid" ? (
+                <MidCard key={index} item={item} lang={lang} />
+              ) : (
+                <FullCard key={index} item={item} lang={lang} />
+              )}
+            </>
+          ))}
+        {/* {typeOf === "news" && data.map((item , index) => (
           <>
             {switchedList === "grid" ? (
-              <MidCard key={item.id} item={item} lang={lang} />
+            <MidCard key={index} item={item} lang={lang} />
             ) : (
-              <FullCard key={item.id} item={item} lang={lang} />
+              <FullCard key={index} item={item} lang={lang} />
             )}
           </>
-        ))}
+        ))} */}
       </div>
     </div>
   );

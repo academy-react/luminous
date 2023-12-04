@@ -1,13 +1,72 @@
+import { notFound } from "next/navigation";
+
+import { Breadcrumbs, CourseInfo } from "@/components/pages/details-page/comps";
+import {
+  CommentSection,
+  CourseDetailsGrid,
+  CourseLessons,
+  PostBody,
+} from "@/components/pages/details-page/comps/content-body";
+import {
+  CourseInfoSideCard,
+  TeacherSideCard,
+} from "@/components/pages/details-page/comps/side-bar-items";
+import { LinkSideCard } from "@/components/pages/details-page/comps/side-bar-items/client";
+import {
+  ContentBody,
+  DetailsSection,
+  SideBar,
+} from "@/components/pages/details-page/wrappers";
+
+import { getCourseById } from "@/core/services/api/course";
+
 import { type Locale } from "#/i18n.config";
 
-const CoursesIDPage = ({
+const CoursesIDPage = async ({
   params: { lang, id },
 }: {
-  params: { lang: Locale; id: number };
+  params: { lang: Locale; id: string };
 }) => {
+  const data = await getCourseById(id);
+
+  // console.log(data);
+
+  if (!data) notFound();
+
   return (
-    <main className="flex h-full items-center justify-center">
-      <h1 className="text-xl">صفحه‌ی کورس‌ها به شماره {id}</h1>
+    <main className="container">
+      <Breadcrumbs
+        lang={lang}
+        segments={[
+          {
+            title: { fa: "دوره‌ها", en: "Courses" }[lang],
+            href: `/${lang}/courses`,
+          },
+          {
+            title: data.title,
+            href: `/${lang}/courses/${data.courseId}`,
+          },
+        ]}
+      />
+      <CourseInfo lang={lang} data={data} />
+      <DetailsSection>
+        <ContentBody>
+          <CourseDetailsGrid lang={lang} />
+          {/* <CourseLessons /> */}
+          {/* <PostBody /> */}
+          <CommentSection
+            lang={lang}
+            typeOf="course"
+            courseId={id}
+            commentCount={data.commentCount}
+          />
+        </ContentBody>
+        <SideBar variant="sticky">
+          <CourseInfoSideCard lang={lang} data={data} />
+          <TeacherSideCard lang={lang} teacherId={data.teacherId} />
+          <LinkSideCard lang={lang} link={`/c/${data.courseId}`} />
+        </SideBar>
+      </DetailsSection>
     </main>
   );
 };

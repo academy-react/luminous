@@ -9,11 +9,10 @@ import {
 import { TeachersSection } from "@/components/pages/lobby/client";
 import { TempTitle } from "@/components/utils/temp-title";
 
-import { getTopCoursesList } from "@/core/services/api";
+import { getAllTeacher, getTopCoursesList } from "@/core/services/api";
+import { getCategories } from "@/core/services/api/category";
 
 import { type Locale } from "#/i18n.config";
-import { getAllTeacher } from "@/core/services/api/teacher/get-all-teachers";
-import { getCategories } from "@/core/services/api/category";
 
 const HomePage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const courseData = await getTopCoursesList();

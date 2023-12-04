@@ -10,17 +10,19 @@ import {
 } from "@/components/pages/list-page/cards";
 import { ContentBar } from "@/components/pages/list-page/content/content-bar";
 import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import { Pagination } from "@/components/elements/common";
 
-import { type BlogsPropsDict } from "@/dict/dev/blog-list.dict";
-import { type CoursesDictProps } from "@/dict/dev/courses.dict";
 import {
   type SortOptionDictProps,
   type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
+import { AllNewsType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
+
+import { AllCourseFilterDtoType } from "./../../../core/validators/api/course/course-pagination.schema";
 
 const ListPage = ({
   children,
@@ -65,43 +67,17 @@ const ListSideBar = ({
 };
 
 // list-Content
-type ListContentProps = {
-  className?: string;
-  sortOptions: SortOptionDictProps[];
-  lang: Locale;
-  FullCard: React.FC<CourseFullCardProps> | React.FC<BlogFullCardProps>;
-  MidCard: React.FC<CourseMidCardProps> | React.FC<BlogMidCardProps>;
-  data: CoursesDictProps[] | BlogsPropsDict[];
-};
 
 const ListContent = ({
+  children,
   className,
-  sortOptions,
-  lang,
-  FullCard,
-  MidCard,
-  data,
-}: ListContentProps) => {
-  const [selectedOption, setSelectedOption] = useState(0);
-  const [switchedList, setSwitchedList] = useState<SwitchedListStates>("grid");
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <div className={cn("flex w-full flex-col gap-3 md:w-[80%]", className)}>
-      <ContentBar
-        sortOptions={sortOptions}
-        lang={lang}
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-        switchedList={switchedList}
-        setSwitchedList={setSwitchedList}
-      />
-      <ContentBody
-        lang={lang}
-        selectedOption={selectedOption}
-        FullCard={FullCard}
-        MidCard={MidCard}
-        switchedList={switchedList}
-        data={data}
-      />
+      {children}
     </div>
   );
 };
