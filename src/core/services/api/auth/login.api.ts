@@ -8,7 +8,8 @@ export const login = async (credentials: SignInInputProps) => {
   const parsedResult = loginResponseSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
-    console.error(parsedResult.error);
+    console.log(response.data);
+    console.error("error in login.api", parsedResult.error.errors);
 
     return null;
   }

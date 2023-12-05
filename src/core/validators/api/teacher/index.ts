@@ -1,1 +1,1 @@
-export * from "./teacher.schema";
+export * from "./get";

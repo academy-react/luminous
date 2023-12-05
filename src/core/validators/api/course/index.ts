@@ -1,1 +1,2 @@
-export * from "./course.schema";
+export * from "./get";
+export * from "./post";

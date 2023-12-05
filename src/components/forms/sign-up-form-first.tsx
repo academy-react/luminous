@@ -25,6 +25,7 @@ import {
 import { type Locale } from "#/i18n.config";
 
 import { Icons } from "../assets/icons";
+import { sendVerifyMessage } from "@/core/services/api";
 
 export const FirstSignUpForm = ({
   lang,
@@ -42,8 +43,10 @@ export const FirstSignUpForm = ({
     },
   });
 
-  const onSubmit = (data: FirstSignUpInputProps) => {
-    setFormState("second");
+  const onSubmit =async (data: FirstSignUpInputProps) => {
+    const result = await sendVerifyMessage(data);
+  console.log(result);
+  setFormState("second");
   };
 
   return (

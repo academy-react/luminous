@@ -222,3 +222,33 @@ export const categoriesDict: CategoryDictProps[] = [
     color: "text-emerald-500 border-emerald-500",
   },
 ];
+export interface CategoryColorDictProps {
+  color: string;
+}
+
+export const categoriesColorDict: CategoryColorDictProps[] = [
+  {
+    color: "text-blue-500 border-blue-500",
+  },
+  {
+    color: "text-red-500 border-red-500",
+  },
+  {
+    color: "text-green-500 border-green-500",
+  },
+  {
+    color: "text-cyan-500 border-cyan-500",
+  },
+  {
+    color: "text-yellow-500 border-yellow-500",
+  },
+  {
+    color: "text-purple-500 border-purple-500",
+  },
+  {
+    color: "text-slate-300 border-slate-300",
+  },
+  {
+    color: "text-emerald-500 border-emerald-500",
+  },
+];
