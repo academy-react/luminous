@@ -1,1 +1,1 @@
-export * from "./user-profile-info.api";
+export * from "./get";

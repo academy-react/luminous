@@ -16,10 +16,9 @@ export const courseDictTitle: TitleDictProps[] = [
   },
 ];
 
-export type SortTypeStates =  "ASC" | "DESC";
+export type SortTypeStates = "ASC" | "DESC";
 
 export type SwitchedListStates = "grid" | "list";
-
 
 export interface GridListSwitcherDictProps {
   id: number;
@@ -45,7 +44,7 @@ export interface SortOptionDictProps {
   option: {
     col: string;
     type: SortTypeStates;
-  }
+  };
 }
 
 // blog sortTitle
@@ -93,29 +92,29 @@ export const courseSortOptionsDict: SortOptionDictProps[] = [
       fa: "همه ی دوره ها",
       en: "all courses",
     },
-   option: {
-    col: "Active",
-    type: "DESC",
-   }
+    option: {
+      col: "Active",
+      type: "DESC",
+    },
   },
   {
     title: {
       fa: "ارزان ترین",
       en: "cheapest ",
     },
-   option: {
-    col: "cost",
-    type: "ASC",
-   }
+    option: {
+      col: "cost",
+      type: "ASC",
+    },
   },
   {
     title: {
       fa: "گران ترین",
       en: "the most expensive ",
     },
-   option: {
-    col: "cost",
-    type: "DESC",
-   }
+    option: {
+      col: "cost",
+      type: "DESC",
+    },
   },
 ];

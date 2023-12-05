@@ -2,13 +2,21 @@ import { TitleBox } from "@/components/pages/lobby";
 import { CategoryCard } from "@/components/pages/lobby/categories/category-card";
 
 import {
-  categoriesDict,
+  categoriesColorDict,
   categoriesTitleBoxDict,
 } from "@/dict/pages/lobby.dict";
 
+import { type CourseCategoryListType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
-export const CategoriesSection = ({ lang }: { lang: Locale }) => {
+export const CategoriesSection = ({
+  lang,
+  data,
+}: {
+  lang: Locale;
+  data: CourseCategoryListType;
+}) => {
   return (
     <section className="flex w-full flex-col items-center gap-10">
       <TitleBox
@@ -17,13 +25,13 @@ export const CategoriesSection = ({ lang }: { lang: Locale }) => {
         desc={categoriesTitleBoxDict.subtitle}
       />
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-        {categoriesDict.map((category) => (
+        {data.map((category, index) => (
           <CategoryCard
-            key={category.title[lang]}
-            lang={lang}
-            title={category.title}
-            Icon={category.Icon}
-            color={category.color}
+            key={category.id}
+            // lang={lang}
+            title={category.techName}
+            icon={category.iconAddress}
+            color={categoriesColorDict[index]?.color}
           />
         ))}
       </div>

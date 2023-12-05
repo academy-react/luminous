@@ -21,5 +21,4 @@ export const setCourseRatting = async (
   }
 
   return parsedResult.data;
-  
 };

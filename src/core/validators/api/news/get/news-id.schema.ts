@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { newsCommentSchema } from ".";
+import { newsCommentSchema } from "./news-comments.schema";
 
 const commentDtoSchema = z.array(newsCommentSchema);
 

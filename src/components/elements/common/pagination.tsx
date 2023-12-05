@@ -109,7 +109,7 @@ function PaginationArrow({
   isDisabled?: boolean;
 }) {
   const className = cn(
-    "flex h-10 w-10 items-center justify-center rounded-md border mx-auto bg-card",
+    "mx-auto flex h-10 w-10 items-center justify-center rounded-md border bg-card",
     {
       "pointer-events-none text-gray-300": isDisabled,
       "hover:border-primary": !isDisabled,

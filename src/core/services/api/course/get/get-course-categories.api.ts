@@ -1,11 +1,11 @@
 import http from "@/core/services/interceptor";
-import { courseCategoriesSchema } from "@/core/validators/api";
+import { courseCategoryListSchema } from "@/core/validators/api";
 
 export const getCourseCategories = async () => {
   const response = await http.get("/Home/GetTechnologies");
 
-  const parsedResult = courseCategoriesSchema.safeParse(response.data);
- 
+  const parsedResult = courseCategoryListSchema.safeParse(response.data);
+
   if (!parsedResult.success) {
     console.error(
       "error in get-course-categories.api",

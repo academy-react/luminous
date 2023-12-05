@@ -14,9 +14,44 @@ const onSuccess = (response: AxiosResponse) => {
 };
 
 const onError = (error: AxiosError) => {
-  console.log("error in interceptor response", error);
+  const status = error.response ? error.response.status : null;
 
-  return Promise.reject(error.message);
+  switch (status) {
+    case 400:
+      console.log(error);
+      return Promise.reject({
+        fa: "درخواست شما معتبر نیست. لطفاً دوباره تلاش کنید.",
+        en: "Your request is invalid. Please try again.",
+      });
+    case 401:
+      return Promise.reject({
+        fa: "ابتدا باید وارد سایت شوید.",
+        en: "You must first login.",
+      });
+    case 403:
+      return Promise.reject({
+        fa: "شما به این بخش دسترسی ندارید.",
+        en: "You do not have access to this section.",
+      });
+    case 404:
+      return Promise.reject({
+        fa: "موردی یافت نشد.",
+        en: "Not found.",
+      });
+    case 500:
+      return Promise.reject({
+        fa: "خطایی رخ داده است.",
+        en: "An error has occurred.",
+      });
+    default:
+      console.error("Unrecognized Error in interceptor");
+      console.error("Full Error: ", error);
+
+      return Promise.reject({
+        fa: "خطایی رخ داده است.",
+        en: "An error has occurred.",
+      });
+  }
 };
 
 instance.interceptors.response.use(onSuccess, onError);

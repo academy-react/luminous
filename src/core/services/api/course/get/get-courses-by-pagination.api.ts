@@ -1,8 +1,9 @@
 "use server";
 
+import { type SortTypeStates } from "@/dict/pages/list.dict";
+
 import http from "@/core/services/interceptor";
 import { courseByPaginationSchema } from "@/core/validators/api";
-import { type SortTypeStates } from "@/dict/pages/list.dict";
 
 type GetCoursesQueryParams = {
   query?: string;
@@ -10,33 +11,30 @@ type GetCoursesQueryParams = {
   rows?: number;
   sortCol?: string;
   sortType?: SortTypeStates;
-  listTech?:string;
-  count?:number;
+  listTech?: string;
+  count?: number;
 };
 
 export const getCoursesByPagination = async ({
   currentPage = 0,
   query = "",
   rows = 2,
-  sortCol= "cost",  
-  sortType= "DESC",
+  sortCol = "cost",
+  sortType = "DESC",
   listTech = "",
-  count= 0,
+  count = 0,
 }: GetCoursesQueryParams = {}) => {
-  
-  const response = await http.get(`/Home/GetCoursesWithPagination`,
-  {
-    params:{
+  const response = await http.get(`/Home/GetCoursesWithPagination`, {
+    params: {
       PageNumber: currentPage,
       RowsOfPage: rows,
-      ...(query  && {Query: query}),
+      ...(query && { Query: query }),
       SortCol: sortCol,
       SortType: sortType,
-      ...(listTech  && {ListTech: listTech} ),
-      TechCount: count
-    }
-  }
-      );
+      ...(listTech && { ListTech: listTech }),
+      TechCount: count,
+    },
+  });
 
   const parsedResult = courseByPaginationSchema.safeParse(response.data);
 

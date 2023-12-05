@@ -22,8 +22,8 @@ import { Pagination } from "@/components/elements/common";
 
 import {
   courseSortOptionsDict,
-  SortTypeStates,
-  SwitchedListStates,
+  type SortTypeStates,
+  type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
 import {
@@ -44,10 +44,9 @@ const CoursesPage = async ({
     perPage?: number;
     view?: SwitchedListStates;
     sort?: string; //sort option of content bar
-    order?: SortTypeStates; 
+    order?: SortTypeStates;
     techIds?: string;
     techCount?: number;
-
   };
 }) => {
   const query = searchParams?.query || "";
@@ -57,17 +56,23 @@ const CoursesPage = async ({
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
   const listTech = searchParams?.techIds || "";
-  const count = searchParams?.techCount || listTech === ""? 0 : 1;
-  const data = await getCoursesByPagination(
-    { currentPage, query, rows, sortCol, sortType, listTech, count }
-    )
+  const count = searchParams?.techCount || listTech === "" ? 0 : 1;
+  const data = await getCoursesByPagination({
+    currentPage,
+    query,
+    rows,
+    sortCol,
+    sortType,
+    listTech,
+    count,
+  });
   const categoriesData = await getCourseCategories();
   if (!data || !categoriesData) {
     return null;
   }
 
-console.log(data);
-console.log(listTech);
+  console.log(data);
+  console.log(listTech);
 
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
@@ -86,10 +91,8 @@ console.log(listTech);
           <ContentBar
             sortOptions={courseSortOptionsDict}
             lang={lang}
-            selectedOption={{col: sortCol , type: sortType}}
+            selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
-            
-
           />
           <ContentBody
             lang={lang}

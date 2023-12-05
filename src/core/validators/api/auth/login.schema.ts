@@ -9,7 +9,17 @@ export const loginResponseSchema = z
       .nullable(),
     id: z.number(),
     token: z.string().min(1).nullable(),
-    roles: z.array(z.enum(["Administrator", "Teacher"])),
+    roles: z
+      .array(
+        z.enum([
+          "Administrator",
+          "Teacher",
+          "Student",
+          "Referee",
+          "TournamentMentor",
+        ])
+      )
+      .nullable(),
     message: z.string().min(1),
     success: z.boolean(),
     errors: z.unknown(),
