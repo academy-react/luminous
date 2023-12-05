@@ -27,7 +27,7 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
 
   useEffect(() => {
     const params = new URLSearchParams();
-    params.set('techIds', categoryIds.join("."));
+    categoryIds.length !==0 && params.set('techIds', categoryIds.join("."));
     router.push(`${pathname}?${params.toString()}`)
 
   }, [categoryIds])
