@@ -1,9 +1,17 @@
 import { z } from "zod";
 
+export const userProfilePictureSchema = z.object({
+  id: z.string(),
+  userProfileId: z.number(),
+  pictureName: z.string(),
+  puctureAddress: z.string(),
+  inserDate: z.string(),
+});
+
 export const userProfileInfoSchema = z.object({
   currentPictureAddress: z.string(),
   profileCompletionPercentage: z.number().min(0).max(100),
-  userImage: z.array(z.string()),
+  userImage: z.array(userProfilePictureSchema),
   email: z.string().email(),
   phoneNumber: z.string(),
   lName: z.string(),
@@ -16,8 +24,8 @@ export const userProfileInfoSchema = z.object({
   nationalCode: z.string(),
   gender: z.boolean(),
   birthDay: z.string(),
-  latitude: z.number().nullable(),
-  longitude: z.number().nullable(),
+  latitude: z.string().nullable(),
+  longitude: z.string().nullable(),
 });
 
 export type userProfileInfoType = z.infer<typeof userProfileInfoSchema>;
