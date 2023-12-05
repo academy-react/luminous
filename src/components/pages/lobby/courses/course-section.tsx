@@ -37,9 +37,9 @@ export const CourseSection = ({
             <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
 
                   {/* new */}
-              {/* {data.map((course, index) => (
+              {data.map((course, index) => (
                 <CourseSideCard key={index} img={course.tumbImageAddress} />
-              ))}  */}
+              ))} 
             </div>
             <div className="flex w-full items-center justify-center gap-4 md:hidden">
 

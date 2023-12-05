@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { Button, Card, CardContent, CardTitle } from "@/components/elements/ui";
 
-import { type CourseType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 import { CourseType } from "@/core/validators/api";
