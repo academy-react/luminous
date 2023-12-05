@@ -5,6 +5,7 @@ import { Button, Card, CardContent, CardTitle } from "@/components/elements/ui";
 
 import { type Locale } from "#/i18n.config";
 import { CourseType } from "@/core/validators/api";
+import { Icons } from "@/components/assets/icons";
 
 type CourseCardProps = {
   lang: Locale;
@@ -23,7 +24,11 @@ describe,
   return (
     <Card className="h-full w-full rounded-xl border-none bg-card p-4 shadow">
       <CardContent className="flex h-full w-full flex-col justify-between">
-        <Link href="#" className="relative aspect-video w-full">
+        <Link href="#" className="relative flex h-full w-full items-center justify-center bg-gray-200 rounded-xl
+        // aspect-video 
+        ">
+      
+         <Icons.placeholder  className=" w-8 h-8 text-slate-600" />
           {/* <Image
             src={tumbImageAddress?tumbImageAddress:'/images/dev/node-green.jpg'}
             alt="course-picture"
