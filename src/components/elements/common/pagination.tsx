@@ -112,7 +112,7 @@ function PaginationArrow({
     "flex h-10 w-10 items-center justify-center rounded-md border mx-auto bg-card",
     {
       "pointer-events-none text-gray-300": isDisabled,
-      "hover:bg-gray-100": !isDisabled,
+      "hover:border-primary": !isDisabled,
       "ml-2 md:ml-4": direction === "left",
       "mr-2 md:mr-4": direction === "right",
     }

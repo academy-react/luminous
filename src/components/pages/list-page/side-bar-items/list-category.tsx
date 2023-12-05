@@ -21,12 +21,12 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
   const techIds = searchParams.get("tech")
   
   const [categoryIds, setCategoryIds] = useState<number[] | []>(
-    techIds ? techIds?.split(",").map(Number) : []
+    techIds ? techIds?.split(".").map(Number) : []
   )
 
   useEffect(() => {
     const params = new URLSearchParams();
-    params.set('techIds', categoryIds.join(","));
+    params.set('techIds', categoryIds.join("."));
     router.push(`${pathname}?${params.toString()}`)
 
   }, [categoryIds])
