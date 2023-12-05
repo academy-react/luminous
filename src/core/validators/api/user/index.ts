@@ -1,1 +1,1 @@
-export * from "./profile-info.schema";
+export * from "./get";

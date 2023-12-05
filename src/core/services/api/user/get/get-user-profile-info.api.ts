@@ -1,15 +1,8 @@
 import http from "@/core/services/interceptor";
 import { userProfileInfoSchema } from "@/core/validators/api";
-import { auth } from "@/lib/auth";
 
 export const getUserProfileInfo = async () => {
-  const session = await auth();
-
-  const response = await http.get("/SharePanel/GetProfileInfo", {
-    headers: {
-      Authorization: `Bearer ${session?.user.token}`,
-    },
-  });
+  const response = await http.get("/SharePanel/GetProfileInfo");
 
   const parsedResult = userProfileInfoSchema.safeParse(response.data);
 

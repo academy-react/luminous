@@ -5,7 +5,10 @@ import {
   type CourseMidCardProps,
 } from "@/components/pages/list-page/cards";
 
-import { type SwitchedListStates } from "@/dict/pages/list.dict";
+import {
+  SortTypeStates,
+  type SwitchedListStates,
+} from "@/dict/pages/list.dict";
 
 import {
   AllNewsType,
@@ -17,7 +20,6 @@ import { type Locale } from "#/i18n.config";
 
 type ContentBodyProps = {
   lang: Locale;
-  selectedOption: number;
   switchedList: SwitchedListStates;
 } & CourseContentProps;
 type CourseContentProps = {
@@ -35,15 +37,7 @@ type CourseContentProps = {
 // }
 
 export const ContentBody = (props: ContentBodyProps) => {
-  const {
-    lang,
-    selectedOption,
-    switchedList,
-    FullCard,
-    MidCard,
-    data,
-    typeOf,
-  } = props;
+  const { lang, switchedList, FullCard, MidCard, data, typeOf } = props;
   return (
     <div className="">
       <div

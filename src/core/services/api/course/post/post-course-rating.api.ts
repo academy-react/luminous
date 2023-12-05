@@ -1,4 +1,5 @@
 import http from "@/core/services/interceptor";
+import { courseRatingResponseSchema } from "@/core/validators/api";
 
 export const setCourseRatting = async (
   courseId: string,
@@ -11,14 +12,13 @@ export const setCourseRatting = async (
     },
   });
 
-  // const parsedResult = courseByPaginationSchema.safeParse(response.data); //change schema
+  const parsedResult = courseRatingResponseSchema.safeParse(response.data); //change schema
 
-  // if (!parsedResult.success) {
-  //   console.error(parsedResult.error);
+  if (!parsedResult.success) {
+    console.error(parsedResult.error);
 
-  //   return null;
-  // }
+    return null;
+  }
 
-  // return parsedResult.data;
-  return null; // temp
+  return parsedResult.data;
 };

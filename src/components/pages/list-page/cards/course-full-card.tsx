@@ -14,12 +14,15 @@ export type CourseFullCardProps = {
   lang: Locale;
 };
 export const CourseFullCard = ({
-  item: { tumbImageAddress, title, describe, teacherName },
+  item: { tumbImageAddress, title, describe, teacherName, courseId },
   lang,
 }: CourseFullCardProps) => {
   return (
     <div className="flex h-[170px] w-full gap-3 rounded-xl bg-card px-4 py-3  shadow">
-      <Link href="#" className="relative aspect-[2/1] basis-1/3 ">
+      <Link
+        href={`/${lang}/courses/${courseId}`}
+        className="relative aspect-[2/1] basis-1/3 "
+      >
         {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
       </Link>
       <div className=" basis-2/3">
@@ -35,9 +38,7 @@ export const CourseFullCard = ({
           <ul className="flex gap-4 text-xs  text-[#505050] ">
             <li>مدرس:{teacherName}</li>
             <li>مدت زمان دوره:80ساعت</li>
-            <li>
-              <Rating />
-            </li>
+            <li>{/* <Rating id={courseId} /> */}</li>
           </ul>
 
           <span className="text-md rounded-xl px-1 text-[#58AD57]">

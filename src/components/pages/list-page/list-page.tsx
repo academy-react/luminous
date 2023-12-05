@@ -1,28 +1,4 @@
-"use client";
-
-import { useState } from "react";
-
-import {
-  type BlogFullCardProps,
-  type BlogMidCardProps,
-  type CourseFullCardProps,
-  type CourseMidCardProps,
-} from "@/components/pages/list-page/cards";
-import { ContentBar } from "@/components/pages/list-page/content/content-bar";
-import { ContentBody } from "@/components/pages/list-page/content/content-body";
-import { Pagination } from "@/components/elements/common";
-
-import {
-  type SortOptionDictProps,
-  type SwitchedListStates,
-} from "@/dict/pages/list.dict";
-
-import { AllNewsType } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
-
-import { type Locale } from "#/i18n.config";
-
-import { AllCourseFilterDtoType } from "./../../../core/validators/api/course/course-pagination.schema";
 
 const ListPage = ({
   children,

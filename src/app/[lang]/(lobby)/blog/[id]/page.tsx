@@ -19,7 +19,7 @@ import {
   latestPostsSideCardDict,
 } from "@/dict/dev/details.dict";
 
-import { getNewsById } from "@/core/services/api/news/get-news-by-id.api";
+import { getNewsById } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 

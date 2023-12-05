@@ -18,7 +18,7 @@ import {
   SideBar,
 } from "@/components/pages/details-page/wrappers";
 
-import { getCourseById } from "@/core/services/api/course";
+import { getCourseById } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
