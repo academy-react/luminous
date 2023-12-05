@@ -29,6 +29,7 @@ import {
   X,
   type LucideIcon,
   type LucideProps,
+  Star,
 } from "lucide-react";
 import { type IconType } from "react-icons";
 import { BiLogoInstagramAlt } from "react-icons/bi";
@@ -45,6 +46,7 @@ export const Icons = {
   leftArrow: ChevronLeft,
   rightArrow: ChevronRight,
   downArrow: ChevronDown,
+  star: Star,
   eye: Eye,
   eyeOff: EyeOff,
   check: Check,

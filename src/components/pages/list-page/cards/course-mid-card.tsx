@@ -32,8 +32,8 @@ const res = await courseFavoriteAction(courseId , lang);
         // aspect-[3/2]
           "
       >
-        {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
         <Icons.placeholder  className=" w-8 h-8 text-slate-600" />
+        {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
       </Link>
       <div className=" flex flex-col gap-4 ">
       
@@ -54,9 +54,10 @@ const res = await courseFavoriteAction(courseId , lang);
           <div>{teacherName}</div>
           <ul className="flex justify-between ">
 
-            <li className="text-yellow-500 text-base ">
-              <Icons.starFilled className=" text-xl "/>
-              {courseRate}
+            <li className="text-yellow-500 text-base flex flex-row items-center" >
+              <span className=" text-3xl text-yellow-500 ">★</span>
+              <span>{courseRate}</span>
+              
             </li>
             <li className="text-3xl rounded-xl  text-[#58AD57] flex flex-row items-center gap-2 ">
               <span>{cost.toLocaleString(lang)}</span>
