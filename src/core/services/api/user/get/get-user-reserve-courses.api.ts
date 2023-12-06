@@ -1,7 +1,7 @@
 import http from "@/core/services/interceptor";
 import { allUserReservedCoursesListSchema } from "@/core/validators/api";
 
-export const getUserFavoriteNews = async () => {
+export const getUserReservedCourses = async () => {
   const response = await http.get("/SharePanel/GetMyCoursesReserve");
 
   const parsedResult = allUserReservedCoursesListSchema.safeParse(
