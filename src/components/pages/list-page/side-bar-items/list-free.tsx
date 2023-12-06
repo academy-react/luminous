@@ -10,7 +10,7 @@ export const ListFree = ({ lang }: { lang: Locale }) => {
       </Label>
       <Switch
         id="list-free"
-        className="bg-[#ccc] data-[state=checked]:bg-purple-secondary"
+        className="bg-[#ccc] data-[state=checked]:bg-primary"
       />
     </div>
   );

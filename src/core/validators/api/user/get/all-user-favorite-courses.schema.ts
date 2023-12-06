@@ -15,11 +15,11 @@ export const favoriteCourseSchema = z
   })
   .strict();
 
-export type FavoriteCourseSchemaType = z.infer<typeof favoriteCourseSchema>;
+export type FavoriteCourseType = z.infer<typeof favoriteCourseSchema>;
 
 export const favoriteCoursesListSchema = z.array(favoriteCourseSchema);
 
-export type FavoriteCoursesListSchemaType = z.infer<
+export type FavoriteCoursesListType = z.infer<
   typeof favoriteCoursesListSchema
 >;
 

@@ -16,6 +16,9 @@ export const {
   session: {
     strategy: "jwt",
   },
+  jwt: {
+    maxAge: 24 * 60 * 60,
+  },
   providers: [
     Credentials({
       async authorize(credentials) {

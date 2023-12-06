@@ -35,4 +35,6 @@ export const getUserCourses = async ({
 
     return null;
   }
+
+  return parsedResult.data;
 };
