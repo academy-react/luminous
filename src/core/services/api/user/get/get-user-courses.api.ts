@@ -1,28 +1,28 @@
-import { type SortTypeStates } from "@/dict/pages/list.dict";
+import { type TempSortTypeStates } from "@/dict/pages/list.dict";
 
 import http from "@/core/services/interceptor";
 import { allUserCoursesSchema } from "@/core/validators/api";
 
 type GetUserCoursesQueryParams = {
   page?: number;
-  rows?: number;
-  sortCol?: SortTypeStates;
-  sortType?: string;
+  perPage?: number;
+  sortingCol?: string;
+  sortType?: TempSortTypeStates;
   query?: string;
 };
 
 export const getUserCourses = async ({
   page = 1,
-  rows = 2,
-  sortCol = "DESC",
-  sortType = "LastUpdate",
+  perPage = 10,
+  sortingCol = "LastUpdate",
+  sortType = "desc",
   query = "",
 }: GetUserCoursesQueryParams = {}) => {
   const response = await http.get("/SharePanel/GetMyCourses", {
     params: {
       PageNumber: page,
-      RowsOfPage: rows,
-      SortCol: sortCol,
+      RowsOfPage: perPage,
+      SortingCol: sortingCol,
       SortType: sortType,
       Query: query,
     },
