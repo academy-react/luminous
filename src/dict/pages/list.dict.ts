@@ -18,6 +18,8 @@ export const courseDictTitle: TitleDictProps[] = [
 
 export type SortTypeStates = "ASC" | "DESC";
 
+export type TempSortTypeStates = "asc" | "desc";
+
 export type SwitchedListStates = "grid" | "list";
 
 export interface GridListSwitcherDictProps {

@@ -7,12 +7,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDate(date: string, locale: Locale) {
-  return new Intl.DateTimeFormat(locale, {
+export function formatDate(
+  date: string,
+  locale: Locale,
+  option: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
     day: "numeric",
-  }).format(new Date(date));
+  }
+) {
+  return new Intl.DateTimeFormat(locale, option).format(new Date(date));
 }
 
 export const generatePagination = (currentPage: number, totalPages: number) => {
