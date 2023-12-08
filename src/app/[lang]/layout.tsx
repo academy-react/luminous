@@ -34,7 +34,8 @@ const RootLayout = ({
     <html lang={lang} suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen font-multi antialiased",
+          "min-h-screen antialiased",
+          lang === "fa" ? "font-multiFA" : "font-multiEN",
           fontRoboto.variable,
           fontIranSans.variable
         )}
