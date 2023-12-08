@@ -39,6 +39,8 @@ const onError = (error: AxiosError) => {
         en: "Not found.",
       });
     case 500:
+      console.error("server Error in interceptor");
+      console.error("Full Error: ", error);
       return Promise.reject({
         fa: "خطایی رخ داده است.",
         en: "An error has occurred.",

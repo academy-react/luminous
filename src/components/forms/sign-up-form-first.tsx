@@ -17,6 +17,7 @@ import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
+import { sendVerifyMessage } from "@/core/services/api";
 import {
   firstSignUpInputSchema,
   type FirstSignUpInputProps,
@@ -25,7 +26,6 @@ import {
 import { type Locale } from "#/i18n.config";
 
 import { Icons } from "../assets/icons";
-import { sendVerifyMessage } from "@/core/services/api";
 
 export const FirstSignUpForm = ({
   lang,
@@ -43,10 +43,10 @@ export const FirstSignUpForm = ({
     },
   });
 
-  const onSubmit =async (data: FirstSignUpInputProps) => {
+  const onSubmit = async (data: FirstSignUpInputProps) => {
     const result = await sendVerifyMessage(data);
-  console.log(result);
-  setFormState("second");
+    console.log(result);
+    setFormState("second");
   };
 
   return (

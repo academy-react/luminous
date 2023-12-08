@@ -29,7 +29,7 @@ export const getCoursesByPagination = async ({
       PageNumber: currentPage,
       RowsOfPage: rows,
       ...(query && { Query: query }),
-      SortCol: sortCol,
+      SortingCol: sortCol,
       SortType: sortType,
       ...(listTech && { ListTech: listTech }),
       TechCount: count,
