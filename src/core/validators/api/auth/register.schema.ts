@@ -13,7 +13,7 @@ export type FirstSignUpResponseProps = z.infer<
   typeof firstSignUpResponseSchema
 >;
 
-export const secondSignUpSchema = z
+export const secondSignUpResponseSchema = z
   .object({
     id: z.number(),
     message: z.string(),
@@ -22,7 +22,9 @@ export const secondSignUpSchema = z
   })
   .strict();
 
-export type SecondSignUpProps = z.infer<typeof secondSignUpSchema>;
+export type SecondSignUpResponseProps = z.infer<
+  typeof secondSignUpResponseSchema
+>;
 
 export const thirdSignUpSchema = z
   .object({
