@@ -18,7 +18,7 @@ export const secondSignUpSchema = z
     id: z.number(),
     message: z.string(),
     success: z.boolean,
-    errors: z.string().nullable,
+    errors: z.string().nullable(),
   })
   .strict();
 
