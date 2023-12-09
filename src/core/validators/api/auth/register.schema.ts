@@ -4,7 +4,7 @@ export const firstSignUpResponseSchema = z
   .object({
     id: z.number(),
     message: z.string(),
-    success: z.boolean,
+    success: z.boolean(),
     errors: z.string().nullable(),
   })
   .strict();
@@ -17,7 +17,7 @@ export const secondSignUpSchema = z
   .object({
     id: z.number(),
     message: z.string(),
-    success: z.boolean,
+    success: z.boolean(),
     errors: z.string().nullable(),
   })
   .strict();
