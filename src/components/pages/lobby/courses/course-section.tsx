@@ -5,20 +5,17 @@ import { CourseCard } from "@/components/pages/lobby/courses/course-card";
 import { CourseSideCard } from "@/components/pages/lobby/courses/course-side-card";
 import { Button } from "@/components/elements/ui";
 
-import { coursesDict } from "@/dict/dev/courses.dict";
 import { coursesTitleBoxDict } from "@/dict/pages/lobby.dict";
 
-import { type TopCourseListType } from "@/core/validators/api";
+import { getTopCoursesList } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
-export const CourseSection = ({
-  lang,
-  data,
-}: {
-  lang: Locale;
-  data: TopCourseListType;
-}) => {
+export const CourseSection = async ({ lang }: { lang: Locale }) => {
+  const data = await getTopCoursesList();
+
+  if (!data) return null;
+
   return (
     <div className="flex w-full flex-col items-center gap-10">
       <TitleBox
@@ -35,18 +32,10 @@ export const CourseSection = ({
         <div className="grow rounded-xl bg-card shadow">
           <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
             <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
-
-                  {/* new */}
-              {data.map((course, index) => (
-                <CourseSideCard key={index} img={course.tumbImageAddress} />
-              ))} 
-            </div>
-            <div className="flex w-full items-center justify-center gap-4 md:hidden">
-
               {/* new */}
-              {/* {data.map((course, index) => (
+              {data.slice(1, 4).map((course, index) => (
                 <CourseSideCard key={index} img={course.tumbImageAddress} />
-              ))} */}
+              ))}
             </div>
             <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
               <Link href="#" className="">
