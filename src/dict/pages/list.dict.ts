@@ -107,14 +107,14 @@ export const courseSortOptionsDict: SortOptionDictProps[] = [
   },
   {
     title: {
-      fa: " قیمت",
-      en: "price ",
+      fa: " تاریخ",
+      en: "date ",
     },
   },
   {
     title: {
-      fa: " تاریخ",
-      en: "date ",
+      fa: " قیمت",
+      en: "price ",
     },
   },
 ];

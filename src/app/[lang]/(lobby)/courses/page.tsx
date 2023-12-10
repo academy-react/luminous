@@ -21,6 +21,8 @@ import {
 import { Pagination } from "@/components/elements/common";
 
 import {
+  courseDateSortOptionsDict,
+  coursePriceSortOptionsDict,
   courseSortOptionsDict,
   type SortTypeStates,
   type SwitchedListStates,
@@ -90,6 +92,8 @@ const CoursesPage = async ({
         <ListContent>
           <ContentBar
             sortOptions={courseSortOptionsDict}
+            sortDateOption={courseDateSortOptionsDict}
+            sortPriceOption={coursePriceSortOptionsDict}
             lang={lang}
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
