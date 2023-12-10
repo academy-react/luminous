@@ -1,10 +1,19 @@
+"use server";
+
 import http from "@/core/services/interceptor";
-import { secondSignUpInputSchema, type SecondSignUpInputProps} from "@/core/validators/forms";
+import { secondSignUpResponseSchema } from "@/core/validators/api/auth/register.schema";
+import { SecondSignUpInputProps } from "@/core/validators/forms/auth/sign-up.schema";
 
-export const verifyMessage = async (credentials: SecondSignUpInputProps) => {
-  const response = await http.post("/Sign/VerifyMessage", credentials);
+import { FirstSignUpInputProps } from "./../../../../validators/forms/auth/sign-up.schema";
 
-  const parsedResult = secondSignUpInputSchema.safeParse(response.data);
+export const verifyMessage = async (code: string, phone: string) => {
+  console.log(code, phone);
+  const response = await http.post("/Sign/VerifyMessage", {
+    phoneNumber: phone,
+    verifyCode: code,
+  });
+
+  const parsedResult = secondSignUpResponseSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
     console.log(response.data);
