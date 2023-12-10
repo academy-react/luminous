@@ -6,10 +6,8 @@ import { SecondSignUpInputProps } from "@/core/validators/forms/auth/sign-up.sch
 
 import { FirstSignUpInputProps } from "./../../../../validators/forms/auth/sign-up.schema";
 
-export const verifyMessage = async (
-  code: SecondSignUpInputProps,
-  phone: FirstSignUpInputProps
-) => {
+export const verifyMessage = async (code: string, phone: string) => {
+  console.log(code, phone);
   const response = await http.post("/Sign/VerifyMessage", {
     phoneNumber: phone,
     verifyCode: code,

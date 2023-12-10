@@ -22,7 +22,7 @@ import {
   firstSignUpInputSchema,
   type FirstSignUpInputProps,
 } from "@/core/validators/forms";
-import { useStore } from "@/stores/sign-up-store-phone";
+import { useStore, useUserStore } from "@/stores/sign-up-store-phone";
 
 import { type Locale } from "#/i18n.config";
 
@@ -44,12 +44,12 @@ export const FirstSignUpForm = ({
     },
   });
 
-  const setUserPhone = useStore((state) => state.setUserPhone);
+  const setUser = useUserStore((state) => state.setUser);
 
   const onSubmit = async (data: FirstSignUpInputProps) => {
     const result = await sendVerifyMessage(data);
     console.log(result);
-    setUserPhone(data);
+    setUser({ phoneNumber: data.phone });
     setFormState("second");
   };
 

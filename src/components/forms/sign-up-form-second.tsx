@@ -22,7 +22,7 @@ import {
   secondSignUpInputSchema,
   type SecondSignUpInputProps,
 } from "@/core/validators/forms";
-import { useStore } from "@/stores/sign-up-store-phone";
+import { useUserStore } from "@/stores/sign-up-store-phone";
 
 import { type Locale } from "#/i18n.config";
 
@@ -41,10 +41,10 @@ export const SecondSignUpForm = ({
     resolver: zodResolver(secondSignUpInputSchema),
   });
 
-  const userPhone = useStore((state) => state.userPhone);
+  const user = useUserStore((state) => state.user);
 
   const onSubmit = async (data: SecondSignUpInputProps) => {
-    const result = await verifyMessage(data.code, userPhone);
+    const result = await verifyMessage(data.code, user.phoneNumber);
     setFormState("third");
   };
 

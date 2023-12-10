@@ -26,13 +26,15 @@ export type SecondSignUpResponseProps = z.infer<
   typeof secondSignUpResponseSchema
 >;
 
-export const thirdSignUpSchema = z
+export const thirdSignUpResponseSchema = z
   .object({
     id: z.number(),
     message: z.string().nullable(),
     success: z.boolean(),
-    errors: z.string(),
+    errors: z.string().nullable(),
   })
   .strict();
 
-export type ThirdSignUpProps = z.infer<typeof thirdSignUpSchema>;
+export type ThirdSignUpResponseProps = z.infer<
+  typeof thirdSignUpResponseSchema
+>;

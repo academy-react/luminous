@@ -18,14 +18,18 @@ import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { thirdSignUpFormDict } from "@/dict/pages/auth.dict";
 
+import { loginAction } from "@/core/actions/auth.action";
+import { register } from "@/core/services/api/auth/index";
 import {
   thirdSignUpInputSchema,
   type ThirdSignUpInputProps,
 } from "@/core/validators/forms";
+import { useUserStore } from "@/stores/sign-up-store-phone";
 
 import { type Locale } from "#/i18n.config";
 
 import { Icons } from "../assets/icons";
+import { AnimatedPasswordInput } from "../elements/common/animated-input";
 
 export const ThirdSignUpForm = ({
   lang,
@@ -41,8 +45,21 @@ export const ThirdSignUpForm = ({
     resolver: zodResolver(thirdSignUpInputSchema),
   });
 
-  const onSubmit = (data: ThirdSignUpInputProps) => {
-    router.push(`/${lang}`);
+  const user = useUserStore((state) => state.user);
+  const onSubmit = async (data: ThirdSignUpInputProps) => {
+    const result = await register(data.email, data.password, user.phoneNumber);
+    console.log("regieter", result);
+    if (result.success) {
+      const result = await loginAction({
+        phoneOrGmail: data.email,
+        password: data.password,
+        rememberMe: false,
+      });
+      console.log("login", result);
+      if (result === "Success") {
+        router.push(`/${lang}`);
+      }
+    }
   };
 
   return (
@@ -61,6 +78,22 @@ export const ThirdSignUpForm = ({
                   lang={lang}
                   Icon={Icons.mail}
                   label={thirdSignUpFormDict.email[lang]}
+                  inputVariant="auth"
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <AnimatedPasswordInput
+                  lang={lang}
+                  label={thirdSignUpFormDict.password[lang]}
                   inputVariant="auth"
                   {...field}
                 />

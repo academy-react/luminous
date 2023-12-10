@@ -1,10 +1,16 @@
+"use server";
+
 import http from "@/core/services/interceptor";
-import { thirdSignUpInputSchema, type ThirdSignUpInputProps} from "@/core/validators/forms";
+import { thirdSignUpResponseSchema } from "@/core/validators/api/auth/register.schema";
 
-export const register = async (credentials: ThirdSignUpInputProps) => {
-  const response = await http.post("/Sign/Register", credentials);
+export const register = async (gmail: string, pass: string, phone: string) => {
+  const response = await http.post("/Sign/Register", {
+    password: pass,
+    gmail: gmail, //
+    phoneNumber: phone,
+  });
 
-  const parsedResult = thirdSignUpInputSchema.safeParse(response.data);
+  const parsedResult = thirdSignUpResponseSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
     console.log(response.data);
