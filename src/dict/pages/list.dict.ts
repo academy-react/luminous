@@ -82,7 +82,7 @@ export const courseDateSortOptionsDict: SortSelectOptionDictProps[] = [
       en: "newest ",
     },
     option: {
-      col: "InserDate",
+      col: "InsertDate",
       type: "ASC",
     },
   },
