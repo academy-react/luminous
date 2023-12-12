@@ -11,8 +11,8 @@ import {
 } from "@/dict/pages/list.dict";
 
 import {
-  AllNewsType,
   type AllCourseFilterDtoType,
+  type AllNewsType,
 } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
@@ -29,12 +29,12 @@ type CourseContentProps = {
   data: AllCourseFilterDtoType;
 };
 
-// type NewsContentProps ={
-//   typeOf: "news";
-//   FullCard: React.FC<BlogFullCardProps>;
-//   MidCard: React.FC<BlogMidCardProps>;
-//   data: AllNewsType;
-// }
+type NewsContentProps = {
+  typeOf: "news";
+  FullCard: React.FC<BlogFullCardProps>;
+  MidCard: React.FC<BlogMidCardProps>;
+  data: AllNewsType;
+};
 
 export const ContentBody = (props: ContentBodyProps) => {
   const { lang, switchedList, FullCard, MidCard, data, typeOf } = props;

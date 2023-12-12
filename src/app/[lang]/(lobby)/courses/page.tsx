@@ -77,7 +77,7 @@ const CoursesPage = async ({
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory category={categoriesData} lang={lang} />
+          <ListCategory courseCategory={categoriesData} lang={lang} />
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
