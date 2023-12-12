@@ -39,7 +39,7 @@ export const gridListSwitcherDict: GridListSwitcherDictProps[] = [
   },
 ];
 
-export interface SortOptionDictProps {
+export interface SortSelectOptionDictProps {
   title: { [key in Locale]: string };
   option: {
     col: string;
@@ -47,9 +47,115 @@ export interface SortOptionDictProps {
   };
 }
 
-// blog sortTitle
+export interface SortOptionDictProps {
+  title: { [key in Locale]: string };
+}
+//   course options
+
+export const coursePriceSortOptionsDict: SortSelectOptionDictProps[] = [
+  {
+    title: {
+      fa: "ارزان ترین",
+      en: "cheapest ",
+    },
+    option: {
+      col: "cost",
+      type: "ASC",
+    },
+  },
+  {
+    title: {
+      fa: "گران ترین",
+      en: "the most expensive ",
+    },
+    option: {
+      col: "cost",
+      type: "DESC",
+    },
+  },
+];
+
+export const courseDateSortOptionsDict: SortSelectOptionDictProps[] = [
+  {
+    title: {
+      fa: "جدید ترین",
+      en: "newest ",
+    },
+    option: {
+      col: "InsertDate",
+      type: "ASC",
+    },
+  },
+  {
+    title: {
+      fa: "قدیم ترین",
+      en: "oldest ",
+    },
+    option: {
+      col: "InsertDate",
+      type: "DESC",
+    },
+  },
+];
+
+export const courseSortOptionsDict: SortOptionDictProps[] = [
+  {
+    title: {
+      fa: "همه ی دوره ها",
+      en: "all courses",
+    },
+  },
+  {
+    title: {
+      fa: " تاریخ",
+      en: "date ",
+    },
+  },
+  {
+    title: {
+      fa: " قیمت",
+      en: "price ",
+    },
+  },
+];
+
+// export const courseSortOptionsDict: SortOptionDictProps[] = [
+//   {
+//     title: {
+//       fa: "همه ی دوره ها",
+//       en: "all courses",
+//     },
+//     option: {
+//       col: "Active",
+//       type: "DESC",
+//     },
+//   },
+//   {
+//     title: {
+//       fa: "ارزان ترین",
+//       en: "cheapest ",
+//     },
+//     option: {
+//       col: "cost",
+//       type: "ASC",
+//     },
+//   },
+//   {
+//     title: {
+//       fa: "گران ترین",
+//       en: "the most expensive ",
+//     },
+//     option: {
+//       col: "cost",
+//       type: "DESC",
+//     },
+//   },
+// ];
+
+//blog option
 // export const blogSortOptionsDict: SortOptionDictProps[] = [
 //   {
+// blog sortTitle
 //     id: "s1",
 //     title: {
 //       fa: "همه ی اخبار",
@@ -83,38 +189,3 @@ export interface SortOptionDictProps {
 //     },
 //   },
 // ];
-
-//   course options
-
-export const courseSortOptionsDict: SortOptionDictProps[] = [
-  {
-    title: {
-      fa: "همه ی دوره ها",
-      en: "all courses",
-    },
-    option: {
-      col: "Active",
-      type: "DESC",
-    },
-  },
-  {
-    title: {
-      fa: "ارزان ترین",
-      en: "cheapest ",
-    },
-    option: {
-      col: "cost",
-      type: "ASC",
-    },
-  },
-  {
-    title: {
-      fa: "گران ترین",
-      en: "the most expensive ",
-    },
-    option: {
-      col: "cost",
-      type: "DESC",
-    },
-  },
-];
