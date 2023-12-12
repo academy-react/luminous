@@ -73,9 +73,6 @@ const CoursesPage = async ({
     return null;
   }
 
-  console.log(data);
-  console.log(listTech);
-
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>

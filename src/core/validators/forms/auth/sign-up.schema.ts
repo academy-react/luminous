@@ -14,6 +14,7 @@ export type SecondSignUpInputProps = z.infer<typeof secondSignUpInputSchema>;
 
 export const thirdSignUpInputSchema = z.object({
   email: z.string().email(),
+  password: z.string(),
 });
 
 export type ThirdSignUpInputProps = z.infer<typeof thirdSignUpInputSchema>;

@@ -12,10 +12,10 @@ export const reserveCourseSchema = z
   })
   .strict();
 
-export type ReserveCourseSchemaType = z.infer<typeof reserveCourseSchema>;
+export type ReserveCourseType = z.infer<typeof reserveCourseSchema>;
 
 export const allUserReservedCoursesListSchema = z.array(reserveCourseSchema);
 
-export type AllUserReservedCoursesListSchemaType = z.infer<
+export type AllUserReservedCoursesListType = z.infer<
   typeof allUserReservedCoursesListSchema
 >;

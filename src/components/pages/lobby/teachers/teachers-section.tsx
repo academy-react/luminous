@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import { TitleBox } from "@/components/pages/lobby";
 import {
   TeacherFullCard,
@@ -10,21 +6,14 @@ import {
 
 import { teachersTitleBoxDict } from "@/dict/pages/lobby.dict";
 
-import { type TeacherListType } from "@/core/validators/api";
+import { getAllTeacher } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
-export const TeachersSection = ({
-  lang,
-  data,
-}: {
-  lang: Locale;
-  data: TeacherListType;
-}) => {
-  const [shownTeacher, setShownTeacher] = useState(data[0]);
-  const restTeachers = data.filter(
-    (teacher) => teacher.fullName !== shownTeacher?.fullName
-  );
+export const TeachersSection = async ({ lang }: { lang: Locale }) => {
+  const teacherData = await getAllTeacher();
+
+  const shownTeacher = teacherData[0];
 
   return (
     <section className="container flex w-full flex-col items-center gap-10">
@@ -35,7 +24,7 @@ export const TeachersSection = ({
       />
       {shownTeacher && <TeacherFullCard lang={lang} data={shownTeacher} />}
       <div className="grid gap-4 md:grid-flow-col md:grid-cols-1">
-        {restTeachers.slice(1, 5).map((teacher, index) => (
+        {teacherData.slice(1, 5).map((teacher, index) => (
           <TeacherMiniCard key={index} lang={lang} data={teacher} />
         ))}
       </div>
