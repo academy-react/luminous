@@ -3,8 +3,8 @@ import {
   CourseFullCard,
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
-import { ContentBar } from "@/components/pages/list-page/content/content-bar";
-import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import { CourseContentBar, NewsContentBar } from "@/components/pages/list-page/content/content-bar";
+import { CourseContentBody, NewsContentBody } from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,
@@ -57,15 +57,15 @@ const CoursesPage = async ({
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
-  const listTech = searchParams?.techIds || "";
-  const count = searchParams?.techCount || listTech === "" ? 0 : 1;
+  const tech = searchParams?.techIds || "";
+  const count = searchParams?.techCount || tech === "" ? 0 : 1;
   const data = await getCoursesByPagination({
     currentPage,
     query,
     rows,
     sortCol,
     sortType,
-    listTech,
+    tech,
     count,
   });
   const categoriesData = await getCourseCategories();
@@ -87,7 +87,7 @@ const CoursesPage = async ({
           <ListTeacher lang={lang} />
         </ListSideBar>
         <ListContent>
-          <ContentBar
+          <CourseContentBar
             sortOptions={courseSortOptionsDict}
             sortDateOption={courseDateSortOptionsDict}
             sortPriceOption={coursePriceSortOptionsDict}
@@ -95,13 +95,12 @@ const CoursesPage = async ({
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
           />
-          <ContentBody
+          <CourseContentBody
             lang={lang}
-            FullCard={CourseFullCard}
-            MidCard={CourseMidCard}
-            data={data?.courseFilterDtos}
+            CourseFullCard={CourseFullCard}
+            CourseMidCard={CourseMidCard}
+            courseData={data?.courseFilterDtos}
             switchedList={view}
-            typeOf="course"
           />
           <Pagination className=" mt-4" totalCount={data.totalCount} />
         </ListContent>

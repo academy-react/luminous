@@ -81,7 +81,7 @@ export const ListCategory = ({
           <div key={item.id} className="flex flex-row  font-[#666] text-sm">
             <Checkbox
               id={`${id}-category${item.id}`}
-              checked={item.id === newsCategory.id}
+              checked={item.id === techIds}
               onCheckedChange={() => {
                 handleCheckedChenge(item.id);
               }}

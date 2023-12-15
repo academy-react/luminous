@@ -5,10 +5,7 @@ import {
   type CourseMidCardProps,
 } from "@/components/pages/list-page/cards";
 
-import {
-  SortTypeStates,
-  type SwitchedListStates,
-} from "@/dict/pages/list.dict";
+import { type SwitchedListStates } from "@/dict/pages/list.dict";
 
 import {
   type AllCourseFilterDtoType,
@@ -21,23 +18,17 @@ import { type Locale } from "#/i18n.config";
 type ContentBodyProps = {
   lang: Locale;
   switchedList: SwitchedListStates;
-} & CourseContentProps;
-type CourseContentProps = {
-  typeOf: "course";
-  FullCard: React.FC<CourseFullCardProps>;
-  MidCard: React.FC<CourseMidCardProps>;
-  data: AllCourseFilterDtoType;
+  CourseFullCard: React.FC<CourseFullCardProps>;
+  CourseMidCard: React.FC<CourseMidCardProps>;
+  courseData: AllCourseFilterDtoType;
+  NewsFullCard: React.FC<BlogFullCardProps>;
+  NewsMidCard: React.FC<BlogMidCardProps>;
+  newsData: AllNewsType;
 };
-
-type NewsContentProps = {
-  typeOf: "news";
-  FullCard: React.FC<BlogFullCardProps>;
-  MidCard: React.FC<BlogMidCardProps>;
-  data: AllNewsType;
-};
-
-export const ContentBody = (props: ContentBodyProps) => {
-  const { lang, switchedList, FullCard, MidCard, data, typeOf } = props;
+//courses
+export const CourseContentBody = (props: ContentBodyProps) => {
+  const { lang, switchedList, CourseFullCard, CourseMidCard, courseData } =
+    props;
   return (
     <div className="">
       <div
@@ -46,25 +37,39 @@ export const ContentBody = (props: ContentBodyProps) => {
           switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
         )}
       >
-        {typeOf === "course" &&
-          data.map((item, index) => (
-            <>
-              {switchedList === "grid" ? (
-                <MidCard key={index} item={item} lang={lang} />
-              ) : (
-                <FullCard key={index} item={item} lang={lang} />
-              )}
-            </>
-          ))}
-        {/* {typeOf === "news" && data.map((item , index) => (
+        {courseData.map((item, index) => (
           <>
             {switchedList === "grid" ? (
-            <MidCard key={index} item={item} lang={lang} />
+              <CourseMidCard key={index} item={item} lang={lang} />
             ) : (
-              <FullCard key={index} item={item} lang={lang} />
+              <CourseFullCard key={index} item={item} lang={lang} />
             )}
           </>
-        ))} */}
+        ))}
+      </div>
+    </div>
+  );
+};
+//news
+export const NewsContentBody = (props: ContentBodyProps) => {
+  const { lang, switchedList, NewsFullCard, NewsMidCard, newsData } = props;
+  return (
+    <div className="">
+      <div
+        className={cn(
+          "grid gap-4",
+          switchedList === "grid" ? "grid-cols-3 " : "grid-cols-1 "
+        )}
+      >
+        {newsData.map((item, index) => (
+          <>
+            {switchedList === "grid" ? (
+              <NewsMidCard key={index} item={item} lang={lang} />
+            ) : (
+              <NewsFullCard key={index} item={item} lang={lang} />
+            )}
+          </>
+        ))}
       </div>
     </div>
   );
