@@ -25,7 +25,7 @@ const mainNavTextVariants = cva(
   }
 );
 
-const mainNavIconVariants = cva("h-10 w-10", {
+const mainNavIconVariants = cva("", {
   variants: {
     iconColorVariant: {
       default: "fill-primary hover:fill-accent",
@@ -52,13 +52,17 @@ export const MainNav = ({
 }: MainNavProps) => {
   return (
     <nav className={cn("flex items-center gap-7", className)}>
-      <Link aria-label="Home" href={`/${lang}`}>
-        <Icons.logo
-          className={cn(
-            mainNavIconVariants({ iconColorVariant, className }),
-            "transition-all duration-500"
-          )}
-        />
+      <Link
+        aria-label="Home"
+        href={`/${lang}`}
+        className={cn(
+          mainNavIconVariants({ iconColorVariant, className }),
+          "transition-all duration-500",
+          "flex items-center gap-2"
+        )}
+      >
+        <Icons.luminousLogo className="h-24 w-24" />
+        <Icons.logo className="h-8 w-8" />
       </Link>
       <div className="hidden w-full md:block md:w-auto">
         <ul className="flex gap-4 lg:gap-8">
