@@ -17,49 +17,51 @@ export const CourseSection = async ({ lang }: { lang: Locale }) => {
   if (!data) return null;
 
   return (
-    <div className="flex w-full flex-col items-center gap-10">
-      <TitleBox
-        lang={lang}
-        title={coursesTitleBoxDict.title}
-        desc={coursesTitleBoxDict.subtitle}
-      />
-      <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row md:items-center">
-        <div className="h-full grow md:w-[70%]">
-          {data[0] && ( //coursesDict change to data
-            <CourseCard lang={lang} data={data[0]} />
-          )}
-        </div>
-        <div className="grow rounded-xl bg-card shadow">
-          <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
-            <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
-              {/* new */}
-              {data.slice(1, 4).map((course, index) => (
-                <CourseSideCard key={index} img={course.tumbImageAddress} />
-              ))}
+    <section className="relative mt-24">
+      <div className="container">
+        <TitleBox
+          lang={lang}
+          title={coursesTitleBoxDict.title}
+          desc={coursesTitleBoxDict.subtitle}
+        />
+        <div className="container flex w-full max-w-screen-lg flex-col gap-4 md:flex-row md:items-center">
+          <div className="h-full grow md:w-[70%]">
+            {data[0] && ( //coursesDict change to data
+              <CourseCard lang={lang} data={data[0]} />
+            )}
+          </div>
+          <div className="grow rounded-xl bg-card shadow">
+            <div className="flex h-full w-full items-center justify-center gap-4 p-4 md:flex-col">
+              <div className="hidden w-full flex-col items-center justify-center gap-4 md:flex">
+                {/* new */}
+                {data.slice(1, 4).map((course, index) => (
+                  <CourseSideCard key={index} img={course.tumbImageAddress} />
+                ))}
+              </div>
+              <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
+                <Link href="#" className="">
+                  <p className="hidden md:block">
+                    {
+                      {
+                        fa: "دوره‌های بیشتر",
+                        en: "More Courses",
+                      }[lang]
+                    }
+                  </p>
+                  <p className="md:hidden">
+                    {
+                      {
+                        fa: "بیشتر",
+                        en: "More",
+                      }[lang]
+                    }
+                  </p>
+                </Link>
+              </Button>
             </div>
-            <Button className="w-full max-w-fit rounded-lg border-2 border-primary bg-primary p-3 text-secondary duration-300 hover:bg-card hover:text-primary">
-              <Link href="#" className="">
-                <p className="hidden md:block">
-                  {
-                    {
-                      fa: "دوره‌های بیشتر",
-                      en: "More Courses",
-                    }[lang]
-                  }
-                </p>
-                <p className="md:hidden">
-                  {
-                    {
-                      fa: "بیشتر",
-                      en: "More",
-                    }[lang]
-                  }
-                </p>
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

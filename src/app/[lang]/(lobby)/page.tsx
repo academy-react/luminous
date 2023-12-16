@@ -13,7 +13,7 @@ import { type Locale } from "#/i18n.config";
 
 const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
-    <PageAnimationWrapper className="flex w-full flex-col items-center justify-center gap-10">
+    <PageAnimationWrapper className="mx-auto max-w-screen-2xl overflow-hidden">
       <HeroSection lang={lang} />
       <ServiceSection lang={lang} />
       <CourseSection lang={lang} />

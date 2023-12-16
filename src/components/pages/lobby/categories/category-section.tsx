@@ -16,21 +16,25 @@ export const CategoriesSection = async ({ lang }: { lang: Locale }) => {
   if (!data) return null;
 
   return (
-    <section className="flex w-full flex-col items-center gap-10">
-      <TitleBox
-        lang={lang}
-        title={categoriesTitleBoxDict.title}
-        desc={categoriesTitleBoxDict.subtitle}
-      />
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-        {data.map((category, index) => (
-          <CategoryCard
-            key={category.id}
-            title={category.techName}
-            icon={category.iconAddress}
-            color={categoriesColorDict[index]?.color}
-          />
-        ))}
+    <section className="relative mt-24">
+      <div className="container">
+        <TitleBox
+          lang={lang}
+          title={categoriesTitleBoxDict.title}
+          desc={categoriesTitleBoxDict.subtitle}
+        />
+        <div className="flex w-full place-content-center place-items-center items-center justify-center">
+          <div className="grid w-fit grid-cols-2 items-center gap-3 md:grid-cols-4 md:gap-5">
+            {data.map((category, index) => (
+              <CategoryCard
+                key={category.id}
+                title={category.techName}
+                icon={category.iconAddress}
+                color={categoriesColorDict[index]?.color}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
