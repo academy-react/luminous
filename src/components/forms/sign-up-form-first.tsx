@@ -17,15 +17,16 @@ import { type SignUpFormStates } from "@/app/[lang]/(auth)/sign-up/page";
 
 import { firstSignUpFormDict } from "@/dict/pages/auth.dict";
 
+import { sendVerifyMessage } from "@/core/services/api";
 import {
   firstSignUpInputSchema,
   type FirstSignUpInputProps,
 } from "@/core/validators/forms";
+import { useStore, useUserStore } from "@/stores/sign-up-store-phone";
 
 import { type Locale } from "#/i18n.config";
 
 import { Icons } from "../assets/icons";
-import { sendVerifyMessage } from "@/core/services/api";
 
 export const FirstSignUpForm = ({
   lang,
@@ -43,10 +44,13 @@ export const FirstSignUpForm = ({
     },
   });
 
-  const onSubmit =async (data: FirstSignUpInputProps) => {
+  const setUser = useUserStore((state) => state.setUser);
+
+  const onSubmit = async (data: FirstSignUpInputProps) => {
     const result = await sendVerifyMessage(data);
-  console.log(result);
-  setFormState("second");
+    console.log(result);
+    setUser({ phoneNumber: data.phone });
+    setFormState("second");
   };
 
   return (

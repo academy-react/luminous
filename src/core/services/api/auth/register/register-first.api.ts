@@ -1,14 +1,15 @@
+"use server";
+
 import http from "@/core/services/interceptor";
-import { firstSignUpInputSchema, type FirstSignUpInputProps} from "@/core/validators/forms";
+import { firstSignUpResponseSchema } from "@/core/validators/api/auth/register.schema";
+import { FirstSignUpInputProps } from "@/core/validators/forms/auth/sign-up.schema";
 
 export const sendVerifyMessage = async (data: FirstSignUpInputProps) => {
   const response = await http.post("/Sign/SendVerifyMessage", {
-    params:{
-      phone: data
-    }
+    phoneNumber: data.phone,
   });
 
-  const parsedResult = firstSignUpInputSchema.safeParse(response.data);
+  const parsedResult = firstSignUpResponseSchema.safeParse(response.data);
 
   if (!parsedResult.success) {
     console.log(response.data);

@@ -22,15 +22,14 @@ export const ListCategory = ({ lang, category }: ListCategoryProps) => {
   const techIds = searchParams.get("tech");
 
   const [categoryIds, setCategoryIds] = useState<number[] | []>(
-    techIds ? techIds?.split(".").map(Number) : []
-  )
+    techIds ? techIds?.split(",").map(Number) : []
+  );
 
   useEffect(() => {
     const params = new URLSearchParams();
-    categoryIds.length !==0 && params.set('techIds', categoryIds.join("."));
-    router.push(`${pathname}?${params.toString()}`)
-
-  }, [categoryIds])
+    categoryIds.length !== 0 && params.set("techIds", categoryIds.join(","));
+    router.push(`${pathname}?${params.toString()}`);
+  }, [categoryIds]);
 
   return (
     <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-base font-bold text-[#333] shadow">
