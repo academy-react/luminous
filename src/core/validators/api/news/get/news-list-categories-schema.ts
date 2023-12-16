@@ -5,7 +5,7 @@ export const newsListCategoriesSchema = z.object({
   id: z.number(),
   categoryName: z.string(),
   image: z.string().nullable(),
-  iconAddress: z.string().url(),
+  iconAddress: z.string(),
   iconName: z.string(),
   googleTitle: z.string(),
   googleDescribe: z.string(),
