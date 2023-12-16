@@ -82,7 +82,7 @@ export const NewsListCategory = ({
   const [catNewsId, setCatNewsId] = useState(techIds ? techIds : "");
   useEffect(() => {
     const params = new URLSearchParams();
-    params.set("techIds", catNewsId.toString());
+    params.set("techIds", catNewsId ? catNewsId.toString() : "");
     router.push(`${pathname}?${params.toString()}`);
   }, [catNewsId]);
 
@@ -98,6 +98,8 @@ export const NewsListCategory = ({
             onCheckedChange={(value) => {
               if (value) {
                 setCatNewsId(item.id);
+              } else {
+                setCatNewsId(null);
               }
             }}
           />
