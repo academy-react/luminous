@@ -19,6 +19,7 @@ export const ServiceSection = ({ lang }: { lang: Locale }) => {
             <ServiceCard
               key={item.id}
               title={item.title[lang]}
+              desc={item.desc[lang]}
               Icon={item.icon}
               bgColor={item.bgColor}
             />

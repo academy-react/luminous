@@ -105,6 +105,9 @@ export interface ServicesDictProps {
   title: {
     [key in Locale]: string;
   };
+  desc: {
+    [key in Locale]: string;
+  };
   icon: Icon;
   bgColor: string;
 }
@@ -113,8 +116,12 @@ export const servicesDict: ServicesDictProps[] = [
   {
     id: 1,
     title: {
-      fa: "مدرک معتبر",
+      fa: "ارائه مدرک معتبر",
       en: "Valid Certificate",
+    },
+    desc: {
+      fa: "با اتمام دوره‌ها مدرک معتبری دریافت کنید",
+      en: "Get a valid certificate after completing the courses",
     },
     icon: Icons.scrollText,
     bgColor: "bg-[#E3B709]",
@@ -122,8 +129,12 @@ export const servicesDict: ServicesDictProps[] = [
   {
     id: 2,
     title: {
-      fa: "امتحان",
-      en: "Exam",
+      fa: "دوره‌های متنوع",
+      en: "Various Courses",
+    },
+    desc: {
+      fa: "دوره‌های متنوعی در زمینه‌های مختلف برای شما فراهم کرده‌ایم",
+      en: "We have provided a variety of courses in various fields for you",
     },
     icon: Icons.fileCheck,
     bgColor: "bg-[#D23120]",
@@ -134,6 +145,10 @@ export const servicesDict: ServicesDictProps[] = [
       fa: "فرصت‌های شغلی",
       en: "Job Opportunity",
     },
+    desc: {
+      fa: "با اتمام دوره‌ها می‌توانید در شرکت‌های معتبر مشغول به کار شوید",
+      en: "After completing the courses, you can work in reputable companies",
+    },
     icon: Icons.network,
     bgColor: "bg-[#267AB2]",
   },
@@ -142,6 +157,10 @@ export const servicesDict: ServicesDictProps[] = [
     title: {
       fa: "مشاوره",
       en: "Counseling",
+    },
+    desc: {
+      fa: "با مشاوران ما می‌توانید در مورد دوره‌ها و مسیر شغلی خود صحبت کنید",
+      en: "You can talk to our consultants about courses and your career path",
     },
     icon: Icons.user,
     bgColor: "bg-[#7D329A]",
