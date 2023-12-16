@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState, useTransition } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { useDebounce } from "use-debounce";
 
-import { Button } from "@/components/elements/ui";
+import { Button, H3 } from "@/components/elements/ui";
 import {
   CommandDialog,
   CommandEmpty,
@@ -19,10 +20,15 @@ import {
   getCoursesByPagination,
   getNewsFilterPages,
 } from "@/core/services/api";
-import { type AllCourseFilterDtoType, type AllNewsType } from "@/core/validators/api";
+import {
+  type AllCourseFilterDtoType,
+  type AllNewsType,
+} from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
-export const SearchNav = () => {
+import { type Locale } from "#/i18n.config";
+
+export const SearchNav = ({ lang }: { lang: Locale }) => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [courseList, setCourseList] = useState<
@@ -91,7 +97,9 @@ export const SearchNav = () => {
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput
-          placeholder="جستجو بر اساس عنوان..."
+          placeholder={
+            { fa: "جستجو بر اساس عنوان...", en: "Search by title..." }[lang]
+          }
           value={query}
           onValueChange={setQuery}
         />
@@ -99,9 +107,9 @@ export const SearchNav = () => {
           <CommandEmpty
             className={cn(isPending ? "hidden" : "py-6 text-center text-sm")}
           >
-            یافت نشد.
+            {{ fa: "یافت نشد.", en: "Not found." }[lang]}
           </CommandEmpty>
-          <div className="mx-auto flex justify-center ">
+          <div className="mx-auto flex w-full justify-center ">
             {isPending ? (
               <div className="space-y-1 overflow-hidden px-1 py-2">
                 <Skeleton className="h-4 w-10 rounded" />
@@ -110,8 +118,8 @@ export const SearchNav = () => {
               </div>
             ) : (
               <CommandGroup
-                heading="دوره ها"
-                className="flex basis-1/2 flex-col items-center py-2 text-purple-primary"
+                heading={{ fa: "دوره ها", en: "Courses" }[lang]}
+                className="flex w-full basis-1/2 flex-col items-center py-2 text-purple-primary"
               >
                 {courseList?.map((item) => (
                   <CommandItem
@@ -122,8 +130,14 @@ export const SearchNav = () => {
                         router.push(`/courses/${item.courseId}`)
                       );
                     }}
+                    className="w-full rounded-md p-2 hover:bg-slate-700"
                   >
-                    {item.title}
+                    <Link
+                      href={`/courses/${item.courseId}`}
+                      className="flex w-full items-center justify-between"
+                    >
+                      <H3 className="w-full text-text">{item.title}</H3>
+                    </Link>
                   </CommandItem>
                 ))}
               </CommandGroup>
@@ -139,8 +153,8 @@ export const SearchNav = () => {
               </div>
             ) : (
               <CommandGroup
-                heading="اخبار و مقالات"
-                className="flex basis-1/2 flex-col items-center  py-2 text-purple-primary "
+                heading={{ fa: "اخبار", en: "News" }[lang]}
+                className="flex w-full basis-1/2 flex-col items-center py-2 text-purple-primary "
               >
                 {newsList?.map((item) => (
                   <CommandItem
@@ -150,7 +164,12 @@ export const SearchNav = () => {
                       handleSelect(() => router.push(`/blog/${item.id}`));
                     }}
                   >
-                    {item.title}
+                    <Link
+                      href={`/courses/${item.id}`}
+                      className="flex w-full items-center justify-between"
+                    >
+                      <H3 className="text-text ">{item.title}</H3>
+                    </Link>
                   </CommandItem>
                 ))}
               </CommandGroup>

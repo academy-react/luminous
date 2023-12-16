@@ -31,7 +31,7 @@ export const AuthNav = ({
   return (
     <nav className="flex flex-1 items-center justify-end">
       <div className="hidden items-center gap-2 md:flex">
-        <SearchNav />
+        <SearchNav lang={lang} />
         {token ? (
           <Button
             className="flex h-full items-center justify-center rounded-xl border-[3px] border-primary bg-primary px-5 py-2 text-center font-semibold text-secondary transition duration-500 hover:bg-transparent hover:text-primary"
