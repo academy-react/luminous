@@ -20,7 +20,7 @@ export interface HeaderMenuOptionDictProps {
   title: {
     [key in Locale]: string;
   };
-  href: string;
+  href: string | null;
 }
 
 export const headerMenuOptionsDict: HeaderMenuOptionDictProps[] = [
@@ -30,7 +30,7 @@ export const headerMenuOptionsDict: HeaderMenuOptionDictProps[] = [
       fa: "خانه",
       en: "Home",
     },
-    href: "",
+    href: null,
   },
   {
     id: 2,
@@ -43,8 +43,8 @@ export const headerMenuOptionsDict: HeaderMenuOptionDictProps[] = [
   {
     id: 3,
     title: {
-      fa: "بلاگ",
-      en: "blog",
+      fa: "مقالات",
+      en: "News",
     },
     href: "blog",
   },
@@ -56,14 +56,14 @@ export const headerMenuOptionsDict: HeaderMenuOptionDictProps[] = [
     },
     href: "about",
   },
-  {
-    id: 5,
-    title: {
-      fa: "تماس با ما",
-      en: "contact us",
-    },
-    href: "contact",
-  },
+  // {
+  //   id: 5,
+  //   title: {
+  //     fa: "تماس با ما",
+  //     en: "contact us",
+  //   },
+  //   href: "contact",
+  // },
 ];
 
 export interface FooterMenuOptionDictProps {

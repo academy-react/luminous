@@ -29,7 +29,7 @@ export const AuthNav = ({
   };
 
   return (
-    <nav className="flex flex-1 items-center justify-end">
+    <nav className="flex basis-1/5 items-center justify-end">
       <div className="hidden items-center gap-2 md:flex">
         <SearchNav lang={lang} />
         {token ? (

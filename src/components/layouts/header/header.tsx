@@ -45,7 +45,7 @@ export const Header = ({
         backgroundOpacity
       )}
     >
-      <div className="container flex h-16 items-center">
+      <div className="container mx-auto flex h-16 w-full items-center justify-between">
         <MainNav lang={lang} />
         <AuthNav lang={lang} token={token} />
         <MobileNav lang={lang} />
