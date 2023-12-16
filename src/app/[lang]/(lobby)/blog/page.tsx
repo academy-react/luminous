@@ -10,12 +10,12 @@ import {
   ListTitle,
 } from "@/components/pages/list-page/list-page";
 import {
-  ListCategory,
   ListCommingSoon,
   ListFree,
   ListSearch,
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
+import { NewsListCategory } from "@/components/pages/list-page/side-bar-items/list-category";
 import { Pagination } from "@/components/elements/common/pagination";
 
 import {
@@ -71,17 +71,17 @@ const BlogPage = async ({
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory newsCategory={categoriesData} lang={lang} />
+          <NewsListCategory newsCategory={categoriesData} lang={lang} />
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
           </div>
-          <ListTeacher lang={lang} />
+          {/* <ListTeacher lang={lang} /> */}
         </ListSideBar>
         <ListContent>
           <NewsContentBar
             sortOptions={blogSortOptionsDict}
-            // sortDateOption={blogDateSortOptionsDict}
+            sortDateOption={blogDateSortOptionsDict}
             lang={lang}
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}

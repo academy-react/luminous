@@ -3,8 +3,14 @@ import {
   CourseFullCard,
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
-import { CourseContentBar, NewsContentBar } from "@/components/pages/list-page/content/content-bar";
-import { CourseContentBody, NewsContentBody } from "@/components/pages/list-page/content/content-body";
+import {
+  CourseContentBar,
+  NewsContentBar,
+} from "@/components/pages/list-page/content/content-bar";
+import {
+  CourseContentBody,
+  NewsContentBody,
+} from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,
@@ -12,12 +18,12 @@ import {
   ListTitle,
 } from "@/components/pages/list-page/list-page";
 import {
-  ListCategory,
   ListCommingSoon,
   ListFree,
   ListSearch,
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
+import { CourseListCategory } from "@/components/pages/list-page/side-bar-items/list-category";
 import { Pagination } from "@/components/elements/common";
 
 import {
@@ -79,12 +85,12 @@ const CoursesPage = async ({
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory courseCategory={categoriesData} lang={lang} />
+          <CourseListCategory courseCategory={categoriesData} lang={lang} />
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
           </div>
-          <ListTeacher lang={lang} />
+          {/* <ListTeacher lang={lang} /> */}
         </ListSideBar>
         <ListContent>
           <CourseContentBar

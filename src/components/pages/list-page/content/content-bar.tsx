@@ -25,7 +25,7 @@ import { type Locale } from "#/i18n.config";
 
 import { SwitchedList } from "./switched-list";
 
-type ContentBarProps = {
+type CourseContentBarProps = {
   sortOptions: SortOptionDictProps[];
   sortDateOption: SortSelectOptionDictProps[];
   sortPriceOption: SortSelectOptionDictProps[];
@@ -33,7 +33,13 @@ type ContentBarProps = {
   selectedOption: { col: string; type: SortTypeStates };
   switchedList: SwitchedListStates;
 };
-
+type NewsContentBarProps = {
+  sortOptions: SortOptionDictProps[];
+  sortDateOption: SortSelectOptionDictProps[];
+  lang: Locale;
+  selectedOption: { col: string; type: SortTypeStates };
+  switchedList: SwitchedListStates;
+};
 //courses
 export const CourseContentBar = ({
   lang,
@@ -42,7 +48,7 @@ export const CourseContentBar = ({
   sortPriceOption,
   selectedOption,
   switchedList,
-}: ContentBarProps) => {
+}: CourseContentBarProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -139,7 +145,7 @@ export const NewsContentBar = ({
   sortDateOption,
   selectedOption,
   switchedList,
-}: ContentBarProps) => {
+}: NewsContentBarProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();

@@ -15,18 +15,22 @@ import { cn } from "@/lib/utils";
 
 import { type Locale } from "#/i18n.config";
 
-type ContentBodyProps = {
+type CourseContentBodyProps = {
   lang: Locale;
   switchedList: SwitchedListStates;
   CourseFullCard: React.FC<CourseFullCardProps>;
   CourseMidCard: React.FC<CourseMidCardProps>;
   courseData: AllCourseFilterDtoType;
+};
+type NewsContentBodyProps = {
+  lang: Locale;
+  switchedList: SwitchedListStates;
   NewsFullCard: React.FC<BlogFullCardProps>;
   NewsMidCard: React.FC<BlogMidCardProps>;
   newsData: AllNewsType;
 };
 //courses
-export const CourseContentBody = (props: ContentBodyProps) => {
+export const CourseContentBody = (props: CourseContentBodyProps) => {
   const { lang, switchedList, CourseFullCard, CourseMidCard, courseData } =
     props;
   return (
@@ -51,7 +55,7 @@ export const CourseContentBody = (props: ContentBodyProps) => {
   );
 };
 //news
-export const NewsContentBody = (props: ContentBodyProps) => {
+export const NewsContentBody = (props: NewsContentBodyProps) => {
   const { lang, switchedList, NewsFullCard, NewsMidCard, newsData } = props;
   return (
     <div className="">
