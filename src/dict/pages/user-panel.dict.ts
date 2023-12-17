@@ -13,19 +13,19 @@ export const panelAsideOption: PanelAsideOptionProps[] = [
     id: 1,
     Icon: Icons.home,
     title: {
-      fa: "پیشخوان",
-      en: "Dashboard",
+      fa: "پروفایل",
+      en: "Profile",
     },
-    href: "account",
+    href: "profile",
   },
   {
     id: 2,
     Icon: Icons.myCourses,
     title: {
-      fa: "دوره های من",
-      en: "My courses",
+      fa: "داشبورد",
+      en: "Dashboard",
     },
-    href: "courses",
+    href: "dashboard",
   },
   {
     id: 3,

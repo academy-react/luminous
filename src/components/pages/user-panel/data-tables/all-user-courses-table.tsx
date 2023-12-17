@@ -59,7 +59,7 @@ export const AllUserCoursesTable = ({
           <div className="flex flex-col">
             <Link
               href={`/${lang}/courses/${row.original.courseId}`}
-              className="text-sm text-gray-600"
+              className="w-40 truncate text-sm text-gray-600"
             >
               {row.original.courseTitle}
             </Link>
@@ -166,7 +166,7 @@ export const AllUserCoursesTable = ({
                 {
                   "درحال برگذاری": {
                     fa: "درحال برگذاری",
-                    en: "In Progress",
+                    en: "In rogress",
                   }[lang],
                   "درحال ثبت نام": {
                     fa: "در حال ثبت نام",
@@ -222,7 +222,7 @@ export const AllUserCoursesTable = ({
               </Badge>
             ) : (
               <Badge className="justify-center bg-yellow-400 text-white hover:bg-yellow-400">
-                {{ fa: "نامشخص", en: "Unkwown" }[lang]}
+                {{ fa: "نامشخص", en: "Unknown" }[lang]}
               </Badge>
             )}
           </div>
