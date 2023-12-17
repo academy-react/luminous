@@ -7,7 +7,6 @@ import {
   ServiceSection,
 } from "@/components/pages/lobby";
 import { TeachersSection } from "@/components/pages/lobby/client";
-import { TempTitle } from "@/components/utils/temp-title";
 
 import { type Locale } from "#/i18n.config";
 
@@ -20,7 +19,6 @@ const HomePage = ({ params: { lang } }: { params: { lang: Locale } }) => {
       <CategoriesSection lang={lang} />
       <TeachersSection lang={lang} />
       <NewsSection lang={lang} />
-      <TempTitle lang={lang} />
     </PageAnimationWrapper>
   );
 };
