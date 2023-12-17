@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 
+import { SettingButton } from "@/components/layouts/buttons/setting-button";
 import { Toaster } from "@/components/elements/ui/toaster";
 import { ProgressBarProvider, ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
@@ -46,7 +47,8 @@ const RootLayout = ({
             <div className="relative flex min-h-screen flex-col">
               {children}
             </div>
-            <TailwindIndicator />
+            <SettingButton lang={lang} />
+            {/* <TailwindIndicator /> */}
           </ProgressBarProvider>
         </ThemeProvider>
         <Toaster lang={lang} />

@@ -18,7 +18,7 @@ export const courseIdSchema = z
     imageAddress: z.string().nullable(),
     currentRate: z.number(),
     cost: z.number(),
-    googleTitle: z.string(),
+    googleTitle: z.string().nullable(),
     googleSchema: z.string().nullable(),
     capacity: z.number(),
     uniqeUrlString: z.string(),

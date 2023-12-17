@@ -8,6 +8,7 @@ export const courseCommentSchema = z
     title: z.string(),
     describe: z.string(),
     author: z.string(),
+    userId: z.number(),
     insertDate: z.string(),
     accept: z.boolean(),
     acceptReplysCount: z.number(),

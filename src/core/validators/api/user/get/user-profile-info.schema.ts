@@ -28,4 +28,4 @@ export const userProfileInfoSchema = z.object({
   longitude: z.string().nullable(),
 });
 
-export type userProfileInfoType = z.infer<typeof userProfileInfoSchema>;
+export type UserProfileInfoType = z.infer<typeof userProfileInfoSchema>;

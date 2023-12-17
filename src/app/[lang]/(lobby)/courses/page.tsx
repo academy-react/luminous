@@ -3,8 +3,14 @@ import {
   CourseFullCard,
   CourseMidCard,
 } from "@/components/pages/list-page/cards";
-import { ContentBar } from "@/components/pages/list-page/content/content-bar";
-import { ContentBody } from "@/components/pages/list-page/content/content-body";
+import {
+  CourseContentBar,
+  NewsContentBar,
+} from "@/components/pages/list-page/content/content-bar";
+import {
+  CourseContentBody,
+  NewsContentBody,
+} from "@/components/pages/list-page/content/content-body";
 import {
   ListContent,
   ListPage,
@@ -12,13 +18,14 @@ import {
   ListTitle,
 } from "@/components/pages/list-page/list-page";
 import {
-  ListCategory,
   ListCommingSoon,
   ListFree,
   ListSearch,
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
+import { CourseListCategory } from "@/components/pages/list-page/side-bar-items/list-category";
 import { Pagination } from "@/components/elements/common";
+import { FetchErrorAnnouncement } from "@/components/elements/common/error-announcement";
 
 import {
   courseDateSortOptionsDict,
@@ -57,19 +64,19 @@ const CoursesPage = async ({
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
-  const listTech = searchParams?.techIds || "";
-  const count = searchParams?.techCount || listTech === "" ? 0 : 1;
+  const tech = searchParams?.techIds || "";
+  const count = searchParams?.techCount || tech === "" ? 0 : 1;
   const data = await getCoursesByPagination({
     currentPage,
     query,
     rows,
     sortCol,
     sortType,
-    listTech,
+    tech,
     count,
   });
   const categoriesData = await getCourseCategories();
-  if (!data || !categoriesData) {
+  if (!data) {
     return null;
   }
 
@@ -79,15 +86,22 @@ const CoursesPage = async ({
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <ListCategory category={categoriesData} lang={lang} />
+          {!categoriesData ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "دسته‌بندی‌ها", en: "Categories" }}
+            />
+          ) : (
+            <CourseListCategory courseCategory={categoriesData} lang={lang} />
+          )}
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
           </div>
-          <ListTeacher lang={lang} />
+          {/* <ListTeacher lang={lang} /> */}
         </ListSideBar>
         <ListContent>
-          <ContentBar
+          <CourseContentBar
             sortOptions={courseSortOptionsDict}
             sortDateOption={courseDateSortOptionsDict}
             sortPriceOption={coursePriceSortOptionsDict}
@@ -95,15 +109,22 @@ const CoursesPage = async ({
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
           />
-          <ContentBody
-            lang={lang}
-            FullCard={CourseFullCard}
-            MidCard={CourseMidCard}
-            data={data?.courseFilterDtos}
-            switchedList={view}
-            typeOf="course"
-          />
-          <Pagination className=" mt-4" totalCount={data.totalCount} />
+          {!data ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "مطالب", en: "News" }}
+            />
+          ) : 
+          (<>
+            <CourseContentBody
+              lang={lang}
+              CourseFullCard={CourseFullCard}
+              CourseMidCard={CourseMidCard}
+              courseData={data?.courseFilterDtos}
+              switchedList={view}
+            />
+            <Pagination className=" mt-4" totalCount={data.totalCount} />
+          </>)}
         </ListContent>
       </ListPage>
     </PageAnimationWrapper>

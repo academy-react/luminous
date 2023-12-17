@@ -1,3 +1,5 @@
+"use server";
+
 import http from "@/core/services/interceptor";
 import { userProfileInfoSchema } from "@/core/validators/api";
 

@@ -1,34 +1,41 @@
-import { Home } from "lucide-react";
+import Link from "next/link";
 
-import { Card, CardContent, CardTitle } from "@/components/elements/ui";
-
-import { categoriesColorDict } from "@/dict/pages/lobby.dict";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
+import { Locale } from "#/i18n.config";
 
 type CategoryCardProps = {
+  lang: Locale
+  id: number;
   title: string;
-  icon: string;
+  desc: string;
   color: string | undefined;
 };
 
-export const CategoryCard = ({ title, icon, color }: CategoryCardProps) => {
+export const CategoryCard = ({ lang, id, title, desc, color }: CategoryCardProps) => {
   return (
-    <Card
-      className={cn(
-        "flex items-center justify-center bg-card px-7 py-4 sm:px-8 lg:h-28 lg:w-48",
-        color
-      )}
-    >
-      <CardContent
-        className={cn("flex flex-col items-center justify-center gap-2")}
+    <Link href={`${lang}/courses?techIds=${id}`}>
+      <Card
+        className={cn(
+          "flex items-center justify-center rounded-xl border-none bg-card bg-gradient-to-tr px-7 py-6 dark:border dark:border-gray-700 sm:px-10",
+          color
+        )}
       >
-        {/* <Icon className="h-10 w-10 lg:h-14 lg:w-14" /> */}
-        <i>{icon ? icon : <Home className="h-10 w-10 lg:h-14 lg:w-14" />}</i>
-        <CardTitle className="text-center text-sm font-extrabold">
-          {title}
-        </CardTitle>
-      </CardContent>
-    </Card>
+        <CardContent className="flex flex-col items-end justify-center">
+          <CardTitle className="text-center text-xl font-black lg:text-3xl">
+            {title.toUpperCase()}
+          </CardTitle>
+          <CardDescription className="text-center font-medium lg:text-xl">
+            {desc}
+          </CardDescription>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };

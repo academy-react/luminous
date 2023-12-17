@@ -1,7 +1,8 @@
 import { TitleBox } from "@/components/pages/lobby";
 import { NewsCard } from "@/components/pages/lobby/news/news-card";
+import { FetchErrorAnnouncement } from "@/components/elements/common/error-announcement";
 
-import { articlesDict, newsDict } from "@/dict/dev";
+import { newsDict } from "@/dict/dev";
 import { newsTitleBoxDict } from "@/dict/pages/lobby.dict";
 
 import { getNewsFilterPages } from "@/core/services/api";
@@ -16,18 +17,19 @@ export const NewsSection = async ({ lang }: { lang: Locale }) => {
   const news = fetchedData?.news;
 
   return (
-    <section className="container flex w-full flex-col items-center gap-10 px-10">
-      <TitleBox
-        lang={lang}
-        title={newsTitleBoxDict.title}
-        desc={newsTitleBoxDict.subtitle}
-      />
-      <div className="flex flex-col items-center justify-center gap-10 md:flex-row">
-        {news && (
-          <>
+    <section className="relative mt-20 sm:mt-40">
+      <div className="container">
+        <TitleBox
+          lang={lang}
+          title={newsTitleBoxDict.title}
+          desc={newsTitleBoxDict.subtitle}
+        />
+        {!news ? (
+          <FetchErrorAnnouncement place={newsTitleBoxDict.title} lang={lang} />
+        ) : (
+          <div className="flex w-full items-center justify-center gap-10 md:flex-row">
             <NewsCard lang={lang} title={newsDict.title} contents={news} />
-            {/* <NewsCard lang={lang} title={articlesDict.title} contents={news} /> */}
-          </>
+          </div>
         )}
       </div>
       <NewsletterSection lang={lang} />
