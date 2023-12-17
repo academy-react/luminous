@@ -26,8 +26,8 @@ export const BlogMidCard = ({
         /> */}
       </Link>
       <div className="flex flex-col items-start gap-2">
-        <h2 className="text-xl font-semibold text-[#333]">{title}</h2>
-        <p className="line-clamp-2 w-[80%] text-sm text-[#666] ">
+        <h2 className="text-xl font-semibold text-text">{title}</h2>
+        <p className="line-clamp-2 w-[80%] text-sm text-text ">
           {miniDescribe}
         </p>
       </div>

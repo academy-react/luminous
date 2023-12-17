@@ -34,7 +34,7 @@ export const ListSearch = ({
     <div className={cn("w-full rounded-xl bg-card p-4 shadow", className)}>
       <input
         type="text"
-        className="border-none bg-transparent text-base placeholder:text-[#444] focus:outline-none focus:placeholder:text-transparent"
+        className="border-none bg-transparent text-text placeholder:text-[#444] focus:outline-none focus:placeholder:text-transparent"
         placeholder={lang === "fa" ? "جستجو..." : "search..."}
         onChange={(e) => {
           handleSearch(e.target.value);

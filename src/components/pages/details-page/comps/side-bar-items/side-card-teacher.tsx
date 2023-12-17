@@ -33,7 +33,7 @@ export const TeacherSideCard = async ({
         <span>مدرس دوره</span>
         <LinkIcon className="w-4" />
       </Link>
-      <p className="mt-2.5 font-light text-zinc-700">
+      <p className="mt-2.5 font-light text-zinc-700 dark:text-slate-200">
         لورم ایپسم متن تشکیلی از واژگانی است که در واقع هیچ معنایی ندارند و کمتر
         کسی حوصله می‌کند که آن‌ها را بخواند، اما اگر افراد کمی توجه از خودشان
         نشان دهند ممکن است بعضی اوقات متوجه شوند که متونی که نوشته شده در واقع

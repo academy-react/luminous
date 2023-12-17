@@ -40,7 +40,7 @@ export const CourseListCategory = ({
   }, [categoryIds]);
 
   return (
-    <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-base font-bold text-[#333] shadow">
+    <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-text font-bold text-[#333] shadow">
       {{ fa: "دسته بندی دوره ها", en: "Course Category" }[lang]}
 
       {courseCategory.map((item) => (
@@ -87,7 +87,7 @@ export const NewsListCategory = ({
   }, [catNewsId]);
 
   return (
-    <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-base font-bold text-[#333] shadow">
+    <div className="flex w-full  flex-col justify-start gap-4 rounded-xl bg-card p-4 text-text font-bold text-[#333] shadow">
       {{ fa: "دسته بندی اخبار", en: "News Category" }[lang]}
 
       {newsCategory.map((item) => (
