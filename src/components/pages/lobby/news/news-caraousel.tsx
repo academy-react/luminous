@@ -111,7 +111,7 @@ export const NewsCarousel = ({
                   </div>
                   <div className="flex justify-center border-t border-t-gray-100 py-3.5 dark:border-gray-700">
                     <Link
-                      href={`/news/${item.id}`}
+                      href={`/blog/${item.id}`}
                       className="group flex items-center gap-x-2 text-white"
                     >
                       <p className="space-x-2.5 text-lg font-bold text-zinc-700 transition-colors duration-500 group-hover:text-primary">

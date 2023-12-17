@@ -22,7 +22,7 @@ export const CourseComment = async ({ lang, comment }: CommentProps) => {
     acceptReplysCount > 0 ? await getCourseCommentReplies(courseId, id) : [];
 
   return (
-    <div className="rounded-2xl bg-gray-100 p-5">
+    <div className="rounded-2xl bg-gray-100 p-5 dark:bg-background">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
@@ -45,7 +45,7 @@ const Reply = ({ lang, reply }: { lang: Locale; reply: CourseCommentType }) => {
   const { describe } = reply;
 
   return (
-    <div className="rounded-2xl bg-gray-200 p-5">
+    <div className="rounded-2xl bg-gray-200 p-5 dark:bg-card">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">

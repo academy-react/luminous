@@ -20,7 +20,7 @@ export const NewsComment = async ({ lang, comment }: NewsProps) => {
   const replies = replyCount > 0 ? await getNewsCommentReplies(newsId, id) : [];
 
   return (
-    <div className="rounded-2xl bg-gray-100 p-5">
+    <div className="rounded-2xl bg-gray-100 p-5 dark:bg-background">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
@@ -43,7 +43,7 @@ const Reply = ({ lang, reply }: { lang: Locale; reply: NewsCommentType }) => {
   const { describe } = reply;
 
   return (
-    <div className="rounded-2xl bg-gray-200 p-5">
+    <div className="rounded-2xl bg-gray-200 p-5 dark:bg-card">
       <div className="flex items-start gap-x-5">
         <UserAvatar avatar={null} userType={"student"} />
         <div className="w-full">
