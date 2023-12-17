@@ -1,8 +1,16 @@
 import { Icons, type Icon } from "@/components/assets/icons";
 
+import { CourseIdType } from "@/core/validators/api";
+
 import { type Locale } from "#/i18n.config";
 
-export const CourseDetailsGrid = ({ lang }: { lang: Locale }) => {
+export const CourseDetailsGrid = ({
+  lang,
+  data,
+}: {
+  lang: Locale;
+  data: CourseIdType;
+}) => {
   return (
     <section className="grid grid-cols-3 grid-rows-2 gap-5">
       <CourseDetail

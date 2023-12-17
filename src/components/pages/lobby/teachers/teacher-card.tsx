@@ -39,8 +39,8 @@ export const TeacherFullCard = ({
           <CardTitle className="text-xl font-bold">{fullName}</CardTitle>
           <h4 className="text-lg font-semibold">{linkdinProfileLink}</h4>
           <CardDescription className="pt-4 text-center text-sm font-medium md:text-start">
-            استاد فلانی عضو هیت علمی دانشگاه علم کامپیوتر و خلاصه اینکه قدرت
-            تکلم فووول قدرت شیرفهم کردن عااالی.
+            {/* استاد فلانی عضو هیت علمی دانشگاه علم کامپیوتر و خلاصه اینکه قدرت
+            تکلم فووول قدرت شیرفهم کردن عااالی. */}
           </CardDescription>
         </CardContent>
       </Card>
