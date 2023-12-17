@@ -47,17 +47,21 @@ const BlogPage = async ({
   };
 }) => {
   const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 0;
-  const rows = searchParams?.perPage || 2;
+  const pageAsNumber = Number(searchParams?.page);
+  const fallbackPage =
+    isNaN(pageAsNumber) || pageAsNumber < 1 ? 0 : pageAsNumber;
+  const perPageAsNumber = Number(searchParams?.perPage);
+  const limit = isNaN(perPageAsNumber) ? 6 : perPageAsNumber;
+
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
   const tech = searchParams?.techIds || "";
   const categoriesData = await getListNewsCategories();
   const data = await getNewsFilterPages({
-    currentPage,
+    currentPage: fallbackPage,
     query,
-    rows,
+    rows: limit,
     sortCol,
     sortType,
     tech,

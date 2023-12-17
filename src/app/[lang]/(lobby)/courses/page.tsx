@@ -59,26 +59,30 @@ const CoursesPage = async ({
   };
 }) => {
   const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) ?? 0;
-  const rows = searchParams?.perPage ?? 3;
+  // const currentPage = Number(searchParams?.page) ?? 0;
+  // const rows = searchParams?.perPage ?? 3;
+
+  const pageAsNumber = Number(searchParams?.page);
+  const fallbackPage =
+    isNaN(pageAsNumber) || pageAsNumber < 1 ? 0 : pageAsNumber;
+  const perPageAsNumber = Number(searchParams?.perPage);
+  const limit = isNaN(perPageAsNumber) ? 6 : perPageAsNumber;
+
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
   const tech = searchParams?.techIds || "";
   const count = searchParams?.techCount || tech === "" ? 0 : 1;
   const data = await getCoursesByPagination({
-    currentPage,
+    currentPage: fallbackPage,
     query,
-    rows,
+    rows: limit,
     sortCol,
     sortType,
     tech,
     count,
   });
   const categoriesData = await getCourseCategories();
-  if (!data) {
-    return null;
-  }
 
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
