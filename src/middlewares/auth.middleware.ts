@@ -9,7 +9,12 @@ import { type CustomMiddleware } from "@/middlewares";
 
 import { i18n, type Locale } from "#/i18n.config";
 
-const protectedRoutes = ["/dashboard"];
+const protectedRoutes = [
+  "/dashboard",
+  "/dashboard/profile",
+  "/dashboard/edit",
+  "/dashboard/dashboard",
+];
 const authRoutes = ["/sign-in", "/sign-up", "/reset-password"];
 
 const getRoutesLocaleCombo = (routes: string[], locales: Locale[]) => {
