@@ -42,3 +42,18 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
     totalPages,
   ];
 };
+
+export const formDataMaker = (data: { [keys: string]: string }) => {
+  const formData = new FormData();
+
+  Object.keys(data).forEach((key) => {
+    const item = data[key];
+
+    if (item) {
+      console.log(key, item);
+      formData.append(key, item);
+    }
+  });
+
+  return formData;
+};

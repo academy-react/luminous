@@ -6,86 +6,31 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import { Button } from "@/components/elements/ui";
+import { Button, Input } from "@/components/elements/ui";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/elements/ui/dialog";
-import { Input } from "@/components/elements/ui/input";
 import { Label } from "@/components/elements/ui/label";
 import { Textarea } from "@/components/elements/ui/textarea";
-import { Icons } from "@/components/assets/icons";
 
-import {
-  courseCommentDissLikeAction,
-  courseCommentLikeAction,
-} from "@/core/actions";
-import { addCourseReplyComment } from "@/core/services/api/course/post/post-course-comment.api";
-import { type CourseCommentType } from "@/core/validators/api";
+import { addCourseComment } from "@/core/services/api/course/post/post-course-comment.api";
 import {
   CourseCommentInputProps,
   courseCommentInputSchema,
 } from "@/core/validators/forms/course/comment.schema";
-import { cn, formDataMaker } from "@/lib/utils";
 
-import { type Locale } from "#/i18n.config";
+import { Locale } from "#/i18n.config";
 
-export const CourseCommentButtons = ({
+export function CommentButton({
   lang,
-  data,
-}: {
-  lang: Locale;
-  data: CourseCommentType;
-}) => {
-  const { id: commentId, courseId, currentUserEmotion } = data;
-
-  const likeAction = async () => {
-    const res = await courseCommentLikeAction(courseId, commentId, lang);
-
-    console.log(res);
-  };
-
-  const dislikeAction = async () => {
-    const res = await courseCommentDissLikeAction(courseId, commentId, lang);
-
-    console.log(res);
-  };
-
-  return (
-    <div className="flex gap-2">
-      <Button className="h-5 p-0" onClick={() => void dislikeAction()}>
-        <Icons.thumbsDown
-          className={cn(
-            "h-5 w-5 text-slate-600 transition-all duration-500 hover:fill-slate-600",
-            currentUserEmotion === "DISSLIKED" && "fill-slate-600"
-          )}
-        />
-      </Button>
-      <Button className="h-5 p-0" onClick={() => void likeAction()}>
-        <Icons.thumbsUp
-          className={cn(
-            "h-5 w-5 text-slate-600 transition-all duration-500 hover:fill-slate-600",
-            currentUserEmotion === "LIKED" && "fill-slate-600"
-          )}
-        />
-      </Button>
-      <ReplyButton lang={lang} commentId={commentId} courseId={courseId} />
-    </div>
-  );
-};
-
-export function ReplyButton({
-  lang,
-  commentId,
   courseId,
 }: {
   lang: Locale;
-  commentId: string;
   courseId: string;
 }) {
   const router = useRouter();
@@ -103,12 +48,11 @@ export function ReplyButton({
     formData.append("Title", data.title);
     formData.append("Describe", data.describe);
     formData.append("CourseId", courseId);
-    formData.append("CommentId", commentId);
 
     console.log(formData);
 
     try {
-      const response = await addCourseReplyComment(formData);
+      const response = await addCourseComment(formData);
       toast.success(response.message);
     } catch (e) {
       toast.error("خطایی رخ داده است");
@@ -118,13 +62,13 @@ export function ReplyButton({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="h-5 p-0">
-          <Icons.reply
-            className={cn(
-              "h-5 w-5 text-slate-600 transition-colors duration-500 hover:text-slate-400",
-              lang === "en" && "-scale-x-100"
-            )}
-          />
+        <Button className="border-[3px] border-green-500 bg-green-500 text-white transition-colors duration-500 hover:bg-transparent hover:text-green-500">
+          {
+            {
+              en: "Add Comment",
+              fa: "ایجاد نظر جدید",
+            }[lang]
+          }
         </Button>
       </DialogTrigger>
       <DialogContent

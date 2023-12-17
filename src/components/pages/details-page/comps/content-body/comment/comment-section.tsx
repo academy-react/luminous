@@ -1,4 +1,4 @@
-import { Button, H3 } from "@/components/elements/ui";
+import { Button, H3, Input } from "@/components/elements/ui";
 
 import { getCourseComments, getNewsComments } from "@/core/services/api";
 import {
@@ -8,6 +8,7 @@ import {
 
 import { type Locale } from "#/i18n.config";
 
+import { CommentButton } from "./comment-button";
 import { CourseComment } from "./course-comment";
 import { NewsComment } from "./news-comment";
 
@@ -61,14 +62,9 @@ export const CommentSection = async (props: CommentSectionProps) => {
             }
           </H3>
         </div>
-        <Button className="border-[3px] border-green-500 bg-green-500 text-white transition-colors duration-500 hover:bg-transparent hover:text-green-500">
-          {
-            {
-              en: "Add Comment",
-              fa: "ایجاد نظر جدید",
-            }[lang]
-          }
-        </Button>
+        {typeOf === "course" && (
+          <CommentButton lang={lang} courseId={props.courseId} />
+        )}
       </div>
       {isThereComments ? (
         <section className="space-y-5">
