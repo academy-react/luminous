@@ -25,6 +25,7 @@ import {
 } from "@/components/pages/list-page/side-bar-items";
 import { CourseListCategory } from "@/components/pages/list-page/side-bar-items/list-category";
 import { Pagination } from "@/components/elements/common";
+import { FetchErrorAnnouncement } from "@/components/elements/common/error-announcement";
 
 import {
   courseDateSortOptionsDict,
@@ -75,7 +76,7 @@ const CoursesPage = async ({
     count,
   });
   const categoriesData = await getCourseCategories();
-  if (!data || !categoriesData) {
+  if (!data) {
     return null;
   }
 
@@ -85,7 +86,14 @@ const CoursesPage = async ({
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <CourseListCategory courseCategory={categoriesData} lang={lang} />
+          {!categoriesData ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "دسته‌بندی‌ها", en: "Categories" }}
+            />
+          ) : (
+            <CourseListCategory courseCategory={categoriesData} lang={lang} />
+          )}
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
@@ -101,14 +109,22 @@ const CoursesPage = async ({
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
           />
-          <CourseContentBody
-            lang={lang}
-            CourseFullCard={CourseFullCard}
-            CourseMidCard={CourseMidCard}
-            courseData={data?.courseFilterDtos}
-            switchedList={view}
-          />
-          <Pagination className=" mt-4" totalCount={data.totalCount} />
+          {!data ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "مطالب", en: "News" }}
+            />
+          ) : 
+          (<>
+            <CourseContentBody
+              lang={lang}
+              CourseFullCard={CourseFullCard}
+              CourseMidCard={CourseMidCard}
+              courseData={data?.courseFilterDtos}
+              switchedList={view}
+            />
+            <Pagination className=" mt-4" totalCount={data.totalCount} />
+          </>)}
         </ListContent>
       </ListPage>
     </PageAnimationWrapper>

@@ -16,6 +16,7 @@ import {
   ListTeacher,
 } from "@/components/pages/list-page/side-bar-items";
 import { NewsListCategory } from "@/components/pages/list-page/side-bar-items/list-category";
+import { FetchErrorAnnouncement } from "@/components/elements/common/error-announcement";
 import { Pagination } from "@/components/elements/common/pagination";
 
 import {
@@ -62,16 +63,20 @@ const BlogPage = async ({
     tech,
   });
 
-  if (!data || !categoriesData) {
-    return null;
-  }
   return (
     <PageAnimationWrapper className="mt-10 h-full w-full">
       <ListPage>
         <ListTitle />
         <ListSideBar>
           <ListSearch lang={lang} />
-          <NewsListCategory newsCategory={categoriesData} lang={lang} />
+          {!categoriesData ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "دسته‌بندی‌ها", en: "Categories" }}
+            />
+          ) : (
+            <NewsListCategory newsCategory={categoriesData} lang={lang} />
+          )}
           <div className="flex gap-3 md:flex-col">
             <ListFree lang={lang} />
             <ListCommingSoon lang={lang} />
@@ -86,14 +91,23 @@ const BlogPage = async ({
             selectedOption={{ col: sortCol, type: sortType }}
             switchedList={view}
           />
-          <NewsContentBody
-            lang={lang}
-            NewsFullCard={BlogFullCard}
-            NewsMidCard={BlogMidCard}
-            newsData={data.news}
-            switchedList={view}
-          />
-          <Pagination className=" mt-4" totalCount={data.totalCount} />
+          {!data ? (
+            <FetchErrorAnnouncement
+              lang={lang}
+              place={{ fa: "مطالب", en: "News" }}
+            />
+          ) : (
+            <>
+              <NewsContentBody
+                lang={lang}
+                NewsFullCard={BlogFullCard}
+                NewsMidCard={BlogMidCard}
+                newsData={data.news}
+                switchedList={view}
+              />
+              <Pagination className=" mt-4" totalCount={data.totalCount} />
+            </>
+          )}
         </ListContent>
       </ListPage>
     </PageAnimationWrapper>
