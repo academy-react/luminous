@@ -36,12 +36,16 @@ export const CourseMidCard = ({
     <div className="flex w-full flex-col gap-2 rounded-xl bg-card px-4 py-2  shadow-lg">
       <Link
         href={`/${lang}/courses/${courseId}`}
-        className="// relative flex aspect-[3/2] h-full w-full items-center justify-center
-        rounded-xl bg-gray-200
-          "
+        className=" relative flex aspect-video h-[200px] w-full items-center justify-center
+        rounded-xl bg-gray-200"
       >
-        <Icons.placeholder className=" h-8 w-8 text-slate-600" />
-        {/* <Image src={tumbImageAddress} alt="" fill className="rounded-xl object-cover" /> */}
+        {/* <Icons.placeholder className=" h-8 w-8 text-slate-600" /> */}
+        {/* <Image
+          src={tumbImageAddress}
+          alt=""
+          fill
+          className="rounded-xl object-cover"
+        /> */}
       </Link>
       <div className=" flex flex-col gap-4 ">
         <div className="flex flex-row items-center justify-between">
@@ -68,7 +72,7 @@ export const CourseMidCard = ({
         <h2 className="text-xl font-semibold ">{title}</h2>
         <div className="flex flex-col gap-y-4 rounded-xl">
           <div>{teacherName}</div>
-          <ul className="flex justify-between ">
+          <ul className="flex items-baseline justify-between">
             <li className="flex flex-row items-center text-base text-yellow-500">
               <span className=" text-3xl text-yellow-500 ">★</span>
               <span>{courseRate}</span>
