@@ -1,26 +1,42 @@
 "use server";
 
+import { SortTypeStates } from "@/dict/pages/list.dict";
+
 import http from "@/core/services/interceptor";
 import { newsFilterPagesSchema } from "@/core/validators/api";
 
 type NewsFilterPagesParams = {
-  pageNumber?: number;
-  rowsOfPage?: number;
-  sortingCol?: string;
-  sortType?: string;
   query?: string;
+  currentPage?: number;
+  rows?: number;
+  sortCol?: string;
+  sortType?: SortTypeStates;
+  tech?: string;
+  // pageNumber?: number;
+  // rowsOfPage?: number;
+  // sortingCol?: string;
+  // sortType?: string;
+  // query?: string;
 };
 
 export const getNewsFilterPages = async ({
-  pageNumber = 1,
+  currentPage = 0,
   query = "",
-  rowsOfPage = 10,
+  rows = 2,
+  sortCol = "Active",
   sortType = "DESC",
-  sortingCol = "InsertDate",
+  tech = "",
 }: NewsFilterPagesParams = {}) => {
-  const response = await http.get(
-    `/News?PageNumber=${pageNumber}&RowsOfPage=${rowsOfPage}&SortingCol=${sortingCol}&SortType=${sortType}&Query=${query}`
-  );
+  const response = await http.get("/News", {
+    params: {
+      PageNumber: currentPage,
+      RowsOfPage: rows,
+      ...(query && { Query: query }),
+      SortingCol: sortCol,
+      SortType: sortType,
+      ...(tech && { NewsCategoryId: tech }),
+    },
+  });
 
   const parsedResult = newsFilterPagesSchema.safeParse(response.data);
 

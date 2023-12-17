@@ -15,6 +15,14 @@ export const courseDictTitle: TitleDictProps[] = [
     },
   },
 ];
+export const blogDictTitle: TitleDictProps[] = [
+  {
+    title: {
+      fa: " اخبار",
+      en: "News",
+    },
+  },
+];
 
 export type SortTypeStates = "ASC" | "DESC";
 
@@ -39,16 +47,50 @@ export const gridListSwitcherDict: GridListSwitcherDictProps[] = [
   },
 ];
 
+export interface SortOptionDictProps {
+  title: { [key in Locale]: string };
+}
+export const courseSortOptionsDict: SortOptionDictProps[] = [
+  {
+    title: {
+      fa: "همه ی دوره ها",
+      en: "all courses",
+    },
+  },
+  {
+    title: {
+      fa: " تاریخ",
+      en: "date ",
+    },
+  },
+  {
+    title: {
+      fa: " قیمت",
+      en: "price ",
+    },
+  },
+];
+
+export const blogSortOptionsDict: SortOptionDictProps[] = [
+  {
+    title: {
+      fa: "همه ی اخبار",
+      en: "all news",
+    },
+  },
+  {
+    title: {
+      fa: "تاریخ",
+      en: "The newest",
+    },
+  },
+];
 export interface SortSelectOptionDictProps {
   title: { [key in Locale]: string };
   option: {
     col: string;
     type: SortTypeStates;
   };
-}
-
-export interface SortOptionDictProps {
-  title: { [key in Locale]: string };
 }
 //   course options
 
@@ -98,94 +140,27 @@ export const courseDateSortOptionsDict: SortSelectOptionDictProps[] = [
   },
 ];
 
-export const courseSortOptionsDict: SortOptionDictProps[] = [
+//blog option
+
+export const blogDateSortOptionsDict: SortSelectOptionDictProps[] = [
   {
     title: {
-      fa: "همه ی دوره ها",
-      en: "all courses",
+      fa: "جدید ترین",
+      en: "newest ",
+    },
+    option: {
+      col: "InsertDate",
+      type: "ASC",
     },
   },
   {
     title: {
-      fa: " تاریخ",
-      en: "date ",
+      fa: "قدیم ترین",
+      en: "oldest ",
     },
-  },
-  {
-    title: {
-      fa: " قیمت",
-      en: "price ",
+    option: {
+      col: "InsertDate",
+      type: "DESC",
     },
   },
 ];
-
-// export const courseSortOptionsDict: SortOptionDictProps[] = [
-//   {
-//     title: {
-//       fa: "همه ی دوره ها",
-//       en: "all courses",
-//     },
-//     option: {
-//       col: "Active",
-//       type: "DESC",
-//     },
-//   },
-//   {
-//     title: {
-//       fa: "ارزان ترین",
-//       en: "cheapest ",
-//     },
-//     option: {
-//       col: "cost",
-//       type: "ASC",
-//     },
-//   },
-//   {
-//     title: {
-//       fa: "گران ترین",
-//       en: "the most expensive ",
-//     },
-//     option: {
-//       col: "cost",
-//       type: "DESC",
-//     },
-//   },
-// ];
-
-//blog option
-// export const blogSortOptionsDict: SortOptionDictProps[] = [
-//   {
-// blog sortTitle
-//     id: "s1",
-//     title: {
-//       fa: "همه ی اخبار",
-//       en: "all news",
-//     },
-//     value: {
-//       fa: "همه ی اخبار",
-//       en: "All news",
-//     },
-//   },
-//   {
-//     id: "s3",
-//     title: {
-//       fa: "جدیدترین",
-//       en: "The newest",
-//     },
-//     value: {
-//       fa: "جدیدترین",
-//       en: "The newest",
-//     },
-//   },
-//   {
-//     id: "s2",
-//     title: {
-//       fa: "پربازدیدترین",
-//       en: "The most popular",
-//     },
-//     value: {
-//       fa: "پربازدیدترین",
-//       en: "The most popular",
-//     },
-//   },
-// ];

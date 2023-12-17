@@ -24,6 +24,7 @@ export const newsSchema = z
     currentUserRateNumber: z.number(),
     currentUserIsDissLike: z.boolean(),
     currentDissLikeCount: z.number(),
+    isActive: z.boolean(),
     totalCount: z.number(),
   })
   .strict();
