@@ -57,7 +57,7 @@ export const MainNav = ({
 
   return (
     <>
-      <div className="flex basis-1/5 items-center">
+      <div className="flex basis-2/5 items-center">
         <Link
           aria-label="Home"
           href={`/${lang}`}
@@ -67,8 +67,8 @@ export const MainNav = ({
             "flex items-center gap-2"
           )}
         >
+          <Icons.logo className="hidden h-8 w-8 lg:block" />
           <Icons.luminousLogo className="h-24 w-24" />
-          <Icons.logo className="h-8 w-8" />
         </Link>
       </div>
       <nav
