@@ -86,8 +86,8 @@ export const NewsCarousel = ({
               className="min-w-0 flex-[0_0_25%] pl-4"
               dir={lang === "fa" ? "rtl" : "ltr"}
             >
-              <div className="flex h-full translate-x-1/2 flex-col rounded-2xl bg-card">
-                <div className="relative flex h-40 items-center justify-center rounded-2xl border border-gray-200">
+              <div className="flex h-full translate-x-1/2 flex-col rounded-2xl bg-card p-1">
+                <div className="relative flex h-40 items-center justify-center rounded-2xl border border-gray-200 bg-gray-200">
                   <Icons.placeholder className="absolute h-8 w-8 text-slate-600" />
                 </div>
                 <div className="mt-4 flex grow flex-col gap-y-8 px-5 py-3">

@@ -62,10 +62,10 @@ export function DataTable<TData, TValue>({
   const pageAsNumber = Number(page);
   const fallbackPage =
     isNaN(pageAsNumber) || pageAsNumber < 1 ? 1 : pageAsNumber;
-  const per_page = searchParams?.get("per_page") ?? "10";
+  const per_page = searchParams?.get("per_page") ?? "7";
   const perPageAsNumber = Number(per_page);
   const fallbackPerPage =
-    isNaN(perPageAsNumber) || perPageAsNumber < 1 ? 10 : perPageAsNumber;
+    isNaN(perPageAsNumber) || perPageAsNumber < 1 ? 7 : perPageAsNumber;
   const sort = searchParams?.get("sort");
   const [column, order] = sort?.split(".") ?? [];
 

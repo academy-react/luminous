@@ -12,7 +12,7 @@ type CourseInfoProps = {
 
 export const CourseInfo = ({
   lang,
-  data: { title, describe, miniDescribe, cost },
+  data: { title, describe, miniDescribe, cost, isCourseReseve },
 }: CourseInfoProps) => {
   return (
     <section className="my-10 flex justify-between gap-x-10">
@@ -26,14 +26,25 @@ export const CourseInfo = ({
         <div className="flex items-center justify-between">
           <Button className="group flex gap-2 rounded-xl border-4 border-green-500 bg-green-500 px-5 py-7 text-2xl font-extrabold text-white transition-colors duration-500 hover:bg-transparent hover:text-green-500">
             <Icons.shieldDone className="h-7 w-7 fill-white transition-colors duration-500 group-hover:fill-green-500" />
-            <span>
-              {
+            {isCourseReseve ? (
+              <span>
                 {
-                  fa: "شرکت در دوره",
-                  en: "Join Course",
-                }[lang]
-              }
-            </span>
+                  {
+                    fa: "رزرو شده",
+                    en: "Course Reserved",
+                  }[lang]
+                }
+              </span>
+            ) : (
+              <span>
+                {
+                  {
+                    fa: "شرکت در دوره",
+                    en: "Join Course",
+                  }[lang]
+                }
+              </span>
+            )}
           </Button>
           <span className="flex gap-2 text-4xl font-semibold">
             {cost.toLocaleString(lang)}

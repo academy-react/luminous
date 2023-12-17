@@ -31,7 +31,7 @@ const CourseDashboard = async ({
   const fallbackPage =
     isNaN(pageAsNumber) || pageAsNumber < 1 ? 1 : pageAsNumber;
   const perPageAsNumber = Number(per_page);
-  const limit = isNaN(perPageAsNumber) ? 10 : perPageAsNumber;
+  const limit = isNaN(perPageAsNumber) ? 7 : perPageAsNumber;
   const [column, order] = (sort?.split(".") as [
     keyof UserCourseType | undefined,
     "asc" | "desc" | undefined,

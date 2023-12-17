@@ -13,7 +13,7 @@ type GetUserCoursesQueryParams = {
 
 export const getUserCourses = async ({
   page = 1,
-  perPage = 10,
+  perPage = 5,
   sortingCol = "LastUpdate",
   sortType = "desc",
   query = "",

@@ -28,8 +28,8 @@ import {
 import { addCourseReplyComment } from "@/core/services/api/course/post/post-course-comment.api";
 import { type CourseCommentType } from "@/core/validators/api";
 import {
-  type CourseCommentInputProps,
   courseCommentInputSchema,
+  type CourseCommentInputProps,
 } from "@/core/validators/forms/course/comment.schema";
 import { cn, formDataMaker } from "@/lib/utils";
 
@@ -47,11 +47,15 @@ export const CourseCommentButtons = ({
   const likeAction = async () => {
     const res = await courseCommentLikeAction(courseId, commentId, lang);
 
+    toast.success(res);
+
     console.log(res);
   };
 
   const dislikeAction = async () => {
     const res = await courseCommentDissLikeAction(courseId, commentId, lang);
+
+    toast.success(res);
 
     console.log(res);
   };

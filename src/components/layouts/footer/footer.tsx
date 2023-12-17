@@ -15,16 +15,16 @@ export const Footer = ({ lang }: { lang: Locale }) => {
   return (
     <div className="my-10">
       {/* footer background */}
-      <div className="relative aspect-[7/1] w-full">
+      {/* <div className="relative aspect-[7/1] w-full">
         <Image
           src="/images/artworks/footer-art.svg"
           fill
           alt="footer-art"
           className="object-cover"
         />
-      </div>
+      </div> */}
       {/* Footer Section */}
-      <footer className="grid w-full grid-rows-3 place-content-center lg:grid-cols-3 lg:grid-rows-1">
+      <footer className="container pt-4 grid w-full grid-rows-3 place-content-center border-t-2 lg:grid-cols-3 lg:grid-rows-1">
         {/* Info Area */}
         <div className="flex items-start justify-center gap-6">
           {/* Nav Bar */}
