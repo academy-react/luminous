@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Countdown from "@/components/elements/common/counter";
-import { H1, H2 } from "@/components/elements/ui";
+import { H1 } from "@/components/elements/ui";
 
 import { heroDict } from "@/dict/pages/lobby.dict";
 
@@ -12,7 +11,7 @@ export const HeroSection = ({ lang }: { lang: Locale }) => {
   return (
     <section className="relative pt-10 lg:pt-24">
       <div className="container">
-        <div className="flex flex-wrap items-center justify-center gap-y-10 text-center lg:flex-nowrap lg:justify-between lg:text-right">
+        <div className="flex flex-wrap items-center justify-center gap-y-10 text-center lg:flex-nowrap lg:justify-between lg:text-start">
           <div className="order-2 w-full sm:w-auto lg:order-1">
             <H1 className="text-6xl font-black leading-[80px] lg:text-7xl lg:leading-[96px]">
               {heroDict.title[lang]}
@@ -28,7 +27,6 @@ export const HeroSection = ({ lang }: { lang: Locale }) => {
                 {heroDict.button[lang]}
               </Link>
             </button>
-            
           </div>
           <div className="order-1 lg:order-2">
             <div className="relative h-[400px] w-[300px] sm:w-[400px] lg:h-[500px] lg:w-[460px] xl:h-[600px] xl:w-[550px]">
