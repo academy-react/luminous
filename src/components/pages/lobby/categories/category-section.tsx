@@ -33,8 +33,10 @@ export const CategoriesSection = async ({ lang }: { lang: Locale }) => {
               {data.map((category, index) => (
                 <CategoryCard
                   key={category.id}
+                  lang={lang}
+                  id={category.id}
                   title={category.techName}
-                  icon={category.iconAddress}
+                  desc={category.describe}
                   color={categoriesColorDict[index]?.color}
                 />
               ))}

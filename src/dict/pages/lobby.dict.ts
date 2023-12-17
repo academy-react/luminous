@@ -13,12 +13,12 @@ export interface LobbyTitleBoxDict {
 
 export const servicesTitleBoxDict: LobbyTitleBoxDict = {
   title: {
-    fa: "خدمات",
-    en: "Services",
+    fa: "ما چه کمکی به شما می‌تونیم بکنیم؟",
+    en: "How Can We Help You?",
   },
   subtitle: {
-    fa: "تمام آنچه نیاز دارید",
-    en: "Everything You Need",
+    fa: "تمام آنچه نیاز دارید اینجاست",
+    en: "Everything You Need Is Here",
   },
 };
 
@@ -39,8 +39,8 @@ export const coursesTitleBoxDict: LobbyTitleBoxDict = {
     en: "Courses",
   },
   subtitle: {
-    fa: "آخرین دوره‌های موجود",
-    en: "Latest Available Courses",
+    fa: "سکوی شما به سمت موفقیت",
+    en: "Your Platform to Success",
   },
 };
 
@@ -50,8 +50,8 @@ export const teachersTitleBoxDict: LobbyTitleBoxDict = {
     en: "Top teachers",
   },
   subtitle: {
-    fa: "اساتید مهربان و دوست‌داشتنی ما",
-    en: "Our Kind and Friendly Teachers",
+    fa: "با اساتید برتر ما آشنا شوید",
+    en: "Get to know our top teachers",
   },
 };
 
@@ -70,6 +70,10 @@ export const suggestionsTitleBoxDict: LobbyTitleBoxDict = {
   title: {
     fa: "پیشنهادات و انتقادات",
     en: "Suggestions and Criticisms",
+  },
+  subtitle: {
+    fa: "نظرات خود را با ما در میان بگذارید",
+    en: "Share your comments with us",
   },
 };
 
@@ -120,11 +124,11 @@ export const servicesDict: ServicesDictProps[] = [
       en: "Valid Certificate",
     },
     desc: {
-      fa: "با اتمام دوره‌ها مدرک معتبری دریافت کنید",
-      en: "Get a valid certificate after completing the courses",
+      fa: "با اتمام دوره‌ها مدرک معتبری دریافت کنید و به رزومه خود اضافه کنید",
+      en: "Get a valid certificate after completing the courses and add it to your resume",
     },
     icon: Icons.scrollText,
-    bgColor: "bg-[#E3B709]",
+    bgColor: "from-[#E3B709]/30 to-[#E3B709]",
   },
   {
     id: 2,
@@ -133,11 +137,11 @@ export const servicesDict: ServicesDictProps[] = [
       en: "Various Courses",
     },
     desc: {
-      fa: "دوره‌های متنوعی در زمینه‌های مختلف برای شما فراهم کرده‌ایم",
-      en: "We have provided a variety of courses in various fields for you",
+      fa: "دوره‌های متنوعی در زمینه‌های مختلف برای شما فراهم کرده‌ایم که می‌توانید از آنها استفاده کنید تا جدیدترین مطالب را یاد بگیرید",
+      en: "We have provided a variety of courses in various fields for you to use to learn the latest topics",
     },
     icon: Icons.fileCheck,
-    bgColor: "bg-[#D23120]",
+    bgColor: "from-[#D23120]/30 to-[#D23120]",
   },
   {
     id: 3,
@@ -146,11 +150,11 @@ export const servicesDict: ServicesDictProps[] = [
       en: "Job Opportunity",
     },
     desc: {
-      fa: "با اتمام دوره‌ها می‌توانید در شرکت‌های معتبر مشغول به کار شوید",
-      en: "After completing the courses, you can work in reputable companies",
+      fa: "با اتمام دوره‌ها می‌توانید در شرکت‌های معتبر مشغول به کار شوید و تجربه کسب کنید و از آن بهره‌مند شوید",
+      en: "After completing the courses, you can work in reputable companies and gain experience and benefit from it",
     },
     icon: Icons.network,
-    bgColor: "bg-[#267AB2]",
+    bgColor: "from-[#267AB2]/30 to-[#267AB2]",
   },
   {
     id: 4,
@@ -159,11 +163,11 @@ export const servicesDict: ServicesDictProps[] = [
       en: "Counseling",
     },
     desc: {
-      fa: "با مشاوران ما می‌توانید در مورد دوره‌ها و مسیر شغلی خود صحبت کنید",
-      en: "You can talk to our consultants about courses and your career path",
+      fa: "با مشاوران ما می‌توانید در مورد دوره‌ها و مسیر شغلی خود صحبت کنید و راهنمایی بگیرید و از تجربه آنها بهره‌مند شوید",
+      en: "You can talk to our consultants about courses and your career path and get guidance and benefit from their experience",
     },
     icon: Icons.user,
-    bgColor: "bg-[#7D329A]",
+    bgColor: "from-[#7D329A]/30 to-[#7D329A]",
   },
 ];
 
@@ -247,27 +251,27 @@ export interface CategoryColorDictProps {
 
 export const categoriesColorDict: CategoryColorDictProps[] = [
   {
-    color: "text-blue-500 border-blue-500",
+    color: "text-white from-blue-500 to-emerald-500",
   },
   {
-    color: "text-red-500 border-red-500",
+    color: "text-white from-red-500 to-slate-500",
   },
   {
-    color: "text-green-500 border-green-500",
+    color: "text-white from-green-500 to-purple-500",
   },
   {
-    color: "text-cyan-500 border-cyan-500",
+    color: "text-white from-cyan-500 to-yellow-500",
   },
   {
-    color: "text-yellow-500 border-yellow-500",
+    color: "text-white from-yellow-500 to-cyan-500",
   },
   {
-    color: "text-purple-500 border-purple-500",
+    color: "text-white from-purple-500 to-purple-500",
   },
   {
-    color: "text-slate-300 border-slate-300",
+    color: "text-white from-slate-500 to-red-500",
   },
   {
-    color: "text-emerald-500 border-emerald-500",
+    color: "text-white from-emerald-500 to-blue-500",
   },
 ];

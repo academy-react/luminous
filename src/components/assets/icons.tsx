@@ -33,12 +33,26 @@ import {
 } from "lucide-react";
 import { type IconType } from "react-icons";
 import { BiLogoInstagramAlt } from "react-icons/bi";
-import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
-import { FaTelegramPlane } from "react-icons/fa";
+import {
+  BsFacebook,
+  BsFiletypeHtml,
+  BsFiletypeSql,
+  BsTwitter,
+  BsYoutube,
+} from "react-icons/bs";
+import { FaReact, FaTelegramPlane } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { TbApi, TbBrandNextjs } from "react-icons/tb";
 
 export type Icon = IconType | LucideIcon;
 
 export const Icons = {
+  html: BsFiletypeHtml as IconType,
+  javascript: IoLogoJavascript as IconType,
+  sql: BsFiletypeSql as IconType,
+  react: FaReact as IconType,
+  nextjs: TbBrandNextjs as IconType,
+  tbapi: TbApi as IconType,
   search: Search,
   menu: Menu,
   layoutGrid: LayoutGrid,

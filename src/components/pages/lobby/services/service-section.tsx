@@ -14,7 +14,7 @@ export const ServiceSection = ({ lang }: { lang: Locale }) => {
           title={servicesTitleBoxDict.title}
           desc={servicesTitleBoxDict.subtitle}
         />
-        <div className="grid items-center gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid cursor-default grid-rows-2 gap-5 md:grid-cols-2">
           {servicesDict.map((item) => (
             <ServiceCard
               key={item.id}

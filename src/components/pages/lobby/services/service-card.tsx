@@ -22,17 +22,18 @@ export const ServiceCard = ({
   bgColor,
 }: ServiceCardProps) => {
   return (
-    <Card className={cn("flex h-40 w-full border-none p-4 shadow-md", bgColor)}>
-      <CardContent className="flex flex-row items-center justify-center gap-5">
-        <Icon className=" text-white sm:h-14 sm:w-14 md:h-20 md:w-20" />
-        <div className="flex flex-col items-start gap-2">
-          <CardTitle className="font-black text-white sm:text-lg md:text-2xl">
-            {title}
-          </CardTitle>
-          <CardDescription className="text-white sm:text-sm">
-            {desc}
-          </CardDescription>
-        </div>
+    <Card className="shadow-light flex flex-wrap items-center justify-center gap-6 rounded-2xl border-none bg-card p-5 text-center dark:border dark:border-gray-700 dark:shadow-none xs:flex-nowrap xs:justify-start xs:text-right">
+      <div
+        className={cn(
+          "h-20 w-20 shrink-0 rotate-45 rounded-full bg-gradient-to-t",
+          bgColor
+        )}
+      />
+      <CardContent className="space-y-2.5">
+        <CardTitle className="text-xl font-black text-text">{title}</CardTitle>
+        <CardDescription className="pl-5 font-light text-slate-500 dark:text-slate-400">
+          {desc}
+        </CardDescription>
       </CardContent>
     </Card>
   );
