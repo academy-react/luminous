@@ -33,7 +33,10 @@ export const BlogFullCard = ({
           </p>
         </div>
         <div className="mt-10 flex items-end justify-between">
-          <span className=" text-sm text-[#555]"># {newsCatregoryName}</span>
+          <span className="w-fit rounded-md bg-secondary px-2 py-1 text-xs text-primary">
+            {" "}
+            {newsCatregoryName}
+          </span>
           <Link
             href="#"
             className="rounded-xl border border-purple-primary p-1 text-sm text-purple-primary"

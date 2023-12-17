@@ -44,7 +44,7 @@ export const CourseFullCard = ({
       </Link>
       <div className=" basis-2/3">
         <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row flex-wrap gap-2">
             {technologyList.split(",").map((tech, index) => (
               <div
                 key={index}

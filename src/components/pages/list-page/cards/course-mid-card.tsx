@@ -45,7 +45,7 @@ export const CourseMidCard = ({
       </Link>
       <div className=" flex flex-col gap-4 ">
         <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row flex-wrap gap-2">
             {technologyList.split(",").map((tech, index) => (
               <div
                 key={index}
