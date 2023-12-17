@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { toast } from "sonner";
+
 import { Button } from "@/components/elements/ui";
 import {
   DropdownMenu,
@@ -39,7 +41,20 @@ export const AuthNav = ({
     const res = await logOutAction();
 
     if (res) {
+      toast.success(
+        {
+          fa: "خروج با موفقیت انجام شد",
+          en: "Logout was successful",
+        }[lang]
+      );
       router.refresh();
+    } else {
+      toast.error(
+        {
+          fa: "خطایی در خروج از حساب کاربری رخ داده است",
+          en: "An error occurred while logging out",
+        }[lang]
+      );
     }
   };
 

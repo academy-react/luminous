@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 import { AnimatedInput } from "@/components/elements/common";
 import {
@@ -49,7 +50,24 @@ export const ThirdSignUpForm = ({
   const onSubmit = async (data: ThirdSignUpInputProps) => {
     const result = await register(data.email, data.password, user.phoneNumber);
     console.log("regieter", result);
-    if (result.success) {
+
+    if (result?.success) {
+      toast.success(
+        {
+          fa: "ثبت نام با موفقیت انجام شد",
+          en: "Register was successful",
+        }[lang]
+      );
+    } else {
+      toast.error(
+        {
+          fa: "ثبت نام با خطا مواجه شد",
+          en: "Register was unsuccessful",
+        }[lang]
+      );
+    }
+
+    if (result?.success) {
       const result = await loginAction({
         phoneOrGmail: data.email,
         password: data.password,

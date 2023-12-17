@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 import {
   AnimatedInput,
@@ -50,7 +51,21 @@ export const SignInForm = ({ lang }: { lang: Locale }) => {
     const result = await loginAction(data);
 
     if (result === "Success") {
+      toast.success(
+        {
+          fa: "ورود با موفقیت انجام شد",
+          en: "Login was successful",
+        }[lang]
+      );
       router.push(`/${lang}`);
+    } else {
+      toast.error(result);
+      toast.error(
+        {
+          fa: "ورود با شکست مواجه شد",
+          en: "Login failed",
+        }[lang]
+      );
     }
 
     setIsLoading(false);

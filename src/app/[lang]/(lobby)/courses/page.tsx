@@ -59,8 +59,8 @@ const CoursesPage = async ({
   };
 }) => {
   const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 0;
-  const rows = searchParams?.perPage || 2;
+  const currentPage = Number(searchParams?.page) ?? 0;
+  const rows = searchParams?.perPage ?? 3;
   const view = searchParams?.view || "grid";
   const sortCol = searchParams?.sort || "Active";
   const sortType = searchParams?.order || "DESC";
@@ -114,17 +114,18 @@ const CoursesPage = async ({
               lang={lang}
               place={{ fa: "مطالب", en: "News" }}
             />
-          ) : 
-          (<>
-            <CourseContentBody
-              lang={lang}
-              CourseFullCard={CourseFullCard}
-              CourseMidCard={CourseMidCard}
-              courseData={data?.courseFilterDtos}
-              switchedList={view}
-            />
-            <Pagination className=" mt-4" totalCount={data.totalCount} />
-          </>)}
+          ) : (
+            <>
+              <CourseContentBody
+                lang={lang}
+                CourseFullCard={CourseFullCard}
+                CourseMidCard={CourseMidCard}
+                courseData={data?.courseFilterDtos}
+                switchedList={view}
+              />
+              <Pagination className=" mt-4" totalCount={data.totalCount} />
+            </>
+          )}
         </ListContent>
       </ListPage>
     </PageAnimationWrapper>

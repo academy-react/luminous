@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 
+import { toast } from "sonner";
+
 import { Button } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
@@ -16,7 +18,21 @@ export const LogOutButton = ({ lang }: { lang: Locale }) => {
     const res = await logOutAction();
 
     if (res) {
+      toast.success(
+        {
+          fa: "خروج با موفقیت انجام شد",
+          en: "Logout was successful",
+        }[lang]
+      );
+
       router.push(`/${lang}`);
+    } else {
+      toast.error(
+        {
+          fa: "خطایی در خروج از حساب کاربری رخ داده است",
+          en: "An error occurred while logging out",
+        }[lang]
+      );
     }
   };
   return (
