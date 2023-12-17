@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { UserDashboardNotification } from "@/components/pages/user-panel/account-page";
 import {
   LogOutButton,
@@ -5,6 +7,7 @@ import {
 } from "@/components/pages/user-panel/side-bar-items";
 import { SideBarNav } from "@/components/pages/user-panel/side-bar-items/client";
 import { H3 } from "@/components/elements/ui";
+import { Icons } from "@/components/assets/icons";
 
 import { dashboardAccountPageDict } from "@/dict/pages/dashboard/account.page.dict";
 
@@ -27,7 +30,10 @@ const DashboardLayout = async ({
   return (
     <div className="flex h-screen max-h-screen min-h-screen w-full items-center px-24 py-16">
       <div className="flex h-full w-full rounded-2xl bg-primary py-3 pe-3">
-        <aside className="hidden h-full flex-col items-center justify-between lg:flex lg:w-1/4">
+        <aside className="relative hidden h-full flex-col items-center justify-between lg:flex lg:w-1/4">
+          <Link href={`/${lang}`} className="absolute start-4 top-0">
+            <Icons.home className="h-8 w-8 cursor-pointer text-white" />
+          </Link>
           <div className="flex w-full flex-col items-center">
             <UserAvatar
               fName={data.fName}
