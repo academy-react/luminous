@@ -31,7 +31,7 @@ export const NewsSection = async ({ lang }: { lang: Locale }) => {
           <NewsCarousel lang={lang} data={fetchedData} />
         )}
       </div>
-      <NewsletterSection lang={lang} />
+      {/* <NewsletterSection lang={lang} /> */}
     </section>
   );
 };
