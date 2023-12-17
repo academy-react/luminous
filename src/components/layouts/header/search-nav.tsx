@@ -12,7 +12,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/elements/ui/command";
+} from "@/components/elements/ui/client";
 import { Skeleton } from "@/components/elements/ui/skeleton";
 import { Icons } from "@/components/assets/icons";
 
