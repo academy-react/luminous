@@ -76,7 +76,7 @@ export const AuthNav = ({
     <nav className="flex basis-2/5 flex-wrap items-center justify-end">
       <div className="hidden items-center gap-2 md:flex">
         <SearchNav lang={lang} />
-        {userInfo ? (
+        {token ? (userInfo && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button className="h-10 w-10 px-0">
@@ -158,7 +158,7 @@ export const AuthNav = ({
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        ) : (
+        )) : (
           <div className="flex h-full flex-wrap gap-2 font-semibold">
             <LinkButton
               lang={lang}
