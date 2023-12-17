@@ -1,3 +1,4 @@
+import { ChangePasswordForm } from "@/components/forms/edit-password-form";
 import { EditProfileForm } from "@/components/forms/edit-profile-form";
 import { H2 } from "@/components/elements/ui";
 import {
@@ -42,7 +43,7 @@ const ProfileDetails = ({ params: { lang } }: { params: { lang: Locale } }) => {
           </TabsList>
           <TabsContent value="password" className="h-full w-full">
             <div className="flex h-full w-full items-center justify-center rounded-md border-4 border-primary">
-              password
+              <ChangePasswordForm lang={lang} />
             </div>
           </TabsContent>
           <TabsContent value="account" className="h-full w-full">

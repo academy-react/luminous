@@ -25,23 +25,27 @@ export const {
         const parsedCredentials = signInInputSchema.safeParse(credentials);
 
         if (parsedCredentials.success) {
-          const result = await login(parsedCredentials.data);
+          try {
+            const result = await login(parsedCredentials.data);
 
-          if (
-            !result ||
-            result.success === false ||
-            !result.id ||
-            !result.token ||
-            !result.phoneNumber
-          ) {
-            return null;
+            if (
+              !result ||
+              result.success === false ||
+              !result.id ||
+              !result.token ||
+              !result.phoneNumber
+            ) {
+              return null;
+            }
+
+            return {
+              id: result.id.toString(),
+              phoneNumber: result.phoneNumber,
+              token: result.token,
+            };
+          } catch (e) {
+            console.log(e);
           }
-
-          return {
-            id: result.id.toString(),
-            phoneNumber: result.phoneNumber,
-            token: result.token,
-          };
         }
 
         return null;
