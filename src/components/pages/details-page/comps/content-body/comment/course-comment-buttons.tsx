@@ -28,7 +28,7 @@ import {
 import { addCourseReplyComment } from "@/core/services/api/course/post/post-course-comment.api";
 import { type CourseCommentType } from "@/core/validators/api";
 import {
-  CourseCommentInputProps,
+  type CourseCommentInputProps,
   courseCommentInputSchema,
 } from "@/core/validators/forms/course/comment.schema";
 import { cn, formDataMaker } from "@/lib/utils";

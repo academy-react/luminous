@@ -5,4 +5,6 @@ export const changePasswordInputSchema = z.object({
   newPassword: z.string(),
 });
 
-export type ChangePasswordInputProps = z.infer<typeof changePasswordInputSchema>;
+export type ChangePasswordInputProps = z.infer<
+  typeof changePasswordInputSchema
+>;

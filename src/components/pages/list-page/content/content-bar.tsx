@@ -13,7 +13,7 @@ import {
 import { Icons } from "@/components/assets/icons";
 
 import {
-  SortSelectOptionDictProps,
+  type SortSelectOptionDictProps,
   type SortOptionDictProps,
   type SortTypeStates,
   type SwitchedListStates,

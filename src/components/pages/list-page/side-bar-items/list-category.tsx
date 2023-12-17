@@ -7,8 +7,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Checkbox } from "@/components/elements/ui/checkbox";
 import { Label } from "@/components/elements/ui/label";
 
-import { CourseCategoryListType } from "@/core/validators/api/course/get/course-categories.schema";
-import { NewsListCategoriesListType } from "@/core/validators/api/news/get/news-list-categories-schema";
+import { type CourseCategoryListType } from "@/core/validators/api/course/get/course-categories.schema";
+import { type NewsListCategoriesListType } from "@/core/validators/api/news/get/news-list-categories-schema";
 
 import { type Locale } from "#/i18n.config";
 

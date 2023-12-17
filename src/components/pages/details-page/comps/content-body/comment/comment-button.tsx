@@ -20,11 +20,11 @@ import { Textarea } from "@/components/elements/ui/textarea";
 
 import { addCourseComment } from "@/core/services/api/course/post/post-course-comment.api";
 import {
-  CourseCommentInputProps,
+  type CourseCommentInputProps,
   courseCommentInputSchema,
 } from "@/core/validators/forms/course/comment.schema";
 
-import { Locale } from "#/i18n.config";
+import { type Locale } from "#/i18n.config";
 
 export function CommentButton({
   lang,

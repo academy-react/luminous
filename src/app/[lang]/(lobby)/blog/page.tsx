@@ -22,8 +22,8 @@ import { Pagination } from "@/components/elements/common/pagination";
 import {
   blogDateSortOptionsDict,
   blogSortOptionsDict,
-  SortTypeStates,
-  SwitchedListStates,
+  type SortTypeStates,
+  type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
 import { getNewsFilterPages } from "@/core/services/api/news/get/get-news-filter-pages.api";

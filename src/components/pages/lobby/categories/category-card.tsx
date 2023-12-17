@@ -8,17 +8,24 @@ import {
 } from "@/components/elements/ui";
 
 import { cn } from "@/lib/utils";
-import { Locale } from "#/i18n.config";
+
+import { type Locale } from "#/i18n.config";
 
 type CategoryCardProps = {
-  lang: Locale
+  lang: Locale;
   id: number;
   title: string;
   desc: string;
   color: string | undefined;
 };
 
-export const CategoryCard = ({ lang, id, title, desc, color }: CategoryCardProps) => {
+export const CategoryCard = ({
+  lang,
+  id,
+  title,
+  desc,
+  color,
+}: CategoryCardProps) => {
   return (
     <Link href={`${lang}/courses?techIds=${id}`}>
       <Card

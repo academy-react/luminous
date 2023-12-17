@@ -1,6 +1,6 @@
 import {
   gridListSwitcherDict,
-  SwitchedListStates,
+  type SwitchedListStates,
 } from "@/dict/pages/list.dict";
 
 import { cn } from "@/lib/utils";

@@ -1,1 +1,1 @@
-export * from "./change-password.api"
+export * from "./change-password.api";

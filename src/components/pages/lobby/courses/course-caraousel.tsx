@@ -14,12 +14,12 @@ import { Button, H4 } from "@/components/elements/ui";
 import { Icons } from "@/components/assets/icons";
 
 import {
-  CourseByPaginationType,
+  type CourseByPaginationType,
   type TopCourseListType,
 } from "@/core/validators/api";
 import { cn } from "@/lib/utils";
 
-import { Locale } from "#/i18n.config";
+import { type Locale } from "#/i18n.config";
 
 import { CourseMidCard } from "../../list-page/cards";
 

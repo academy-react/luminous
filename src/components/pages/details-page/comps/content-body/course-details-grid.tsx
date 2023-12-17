@@ -1,6 +1,6 @@
 import { Icons, type Icon } from "@/components/assets/icons";
 
-import { CourseIdType } from "@/core/validators/api";
+import { type CourseIdType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
 

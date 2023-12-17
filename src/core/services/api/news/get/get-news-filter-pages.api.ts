@@ -1,6 +1,6 @@
 "use server";
 
-import { SortTypeStates } from "@/dict/pages/list.dict";
+import { type SortTypeStates } from "@/dict/pages/list.dict";
 
 import http from "@/core/services/interceptor";
 import { newsFilterPagesSchema } from "@/core/validators/api";

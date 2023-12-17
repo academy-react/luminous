@@ -2,7 +2,7 @@
 
 import http from "@/core/services/interceptor";
 import { firstSignUpResponseSchema } from "@/core/validators/api/auth/register.schema";
-import { FirstSignUpInputProps } from "@/core/validators/forms/auth/sign-up.schema";
+import { type FirstSignUpInputProps } from "@/core/validators/forms/auth/sign-up.schema";
 
 export const sendVerifyMessage = async (data: FirstSignUpInputProps) => {
   const response = await http.post("/Sign/SendVerifyMessage", {

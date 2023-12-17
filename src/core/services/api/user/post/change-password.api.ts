@@ -2,7 +2,10 @@
 
 import http from "@/core/services/interceptor";
 import { loginResponseSchema } from "@/core/validators/api";
-import { ChangePasswordInputProps, type SignInInputProps } from "@/core/validators/forms";
+import {
+  type ChangePasswordInputProps,
+  type SignInInputProps,
+} from "@/core/validators/forms";
 
 export const changePassword = async (credentials: ChangePasswordInputProps) => {
   const response = await http.post("/SharePanel/ChangePassword", credentials);

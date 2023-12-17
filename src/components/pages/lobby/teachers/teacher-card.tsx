@@ -6,11 +6,11 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/elements/ui";
+import { Icons } from "@/components/assets/icons";
 
 import { type TeacherType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
-import { Icons } from "@/components/assets/icons";
 
 type TeacherCardProps = {
   lang: Locale;
@@ -25,8 +25,8 @@ export const TeacherFullCard = ({
     <div className="px-10">
       <Card className="relative flex max-w-sm flex-col items-center gap-4 border-none bg-card p-4 text-center shadow md:flex-row">
         <div className="md:absolute md:start-0 md:top-1/2 md:-translate-y-1/2 md:ltr:-translate-x-1/2 md:rtl:translate-x-1/2">
-          <div className="relative aspect-square h-24 justify-center bg-gray-200 rounded-xl items-center flex">
-          <Icons.placeholder  className=" w-8 h-8 text-slate-600" />
+          <div className="relative flex aspect-square h-24 items-center justify-center rounded-xl bg-gray-200">
+            <Icons.placeholder className=" h-8 w-8 text-slate-600" />
             {/* <Image
               src={pictureAddress? pictureAddress : "/images/dev/person-avatar.jpg"}
               alt="teacher-picture"
@@ -55,8 +55,8 @@ export const TeacherMiniCard = ({
   return (
     <Card className="relative flex cursor-pointer border-none bg-card p-4 shadow">
       <div className="absolute -top-2 start-3">
-        <div className="relative aspect-square h-16  justify-center bg-gray-200 rounded-xl items-center flex">
-        <Icons.placeholder  className=" w-8 h-8 text-slate-600" />
+        <div className="relative flex aspect-square  h-16 items-center justify-center rounded-xl bg-gray-200">
+          <Icons.placeholder className=" h-8 w-8 text-slate-600" />
           {/* <Image
             src={pictureAddress? pictureAddress : "/images/dev/person-avatar.jpg"}
             alt="teacher-picture"

@@ -19,7 +19,9 @@ export const CourseInfo = ({
       <div className="flex w-full flex-col justify-between">
         <div className="">
           <H1 className="text-3xl font-black">{title}</H1>
-          <p className="mt-3.5 line-clamp-4 text-xl font-light">{miniDescribe}</p>
+          <p className="mt-3.5 line-clamp-4 text-xl font-light">
+            {miniDescribe}
+          </p>
         </div>
         <div className="flex items-center justify-between">
           <Button className="group flex gap-2 rounded-xl border-4 border-green-500 bg-green-500 px-5 py-7 text-2xl font-extrabold text-white transition-colors duration-500 hover:bg-transparent hover:text-green-500">

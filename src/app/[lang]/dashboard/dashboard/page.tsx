@@ -56,7 +56,11 @@ const CourseDashboard = async ({
       </div>
       <div className="h-full w-full">
         <React.Suspense fallback={<DataTableSkeleton columnCount={4} />}>
-          <AllUserCoursesTable lang={lang} data={data} limit={perPageAsNumber} />
+          <AllUserCoursesTable
+            lang={lang}
+            data={data}
+            limit={perPageAsNumber}
+          />
         </React.Suspense>
       </div>
     </div>

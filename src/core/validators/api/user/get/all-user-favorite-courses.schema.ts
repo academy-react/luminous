@@ -19,9 +19,7 @@ export type FavoriteCourseType = z.infer<typeof favoriteCourseSchema>;
 
 export const favoriteCoursesListSchema = z.array(favoriteCourseSchema);
 
-export type FavoriteCoursesListType = z.infer<
-  typeof favoriteCoursesListSchema
->;
+export type FavoriteCoursesListType = z.infer<typeof favoriteCoursesListSchema>;
 
 export const allUserFavoriteCoursesSchema = z
   .object({

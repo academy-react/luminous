@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button, Card, CardContent, CardTitle } from "@/components/elements/ui";
+import { Icons } from "@/components/assets/icons";
 
+import { type CourseType } from "@/core/validators/api";
 
 import { type Locale } from "#/i18n.config";
-import { CourseType } from "@/core/validators/api";
-import { Icons } from "@/components/assets/icons";
 
 type CourseCardProps = {
   lang: Locale;
@@ -20,11 +20,13 @@ export const CourseCard = ({
   return (
     <Card className="h-full w-full rounded-xl border-none bg-card p-4 shadow">
       <CardContent className="flex h-full w-full flex-col justify-between">
-        <Link href="#" className="relative flex h-full w-full items-center justify-center bg-gray-200 rounded-xl
-        // aspect-video 
-        ">
-      
-         <Icons.placeholder  className=" w-8 h-8 text-slate-600" />
+        <Link
+          href="#"
+          className="// relative flex aspect-video h-full w-full items-center justify-center
+        rounded-xl bg-gray-200 
+        "
+        >
+          <Icons.placeholder className=" h-8 w-8 text-slate-600" />
           {/* <Image
             src={tumbImageAddress?tumbImageAddress:'/images/dev/node-green.jpg'}
             alt="course-picture"
