@@ -9,6 +9,7 @@ import { getNewsFilterPages } from "@/core/services/api";
 
 import { type Locale } from "#/i18n.config";
 
+import { NewsCarousel } from "./news-caraousel";
 import { NewsletterSection } from "./newsletter-card";
 
 export const NewsSection = async ({ lang }: { lang: Locale }) => {
@@ -27,9 +28,7 @@ export const NewsSection = async ({ lang }: { lang: Locale }) => {
         {!news ? (
           <FetchErrorAnnouncement place={newsTitleBoxDict.title} lang={lang} />
         ) : (
-          <div className="flex w-full items-center justify-center gap-10 md:flex-row">
-            <NewsCard lang={lang} title={newsDict.title} contents={news} />
-          </div>
+          <NewsCarousel lang={lang} data={fetchedData} />
         )}
       </div>
       <NewsletterSection lang={lang} />
